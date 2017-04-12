@@ -3,6 +3,12 @@
   dslVersion="1.0.0.0"
   Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c"
   name="STDM Framework Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="a91f1b47-15e1-4102-8221-297ccdea0a74">
+      <body>Inherits from stdm.entities.BaseEntityInfo</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -491,7 +497,48 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="832410dd-0dc0-468a-ab77-efc42f58561f"
+                  name="user"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                      LastKnownName="UserInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e4c56b70-07c8-48bf-8624-7207745c4928"
+                  name="role"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d582b496-0fb9-4a98-93e5-5581aaa1e8a9"
+                      LastKnownName="RoleInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4614491b-f977-4ff0-aea2-a6042618ca86"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="e3f07b93-4acf-4cc3-b7d6-d1962c484dbb"
             name="create_role"
@@ -559,7 +606,23 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e421c3b7-11ec-44c4-be4b-1621ddf2c255"
+                  name="role"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6ed2e050-6a05-4b54-b582-8b4d80aa7f81"
+                      LastKnownName="RoleInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="520ab389-6f25-40ba-9168-8e54c35c1c86"
             name="role"
@@ -618,6 +681,30 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b286a0ce-8762-4288-b058-2248770dcaaa"
+                  direction="Return">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b41bdbc5-8bf1-461c-b6eb-dbceefee01a9"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b36de8f8-5704-448b-bbbe-e4030a9eabfe"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                      LastKnownName="UserInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -632,12 +719,36 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="e497fcaf-1d03-4e12-ab4f-38c63a6b3495"
-                  name="name"
+                  name="user"
                   direction="In">
                   <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
+                    <classMoniker
+                      Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                      LastKnownName="UserInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c5f4bc4-0246-48ac-8f98-c9cc1f9e62b1"
+                  direction="Return">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2ba1304a-45ab-4e6f-ad8f-8a32fd906c86"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="71eeedd2-ae85-43c7-8297-dd297d2df15c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d582b496-0fb9-4a98-93e5-5581aaa1e8a9"
+                      LastKnownName="RoleInfo"
                       LastKnownLocation="STDM Framework Design.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -651,7 +762,36 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="48e51822-b57f-4362-8bc5-684fbbc331dc"
+                  name="user"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                      LastKnownName="UserInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="742a06e3-c8b4-4942-a2ac-0b4ad781b198"
+                  name="role"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6ed2e050-6a05-4b54-b582-8b4d80aa7f81"
+                      LastKnownName="RoleInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -846,8 +986,8 @@
             </type_NamedElement>
           </property>
           <property
-            Id="a99911eb-26ab-4d15-985b-907f8927553e"
-            name="role_id"
+            Id="a86895f3-1e9d-40b5-ac18-f149e6b84256"
+            name="auto_assign"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -858,8 +998,8 @@
             isComposite="false">
             <type_NamedElement>
               <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -957,9 +1097,284 @@
             name="LOGIN_USERLOCKEDOUT" />
           <enumerationLiteral
             Id="d94405e6-e117-4545-aad2-48b69c424792"
-            name="USER_NOTAPPROVED" />
+            name="LOGIN_USERNOTAPPROVED" />
         </ownedLiterals>
       </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b4e807d9-21d7-45cb-a82e-eff48945cf58"
+        name="DataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d582b496-0fb9-4a98-93e5-5581aaa1e8a9"
+        name="RoleInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="25c98e00-525d-4438-8499-d540843035a8"
+            name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="72606142-ca72-444b-abcd-6a46e583b905"
+            name="description"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="68446b9c-25ce-493d-bf36-6c708863e4e9"
+            name="icon_file"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="64200178-20d5-4fd4-8ae4-7994f30f199d"
+            name="auto_assign"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8dca0f0d-7e88-4cce-8b15-b4a38edbd37f"
+            name="status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="d4ab6ec3-e1c5-46a3-be8a-553c2b62e5af"
+                LastKnownName="RoleStatus"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="52d35cd2-229f-46a9-9664-58154ea9f847"
+            name="__eq__"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>compare using role name</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="321bc098-0928-480f-84a5-234b26e61cea"
+                  name="role_info"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="73a8b688-c78d-4c7f-a2d2-fbf9c9a4dae8"
+                      LastKnownName="STDM Security Framework::RoleInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dd40ff14-93d0-4d20-a70c-450ee0db2d06"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="d4ab6ec3-e1c5-46a3-be8a-553c2b62e5af"
+        name="RoleStatus"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="264df4d6-e855-4b41-a11d-199a64ccec29"
+            name="PENDING" />
+          <enumerationLiteral
+            Id="253391f4-698e-4f9a-8a72-2cbde25c5618"
+            name="DISABLED" />
+          <enumerationLiteral
+            Id="e91385c8-4b31-4eb1-b513-5c0cb8e1f609"
+            name="APPROVED" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="a9a9cda0-cb7a-4870-aee1-d260dcff5cb1"
+        name="SystemRoles"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="177949de-ba49-4cf4-bc25-12e1f8b3b521"
+            name="ADMINISTRATOR" />
+          <enumerationLiteral
+            Id="ee3343cb-c30f-48b5-9631-6e315f026356"
+            name="REGISTERED_USER" />
+          <enumerationLiteral
+            Id="c97727af-eb00-421d-ab41-4c4ebe8f45c6"
+            name="NONE" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="73241dc7-d4b3-4d16-8fdc-749f7cf625aa"
+        name="(none" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f1140ead-288f-4a1c-86e2-f8b2440051cc"
+        name="UserRoleInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="e5e4b775-a88d-4a91-a43c-c7fff0311fc5"
+            name="role_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ef95870c-a127-4a9f-bcc5-ea6256401d53"
+            name="user_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="32885106-3dad-42d1-ab1d-a03a39af6c9b"
+            name="role"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="6ed2e050-6a05-4b54-b582-8b4d80aa7f81"
+                LastKnownName="RoleInfo"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5248228c-d641-4822-8dfa-c9e2303c3bd3"
+            name="user"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                LastKnownName="UserInfo"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
