@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6f280d66-75f8-49d5-96ae-5638396e40ea" name="Security" linkedPackageId="7db89a6b-c13e-47c0-8910-40349090987f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="3cc4a459-c4bc-4ef0-ac23-1fee20e19736">
+      <profileInstance Id="ed1e4aa2-3394-4123-9704-39cd031e0508" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="74d43127-741f-4eb4-acb0-470c32170a2d">
+      <profileInstance Id="79aba8ea-8bae-49cc-bfcf-405e47cbc290" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" name="STDM Security Framework::Entities::UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::Entities::UserInfo">
+        <elementDefinition Id="8e047c9f-3076-4f8b-84fe-dd805a7b0050" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="909e508d-4657-4789-82ff-e9304954cc46" name="STDM Security Framework::UserCreateStatus" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::UserCreateStatus">
+        <elementDefinition Id="98308503-3e53-42fb-bf34-9c67f16164dd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="74258531-b676-44e4-a40d-f4564b2d39dd" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0cfed435-f717-4f87-9495-aefd39c0461d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d8287510-e937-4f81-a024-cde68fb9770c" name="STDM Security Framework::Entities::UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::Entities::UserInfo">
+        <elementDefinition Id="8e047c9f-3076-4f8b-84fe-dd805a7b0050" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6e0c29a1-c1c8-4ba2-8b57-10907b3531d0" name="STDM Security Framework::Entities::UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::Entities::UserInfo">
+        <elementDefinition Id="8e047c9f-3076-4f8b-84fe-dd805a7b0050" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c1dff7fe-1939-4643-8679-c9abe5b3a44e" name="STDM Security Framework::Entities::UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::Entities::UserInfo">
+        <elementDefinition Id="8e047c9f-3076-4f8b-84fe-dd805a7b0050" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5ad56442-9391-453a-a158-0aed63d421ee" name="STDM Security Framework::RoleInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::RoleInfo">
+        <elementDefinition Id="73a8b688-c78d-4c7f-a2d2-fbf9c9a4dae8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7cba3cf6-fd4d-4b7e-96c0-da75060ff0e3" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5d11ffa6-26b8-41b2-91d0-28e7e7c24be2" name="MembershipProvider" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d33062b0-9cde-4671-bc55-07e8b43b0530" />
+        <ownedAttributesInternal>
+          <property Id="934804eb-1e2a-4592-b390-79a8093cd0f5" name="INVALID_PASSWORD_ATTEMPTS" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7934a78f-afc4-4aa9-a59a-1f852be7d1f6" />
+          </property>
+          <property Id="3b6d1166-4cd3-4f5a-ba88-d9db131642c7" name="MINIMUM_PASSWORD_LENGTH" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="99052332-57d8-4441-a9bf-cd0d06a7337a" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e6a83c67-b3e8-47ec-be86-0b08bc7c36cc" name="create_user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a07f37c-da48-4107-b4c4-399faae4be10" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="339bd2c6-84f4-4b66-b7bd-8bbb337911c7" name="user_info" direction="In">
+                  <elementDefinition Id="426acdd8-948e-4fc8-bbfc-878b54de6747" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed3d80c6-b52c-4412-8993-5f22b33b5dd4" direction="Return">
+                  <elementDefinition Id="c112cc69-0538-4424-a184-5c3af6f8d87e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="909e508d-4657-4789-82ff-e9304954cc46" LastKnownName="STDM Security Framework::UserCreateStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cb881adc-003d-466c-bfb2-bbc547dc9cbb" name="delete_user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d440b9d4-657e-4cd5-bd54-ef6811e084a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ea4ea258-0a04-480a-bfd6-076c54f5aa84" name="user_info" direction="In">
+                  <elementDefinition Id="56117113-673a-45c3-ae33-e250c533b551" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4bdecfe7-1568-4848-883f-cfed6dee9f1a" name="change_password" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="828d6949-b16c-415d-957b-a9d8dee2db5d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5df49df7-1068-4445-b8dc-102aa79770a7" name="user_info" direction="In">
+                  <elementDefinition Id="4de01b5a-1af4-4284-8327-a94c12d7d453" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7c88f5d0-665d-4247-af86-06c21d20e114" name="old_password" direction="In">
+                  <elementDefinition Id="02c5ef43-1c94-4571-9823-96f09ebaa9f2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9fe3d2c1-dc5b-4908-bb4c-71b46e353cf0" name="new_password" direction="In">
+                  <elementDefinition Id="da879e06-9749-4452-beca-e15dd18c76a4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b177120e-c493-43a4-bdf2-33f8637cd612" name="update_user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6701835b-63db-46b3-b90e-f2b05869559c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9f8d61e8-caf3-4416-9768-5379769f2beb" name="user_info" direction="In">
+                  <elementDefinition Id="fec1e59c-fce7-41a1-9887-3ae462d0168a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d2ed52a5-e2fd-479d-a2eb-fcd2bdbbb18a" name="unlock_user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c381c814-45a8-4eec-9c0e-9adfedd1d79f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d2361a4d-3622-4568-943b-b9a9c3f607b9" name="user_info" direction="In">
+                  <elementDefinition Id="79fa1c4e-def9-47f5-8a91-fb31edb15ee1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6092b450-89da-465a-bd02-b84680eb538d" name="logged_in_users" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27295ace-e04a-4702-84ee-a8296e66c03b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="33763576-72ad-451e-95bc-af20bb8f9aa4" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="6727a21b-bd28-47a6-84dd-cb2c3128211b" name="Lower" value="*">
+                      <elementDefinition Id="fb89705a-2df3-4f1a-b58c-105506eb7c04" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0cd8bb24-0df5-4df7-8ef1-15e8427cfb77" name="Upper" value="*">
+                      <elementDefinition Id="3b9ab0e9-eb64-4bda-9516-1709f71ea537" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="9c5b2d4e-e3ed-4a59-8f6d-34a13f9cd04f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="239d6216-dd6f-4ea6-8bec-a7cc44a4fb7a" LastKnownName="UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="621441da-65dd-4cf4-9ece-c78fa4cbfe5d" name="is_user_logged_in" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a2e62015-7c21-4089-ae34-d8bbfc06793a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="72a89afc-1125-4bb1-a2cd-0e5839c42cd1" name="user_info" direction="In">
+                  <elementDefinition Id="f6ba7429-472f-4ec6-a4c0-5988cf3f1a8f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c3e5a268-48e1-4daa-8e41-747e8aafe790" LastKnownName="UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3c8fa445-491f-4bb6-a375-d610b4c460c6" direction="Return">
+                  <elementDefinition Id="be125796-4e51-4158-a900-1905ec3d7a89" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4d1e5981-2b0f-42bf-a131-bdfb9e09fff7" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2898254b-efd6-46c7-87c3-5fb79cfff7dd" name="is_user_online" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d667f7ea-4487-4157-b2ec-86c85e983943" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0bd9eef8-780f-4b9b-bac3-f788a1a4d927" name="user_info" direction="In">
+                  <elementDefinition Id="2f2e4a5a-88c5-4d7e-a6dd-3bb689307894" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5b813005-5bf9-4daf-a4d0-13bfc16268d5" name="user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f379a657-b97d-44ff-b7bd-974d7088355d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3623756d-5f18-4790-a748-a4304b2979a7" name="user_id" direction="In">
+                  <elementDefinition Id="bd0d2b2e-ccd3-4969-ab7a-c1a16955bd81" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0cfed435-f717-4f87-9495-aefd39c0461d" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c3b392df-2c68-421c-8173-68c9bce97b0b" direction="Return">
+                  <elementDefinition Id="406cc5d5-b336-44b2-9235-6c5435a49c0e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8287510-e937-4f81-a024-cde68fb9770c" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="16948666-5889-4d13-93f0-ff36821f1fe8" name="online_users" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="34206726-df05-4189-bb69-7de9f74bc35c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8fdfbd22-f3f7-4705-8d92-db86a7f6482f" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="d1b02a09-71e1-45c2-8ed4-35142e186f8e" name="Lower" value="*">
+                      <elementDefinition Id="0ab242d3-4bb9-40ac-9315-21a878c3cd1a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7574fb0a-5304-41e0-a0eb-2e22e635fa58" name="Upper" value="*">
+                      <elementDefinition Id="536335d3-c102-453f-a7ac-9aec832fdf47" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="4c2de706-1ef9-464c-aa88-e7687f5429dd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6e0c29a1-c1c8-4ba2-8b57-10907b3531d0" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="aab79ac1-3fab-4dc2-84af-03185796e813" name="user_by_email" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6023f4e2-cc59-429b-b8d7-e0dda5e0cec3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1b6df19c-21ca-46b7-b762-c68577df2e61" name="email" direction="In">
+                  <elementDefinition Id="81370443-ff7c-4a3d-846b-11239c9ab091" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bd1b078e-7c30-4448-929a-486623437291" direction="Return">
+                  <elementDefinition Id="36ceee78-6b57-474a-bef9-d06acf40d714" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c1dff7fe-1939-4643-8679-c9abe5b3a44e" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8130fd0d-71ca-49ab-83ba-51261b20853e" name="lock_user" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b96e7243-4177-472c-a617-6b04e1e1516d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a86d1d24-8d93-4305-a356-409d8fcff67c" name="user_info" direction="In">
+                  <elementDefinition Id="03cf62a9-1a05-4dd2-badd-d23d59fa986b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" LastKnownName="STDM Security Framework::Entities::UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a93a0c59-53bc-4171-aabc-869d0e55d2a5" name="RoleProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="61289999-d12c-4da3-9abe-3a45376b7eb0" />
+        <ownedOperationsInternal>
+          <operation Id="d73a313a-ac2c-4484-a1d0-376449026b18" name="add_user_to_role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="23fdce3a-6d49-4217-8998-d4dd96cc6af2" />
+          </operation>
+          <operation Id="e288dc54-b2f8-4ada-9204-7a0d1cc18ec3" name="create_role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3f07b93-4acf-4cc3-b7d6-d1962c484dbb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c46511d3-b5c0-4756-9ff0-4f63e7d40e0a" name="role_info" direction="In">
+                  <elementDefinition Id="5eec6ce8-1035-4613-b036-c054f326dd6c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5ad56442-9391-453a-a158-0aed63d421ee" LastKnownName="STDM Security Framework::RoleInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6b3ac054-63b6-4daf-b5fe-eaa7392831c9" direction="Return">
+                  <elementDefinition Id="6dc63c17-e629-41f4-8367-2bd5e827e2ae" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7cba3cf6-fd4d-4b7e-96c0-da75060ff0e3" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cefd0e95-6916-4b4b-b8b0-da1cdc558aa6" name="delete_role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6962906f-e5c3-4ba5-883b-4dfd7f162876" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f0360a93-6249-49bf-baf3-ca61a07e84a3" name="role_info" direction="In">
+                  <elementDefinition Id="de28e0a4-2171-48e3-8d4d-f6875b5ead35" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5ad56442-9391-453a-a158-0aed63d421ee" LastKnownName="STDM Security Framework::RoleInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f7b34e0d-a6e1-4d69-b487-9ef0001f45c1" name="update_role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4b27b802-f47b-47aa-8e38-45fa9d7db9d7" />
+          </operation>
+          <operation Id="8e80c9c3-b6f8-496a-81a1-c45468a1319d" name="role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="520ab389-6f25-40ba-9168-8e54c35c1c86" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f959a71a-c2b1-43bc-9ef8-30292cab6f80" name="name" direction="In">
+                  <elementDefinition Id="64a2f752-79bd-470e-9a11-77d19f382b22" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e8c8ca5-7a71-4838-ba97-72b7b13f7575" direction="Return">
+                  <elementDefinition Id="ae80014d-7dfa-4e2f-8172-c071cd39a8aa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5ad56442-9391-453a-a158-0aed63d421ee" LastKnownName="STDM Security Framework::RoleInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d31c0c2d-15ea-4e48-81a5-9c50e566c520" name="users_by_role_name" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="721ef16c-93d5-40b1-9b4e-4b71d229e358" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="564ea14a-81cd-4944-a80b-66782e192943" name="name" direction="In">
+                  <elementDefinition Id="010eaed3-0118-4b80-9811-ca6d854eb678" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6def9e7a-ff05-4974-af7b-420c5d967b9e" name="user_roles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ab701c06-65b8-46a3-b659-09415527425d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="14408165-a6b8-43cd-9020-91ca37af3f66" name="name" direction="In">
+                  <elementDefinition Id="e497fcaf-1d03-4e12-ab4f-38c63a6b3495" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="74258531-b676-44e4-a40d-f4564b2d39dd" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f4fc116c-a786-4bc7-b4a1-453eaa956be0" name="remove_user_from_role" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a53afa9-4e7a-49c4-9e17-0f33b0ee41f6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c3e5a268-48e1-4daa-8e41-747e8aafe790" name="UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::UserInfo">
+        <elementDefinition Id="a21e9273-2891-45f6-a6b8-18f2576c0491" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4d1e5981-2b0f-42bf-a131-bdfb9e09fff7" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="239d6216-dd6f-4ea6-8bec-a7cc44a4fb7a" name="UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::UserInfo">
+        <elementDefinition Id="a21e9273-2891-45f6-a6b8-18f2576c0491" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="4b0f1b6b-601a-41a4-bc22-b194d519e430" name="UserCreateStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d7739759-775e-4e8e-8474-4380d6459143" />
+        <ownedLiterals>
+          <enumerationLiteral Id="06473e7c-9b00-4b0a-9f25-c6838041039f" name="USERNAME_ALREADY_EXISTS">
+            <elementDefinition Id="ad1e7ee7-562d-4da9-9875-30427e71a289" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d91aa1dd-b362-4da0-94ea-76f013890670" name="DUPLICATE_EMAIL">
+            <elementDefinition Id="ff61b25b-a22f-4daf-a68c-63d5e05b1eec" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="481ca8c8-3154-41bb-98f4-36aa5d7b1636" name="INVALID_EMAIL">
+            <elementDefinition Id="7b715af5-bf73-4ee1-8600-fe707750d4a4" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="40515b9e-4a4f-4de5-a755-077a219dd176" name="INVALID_PASSWORD">
+            <elementDefinition Id="0ffa3753-5384-4c3b-93dd-11c28dde6ce5" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="5f8e31a8-2484-44cd-bfb2-4e9cb2c4a26c" name="SUCCESS">
+            <elementDefinition Id="09e542ad-b10e-47a1-887d-eca7cbac96fb" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="0aec7265-57cf-4561-8042-16491ccf815d" name="PASSWORD_MISMATCH">
+            <elementDefinition Id="0301b583-a820-4131-a32a-7dd5b43c45c6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="0b94c8d5-a70c-41c2-92aa-190abc37be45" name="INVALID_DISPLAYNAME">
+            <elementDefinition Id="a056a949-dae8-4279-9208-b9a939ab28db" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="efadfc52-eda6-4199-a7bd-eb5c21693b0a" name="DUPLICATE_DISPLAYNAME">
+            <elementDefinition Id="9e2ae4d8-4736-437e-aa4b-769808de995f" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="3b235cba-2a44-4818-84cb-ed5c2dd4726b" name="UserLoginStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4c13faab-d408-48dd-8fea-bc7f5b70a2ff" />
+        <ownedLiterals>
+          <enumerationLiteral Id="8230f86e-75b1-4f61-9fd0-6bc8ebed2086" name="LOGIN_FAILURE">
+            <elementDefinition Id="907d0fbc-eb9c-4e38-9c08-6ce149b9551c" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="a92978e3-3b65-455d-b2b7-b61efc926c9d" name="LOGIN_SUCCESS">
+            <elementDefinition Id="aa8832d4-e93d-4242-aa0c-0a43eaee6aa4" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="a87f299b-2cfd-4397-85f6-4c94077d8d9b" name="LOGIN_USERLOCKEDOUT">
+            <elementDefinition Id="3132befe-fddf-475f-a693-55ba63226d3e" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="03f21d98-401e-4137-8837-cb0d153a9e3a" name="USER_NOTAPPROVED">
+            <elementDefinition Id="d94405e6-e117-4545-aad2-48b69c424792" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7db89a6b-c13e-47c0-8910-40349090987f" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>
