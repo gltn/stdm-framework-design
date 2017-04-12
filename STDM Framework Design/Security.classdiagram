@@ -5,6 +5,10 @@
       <elementDefinition Id="a91f1b47-15e1-4102-8221-297ccdea0a74" />
       <body>Inherits from stdm.entities.BaseEntityInfo</body>
     </comment>
+    <comment Id="cb8cf59a-ebd8-4f4b-a159-03c3dcafa7a4">
+      <elementDefinition Id="6fd195d9-15bc-498f-9dc9-48ffe9237ed4" />
+      <body>Concrete implementation using a PostgreSQL backend</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances Id="3cc4a459-c4bc-4ef0-ac23-1fee20e19736">
@@ -761,6 +765,17 @@
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b17ae18b-e035-4f06-9957-9a21daebffae" name="StdmMembershipProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="666a12f5-1fe5-445f-836b-55e361f33a11" />
+        <generalsInternal>
+          <generalization Id="777768f2-b591-43d4-b8b1-e0fb09f050dd" isSubstitutable="false">
+            <classMoniker Id="5d11ffa6-26b8-41b2-91d0-28e7e7c24be2" LastKnownName="MembershipProvider" />
+            <elementDefinition Id="e1ae3060-28fb-42d6-88e6-cf2de4cc27c0" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="7db89a6b-c13e-47c0-8910-40349090987f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

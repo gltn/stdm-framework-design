@@ -8,6 +8,10 @@
       Id="a91f1b47-15e1-4102-8221-297ccdea0a74">
       <body>Inherits from stdm.entities.BaseEntityInfo</body>
     </comment>
+    <comment
+      Id="6fd195d9-15bc-498f-9dc9-48ffe9237ed4">
+      <body>Concrete implementation using a PostgreSQL backend</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -282,7 +286,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -306,7 +310,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -508,7 +512,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -701,7 +705,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -725,7 +729,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -773,7 +777,7 @@
                     <classMoniker
                       Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                       LastKnownName="UserInfo"
-                      LastKnownLocation="STDM Framework Design.uml" />
+                      LastKnownLocation="Package_1138.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -793,116 +797,6 @@
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="672ff945-7bd1-42d2-8815-25426c9de169"
-        name="BaseEntityInfo"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="adc5f276-a24c-4fe5-84f3-df8ebfe264c8"
-            name="created_by_user"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="2504ab01-da56-4caa-b20e-2e7046fc65de"
-            name="created_on_date"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="e452e3b5-0718-4357-9f1b-e6a8b58743a6"
-            name="last_modified_by_user"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="dca9b2af-7b73-433a-9be2-4a7978d21c56"
-            name="last_modified_on_date"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
-        name="UserInfo"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="5f6c57d5-25e6-4d34-8914-1c035d9ffc98"
-            name="first_name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="85ad3d57-f80e-4815-9738-7a6db37d2f4e"
-            name="last_name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="8d11979e-75fb-4d94-919d-0bbbbeac0401"
-            name="display_name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="b3adee8f-a53a-4a38-9984-2dc07d651ff1"
-            name="email"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -927,7 +821,7 @@
             <classMoniker
               Id="672ff945-7bd1-42d2-8815-25426c9de169"
               LastKnownName="BaseEntityInfo"
-              LastKnownLocation="STDM Framework Design.uml" />
+              LastKnownLocation="Package_1138.uml" />
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
@@ -1370,11 +1264,36 @@
               <classMoniker
                 Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
                 LastKnownName="UserInfo"
-                LastKnownLocation="STDM Framework Design.uml" />
+                LastKnownLocation="Package_1138.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="666a12f5-1fe5-445f-836b-55e361f33a11"
+        name="StdmMembershipProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="e1ae3060-28fb-42d6-88e6-cf2de4cc27c0"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d33062b0-9cde-4671-bc55-07e8b43b0530"
+              LastKnownName="MembershipProvider"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="87d89d3f-eb32-459e-b7dc-93fd54b31a4b"
+        LastKnownName="users"
+        LastKnownLocation="Package_1138.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
