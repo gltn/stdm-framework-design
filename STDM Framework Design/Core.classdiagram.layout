@@ -13,5 +13,12 @@
       <commentMoniker Id="a0cb053c-605f-43da-8679-369873c8d135" />
       <relativeChildShapes />
     </commentShape>
+    <classShape Id="6fb715d5-2342-4223-af60-dcb6d7f89cb0" absoluteBounds="0.5, 2.875, 2.75, 1.7031249602635699" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="460a777c-a073-47e8-a4c2-5be812ad554a" LastKnownName="STDMApplication" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="c846dc56-25ea-482b-afc8-7aeb7c033a09" absoluteBounds="0.515, 3.265, 2.7199999999999998, 1.0019530927141507" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="5ed5f6f7-2393-4c1f-9ba0-6a376319de46" absoluteBounds="0.515, 4.2769530927141508, 2.7199999999999998, 0.20117186754941963" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

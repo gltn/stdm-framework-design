@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c0a1df0d-e76b-483b-aa66-8d6a71f056c5" name="Configuration" linkedPackageId="283cbb39-41aa-4b4d-a67d-8ea7a06d77c9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="dacf1596-a3c7-409a-ad33-3190cdaf97e4">
+      <elementDefinition Id="8b1e7934-cfed-4c22-97e6-432e5dc25583" />
+      <body>More details in separate class diagram</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="4113aec7-da84-410a-962d-c8d959022d0f">
+      <profileInstance Id="673fcad4-7c47-4ec5-96f9-be0a9e0a7dfd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="59b01402-c812-40b5-a6ec-965e50f724be">
+      <profileInstance Id="b2746d3f-48d4-4f28-ab89-0405482c0475" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9a8090a8-e5c7-4dfe-9574-283d94029bc9" name="StdmConfiguration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f0b4969-7adb-4e5d-86af-af47f2500ef4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="283cbb39-41aa-4b4d-a67d-8ea7a06d77c9" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>
