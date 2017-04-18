@@ -50,6 +50,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Entities.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Migration.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Migration.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Migration.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package_1138.uml">
       <SubType>Content</SubType>
     </Content>
