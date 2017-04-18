@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Core">
+  <logicalClassDesignerModelMoniker Id="75af31a2-e5df-48b0-b18b-04a051b521f7" />
+  <nestedChildShapes>
+    <classShape Id="baa41de5-0e57-4b56-9a65-2a1f46863ef5" absoluteBounds="0.5, 1.25, 2.75, 1.2226562251647315" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="42a2ac4e-10c4-4f4b-ad31-86547014d54f" LastKnownName="SelfRegistrable" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="59bbbeb0-1ed5-48c2-b110-2451ab7d5f58" absoluteBounds="0.515, 1.6400000000000001, 2.7199999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="936bd4c3-d23e-4a34-8f57-4b3211cdefaa" absoluteBounds="0.515, 2.0113281125823654, 2.7199999999999998, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <commentShape Id="dae97d7d-fe12-4a0b-a83a-a5f308bdc712" absoluteBounds="0.5, 0.75, 2.75, 0.375" customColor="251, 247, 200">
+      <commentMoniker Id="a0cb053c-605f-43da-8679-369873c8d135" />
+      <relativeChildShapes />
+    </commentShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

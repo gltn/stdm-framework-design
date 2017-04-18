@@ -7,23 +7,10 @@
     </comment>
     <comment Id="cb8cf59a-ebd8-4f4b-a159-03c3dcafa7a4">
       <elementDefinition Id="6fd195d9-15bc-498f-9dc9-48ffe9237ed4" />
-      <body>Concrete implementation using a PostgreSQL backend</body>
+      <body>Concrete implementation using an implicit
+ PostgreSQL backend </body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="3cc4a459-c4bc-4ef0-ac23-1fee20e19736">
-      <profileInstance Id="ed1e4aa2-3394-4123-9704-39cd031e0508" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="74d43127-741f-4eb4-acb0-470c32170a2d">
-      <profileInstance Id="79aba8ea-8bae-49cc-bfcf-405e47cbc290" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="e0907d35-c22d-403b-a0c5-30e3f77576d1" name="STDM Security Framework::Entities::UserInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Security Framework::Entities::UserInfo">
@@ -607,7 +594,7 @@
               <referencedTypeMoniker Id="1562ef7d-30d4-4cc8-b70b-f055b873c48d" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="6584bd65-110d-49de-9655-40f61f743b02" name="icon_file" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="6584bd65-110d-49de-9655-40f61f743b02" name="icon" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="68446b9c-25ce-493d-bf36-6c708863e4e9" />
             <type_NamedElement>
               <referencedTypeMoniker Id="f04f1da0-b7f4-4b64-a4bd-e9725e79ae4e" LastKnownName="String" />
@@ -779,5 +766,19 @@
   </packagedElements>
   <package Id="7db89a6b-c13e-47c0-8910-40349090987f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="3cc4a459-c4bc-4ef0-ac23-1fee20e19736">
+        <profileInstance Id="ed1e4aa2-3394-4123-9704-39cd031e0508" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="74d43127-741f-4eb4-acb0-470c32170a2d">
+        <profileInstance Id="79aba8ea-8bae-49cc-bfcf-405e47cbc290" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

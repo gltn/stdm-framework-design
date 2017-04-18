@@ -16,5 +16,12 @@
         <OperationElementListCompartment Id="46da1f37-53a2-474b-83c1-e5039900e1dc" absoluteBounds="0.7649999999999999, 2.6011718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="e8f51dc9-2471-4c56-9757-52db303da2e1" absoluteBounds="0.75, 3.125, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="d52b3c36-10c3-45ab-9ed5-0fca89bc8cee" LastKnownName="OrderedDict" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="1b170901-ff3c-408f-ad51-29f1f5615e38" absoluteBounds="0.7649999999999999, 3.515, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="0889ee83-7e8d-48c9-a916-485b23fc8b9b" absoluteBounds="0.7649999999999999, 3.7261718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

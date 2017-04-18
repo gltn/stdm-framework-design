@@ -10,7 +10,16 @@
     </comment>
     <comment
       Id="6fd195d9-15bc-498f-9dc9-48ffe9237ed4">
-      <body>Concrete implementation using a PostgreSQL backend</body>
+      <body>Concrete implementation using an implicit
+ PostgreSQL backend </body>
+    </comment>
+    <comment
+      Id="8cf495c0-c048-4f04-86bb-52be548a52a1">
+      <body>All classes that need to register subclasses can inherit from this class.</body>
+    </comment>
+    <comment
+      Id="2f14a4fd-a9ba-4f12-81a8-0a5e15a6dacf">
+      <body>Consider using passlib or bcrypt</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -1049,7 +1058,7 @@
           </property>
           <property
             Id="68446b9c-25ce-493d-bf36-6c708863e4e9"
-            name="icon_file"
+            name="icon"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1294,6 +1303,205 @@
         Id="87d89d3f-eb32-459e-b7dc-93fd54b31a4b"
         LastKnownName="users"
         LastKnownLocation="Package_1138.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bbd28d83-028f-466f-bd18-0db0456595d5"
+        name="SelfRegistrable"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="87d5a538-a611-4115-b45d-c265b3d2e34d"
+            name="registry"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc"
+                LastKnownName="OrderedDict"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7c8db599-5ffa-4289-a50b-0d3ec0d1886a"
+            name="subtype"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Returns an instance of the subclass based on a unique identifier</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ffbd806c-63b1-462d-a83c-f1389b96cb3c"
+                  name="identifier"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc42e85e-4147-4d52-8f6c-5cc7d3b1be75"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="bbd28d83-028f-466f-bd18-0db0456595d5"
+                      LastKnownName="SelfRegistrable"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc"
+        name="OrderedDict"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="e72e9a4a-a80c-4661-817e-ff6d68c4d1d7"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5508ca6d-c13f-4e7d-9913-0f085aad94ff"
+        name="CryptographyProvider"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="2315c68c-a64e-459b-81fc-d479f02d4f33"
+            name="generate_hash"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4497f75e-7656-4488-86b5-a07802ee46dd"
+                  name="plain_text"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e720cdb-7d78-44aa-b188-1af890c11461"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="583a51a3-db1d-4289-aef6-c0bba5773246"
+            name="check_hash"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="aeea6e3e-8da2-4916-b799-1fabc633f788"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2504bf00-79a4-45f8-9cb2-1ff652de4488"
+                  name="plain_text"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bed6828b-0f9d-42f3-bba6-26e4d7ae1faa"
+                  name="hashed_text"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea9109fc-4cbe-434a-8840-9b937bf2e280"
+        name="DefaultCryptographyProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="ea57c399-0331-43de-bf41-6290d43f06db"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5508ca6d-c13f-4e7d-9913-0f085aad94ff"
+              LastKnownName="CryptographyProvider"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

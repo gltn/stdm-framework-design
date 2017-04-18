@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7dbaa365-c6a1-4492-93ee-7a1cf2460827" name="Cryptography" linkedPackageId="2679d879-b322-4436-841d-41e25b5cc0d0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="db8e964f-dfdf-4039-bec0-22d0cee493d4">
+      <elementDefinition Id="2f14a4fd-a9ba-4f12-81a8-0a5e15a6dacf" />
+      <body>Consider using passlib or bcrypt</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="b34e285a-f6ce-424d-a680-89119be0ee62">
+      <profileInstance Id="70944087-f735-434a-b00e-4856e1049a73" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4c231759-269c-4673-9c2a-33e3168ba54a">
+      <profileInstance Id="bc1caeb6-db1c-4fbd-9403-12fd79979d41" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9994dd44-2235-430c-931a-7c89de5c7af4" name="CryptographyProvider" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5508ca6d-c13f-4e7d-9913-0f085aad94ff" />
+        <ownedOperationsInternal>
+          <operation Id="0673cd71-e265-466b-8464-55ebd7a01858" name="generate_hash" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2315c68c-a64e-459b-81fc-d479f02d4f33" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="705496b3-2262-48b0-8bda-4c9d6f1c24ca" name="plain_text" direction="In">
+                  <elementDefinition Id="4497f75e-7656-4488-86b5-a07802ee46dd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="38aa09cc-7549-48de-88e6-58c2b49482d1" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="89a54f53-bd96-40b7-ae62-932339f3dfd2" direction="Return">
+                  <elementDefinition Id="3e720cdb-7d78-44aa-b188-1af890c11461" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="30993758-c0b4-470b-8387-c9b94ee438a0" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="280d0a00-c0fa-4e93-b037-615ee90d3c8e" name="check_hash" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="583a51a3-db1d-4289-aef6-c0bba5773246" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="efe0c3ea-3285-4a12-a9d0-f66b5408ac4c" direction="Return">
+                  <elementDefinition Id="aeea6e3e-8da2-4916-b799-1fabc633f788" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4228c11b-4840-4c1d-89cc-862ee636e2a5" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dcbc9e2b-32ba-4110-a1e9-9de56760ab85" name="plain_text" direction="In">
+                  <elementDefinition Id="2504bf00-79a4-45f8-9cb2-1ff652de4488" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="38aa09cc-7549-48de-88e6-58c2b49482d1" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d3223a12-b9bc-4984-bfa4-220d6fb0e667" name="hashed_text" direction="In">
+                  <elementDefinition Id="bed6828b-0f9d-42f3-bba6-26e4d7ae1faa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="38aa09cc-7549-48de-88e6-58c2b49482d1" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="38aa09cc-7549-48de-88e6-58c2b49482d1" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="30993758-c0b4-470b-8387-c9b94ee438a0" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4228c11b-4840-4c1d-89cc-862ee636e2a5" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4bdd3441-9c0d-46d5-88cc-b659e556b7a9" name="DefaultCryptographyProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ea9109fc-4cbe-434a-8840-9b937bf2e280" />
+        <generalsInternal>
+          <generalization Id="e3a8f20c-4aef-4924-b745-3f6f5f4f8840" isSubstitutable="false">
+            <classMoniker Id="9994dd44-2235-430c-931a-7c89de5c7af4" LastKnownName="CryptographyProvider" />
+            <elementDefinition Id="ea57c399-0331-43de-bf41-6290d43f06db" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2679d879-b322-4436-841d-41e25b5cc0d0" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>
