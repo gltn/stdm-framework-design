@@ -10,6 +10,18 @@
       <body>Concrete implementation using an implicit
  PostgreSQL backend </body>
     </comment>
+    <comment Id="b2f1b4e8-3d1e-4982-8557-be7ff439d7fb">
+      <elementDefinition Id="9f7f1aa2-3128-480b-8ad0-358a87117a1d" />
+      <body>Inherits BaseEntityInfo, HashCodeMixin</body>
+    </comment>
+    <comment Id="ac31edd9-cbc2-46cc-99bc-532db6530880">
+      <elementDefinition Id="a766894a-37fa-42ed-9f5c-1e499550ce5c" />
+      <body>Inherits BaseEntityInfo</body>
+    </comment>
+    <comment Id="6987ec28-75ee-496d-88f0-51ef1241559a">
+      <elementDefinition Id="7ff2b2a3-524c-4ad8-b412-30189195dcb9" />
+      <body>Implemented as a dict or cacheable object</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -673,6 +685,9 @@
           <enumerationLiteral Id="dfd64a1d-7136-4fe9-9ab2-8a2f9ca5323d" name="NONE">
             <elementDefinition Id="c97727af-eb00-421d-ab41-4c4ebe8f45c6" />
           </enumerationLiteral>
+          <enumerationLiteral Id="fb86de56-d90d-4447-bbef-6f53ee493db5" name="CUSTOM">
+            <elementDefinition Id="a05d0fd8-a603-4842-ba72-0a55be74c537" />
+          </enumerationLiteral>
         </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
@@ -753,7 +768,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b17ae18b-e035-4f06-9957-9a21daebffae" name="StdmMembershipProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="b17ae18b-e035-4f06-9957-9a21daebffae" name="DefaultMembershipProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="666a12f5-1fe5-445f-836b-55e361f33a11" />
         <generalsInternal>
           <generalization Id="777768f2-b591-43d4-b8b1-e0fb09f050dd" isSubstitutable="false">
@@ -763,6 +778,238 @@
         </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1389b64b-2fcb-4cc3-8c1e-ce4fdcccf380" name="PermissionInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f" />
+        <ownedAttributesInternal>
+          <property Id="62b474a7-9e5a-4c76-9be6-d2ae9b2e3346" name="children" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="261f81d8-506f-4497-9e40-b30b41ddb147" name="Lower" value="*">
+                <elementDefinition Id="dad6d125-015c-4664-97f8-626f53876640" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="76272ca4-8862-4691-be3b-b838cea659d3" name="Upper" value="*">
+                <elementDefinition Id="be24e2ff-6c5d-4c73-bf3d-3a5ec13a385d" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="9e74160f-e758-47e6-8452-bedb252b0b40" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f8ba620c-a725-4611-976e-b9b78c50487c" LastKnownName="PermissionInfo" />
+            </type_NamedElement>
+          </property>
+          <property Id="721ec500-5869-42d8-9d76-9df23fd976f8" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="963d1e49-6207-43b0-b47a-8c2c15ea35f4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16dedf5d-58a7-47e5-ab12-5b9afdb652c9" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="f69355d6-88ea-4e6a-a106-62772c94776b" name="category" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="caa4fac6-376d-4cbd-976b-298c92885199" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ecfb806c-fc24-4fdc-92b6-a66f3a4e0f39" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="16dedf5d-58a7-47e5-ab12-5b9afdb652c9" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ecfb806c-fc24-4fdc-92b6-a66f3a4e0f39" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b3e7b0d5-a270-4cae-888f-c57c92b2e27a" name="PermissionProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cc1371bc-ac1a-442c-b066-42f96c7e90f0" />
+        <ownedOperationsInternal>
+          <operation Id="a1caa47c-8f09-43af-9d53-f1bfd5648091" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7d9b4140-f97c-4852-8437-47a80a2f1394" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fc0766a9-d0df-44a9-ade4-31663d4683fd" name="permission" direction="In">
+                  <elementDefinition Id="88d7243f-9498-4efc-8a5f-49a9b4a9a6a8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b8517af3-7a1f-4e1c-b955-bb51530082db" LastKnownName="PermissionInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="07804b6a-7159-49c9-86ff-a6ac3b8f4a73" direction="Return">
+                  <elementDefinition Id="f20d7b3b-0f81-45fd-b6d7-9ab5a9e53a80" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0d4ea5d-31ba-4f77-a7ca-0441764d3fd8" LastKnownName="PermissionRegisterStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="de204b17-de8d-4056-bf86-91901737764a" name="clear" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Removes all permission objects in the database</description>
+            <elementDefinition Id="b193a4df-c8f0-4a6f-a749-392f77e9f916" />
+          </operation>
+          <operation Id="d733504f-098f-4a00-bc37-6fec17da48e5" name="permissions" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4fec69d9-a5ab-4d95-945b-0d9d80d8778a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a508ba2a-bea2-47bb-b366-28b27c3a0fe8" direction="Return" isOrdered="true">
+                  <lowerValueInternal>
+                    <literalString Id="b22c1abe-ed3d-4ad9-a9d2-b600f29918dc" name="Lower" value="*">
+                      <elementDefinition Id="8c83d176-cf62-4c0a-857d-a0e6513fcf62" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="32084050-588d-4cf3-89b6-b34cf062e8cd" name="Upper" value="*">
+                      <elementDefinition Id="100672a4-b631-4ea4-8659-c6b5224b0dcb" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="08a6d20f-1869-45d1-832e-5b7b15df8676" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9d8f5081-cc2c-4aa8-86f3-2eeb1d4d0711" LastKnownName="PermissionInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="93d838ad-9d9e-4201-b8ae-47f7207f0c86" name="user_role_permissions" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc654f91-8e58-4e29-9aa6-780be3c7b086" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="774e0a84-fb7f-4036-897c-3a9f5095c8a3" name="user_info" direction="In">
+                  <elementDefinition Id="44cc599b-6e0a-4217-99f6-88fcb0655dfe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c3e5a268-48e1-4daa-8e41-747e8aafe790" LastKnownName="UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9a0d0c72-49ee-4958-b8ae-e0683022801d" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="3cd99389-d0a3-42e9-973f-a506fe0a2fa7" name="Lower" value="*">
+                      <elementDefinition Id="c6358ddd-cc9b-4831-9e05-57ad935017be" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="5635980d-7518-4959-b554-1a910c5d4aa6" name="Upper" value="*">
+                      <elementDefinition Id="04ec28c6-6d57-4112-8ec7-566f01989d89" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="daffa586-1171-472f-a0bd-927887eb567e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2fe0f619-81d4-4214-be51-07d5fca026cd" LastKnownName="RolePermissionInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="b8517af3-7a1f-4e1c-b955-bb51530082db" name="PermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PermissionInfo">
+        <elementDefinition Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f8ba620c-a725-4611-976e-b9b78c50487c" name="PermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PermissionInfo">
+        <elementDefinition Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f5a2fb5b-16bb-44f4-b645-f3d36a957708" name="RolePermissionInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fe3b732e-d830-4055-b425-c6680ef2db8c" />
+        <ownedAttributesInternal>
+          <property Id="75b235ae-c414-4570-a333-44f08636b45c" name="role" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="75bf3019-2633-448c-8955-7a61d8a4213f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="36fb1462-e9ca-400d-82f0-dc1be6b8b3ed" LastKnownName="RoleInfo" />
+            </type_NamedElement>
+          </property>
+          <property Id="8d3ec0a1-5980-4ec4-95b4-81059f9b3090" name="permission" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b38354ea-6b78-4561-8116-a0ce21ad5cbc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f09f7428-6ac2-4d75-bc8a-cdeaf795a303" LastKnownName="PermissionInfo" />
+            </type_NamedElement>
+          </property>
+          <property Id="5fc1e089-7c80-40c9-90fe-21e19578c744" name="allow" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="79706bed-f1da-40d1-a4f5-a5f62b0f77d3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8c9bfc30-8280-4a7e-a032-93cc0edf16a7" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f09f7428-6ac2-4d75-bc8a-cdeaf795a303" name="PermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PermissionInfo">
+        <elementDefinition Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="36fb1462-e9ca-400d-82f0-dc1be6b8b3ed" name="RoleInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::RoleInfo">
+        <elementDefinition Id="d582b496-0fb9-4a98-93e5-5581aaa1e8a9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8c9bfc30-8280-4a7e-a032-93cc0edf16a7" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9d8f5081-cc2c-4aa8-86f3-2eeb1d4d0711" name="PermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PermissionInfo">
+        <elementDefinition Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="c888acf8-6419-47e6-8930-6358c119a06b" name="PermissionRegisterStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0ab6785b-3e6f-484d-9e76-e1677025e0b6" />
+        <ownedLiterals>
+          <enumerationLiteral Id="12918cc9-f308-4c3f-951a-67e72803b2fe" name="SUCCEED">
+            <elementDefinition Id="35b384ba-66bc-478e-a596-cab153f523b1" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="a23ee689-5da3-4498-a81b-23789ae82b78" name="NOT_SYS_ADMIN">
+            <elementDefinition Id="c82c4d05-9914-4051-9789-2b926092a039" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="e0d4ea5d-31ba-4f77-a7ca-0441764d3fd8" name="PermissionRegisterStatus" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PermissionRegisterStatus">
+        <elementDefinition Id="0ab6785b-3e6f-484d-9e76-e1677025e0b6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2fe0f619-81d4-4214-be51-07d5fca026cd" name="RolePermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::RolePermissionInfo">
+        <elementDefinition Id="fe3b732e-d830-4055-b425-c6680ef2db8c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="38a8dfd0-8cff-4444-a217-7a9244e15459" name="RolePermissions" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="92ed1b25-d2d4-4773-b330-724bf19859b9" />
+        <ownedAttributesInternal>
+          <property Id="b8c9af53-789e-47ea-89ef-2dcc0a24502a" name="role_permissions" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e23414a9-fb84-43d3-b529-4aed1815e6eb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cd38df06-793a-49e5-a26e-3020978510d3" LastKnownName="RolePermissionInfo" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="eff54d75-2f89-4147-9a4e-cd73bcdbf569" name="permission_info" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0cfda152-108c-415b-a26b-7527ba271e7b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="cd38df06-793a-49e5-a26e-3020978510d3" name="RolePermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::RolePermissionInfo">
+        <elementDefinition Id="fe3b732e-d830-4055-b425-c6680ef2db8c" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="7db89a6b-c13e-47c0-8910-40349090987f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

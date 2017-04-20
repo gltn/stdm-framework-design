@@ -121,6 +121,16 @@
         <elementDefinition Id="1f0b4969-7adb-4e5d-86af-af47f2500ef4" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f7e64793-de3c-40a1-9f1e-bb32d22b0b44" name="HashCodeMixin" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f2b23857-f684-4651-9695-3c6e956a73ac" />
+        <ownedOperationsInternal>
+          <operation Id="71dca5d8-2496-4ebe-a93c-dd694b00d654" name="identifier" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d834232-8335-4a07-97cc-859a07a93cae" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="1ca07b80-6bfb-404d-a1c6-bcc35c597e55" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

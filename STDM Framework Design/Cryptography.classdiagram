@@ -6,20 +6,6 @@
       <body>Consider using passlib or bcrypt</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="b34e285a-f6ce-424d-a680-89119be0ee62">
-      <profileInstance Id="70944087-f735-434a-b00e-4856e1049a73" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4c231759-269c-4673-9c2a-33e3168ba54a">
-      <profileInstance Id="bc1caeb6-db1c-4fbd-9403-12fd79979d41" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="9994dd44-2235-430c-931a-7c89de5c7af4" name="CryptographyProvider" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -107,5 +93,19 @@
   </packagedElements>
   <package Id="2679d879-b322-4436-841d-41e25b5cc0d0" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b34e285a-f6ce-424d-a680-89119be0ee62">
+        <profileInstance Id="70944087-f735-434a-b00e-4856e1049a73" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4c231759-269c-4673-9c2a-33e3168ba54a">
+        <profileInstance Id="bc1caeb6-db1c-4fbd-9403-12fd79979d41" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

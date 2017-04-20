@@ -16,6 +16,11 @@
         <elementDefinition Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d08357b1-2241-4c9c-b12d-ac51022c0742" name="list" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="27024117-cd8c-479f-9b37-2f06ca9831e6" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
