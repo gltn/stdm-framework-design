@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="04a60727-6abc-4285-ab0b-aa93600b7255" name="QGIS Framework" linkedPackageId="da09dc5b-05a3-4e1c-b826-b491beff5f99" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3ec52388-2ee6-4d4a-97f7-2c3da6a312f9" name="QgsVectorLayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c9875639-dac7-40ca-bfcd-e236fa73dcaa" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b6890a29-cdde-49b5-b953-c9918b901304" name="QgsFeature" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9aeb921a-bf2e-4094-9a9d-34579bb0af6c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="da57fd96-63d4-4684-bac2-b46f7f6f2875" name="QgsField" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7f0db329-ec36-45db-a4a0-519367737570" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bef19669-4c87-4e74-8210-097f8b286b03" name="QgsFeatureRequest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="275fcd25-cad6-4e8a-86f5-ffd099f6d56c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c354bc0f-4549-42e3-99af-94ce0072633d" name="QgsFeatureIterator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3129297e-adbf-49cd-82e8-27258258271a" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="da09dc5b-05a3-4e1c-b826-b491beff5f99" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b5965832-a6bd-4da4-982a-626b438a256e">
+        <profileInstance Id="c4ff62e0-d972-4a42-be1c-2ae189284fb4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2ca0d184-4e83-4fc9-887d-df4b35e27801">
+        <profileInstance Id="7e30ecb9-7b8b-41f9-96ce-d77dfa9134f8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

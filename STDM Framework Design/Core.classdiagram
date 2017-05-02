@@ -131,6 +131,49 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7603e256-9b77-4f7c-891a-cac1e0644914" name="ProviderBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ed60c179-93a9-4753-a42d-a57d0945a210" />
+        <ownedOperationsInternal>
+          <operation Id="d0b1b72d-4e7a-4690-9e31-7688ada37eea" name="name" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c23288b5-41a8-4f91-90ab-0fb7db671494" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86736962-f336-460c-9d6c-0bb9ebc1f0ff" direction="Return">
+                  <elementDefinition Id="71054200-2702-4f56-b1cf-10c70ae9d904" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="01701ca6-242e-4548-aab6-91302d3593a7" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0a86aa62-5628-4efd-ad58-039272a207d9" name="key" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e71846ce-07a7-46e2-9962-733f18ed0a5a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3af73808-b28c-44b2-bc47-ffa2a4bd3c6f" direction="Return">
+                  <elementDefinition Id="f42717a3-bebd-48ab-8ec6-ef329c070efd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="66b1bf3f-ebaf-4d1d-81c4-db08e50709fb" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="01701ca6-242e-4548-aab6-91302d3593a7" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="66b1bf3f-ebaf-4d1d-81c4-db08e50709fb" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="1ca07b80-6bfb-404d-a1c6-bcc35c597e55" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
