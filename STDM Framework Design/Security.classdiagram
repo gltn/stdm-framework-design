@@ -20,7 +20,7 @@
     </comment>
     <comment Id="6987ec28-75ee-496d-88f0-51ef1241559a">
       <elementDefinition Id="7ff2b2a3-524c-4ad8-b412-30189195dcb9" />
-      <body>Implemented as a dict or cacheable object</body>
+      <body>Implemented as a cacheable object</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -271,7 +271,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="aab79ac1-3fab-4dc2-84af-03185796e813" name="user_by_email" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="aab79ac1-3fab-4dc2-84af-03185796e813" name="users_by_email" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6023f4e2-cc59-429b-b8d7-e0dda5e0cec3" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -284,6 +284,16 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="bd1b078e-7c30-4448-929a-486623437291" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="ae98262e-742a-4dd1-8d17-afe4f15bfca6" name="Lower" value="*">
+                      <elementDefinition Id="c4a16da1-f7ae-4019-92cd-cba6e00c6d2f" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b4ef8f73-baab-4793-96a1-c2bf2535ab91" name="Upper" value="*">
+                      <elementDefinition Id="d62fbb84-5407-45ea-bd5d-8499d35d19a9" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="36ceee78-6b57-474a-bef9-d06acf40d714" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="c1dff7fe-1939-4643-8679-c9abe5b3a44e" LastKnownName="STDM Security Framework::Entities::UserInfo" />
@@ -682,11 +692,8 @@
           <enumerationLiteral Id="640c97ef-991c-46c1-b6b1-eaca3d6e4ab0" name="REGISTERED_USER">
             <elementDefinition Id="ee3343cb-c30f-48b5-9631-6e315f026356" />
           </enumerationLiteral>
-          <enumerationLiteral Id="dfd64a1d-7136-4fe9-9ab2-8a2f9ca5323d" name="NONE">
-            <elementDefinition Id="c97727af-eb00-421d-ab41-4c4ebe8f45c6" />
-          </enumerationLiteral>
-          <enumerationLiteral Id="fb86de56-d90d-4447-bbef-6f53ee493db5" name="CUSTOM">
-            <elementDefinition Id="a05d0fd8-a603-4842-ba72-0a55be74c537" />
+          <enumerationLiteral Id="b8674a87-be10-4cc2-926f-9f33fe2572cc" name="SECURITY_GROUP">
+            <elementDefinition Id="ad5a9481-4a68-46d6-bf86-91abe2c71484" />
           </enumerationLiteral>
         </ownedLiterals>
       </enumeration>
@@ -846,6 +853,14 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dc8ccbac-7549-4bce-a3d6-1151e74afe31" name="user_info" direction="In">
+                  <elementDefinition Id="b08533b5-fbd7-41b4-a1ec-13e32f193fc8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c3e5a268-48e1-4daa-8e41-747e8aafe790" LastKnownName="UserInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation Id="de204b17-de8d-4056-bf86-91901737764a" name="clear" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -876,6 +891,7 @@
             </ownedParameters>
           </operation>
           <operation Id="93d838ad-9d9e-4201-b8ae-47f7207f0c86" name="user_role_permissions" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>This is loaded once when the session is loaded</description>
             <elementDefinition Id="cc654f91-8e58-4e29-9aa6-780be3c7b086" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -889,18 +905,18 @@
               <operationHasOwnedParameters>
                 <parameter Id="9a0d0c72-49ee-4958-b8ae-e0683022801d" direction="Return">
                   <lowerValueInternal>
-                    <literalString Id="3cd99389-d0a3-42e9-973f-a506fe0a2fa7" name="Lower" value="*">
+                    <literalString Id="3cd99389-d0a3-42e9-973f-a506fe0a2fa7" name="Lower" value="1">
                       <elementDefinition Id="c6358ddd-cc9b-4831-9e05-57ad935017be" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="5635980d-7518-4959-b554-1a910c5d4aa6" name="Upper" value="*">
+                    <literalString Id="5635980d-7518-4959-b554-1a910c5d4aa6" name="Upper" value="1">
                       <elementDefinition Id="04ec28c6-6d57-4112-8ec7-566f01989d89" />
                     </literalString>
                   </upperValueInternal>
                   <elementDefinition Id="daffa586-1171-472f-a0bd-927887eb567e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="2fe0f619-81d4-4214-be51-07d5fca026cd" LastKnownName="RolePermissionInfo" />
+                    <referencedTypeMoniker Id="2c58f50a-a80f-45d3-9ba3-6af4fd3259b5" LastKnownName="UserRolePermissionCollection" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -982,13 +998,8 @@
         <elementDefinition Id="0ab6785b-3e6f-484d-9e76-e1677025e0b6" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="2fe0f619-81d4-4214-be51-07d5fca026cd" name="RolePermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::RolePermissionInfo">
-        <elementDefinition Id="fe3b732e-d830-4055-b425-c6680ef2db8c" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="38a8dfd0-8cff-4444-a217-7a9244e15459" name="RolePermissions" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="38a8dfd0-8cff-4444-a217-7a9244e15459" name="UserRolePermissionCollection" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="92ed1b25-d2d4-4773-b330-724bf19859b9" />
         <ownedAttributesInternal>
           <property Id="b8c9af53-789e-47ea-89ef-2dcc0a24502a" name="role_permissions" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -999,8 +1010,26 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="eff54d75-2f89-4147-9a4e-cd73bcdbf569" name="permission_info" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="eff54d75-2f89-4147-9a4e-cd73bcdbf569" name="has_permission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0cfda152-108c-415b-a26b-7527ba271e7b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0f24c094-387f-4569-b54f-97054536ec24" name="permission_info" direction="In">
+                  <elementDefinition Id="6be858d7-f8ab-4a5b-a7e8-3d00dfde560c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b8517af3-7a1f-4e1c-b955-bb51530082db" LastKnownName="PermissionInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="606eb7b7-1318-40ab-83d8-e63566ec1ea8" direction="Return">
+                  <elementDefinition Id="be504b77-22bf-4bd6-b1cd-a6d2e958e6e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="50c4e0b1-e63f-4768-bb3d-80b5f8d53289" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1008,6 +1037,16 @@
     <packageHasNamedElement>
       <referencedType Id="cd38df06-793a-49e5-a26e-3020978510d3" name="RolePermissionInfo" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::RolePermissionInfo">
         <elementDefinition Id="fe3b732e-d830-4055-b425-c6680ef2db8c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2c58f50a-a80f-45d3-9ba3-6af4fd3259b5" name="UserRolePermissionCollection" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::UserRolePermissionCollection">
+        <elementDefinition Id="92ed1b25-d2d4-4773-b330-724bf19859b9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="50c4e0b1-e63f-4768-bb3d-80b5f8d53289" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

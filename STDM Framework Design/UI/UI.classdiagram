@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="8a536c1f-eb5b-4008-aea1-072cd4ca5745" name="UI" linkedPackageId="6ee5d907-1559-4647-a450-09cefec8fdbd" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="f70cc14f-e8bf-442a-9403-7acae20d32c5">
-      <profileInstance Id="4f3a0e09-6990-41aa-a88d-988a79881a14" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="99cbe689-1a95-4690-835b-02f90ac38b89">
-      <profileInstance Id="16fd01de-84a6-407b-a3de-c78ebc4d4b0b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="952f803b-e069-46f7-8a9d-a7d7f5800e99" name="StdmModule" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e7393fa5-fe3a-42a6-84b0-df1a001f7e1f" />
+        <ownedAttributesInternal>
+          <property Id="47ff7040-ff3f-462a-941e-ae63bdba3a36" name="registry" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="006b3e37-e637-40f0-8b83-10de9952f1ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f1d5a828-7b65-4504-aa40-1535cb4f55c1" LastKnownName="OrderedDict" />
+            </type_NamedElement>
+          </property>
+          <property Id="57c35f7c-b927-495d-a28a-6a1e0eb65b0b" name="key" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="85573638-d6f9-4296-a8f2-fff8dab3edc8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="78b29302-419c-4614-8bbc-3a5dbaf157c3" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="ba76af1f-8d66-4a89-80f9-a2e02fab0aac" name="permission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="5ab1f307-e23f-4292-a95a-f402a2e16b71" />
@@ -110,6 +110,46 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="389a4ee8-b5c7-4d7d-bf91-662d1d4bf088" name="modules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Returns a collection of all registered modules</description>
+            <elementDefinition Id="6849ffd4-871a-49c7-95b2-dfdfb7aec8db" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4ac13f3c-3e24-4434-8f7a-96f76614d859" direction="Return">
+                  <elementDefinition Id="fb676b0f-2003-407d-bb96-f05b8d2ca6c9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="851f46d7-6972-47de-be0a-a1a31be8e0a4" LastKnownName="OrderedDict" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="10f17779-a896-49b5-bef0-192ce672e43f" name="module" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Class method</description>
+            <elementDefinition Id="86c8270d-3592-47d3-8c48-101ca16edf87" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="63e8c4d9-2634-4689-a46e-a00132101d2a" name="key" direction="In">
+                  <elementDefinition Id="00ee2b28-9077-4331-9c49-cad8c03d7a1c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="042041d1-e45d-4448-ace2-3158a18838d1" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="12a4ffeb-99c3-4faa-9bf0-0450ef5dab9c" direction="Return">
+                  <elementDefinition Id="0e7f431b-3713-4633-a8ee-11866e7ef014" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9d65374d-102b-4f0f-b1ce-3d5170af4c0e" LastKnownName="StdmModule" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="282d9f24-1111-427b-ac90-905317eb8a8c" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Class method</description>
+            <elementDefinition Id="4a3eca8c-4e5a-4c33-90c2-730e8e2e4af9" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -148,8 +188,79 @@
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="858d7e05-f386-4cc8-bc9f-029b3c95bd03" name="StdmModuleLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e99c45e8-a89b-42c7-bbb6-7762bdc1ffd8" />
+        <ownedOperationsInternal>
+          <operation Id="a158c8e1-551b-4899-8fe7-caaa1180d4d7" name="has_permission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Checks if the current user has permissions for accessing the module</description>
+            <elementDefinition Id="9962342f-4dc5-43d0-b905-6b5bf95d6f18" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="958caf05-b6ad-415b-ba44-cd8bcd1d80fe" name="module" direction="In">
+                  <elementDefinition Id="a53c3826-2c49-424a-8428-1df8a957d6a4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9d65374d-102b-4f0f-b1ce-3d5170af4c0e" LastKnownName="StdmModule" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8b599f11-8e13-400d-bfe8-8d3344a588e1" direction="Return">
+                  <elementDefinition Id="3ba36c38-c287-4cfa-8f60-37d3ae096226" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a2971fae-7ed8-494c-8ce6-d89a8c1b1e6a" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="51441cd6-09b0-4208-bf10-853e550c68a6" name="load_modules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="611b76d2-31a2-405c-800b-e7a7110c5629" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="78b29302-419c-4614-8bbc-3a5dbaf157c3" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f1d5a828-7b65-4504-aa40-1535cb4f55c1" name="OrderedDict" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::OrderedDict">
+        <elementDefinition Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="851f46d7-6972-47de-be0a-a1a31be8e0a4" name="OrderedDict" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::OrderedDict">
+        <elementDefinition Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9d65374d-102b-4f0f-b1ce-3d5170af4c0e" name="StdmModule" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::StdmModule">
+        <elementDefinition Id="e7393fa5-fe3a-42a6-84b0-df1a001f7e1f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a2971fae-7ed8-494c-8ce6-d89a8c1b1e6a" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="6ee5d907-1559-4647-a450-09cefec8fdbd" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f70cc14f-e8bf-442a-9403-7acae20d32c5">
+        <profileInstance Id="4f3a0e09-6990-41aa-a88d-988a79881a14" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="99cbe689-1a95-4690-835b-02f90ac38b89">
+        <profileInstance Id="16fd01de-84a6-407b-a3de-c78ebc4d4b0b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

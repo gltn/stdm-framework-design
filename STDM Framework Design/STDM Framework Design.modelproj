@@ -67,12 +67,22 @@
     <Content Include="ModelDefinition\Package_1138.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1748.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Python Framework.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Python Framework.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Python Framework.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="QGIS Framework.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="QGIS Framework.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>QGIS Framework.classdiagram</DependentUpon>
     </Content>
     <Content Include="Qt Framework.classdiagram">
       <SubType>Content</SubType>
@@ -88,16 +98,24 @@
       <SubType>Content</SubType>
       <DependentUpon>Security.classdiagram</DependentUpon>
     </Content>
-    <Content Include="UI.classdiagram">
+    <Content Include="UI\EnumTranslators.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UI.classdiagram.layout">
+    <Content Include="UI\EnumTranslators.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>UI.classdiagram</DependentUpon>
+      <DependentUpon>UI\EnumTranslators.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UI\UI.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\UI.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UI\UI.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\STDM Framework Design.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="UI" />
   </ItemGroup>
 </Project>

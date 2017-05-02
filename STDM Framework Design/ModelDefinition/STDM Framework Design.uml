@@ -35,7 +35,15 @@
     </comment>
     <comment
       Id="7ff2b2a3-524c-4ad8-b412-30189195dcb9">
-      <body>Implemented as a dict or cacheable object</body>
+      <body>Implemented as a cacheable object</body>
+    </comment>
+    <comment
+      Id="8956fe7d-06d0-473e-91e5-1c241b7a376a">
+      <body>Inherits from QObject in order to use translate capabilities</body>
+    </comment>
+    <comment
+      Id="d63ba3fe-bb0c-4acf-b433-d5eebd63bf95">
+      <body>Polymorphic class for performing CRUD operations</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -450,7 +458,7 @@
           </operation>
           <operation
             Id="6023f4e2-cc59-429b-b8d7-e0dda5e0cec3"
-            name="user_by_email"
+            name="users_by_email"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -474,6 +482,18 @@
                 <parameter
                   Id="36ceee78-6b57-474a-bef9-d06acf40d714"
                   direction="Return">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c4a16da1-f7ae-4019-92cd-cba6e00c6d2f"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d62fbb84-5407-45ea-bd5d-8499d35d19a9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="8e047c9f-3076-4f8b-84fe-dd805a7b0050"
@@ -1024,9 +1044,89 @@
       <class
         Id="b4e807d9-21d7-45cb-a82e-eff48945cf58"
         name="DataProvider"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="249f9076-284e-431e-944e-1c394d0b9cfa"
+            name="uri"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="99f9a742-f9c0-42b8-a46a-5f266f2bcfe6"
+            name="DataProvider"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9ef15794-e52d-4bb9-bf28-6b114b989a17"
+                  name="uri"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="48e0ff9c-8d29-4bfe-b4d8-2f375034935b"
+            name="uri"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="58c3d307-642f-47d2-ac49-3b0d51912db7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="68c1686d-9081-49fb-9375-4447e6734dd7"
+            name="create_column"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1819ac5f-fd5a-4fc9-971f-04fd0444f91b"
+            name="create_table"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -1202,11 +1302,8 @@
             Id="ee3343cb-c30f-48b5-9631-6e315f026356"
             name="REGISTERED_USER" />
           <enumerationLiteral
-            Id="c97727af-eb00-421d-ab41-4c4ebe8f45c6"
-            name="NONE" />
-          <enumerationLiteral
-            Id="a05d0fd8-a603-4842-ba72-0a55be74c537"
-            name="CUSTOM" />
+            Id="ad5a9481-4a68-46d6-bf86-91abe2c71484"
+            name="SECURITY_GROUP" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -1765,6 +1862,19 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b08533b5-fbd7-41b4-a1ec-13e32f193fc8"
+                  name="user_info"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a21e9273-2891-45f6-a6b8-18f2576c0491"
+                      LastKnownName="UserInfo"
+                      LastKnownLocation="Package_1138.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -1821,6 +1931,7 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <description>This is loaded once when the session is loaded</description>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -1843,18 +1954,18 @@
                     <literalString
                       Id="c6358ddd-cc9b-4831-9e05-57ad935017be"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="04ec28c6-6d57-4112-8ec7-566f01989d89"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                   <type_NamedElement>
                     <classMoniker
-                      Id="fe3b732e-d830-4055-b425-c6680ef2db8c"
-                      LastKnownName="RolePermissionInfo"
+                      Id="92ed1b25-d2d4-4773-b330-724bf19859b9"
+                      LastKnownName="UserRolePermissionCollection"
                       LastKnownLocation="STDM Framework Design.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1871,6 +1982,46 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="006b3e37-e637-40f0-8b83-10de9952f1ce"
+            name="registry"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc"
+                LastKnownName="OrderedDict"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="85573638-d6f9-4296-a8f2-fff8dab3edc8"
+            name="key"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="5ab1f307-e23f-4292-a95a-f402a2e16b71"
@@ -2033,6 +2184,77 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="6849ffd4-871a-49c7-95b2-dfdfb7aec8db"
+            name="modules"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Returns a collection of all registered modules</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb676b0f-2003-407d-bb96-f05b8d2ca6c9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc"
+                      LastKnownName="OrderedDict"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="86c8270d-3592-47d3-8c48-101ca16edf87"
+            name="module"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Class method</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="00ee2b28-9077-4331-9c49-cad8c03d7a1c"
+                  name="key"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0e7f431b-3713-4633-a8ee-11866e7ef014"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e7393fa5-fe3a-42a6-84b0-df1a001f7e1f"
+                      LastKnownName="StdmModule"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4a3eca8c-4e5a-4c33-90c2-730e8e2e4af9"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Class method</description>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2128,7 +2350,7 @@
     <packageHasNamedElement>
       <class
         Id="92ed1b25-d2d4-4773-b330-724bf19859b9"
-        name="RolePermissions"
+        name="UserRolePermissionCollection"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2156,12 +2378,40 @@
         <ownedOperationsInternal>
           <operation
             Id="0cfda152-108c-415b-a26b-7527ba271e7b"
-            name="permission_info"
+            name="has_permission"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6be858d7-f8ab-4a5b-a7e8-3d00dfde560c"
+                  name="permission_info"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f2db5d81-2ac5-4cd6-982d-71272b92f75f"
+                      LastKnownName="PermissionInfo"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be504b77-22bf-4bd6-b1cd-a6d2e958e6e4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2183,6 +2433,455 @@
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9d7033ff-5982-4c7f-b120-9b4763168f78"
+        LastKnownName="Package1"
+        LastKnownLocation="Package_1748.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b769cd8e-50b1-46c0-8f64-528d6dddafb3"
+        name="UserCreateStatusTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="0f6848fc-e314-47a8-9533-71f75c8f7283"
+            isSubstitutable="false">
+            <classMoniker
+              Id="54c07e03-ba58-4bd0-8c23-275f8849279f"
+              LastKnownName="EnumTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a50bc1dc-8ecf-42b8-bc43-1aeff7bbd586"
+            name="translate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cb78085b-8594-4eca-b990-8d0821d866d0"
+                  name="enum_value"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="814a06cd-92c0-43bd-9882-4a8c2194d186"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="54c07e03-ba58-4bd0-8c23-275f8849279f"
+        name="EnumTranslator"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="1bbc20cc-a833-4da7-a5c6-933a4f9ea6f4"
+            name="context"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="83e07b66-ae62-4452-a87c-cf9a6810abab"
+            name="translate"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84b83449-ab6a-403e-a475-35ea6284515f"
+                  name="enum_value"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a9447dc3-9974-4843-be05-74b18b82d041"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e99c45e8-a89b-42c7-bbb6-7762bdc1ffd8"
+        name="StdmModuleLoader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="9962342f-4dc5-43d0-b905-6b5bf95d6f18"
+            name="has_permission"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Checks if the current user has permissions for accessing the module</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a53c3826-2c49-424a-8428-1df8a957d6a4"
+                  name="module"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e7393fa5-fe3a-42a6-84b0-df1a001f7e1f"
+                      LastKnownName="StdmModule"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3ba36c38-c287-4cfa-8f60-37d3ae096226"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="611b76d2-31a2-405c-800b-e7a7110c5629"
+            name="load_modules"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="88237de4-0dec-4c50-840e-ac3dd52ea95c"
+        name="Model"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="a7542799-89d0-4d58-96b4-46d30c62f44e"
+            name="vector_layer"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="85535ab7-af9c-4fb1-8d8e-d012cc954719"
+            name="vector_layer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d0bc63f7-01bd-49de-ba8f-beb5cebbbd18"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c9875639-dac7-40ca-bfcd-e236fa73dcaa"
+                      LastKnownName="QgsVectorLayer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="495b2016-a4f5-4cf4-b5bf-3a035ce5031a"
+            name="Model"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Class constructor</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7376d8e-1c6e-43bc-a8be-1e8d9f80333d"
+                  name="vector_layer"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c9875639-dac7-40ca-bfcd-e236fa73dcaa"
+                      LastKnownName="QgsVectorLayer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0d9610c1-c8cb-482b-9a26-947d04b72679"
+            name="save"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="527ab441-54bf-47f8-b9a2-f9c07582e39d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="42dd16a1-aafa-4982-b362-205b57f8203e"
+            name="save_many"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="104a322a-0265-45e1-a85d-5c0251fd8965"
+                  name="models"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="88237de4-0dec-4c50-840e-ac3dd52ea95c"
+                      LastKnownName="Model"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="54bfca93-e104-4914-8a98-6ba020355cde"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="274dc5d9-fc56-4658-a1c9-8158618333ae"
+            name="delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c3e3a80-c348-40a3-b4ce-3c7725ce87b6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2be375ef-0656-4259-9804-fa55fb2b914f"
+            name="query"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4cebbded-97e2-4567-9775-f1b81f382e56"
+                  name="request"
+                  direction="In">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="be485b3f-7aec-411e-9299-9cb359e37bbd"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0fadd7ad-1250-45c1-bb6d-9967702cbb74"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="275fcd25-cad6-4e8a-86f5-ffd099f6d56c"
+                      LastKnownName="QgsFeatureRequest"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d0dba42-7d9a-4e6a-9707-f9619cac2ad6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3129297e-adbf-49cd-82e8-27258258271a"
+                      LastKnownName="QgsFeatureIterator"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0e3cfb0a-d068-41a5-b863-995838990ded"
+            name="feature_count"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d70f2bc8-cdd2-4dff-b9bc-b2615c289a31"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c9875639-dac7-40ca-bfcd-e236fa73dcaa"
+        name="QgsVectorLayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9aeb921a-bf2e-4094-9a9d-34579bb0af6c"
+        name="QgsFeature"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7f0db329-ec36-45db-a4a0-519367737570"
+        name="QgsField"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="275fcd25-cad6-4e8a-86f5-ffd099f6d56c"
+        name="QgsFeatureRequest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3129297e-adbf-49cd-82e8-27258258271a"
+        name="QgsFeatureIterator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
