@@ -67,7 +67,16 @@
     <Content Include="ModelDefinition\Package_1138.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1624.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1628.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1748.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1852.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Python Framework.classdiagram">
