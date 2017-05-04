@@ -22,10 +22,6 @@
       <body>Consider using passlib or bcrypt</body>
     </comment>
     <comment
-      Id="8b1e7934-cfed-4c22-97e6-432e5dc25583">
-      <body>More details in separate class diagram</body>
-    </comment>
-    <comment
       Id="9f7f1aa2-3128-480b-8ad0-358a87117a1d">
       <body>Inherits BaseEntityInfo, HashCodeMixin</body>
     </comment>
@@ -2593,6 +2589,127 @@
         Id="56925dcc-94d4-4414-a252-283a4221092f"
         LastKnownName="Restore"
         LastKnownLocation="Package_1852.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="48f23d37-8a3f-4f4a-a642-348331336aba"
+        name="STDM 1.2::stdm.data::SocialTenure" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="eba46e64-5610-49b4-9472-8a059c80b4c0"
+        name="STDM 1.2::stdm.data::StdmConfiguration" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7585152d-6017-45d3-90a0-b6f580ecbe45"
+        name="STDM 1.2::stdm.data::TableItem" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="07dfa738-34ad-4220-b858-fd9564b3a79b"
+        name="STDM 1.2::stdm.data::EntityRelation" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="111a3348-8b59-4a91-ac6b-0dcfaec05857"
+        name="STDM 1.2::stdm.data::Profile" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="44ff5618-225b-4fab-be71-1f8807b95577"
+        name="STDM 1.2::stdm.data::BaseColumn" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="88763f9b-e467-4c98-bf47-79d576f4b5ea"
+        name="STDM 1.2::stdm.data::ContentGroup" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="937e0fd2-fb21-47b3-bea6-1568a350ec87"
+        name="STDM 1.2::stdm.data::Entity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="27bdb318-6d47-4bd2-8f9e-23a65175ae9d"
+        name="STDM 1.2::Double" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="899149d6-3a68-4baf-9bb6-149007468d31"
+        name="STDM 1.2::stdm.data::GeometryType" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="46bafeb7-8711-4754-b97d-06ca3ad3fee5"
+        name="STDM 1.2::stdm.data::CodeValue" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9c7d784f-6670-4e96-9925-89f85797b58f"
+        name="STDM 1.2::stdm.data::DatabaseItemAction" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e2bc7662-22e5-4463-9924-aab678b1eb64"
+        name="STDM 1.2::SqlAlchemy::Engine" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6debc80e-f8c4-404d-9b23-3a3650e02bfc"
+        name="STDM 1.2::stdm.data::ForeignKeyColumn" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3fe8aec6-3429-4e3e-9f90-0aeb5bad3f1d"
+        name="STDM 1.2::stdm.data::VarChar" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="433d3dc3-70b3-4a8f-8fd5-1fa47cef96f1"
+        name="STDM 1.2::stdm.data::Integer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="57d11e82-240e-40c4-976a-b4c1d38a843d"
+        name="STDM 1.2::stdm.data::DateTime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7163c77d-65c2-4a72-ad49-c8b623a5a523"
+        name="STDM 1.2::stdm.data::TableItemFactory" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6ab967cb-93e5-452d-8b41-ef0f96e44c98"
+        name="STDM 1.2::stdm.data::BaseColumnFactory" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="43b39f30-7506-45e7-ae48-cdaa4e283bc3"
+        name="STDM 1.2::stdm.data::Content" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ceb849a9-fafc-4e04-8d6a-6cd2585f7a83"
+        name="STDM 1.2::SqlAlchemy::Column" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="92c8b4ce-a5de-4dc8-885a-5a8246177985"
+        name="STDM 1.2::SqlAlchemy::Table" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8f5fce83-2200-4d31-a7b0-425d2ff52e44"
+        name="STDM 1.2::Python::OrderedDict" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0454b3fd-d70c-496c-97e5-6ee721cea99a"
+        LastKnownName="stdm.configuration"
+        LastKnownLocation="Package_2212.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
