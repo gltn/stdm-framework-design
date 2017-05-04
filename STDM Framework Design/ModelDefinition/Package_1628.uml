@@ -3,6 +3,12 @@
   dslVersion="1.0.0.0"
   Id="489a58c3-7076-47d4-a87b-a8a0f13b43a4"
   name="Backup" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="b9bd0d07-1562-42e3-b8e8-2109d5b93b2a">
+      <body>Share finctionality with restore</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
       <class
