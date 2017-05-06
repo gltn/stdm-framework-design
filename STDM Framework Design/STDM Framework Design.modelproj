@@ -22,12 +22,12 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="auditing.classdiagram">
+    <Content Include="Auditing.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="auditing.classdiagram.layout">
+    <Content Include="Auditing.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>auditing.classdiagram</DependentUpon>
+      <DependentUpon>Auditing.classdiagram</DependentUpon>
     </Content>
     <Content Include="Configuration.classdiagram">
       <SubType>Content</SubType>
@@ -64,12 +64,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Entities.classdiagram</DependentUpon>
     </Content>
-    <Content Include="mapping.classdiagram">
+    <Content Include="Mapping.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="mapping.classdiagram.layout">
+    <Content Include="Mapping.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>mapping.classdiagram</DependentUpon>
+      <DependentUpon>Mapping.classdiagram</DependentUpon>
     </Content>
     <Content Include="Migration.classdiagram">
       <SubType>Content</SubType>
@@ -137,6 +137,13 @@
     <Content Include="UI\UI.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>UI\UI.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Workflow.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Workflow.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Workflow.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\STDM Framework Design.uml">

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="75896d89-0a2b-4597-84d9-aea6c0fadbd4" name="auditing" linkedPackageId="1e9cfd95-7221-40fb-a8de-01783cfc5b60" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="75896d89-0a2b-4597-84d9-aea6c0fadbd4" name="Auditing" linkedPackageId="1e9cfd95-7221-40fb-a8de-01783cfc5b60" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
     <packageHasProfileInstances Id="0ce2dcc7-6a86-4728-ba65-4a859849a121">
       <profileInstance Id="2840e217-9c17-4e5b-887a-25a10363f3c4" name="StandardProfileL2">
@@ -106,6 +106,11 @@
             <elementDefinition Id="d4801de9-db48-40e2-b74c-5e40e1b2e622" />
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="d65c5e23-3288-40d1-8aa0-ca120eb3fd89" name="audit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c6f587d-f895-487f-9697-0c39a094764a" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -129,6 +134,11 @@
             <elementDefinition Id="7fbaf96b-a28b-4fb0-af3a-8fc40da83bec" />
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="ac39018c-5b1d-4a78-8552-73327c50e948" name="audit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0f04ff4d-4984-4975-9dca-c2fb3ed3c3d2" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -152,6 +162,11 @@
             <elementDefinition Id="b5a3d6e9-5ae0-42f6-a0ae-1aceeb9c0491" />
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="4d658a55-1748-4e6c-8828-0495e425ad21" name="audit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="267a6cdf-1525-4549-a7b9-3fd64960c0ac" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

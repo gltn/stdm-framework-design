@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="Mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
     <packageHasProfileInstances Id="89716908-fd65-4f89-94b1-b40ddbae76e5">
       <profileInstance Id="a7241897-8625-4705-aeec-502f06b75f25" name="StandardProfileL2">
@@ -16,7 +16,7 @@
   </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="3a97fa1b-66ec-4ea0-b481-2dd1b235b16d" name="CanvasObjects" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="3a97fa1b-66ec-4ea0-b481-2dd1b235b16d" name="CanvasItems" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b417a930-6b44-475c-aa19-1ac95a4ce6c3" />
         <targetEnds>
           <association Id="1e3a8630-1ce6-4842-a20b-05a8661aa1eb" isDerived="false" sourceEndRoleName="CanvasObjects" targetEndRoleName="GeoProcessing" isLeaf="false" isAbstract="false">
@@ -266,7 +266,115 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="74d2c7c6-6cad-4c41-bbe7-ab1369de9045" />
           </association>
+          <association Id="0a404780-fae7-4220-a685-ca6f88186d66" isDerived="false" sourceEndRoleName="LocalMap" targetEndRoleName="LayersManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2f080010-3faa-4d95-a3f1-cae720467ffc" LastKnownName="LayersManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="84d4a8f2-1ce0-4cc6-a0ad-baa05e76fd6f" name="LocalMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a0380157-017f-464d-8cd8-111f9ef6929d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5aeb50d-05ef-4157-b440-d701d8bd3a4d" name="LayersManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d5ece33b-5d54-4b72-98f9-5e70d82a0fa7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d0b0a70f-8b66-4e0e-9551-07d40b98f56b" />
+          </association>
         </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f080010-3faa-4d95-a3f1-cae720467ffc" name="LayersManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fe278105-476b-43c9-a1da-3dbe00f3c645" />
+        <ownedOperationsInternal>
+          <operation Id="55ff0657-fc3d-4cbe-b57f-f0a39a4040bf" name="layer_source" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b2c941c3-3301-4f1a-8801-16c0d590f047" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81faf9c8-a33b-4007-b15c-c3106fb9b26a" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="749c8469-5129-448f-9e5a-7eb0c2b5e38a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a5e35ec0-67d6-4f87-8e76-2e9f76a18bcc" name="add_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5acdd1a1-319d-46e7-8e1d-649f4794cbab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="31a72caa-d2d8-45e8-a3df-85386a4fb8b8" name="entity" direction="In" isUnique="false">
+                  <elementDefinition Id="bcd91f28-be99-4387-be33-641d65be26d0" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34f49040-1bba-420f-aeea-8c6f40d6c390" name="type" direction="In" isUnique="false">
+                  <elementDefinition Id="af91141e-45e9-4efe-a7e9-2170b453b4bd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a49af2a9-65a4-43df-8458-83496d6236a1" name="display" direction="In" isUnique="false">
+                  <elementDefinition Id="d1f3a32a-75cf-4604-a734-d56a70b145b9" />
+                  <defaultValue>
+                    <literalString Id="5fecfa05-6730-4fd9-a218-22bfe9cc83f6" name="DefaultValue" value="True">
+                      <elementDefinition Id="78da6bd9-a6e2-471f-a200-4785df4e52fd" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f8b8d5af-4548-451a-bf83-0f2938bd6ce4" name="remove_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="24a3bad9-5ed2-4f89-812b-900576823d07" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bb8e8a64-7e6e-484f-96c8-acd5a6a48d57" name="entity" direction="In" isUnique="false">
+                  <elementDefinition Id="c71fb22e-dca3-44db-a4cf-afc78c8b465d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9d293cd2-4b2a-4127-8ceb-be8a871f46df" name="highlight_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2c1b1dc-a06d-44ad-8bf7-b4280dbf349f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e9ece3f6-9999-49fd-935b-14ecf1fe85b4" name="feature" direction="In" isUnique="false">
+                  <elementDefinition Id="4e4c6372-9efb-4866-9d9a-585c53eba7ef" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8815e3a8-ec07-4f1c-802f-317bfab018d6" name="zoom_to_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd4e8812-db7f-4c0d-841d-e2b01b037710" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7a39acd0-10e0-49fc-8297-7f485fea6988" name="feature" direction="In" isUnique="false">
+                  <elementDefinition Id="a90de241-99bb-4410-91fe-e3c1df2ce868" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9bf4775f-ac10-4ad2-bec5-cd797a0c3e18" name="zoom_to_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ac5797d-d5d6-4e6b-aa79-4b247b4d90d6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01858f17-0093-46b7-ba08-9cf4073a88af" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="ee23aa41-18c9-4317-a9d7-640ef9d531e6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b299f279-3ad8-44ea-acb5-75100843afbb" name="rename_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="111435f4-bd64-464b-ba95-8c43bfb2140b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="948eee8e-51cc-4108-8881-6156655c8a63" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="1cda2eaf-b662-4718-bb86-cdf6d9634fbb" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

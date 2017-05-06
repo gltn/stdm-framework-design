@@ -33,6 +33,12 @@
       Id="7ff2b2a3-524c-4ad8-b412-30189195dcb9">
       <body>Implemented as a cacheable object</body>
     </comment>
+    <comment
+      Id="7c2d3a6e-bf74-4287-a83d-c2e15cf475d5">
+      <body>
+
+approval.stc</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -2714,7 +2720,7 @@
     <packageHasNamedElement>
       <class
         Id="b417a930-6b44-475c-aa19-1ac95a4ce6c3"
-        name="CanvasObjects"
+        name="CanvasItems"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -3175,6 +3181,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="d0b0a70f-8b66-4e0e-9551-07d40b98f56b"
+            isDerived="false"
+            sourceEndRoleName="LocalMap"
+            targetEndRoleName="LayersManager"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fe278105-476b-43c9-a1da-3dbe00f3c645"
+              LastKnownName="LayersManager"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0380157-017f-464d-8cd8-111f9ef6929d"
+                  name="LocalMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5ece33b-5d54-4b72-98f9-5e70d82a0fa7"
+                  name="LayersManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -3348,6 +3393,16 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="7c6f587d-f895-487f-9697-0c39a094764a"
+            name="audit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3398,6 +3453,16 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="0f04ff4d-4984-4975-9dca-c2fb3ed3c3d2"
+            name="audit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3448,7 +3513,500 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="267a6cdf-1525-4549-a7b9-3fd64960c0ac"
+            name="audit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="817c0748-8bcb-4ea1-b7e7-d886e2f2ac2c"
+        name="Approval"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fe278105-476b-43c9-a1da-3dbe00f3c645"
+        name="LayersManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="b2c941c3-3301-4f1a-8801-16c0d590f047"
+            name="layer_source"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="749c8469-5129-448f-9e5a-7eb0c2b5e38a"
+                  name="layer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5acdd1a1-319d-46e7-8e1d-649f4794cbab"
+            name="add_layer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bcd91f28-be99-4387-be33-641d65be26d0"
+                  name="entity"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="af91141e-45e9-4efe-a7e9-2170b453b4bd"
+                  name="type"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d1f3a32a-75cf-4604-a734-d56a70b145b9"
+                  name="display"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="78da6bd9-a6e2-471f-a200-4785df4e52fd"
+                      name="DefaultValue"
+                      value="True" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="24a3bad9-5ed2-4f89-812b-900576823d07"
+            name="remove_layer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c71fb22e-dca3-44db-a4cf-afc78c8b465d"
+                  name="entity"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c2c1b1dc-a06d-44ad-8bf7-b4280dbf349f"
+            name="highlight_feature"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e4c6372-9efb-4866-9d9a-585c53eba7ef"
+                  name="feature"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bd4e8812-db7f-4c0d-841d-e2b01b037710"
+            name="zoom_to_feature"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a90de241-99bb-4410-91fe-e3c1df2ce868"
+                  name="feature"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9ac5797d-d5d6-4e6b-aa79-4b247b4d90d6"
+            name="zoom_to_layer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee23aa41-18c9-4317-a9d7-640ef9d531e6"
+                  name="layer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="111435f4-bd64-464b-ba95-8c43bfb2140b"
+            name="rename_layer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1cda2eaf-b662-4718-bb86-cdf6d9634fbb"
+                  name="layer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
+        name="ApproverEntity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f8e35bf9-d193-4b86-8b77-b35fb1805f79"
+            isDerived="false"
+            sourceEndRoleName="ApproverEntity"
+            targetEndRoleName="AprovalConfiguration"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
+              LastKnownName="AprovalConfiguration"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd8c222c-1a7f-4b1e-9798-2998381558f1"
+                  name="ApproverEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b775054-5b8d-49d7-8336-f76f1352e828"
+                  name="AprovalConfiguration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f41541a1-52d9-4e30-bafa-9a7178ea558a"
+            name="supporting_document"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
+        name="AprovalConfiguration"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="e1d85f3a-1581-4d23-a005-37bd01317903">
+            <classMoniker
+              Id="6b2bb508-1f1b-4743-a9aa-e99cebd80c30"
+              LastKnownName="ApprovalSerializer"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0a7fff51-beaf-4037-8b4e-129ccd59decb"
+            name="add_approver_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a0e2c777-38e3-4cd9-87dd-f9525329f1f6"
+            name="add_approved_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9307c8a9-09fd-4e8c-b2f2-233d6c751e53"
+            name="remove_approver_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="383b1298-e08c-4d8e-88a2-1e9f1b970131"
+            name="remove_approved_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dca588cd-e969-459a-8fc4-f9f321935036"
+            name="add_approval"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6b2bb508-1f1b-4743-a9aa-e99cebd80c30"
+        name="ApprovalSerializer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="7ff379e1-3813-408a-a880-2bcd8c969986"
+            isDerived="false"
+            sourceEndRoleName="ApprovalSerializer"
+            targetEndRoleName="ApprovalEntitySerializer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b48e4ab9-b08d-4aa6-b2b4-7df42fb1d20d"
+              LastKnownName="ApprovalEntitySerializer"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e691c3ba-464f-4ead-b6e6-7cd0032387b1"
+                  name="ApprovalSerializer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3338771b-7f2f-4ddb-aee2-0e9793b0b3b1"
+                  name="ApprovalEntitySerializer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fda9b60f-f19f-45e5-aef9-1a950c16dc3c"
+            isDerived="false"
+            sourceEndRoleName="ApprovalSerializer"
+            targetEndRoleName="ApprovalEntitySerializer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4"
+              LastKnownName="ApprovalEntitySerializer"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="81207428-14ef-4fec-b2cc-916222800a3d"
+                  name="ApprovalSerializer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ba9221a4-dbf2-4e16-853b-e2dda9b1e2be"
+                  name="ApprovalEntitySerializer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="b4f9caf1-8d31-487c-ab65-73bd16ae6a37"
+            name="read_stc"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9d908c6e-3f68-41e3-b3c5-c41ef4e13a04"
+            name="write_stc"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc8e3977-98b2-4e6a-a38a-fa344b8b81dc"
+        name="ApprovedEntity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="6f5caebe-a0cd-4387-b5d4-068f3cb0c8e9"
+            isDerived="false"
+            sourceEndRoleName="ApprovedEntity"
+            targetEndRoleName="AprovalConfiguration"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
+              LastKnownName="AprovalConfiguration"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3a52e93a-f0ef-49bf-9cd2-0a74698cf968"
+                  name="ApprovedEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="18c43878-752a-40d6-8a0e-a3b18e8195fd"
+                  name="AprovalConfiguration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="b6aa8b18-d4ba-4301-aefc-3554206e4fbb"
+            name="supporting_document"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="43765cba-3553-433e-8882-5c9daa05a25f"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b48e4ab9-b08d-4aa6-b2b4-7df42fb1d20d"
+        name="ApprovalEntitySerializer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4"
+        name="ApprovalEntitySerializer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
