@@ -1035,7 +1035,7 @@
     <packageHasNamedElement>
       <class
         Id="b4e807d9-21d7-45cb-a82e-eff48945cf58"
-        name="DataProvider"
+        name="AbstractDataProvider"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
@@ -2593,6 +2593,62 @@
         Id="56925dcc-94d4-4414-a252-283a4221092f"
         LastKnownName="Restore"
         LastKnownLocation="Package_1852.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4a0d237d-8123-4f76-b7c4-8077fa787c48"
+        name="QgsVectorLayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a1373705-1628-425f-81e2-97c933526194"
+        name="QgsFeature"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="26f9719f-112f-47ac-89d8-9483fc5e7b2c"
+        name="QgsField"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3a2600ec-c737-4740-9a39-11a31657c7de"
+        name="QgsFeatureRequest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="225618f5-3d4d-4331-a88c-c11f4b4b388d"
+        name="QgsFeatureIterator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0e76996b-22ce-4469-9bf2-dfe0942adf81"
+        name="GeoPackageDataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c1878b43-a848-4507-8545-e068a377b937"
+        name="PostgresDataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

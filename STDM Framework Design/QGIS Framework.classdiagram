@@ -2,28 +2,28 @@
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="04a60727-6abc-4285-ab0b-aa93600b7255" name="QGIS Framework" linkedPackageId="da09dc5b-05a3-4e1c-b826-b491beff5f99" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="3ec52388-2ee6-4d4a-97f7-2c3da6a312f9" name="QgsVectorLayer" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="c9875639-dac7-40ca-bfcd-e236fa73dcaa" />
+      <class Id="e9b0d887-877a-4bdd-9d98-cde210cf10bf" name="QgsVectorLayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4a0d237d-8123-4f76-b7c4-8077fa787c48" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b6890a29-cdde-49b5-b953-c9918b901304" name="QgsFeature" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="9aeb921a-bf2e-4094-9a9d-34579bb0af6c" />
+      <class Id="710dd930-c438-43d7-b332-d57adadd2ccf" name="QgsFeature" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a1373705-1628-425f-81e2-97c933526194" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="da57fd96-63d4-4684-bac2-b46f7f6f2875" name="QgsField" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="7f0db329-ec36-45db-a4a0-519367737570" />
+      <class Id="1862e0be-45bf-4919-9008-f17439bac24c" name="QgsField" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="26f9719f-112f-47ac-89d8-9483fc5e7b2c" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="bef19669-4c87-4e74-8210-097f8b286b03" name="QgsFeatureRequest" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="275fcd25-cad6-4e8a-86f5-ffd099f6d56c" />
+      <class Id="07df4c82-467e-457c-ab1f-ebcaf78d1e66" name="QgsFeatureRequest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3a2600ec-c737-4740-9a39-11a31657c7de" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="c354bc0f-4549-42e3-99af-94ce0072633d" name="QgsFeatureIterator" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="3129297e-adbf-49cd-82e8-27258258271a" />
+      <class Id="d4f21dae-79cf-4c43-b221-0697a9e4340a" name="QgsFeatureIterator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="225618f5-3d4d-4331-a88c-c11f4b4b388d" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
