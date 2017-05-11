@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="Mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="89716908-fd65-4f89-94b1-b40ddbae76e5">
+      <profileInstance Id="a7241897-8625-4705-aeec-502f06b75f25" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="753607ed-5bac-406f-a11d-91132e2980b5">
+      <profileInstance Id="43f262a9-8fe4-4bbc-b3d3-569654928cd0" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3a97fa1b-66ec-4ea0-b481-2dd1b235b16d" name="CanvasItems" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b417a930-6b44-475c-aa19-1ac95a4ce6c3" />
+        <targetEnds>
+          <association Id="1e3a8630-1ce6-4842-a20b-05a8661aa1eb" isDerived="false" sourceEndRoleName="CanvasObjects" targetEndRoleName="GeoProcessing" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fd0efd73-5a71-4b37-b272-4649484a39cb" LastKnownName="GeoProcessing" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39b1838e-5f7f-4eca-8550-f8bfcb5d6b1d" name="CanvasObjects" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c775c40d-1478-4b59-bbf8-c5f3f094add2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="541877a4-5c85-4c10-b97b-25211c7b146c" name="GeoProcessing" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="614b7196-f18e-401a-a948-e6fefd07f26b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a4e879e4-9257-4ff2-99c6-ddfa2b05c395" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="d3c237e0-344b-4b72-bcbb-b975a2b2a4ab" name="add_text" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="44ca18ca-8fbd-432d-9e49-9fa1f97882a2" />
+          </operation>
+          <operation Id="66d8188b-aaf8-441c-aed3-3ec03b344d29" name="add_line" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9227e4f4-aaff-4e57-8bc3-0fc0898123d1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="729583e9-92f7-446a-978d-1b62ebfd98a9" name="GeoValidation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="53c23500-6afe-4541-8d31-57c521e41363" />
+        <ownedOperationsInternal>
+          <operation Id="ce18ff5e-ccd8-444f-9dc4-7b328a756a8c" name="validate_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7b47e641-382c-40e1-b003-6539a23695d2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95f72a93-eb76-4f49-a3e1-b41b4128dcb6" name="feature" direction="In" isUnique="false">
+                  <elementDefinition Id="583d0753-5dea-4b18-8f32-603ef9e5e24a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="071107ec-07b8-47d7-8fe3-f1cf46b6b5c0" name="validate_geometry" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="14dfa447-6bb7-4884-b1be-34e9db2f601e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dfcb3f7c-63a3-4760-be04-f701618b9606" name="geom" direction="In" isUnique="false">
+                  <elementDefinition Id="b78d7fe5-9329-4fc3-a431-32adda555c20" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9fd6b4d6-7f4f-4e68-a101-2c5e864e138f" name="overalps" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="870cdbb7-67d4-4152-9cfd-4a97ef013b18" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d2ae046e-5144-4667-86de-2951657723fa" name="geom_1" direction="In" isUnique="false">
+                  <elementDefinition Id="566aadd9-0256-4628-9381-842f559141c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d403f5bb-550f-47a1-afb9-ce3214eaf834" name="geom_2" direction="In" isUnique="false">
+                  <elementDefinition Id="b385bc84-6f77-40b1-95c1-87b2422afa43" />
+                  <defaultValue>
+                    <literalString Id="76cb4fce-7b38-4bd3-9e4e-ece5fb90ac41" value="None">
+                      <elementDefinition Id="333a97f6-da24-4e55-a1b5-a034eeb653c9" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="be2584ae-8339-452f-90a1-a452b7de4a31" name="duplicate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="67539c27-e74b-4eb8-89d9-99636d636553" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8711ad46-d1d5-4ed0-904e-030ed2f3ede3" name="geom_1" direction="In" isUnique="false">
+                  <elementDefinition Id="adaeed17-2f44-4656-9bb5-33c7023c7b95" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0468069c-db7b-4e73-8c37-1b565955da29" name="geom_2" direction="In" isUnique="false">
+                  <elementDefinition Id="7fefe485-2711-4114-91d7-97815324946a" />
+                  <defaultValue>
+                    <literalString Id="d23f58f7-3466-4db1-a8cf-e5a30e09bb7a" value="None">
+                      <elementDefinition Id="364eab00-0f3d-4f30-85fd-d9c9bebfca20" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2d8c1229-a9a2-4d82-ac3a-4e97e873811e" name="contains" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6d88acb6-8fe9-4817-953b-5093d36649c8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f65c963e-50b4-42fb-8d52-2874dac95a7c" name="geom_1" direction="In" isUnique="false">
+                  <elementDefinition Id="e62a0fdf-5cab-457a-a8ca-8794c2e2042f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1434a324-7dfe-490e-93c1-ae3d8fc948c7" name="geom_2" direction="In" isUnique="false">
+                  <elementDefinition Id="f8e562c5-f58d-4af0-9b46-d2b8136867da" />
+                  <defaultValue>
+                    <literalString Id="8a90bb58-3c5e-4f85-be92-2fb15335d16c" value="None">
+                      <elementDefinition Id="91466080-b907-4589-8bfa-5a78c0ccbc99" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="829aeb9a-be09-4e9e-885a-9437c31d3d93" name="contained" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b8011cfa-7d83-452a-a955-de708ca00fd1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1cad1560-e5ba-4410-94f7-3e0cc199c7b4" name="geom" direction="In" isUnique="false">
+                  <elementDefinition Id="e507e0cc-6c37-4b1c-adc9-c583ed424385" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fd0efd73-5a71-4b37-b272-4649484a39cb" name="GeoProcessing" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5a99d4c7-04a1-4d23-8c54-312a0908a0ed" />
+        <targetEnds>
+          <association Id="52ed7ebe-f1b1-4379-bb43-99c0a9a41a12" isDerived="false" sourceEndRoleName="GeoProcessing" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d85a9309-d87c-4be9-8a62-30ad98a84e66" name="GeoProcessing" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="945e4f74-f1ab-4c22-be7a-3757b727e343" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c5e36a03-6826-46a0-bd08-85388618d4be" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="2b74973d-7f15-4bc9-8d11-83809257dbe2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6ddc06dc-5266-460f-9983-ffdae690a91f" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="f7fea9b7-78b3-4307-ae58-69fa4f0021de" name="transform_crs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="acc41864-0a87-42f6-a5d1-6248d9b0580a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e748686a-f690-4c03-bf63-16722f324345" name="geom" direction="In" isUnique="false">
+                  <elementDefinition Id="0a012624-9732-4a70-84e3-7729f23bcf74" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b74bbfb3-f958-47f5-891d-41a391d1fa8c" name="source_crs" direction="In" isUnique="false">
+                  <elementDefinition Id="3d85935e-2f2d-40d5-80f1-6254cbc602d6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34564415-a086-44d3-800b-0909ba3b64d7" name="destination_crs" direction="In" isUnique="false">
+                  <elementDefinition Id="1abbd0bd-9beb-4a2f-86c5-cefd9a065ee4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bbbc479e-5ac4-4b95-a3ca-0660e2bdad3e" name="area" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="77e9f387-7d7d-4e48-b57e-fe909eca65fe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="567a4a38-3fea-4261-a560-1b7a652471ca" name="geom" direction="In" isUnique="false">
+                  <elementDefinition Id="c3830d56-b5bf-41e5-bce6-83ba05ad4cbe" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4165a2a4-6b7a-4fb4-ba0d-d55425025459" name="utm_crs" direction="In" isUnique="false">
+                  <elementDefinition Id="7b45310f-687b-4e19-ab1d-26e4cb66fe78" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a3c47017-6633-4591-9a6b-04f76140e1bb" name="distance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6cc9da13-16ca-46a5-947a-7ac7da7c4b8f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="800fa1db-9b5c-4f6f-8c88-62232a022cd6" name="geom_1" direction="In" isUnique="false">
+                  <elementDefinition Id="35dfbdb5-233d-4a7c-8c92-f94df777b409" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13ec73e1-76d7-40d5-b610-4b9370cc544f" name="geom_2" direction="In" isUnique="false">
+                  <elementDefinition Id="1aaa1ba3-2264-469e-a558-2b036252fa05" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c98c7d90-75b4-4b7b-88a0-2455fecafaa8" name="unit" direction="In" isUnique="false">
+                  <elementDefinition Id="453e13f2-861d-4213-adea-2b692979ee72" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5b0732e7-47c8-40bf-9e8f-6d7e5cfabae5" name="WebMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="376d007d-eb71-441c-ad35-7c3931aaa6fe" />
+        <targetEnds>
+          <association Id="95c97fb7-78ee-4f46-9530-a1c7da8ff034" isDerived="false" sourceEndRoleName="WebMap" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cc3d6188-16ca-42ea-ae2c-e56a30d27e03" name="WebMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="580b1473-a9fd-48f5-890c-c29478edb466" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5028fbf0-532e-485f-aa34-b3e35d7f9a62" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="e9d1c6d0-1eff-422c-9be3-5e5b649746e0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c648fc32-cb16-4437-9c14-b184e6abd95e" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f0f56cc3-2fb9-42d4-ad24-d6f222fe8a27" name="LocalMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a10367a6-f043-4247-a4f9-4380a782a233" />
+        <targetEnds>
+          <association Id="91b3c08b-b2bb-4ce6-92bc-1b823e0ca378" isDerived="false" sourceEndRoleName="LocalMap" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="10007a78-fda7-4622-bc53-b3c372c90140" name="LocalMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a463835-a3dc-4372-90f6-ea850165bded" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="99a5d4eb-7cfe-4e6c-9d8a-b9b8b9643488" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="52548166-ec99-4dfb-b3f4-f23c07202c08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="74d2c7c6-6cad-4c41-bbe7-ab1369de9045" />
+          </association>
+          <association Id="0a404780-fae7-4220-a685-ca6f88186d66" isDerived="false" sourceEndRoleName="LocalMap" targetEndRoleName="LayersManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2f080010-3faa-4d95-a3f1-cae720467ffc" LastKnownName="LayersManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="84d4a8f2-1ce0-4cc6-a0ad-baa05e76fd6f" name="LocalMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a0380157-017f-464d-8cd8-111f9ef6929d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5aeb50d-05ef-4157-b440-d701d8bd3a4d" name="LayersManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d5ece33b-5d54-4b72-98f9-5e70d82a0fa7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d0b0a70f-8b66-4e0e-9551-07d40b98f56b" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f080010-3faa-4d95-a3f1-cae720467ffc" name="LayersManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fe278105-476b-43c9-a1da-3dbe00f3c645" />
+        <ownedOperationsInternal>
+          <operation Id="55ff0657-fc3d-4cbe-b57f-f0a39a4040bf" name="layer_source" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b2c941c3-3301-4f1a-8801-16c0d590f047" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81faf9c8-a33b-4007-b15c-c3106fb9b26a" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="749c8469-5129-448f-9e5a-7eb0c2b5e38a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a5e35ec0-67d6-4f87-8e76-2e9f76a18bcc" name="add_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5acdd1a1-319d-46e7-8e1d-649f4794cbab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="31a72caa-d2d8-45e8-a3df-85386a4fb8b8" name="entity" direction="In" isUnique="false">
+                  <elementDefinition Id="bcd91f28-be99-4387-be33-641d65be26d0" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34f49040-1bba-420f-aeea-8c6f40d6c390" name="type" direction="In" isUnique="false">
+                  <elementDefinition Id="af91141e-45e9-4efe-a7e9-2170b453b4bd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a49af2a9-65a4-43df-8458-83496d6236a1" name="display" direction="In" isUnique="false">
+                  <elementDefinition Id="d1f3a32a-75cf-4604-a734-d56a70b145b9" />
+                  <defaultValue>
+                    <literalString Id="5fecfa05-6730-4fd9-a218-22bfe9cc83f6" name="DefaultValue" value="True">
+                      <elementDefinition Id="78da6bd9-a6e2-471f-a200-4785df4e52fd" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f8b8d5af-4548-451a-bf83-0f2938bd6ce4" name="remove_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="24a3bad9-5ed2-4f89-812b-900576823d07" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bb8e8a64-7e6e-484f-96c8-acd5a6a48d57" name="entity" direction="In" isUnique="false">
+                  <elementDefinition Id="c71fb22e-dca3-44db-a4cf-afc78c8b465d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9d293cd2-4b2a-4127-8ceb-be8a871f46df" name="highlight_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2c1b1dc-a06d-44ad-8bf7-b4280dbf349f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e9ece3f6-9999-49fd-935b-14ecf1fe85b4" name="feature" direction="In" isUnique="false">
+                  <elementDefinition Id="4e4c6372-9efb-4866-9d9a-585c53eba7ef" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8815e3a8-ec07-4f1c-802f-317bfab018d6" name="zoom_to_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd4e8812-db7f-4c0d-841d-e2b01b037710" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7a39acd0-10e0-49fc-8297-7f485fea6988" name="feature" direction="In" isUnique="false">
+                  <elementDefinition Id="a90de241-99bb-4410-91fe-e3c1df2ce868" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9bf4775f-ac10-4ad2-bec5-cd797a0c3e18" name="zoom_to_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ac5797d-d5d6-4e6b-aa79-4b247b4d90d6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01858f17-0093-46b7-ba08-9cf4073a88af" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="ee23aa41-18c9-4317-a9d7-640ef9d531e6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b299f279-3ad8-44ea-acb5-75100843afbb" name="rename_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="111435f4-bd64-464b-ba95-8c43bfb2140b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="948eee8e-51cc-4108-8881-6156655c8a63" name="layer" direction="In" isUnique="false">
+                  <elementDefinition Id="1cda2eaf-b662-4718-bb86-cdf6d9634fbb" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="cdd72785-84d3-47c5-881d-60fef4ed4545" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>

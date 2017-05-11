@@ -777,6 +777,12 @@
     </logicalClassDesignerModelHasPackages>
     <logicalClassDesignerModelHasPackages>
       <package Id="552710c5-1bdb-4acb-92e1-6661294ebb3a" name="Backup">
+        <ownedCommentsInternal>
+          <comment Id="e9be60ff-621d-467b-b62c-e2f025f8f88b">
+            <elementDefinition Id="b9bd0d07-1562-42e3-b8e8-2109d5b93b2a" />
+            <body>Share finctionality with restore</body>
+          </comment>
+        </ownedCommentsInternal>
         <elementDefinition Id="489a58c3-7076-47d4-a87b-a8a0f13b43a4" />
         <packagedElements>
           <packageHasNamedElement>
@@ -902,17 +908,6 @@
               <elementDefinition Id="db368cde-c4eb-4e97-9cdf-4034b2c663e9" />
             </class>
           </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="b80262a5-b922-4a69-ad0f-c3764aebe4eb" name="TableExport" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="845cb4f0-b2f6-4928-8246-9868ff42acbd" />
-              <suppliersInternal>
-                <dependency Id="45ad286e-597c-4823-ab8c-c8e189baa86b">
-                  <classMoniker Id="c339e5fe-b919-4940-a150-c6766c047cc3" LastKnownName="DatabaseBackup" />
-                  <elementDefinition Id="0170907a-e1f0-4727-8993-341136664436" />
-                </dependency>
-              </suppliersInternal>
-            </class>
-          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
@@ -921,11 +916,6 @@
         <elementDefinition Id="56925dcc-94d4-4414-a252-283a4221092f" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="39d60f6a-b225-44bf-8d1b-ffb442e130e0" name="TableImport" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="7f02d35a-f763-4c75-b398-672af6156bbb" />
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
             <class Id="ca712fab-7001-4f59-a8ec-293f857ccae8" name="Restore" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="2ef658ba-f3d3-4d61-a255-411255ef2fbc" />
             </class>
@@ -933,6 +923,22 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <class Id="b80262a5-b922-4a69-ad0f-c3764aebe4eb" name="TableExport" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="845cb4f0-b2f6-4928-8246-9868ff42acbd" />
+        <suppliersInternal>
+          <dependency Id="45ad286e-597c-4823-ab8c-c8e189baa86b">
+            <classMoniker Id="c339e5fe-b919-4940-a150-c6766c047cc3" LastKnownName="DatabaseBackup" />
+            <elementDefinition Id="0170907a-e1f0-4727-8993-341136664436" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="39d60f6a-b225-44bf-8d1b-ffb442e130e0" name="TableImport" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7f02d35a-f763-4c75-b398-672af6156bbb" />
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ce5195fe-86ae-4dd6-b2ca-aa9baad2aa8b" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
