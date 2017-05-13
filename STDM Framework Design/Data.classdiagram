@@ -5,10 +5,22 @@
       <elementDefinition Id="e3c93af1-d526-43af-bd01-8bd5259ba636" />
       <body>Inherits ProviderBase</body>
     </comment>
+    <comment Id="7b341df7-4117-4d35-abd2-9a664a67f211">
+      <elementDefinition Id="b700cc11-f8be-4a9e-ba1c-1fbe0d2f76da" />
+      <body>Uses psycopg2 library for DDL queries</body>
+    </comment>
+    <comment Id="1e405aa2-57fa-455f-9f6f-d863278f6d4f">
+      <elementDefinition Id="cff77be1-ecbb-436c-b831-0b12c57db40f" />
+      <body>Uses OGR for DDL queries</body>
+    </comment>
+    <comment Id="65f60817-e2cf-4089-b114-5315df916455">
+      <elementDefinition Id="bb0947c7-d9f7-41a4-9e8c-4dde80ec0a50" />
+      <body>Queries to be done via the QgsVectorLayer</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="3141da07-94db-44b0-823c-c1f402877667" name="DataProvider" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="3141da07-94db-44b0-823c-c1f402877667" name="AbstractDataProvider" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b4e807d9-21d7-45cb-a82e-eff48945cf58" />
         <ownedAttributesInternal>
           <property Id="d2a8cbee-a028-44b2-88c1-b5ac806b061a" name="uri" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -80,7 +92,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="8765c0f2-5a8a-4d63-b73d-6210176ade25" name="spatial_tables" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8765c0f2-5a8a-4d63-b73d-6210176ade25" name="tables" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a4ecd830-af06-4a19-a388-d1dbfe305078" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -98,6 +110,14 @@
                   <elementDefinition Id="0edc0077-c56e-4777-a27a-0cb7f4fb4078" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="d6e8ffa6-b51f-4094-acde-cac4139f8729" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f25b769e-2198-4b7c-8915-4d0293400047" name="spatial_only" direction="In">
+                  <elementDefinition Id="54318e1b-4808-4710-bd02-3f006d55d9ef" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2e353e79-18c2-47f3-9ee8-778866309511" LastKnownName="Boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -141,10 +161,26 @@
             <elementDefinition Id="497ede29-6cff-4643-85b0-accf9a0775fb" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="2933ebfc-442c-43d8-a973-b5fea8dba868" name="name" direction="In">
+                <parameter Id="2933ebfc-442c-43d8-a973-b5fea8dba868" name="table" direction="In">
                   <elementDefinition Id="46285596-1708-49dd-8e71-fe72539f53db" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="cf690f7c-0fa0-463d-84f8-d18df278d14f" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b52d458f-7b6e-42f2-96e5-a2d6bea0ce14" name="name" direction="In">
+                  <elementDefinition Id="e7977010-61a4-45a1-a593-17c48ade089f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cf690f7c-0fa0-463d-84f8-d18df278d14f" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3040da26-f07f-4d55-b9e8-a6587eb7ea04" name="cascade" direction="In">
+                  <elementDefinition Id="84680419-2533-4a98-95d2-db3f91fe9bed" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2e353e79-18c2-47f3-9ee8-778866309511" LastKnownName="Boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -173,6 +209,51 @@
               <operationHasOwnedParameters>
                 <parameter Id="b5a38d48-fa69-41ab-8924-69f40b18bc9b" direction="Return">
                   <elementDefinition Id="1f6e7f9b-92b5-4b64-9cb4-2ff5165be4a8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2e353e79-18c2-47f3-9ee8-778866309511" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fc4d0678-f284-47cc-9ee0-7ecfe5199c0d" name="open" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6316ee14-5b8b-449e-9a18-26f7c801ab5a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f32c643-4e20-4870-b8a0-6887c5da251a" direction="Return">
+                  <elementDefinition Id="03bfeff0-a160-426b-8850-ec1ccb86e1b0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2b953df0-312b-4ee1-acaf-e9bd5f3d5a67" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9bdc4072-099a-4d90-a4fc-67b269683960" name="close" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="efddcbc0-6cf8-492b-9eaf-b83e8f552ae8" />
+          </operation>
+          <operation Id="682c07be-72d2-42a4-b6b2-20123be11567" name="drop_table" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a7539ae6-406b-4f7a-9377-fde116044ff0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f3c64515-adbb-4ad7-8dff-978ef3ff3fbe" name="name" direction="In">
+                  <elementDefinition Id="cbc6b889-1c37-4ad2-a278-0618ddc378c6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cf690f7c-0fa0-463d-84f8-d18df278d14f" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f378a396-e6ce-4611-8a3a-74958dea11dd" direction="Return">
+                  <elementDefinition Id="2b510c3f-c3b6-44a4-9c7a-97bb1cfb522e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="21c9f783-efbb-49ce-af43-0f5301ee48e0" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="57485db2-5284-4fd0-84bb-995f3ab8f40c" name="cascade" direction="In">
+                  <elementDefinition Id="d23f2a25-a816-427f-b6a1-7b4e9e5af2ce" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="2e353e79-18c2-47f3-9ee8-778866309511" LastKnownName="Boolean" />
                   </type_NamedElement>
@@ -211,15 +292,57 @@
     <logicalClassDesignerModelHasTypes>
       <enumeration Id="0fb8a028-b484-4824-bb24-a5e029cf0191" name="ColumnOpStatus" isAbstract="false" isLeaf="false">
         <elementDefinition Id="3e06ec94-e15e-4952-82b0-54aca11c9815" />
+        <ownedLiterals>
+          <enumerationLiteral Id="a266c457-eeb4-4101-9ab2-9f3ce6333074" name="COLUMN_EXISTS">
+            <elementDefinition Id="683aaa8f-27a5-45c8-a993-01e8695e7982" />
+          </enumerationLiteral>
+        </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <enumeration Id="a3326d26-3ad3-4d2b-a11a-8686e63ec8c9" name="TableOpStatus" isAbstract="false" isLeaf="false">
         <elementDefinition Id="fdd40c73-c174-4e17-aa53-967fdce53c74" />
+        <ownedLiterals>
+          <enumerationLiteral Id="5acfe579-2910-4d70-9279-1b8408a02399" name="TABLE_EXISTS">
+            <elementDefinition Id="adde309c-6580-4992-a5c5-86519d8b60b4" />
+          </enumerationLiteral>
+        </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
       <referencedType Id="2e353e79-18c2-47f3-9ee8-778866309511" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4bbbaf19-0eab-4721-be37-50393ad2f38c" name="PostgreSQLProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eb56166e-17d4-4fd2-9097-e917b1076bd1" />
+        <generalsInternal>
+          <generalization Id="1bf724eb-0b02-45ec-b3b0-8a951ca313ed" isSubstitutable="false">
+            <classMoniker Id="3141da07-94db-44b0-823c-c1f402877667" LastKnownName="AbstractDataProvider" />
+            <elementDefinition Id="122f5726-50c9-4b48-9968-4abf011d2bac" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6400fd21-b752-4ee8-a645-67498b88ca85" name="GeoPackageProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="31369c1f-e78b-4fb0-8853-8618a55643dc" />
+        <generalsInternal>
+          <generalization Id="c608ec06-541f-4287-8108-56aa19a17712" isSubstitutable="false">
+            <classMoniker Id="3141da07-94db-44b0-823c-c1f402877667" LastKnownName="AbstractDataProvider" />
+            <elementDefinition Id="f6801b97-5a51-4663-bece-c1b2681da4e7" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2b953df0-312b-4ee1-acaf-e9bd5f3d5a67" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="21c9f783-efbb-49ce-af43-0f5301ee48e0" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
