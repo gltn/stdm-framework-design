@@ -55,6 +55,18 @@ approval.stc</body>
       Id="bb0947c7-d9f7-41a4-9e8c-4dde80ec0a50">
       <body>Queries to be done via the QgsVectorLayer</body>
     </comment>
+    <comment
+      Id="ecb8851e-7e5f-4c29-a6eb-1d1182869c8e">
+      <body>consider chaing configuration</body>
+    </comment>
+    <comment
+      Id="7a4bf4b3-8011-4eb2-b979-0492fc3b0f7b">
+      <body>activity diagram</body>
+    </comment>
+    <comment
+      Id="f8d0b67e-2ecc-4130-939e-4767f49121ae">
+      <body>combine overalp, dup..</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -3338,74 +3350,6 @@ approval.stc</body>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="b417a930-6b44-475c-aa19-1ac95a4ce6c3"
-        name="CanvasItems"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="a4e879e4-9257-4ff2-99c6-ddfa2b05c395"
-            isDerived="false"
-            sourceEndRoleName="CanvasObjects"
-            targetEndRoleName="GeoProcessing"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="5a99d4c7-04a1-4d23-8c54-312a0908a0ed"
-              LastKnownName="GeoProcessing"
-              LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c775c40d-1478-4b59-bbf8-c5f3f094add2"
-                  name="CanvasObjects"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="614b7196-f18e-401a-a948-e6fefd07f26b"
-                  name="GeoProcessing"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-        <ownedOperationsInternal>
-          <operation
-            Id="44ca18ca-8fbd-432d-9e49-9fa1f97882a2"
-            name="add_text"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="9227e4f4-aaff-4e57-8bc3-0fc0898123d1"
-            name="add_line"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
         Id="53c23500-6afe-4541-8d31-57c521e41363"
         name="GeoValidation"
         isAbstract="false"
@@ -3445,6 +3389,18 @@ approval.stc</body>
                   name="geom"
                   direction="In"
                   isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2acf30a3-f365-4474-8529-02866aa2ca57"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="70b57733-eff1-4763-8429-d1c17792fe8f"
+                      LastKnownName="enum"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3565,51 +3521,10 @@ approval.stc</body>
     <packageHasNamedElement>
       <class
         Id="5a99d4c7-04a1-4d23-8c54-312a0908a0ed"
-        name="GeoProcessing"
+        name="GeoProcessingUtil"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="6ddc06dc-5266-460f-9983-ffdae690a91f"
-            isDerived="false"
-            sourceEndRoleName="GeoProcessing"
-            targetEndRoleName="GeoValidation"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="53c23500-6afe-4541-8d31-57c521e41363"
-              LastKnownName="GeoValidation"
-              LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="945e4f74-f1ab-4c22-be7a-3757b727e343"
-                  name="GeoProcessing"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="2b74973d-7f15-4bc9-8d11-83809257dbe2"
-                  name="GeoValidation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="acc41864-0a87-42f6-a5d1-6248d9b0580a"
@@ -3710,47 +3625,15 @@ approval.stc</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="c648fc32-cb16-4437-9c14-b184e6abd95e"
-            isDerived="false"
-            sourceEndRoleName="WebMap"
-            targetEndRoleName="GeoValidation"
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="db1fb61a-cacb-4d7a-a5c6-a42e66382fc9">
             <classMoniker
               Id="53c23500-6afe-4541-8d31-57c521e41363"
               LastKnownName="GeoValidation"
               LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="580b1473-a9fd-48f5-890c-c29478edb466"
-                  name="WebMap"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e9d1c6d0-1eff-422c-9be3-5e5b649746e0"
-                  name="GeoValidation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
+          </dependency>
+        </suppliersInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3760,46 +3643,16 @@ approval.stc</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="74d2c7c6-6cad-4c41-bbe7-ab1369de9045"
-            isDerived="false"
-            sourceEndRoleName="LocalMap"
-            targetEndRoleName="GeoValidation"
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="b9ca3444-5cc9-4718-8d7a-9af8eeee916b">
             <classMoniker
               Id="53c23500-6afe-4541-8d31-57c521e41363"
               LastKnownName="GeoValidation"
               LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4a463835-a3dc-4372-90f6-ea850165bded"
-                  name="LocalMap"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="52548166-ec99-4dfb-b3f4-f23c07202c08"
-                  name="GeoValidation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
           <association
             Id="d0b0a70f-8b66-4e0e-9551-07d40b98f56b"
             isDerived="false"
@@ -4317,6 +4170,15 @@ approval.stc</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="42e27b93-dbe0-47ac-aa50-bb3d687e6ef9">
+            <classMoniker
+              Id="736d3ebe-92b2-46d8-a5fc-adedbecc25b1"
+              LastKnownName="Notification"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="f8e35bf9-d193-4b86-8b77-b35fb1805f79"
@@ -4489,7 +4351,7 @@ approval.stc</body>
             isAbstract="false">
             <classMoniker
               Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4"
-              LastKnownName="ApprovalEntitySerializer"
+              LastKnownName="ApproverEntitySerializer"
               LastKnownLocation="STDM Framework Design.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -4622,7 +4484,7 @@ approval.stc</body>
     <packageHasNamedElement>
       <class
         Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4"
-        name="ApprovalEntitySerializer"
+        name="ApproverEntitySerializer"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -4757,6 +4619,35 @@ approval.stc</body>
       <class
         Id="7f338b5f-3866-4de8-8380-7ef08fb3c118"
         name="dict"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="736d3ebe-92b2-46d8-a5fc-adedbecc25b1"
+        name="Notification"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8ed8e8c4-214a-4eac-b62e-079de709bab1"
+        name="Class4"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="70b57733-eff1-4763-8429-d1c17792fe8f"
+        name="enum" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b509a977-b621-4a50-aabd-ca5df7d13b3e"
+        name="Maps"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

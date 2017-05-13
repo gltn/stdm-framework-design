@@ -1,51 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="Mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="89716908-fd65-4f89-94b1-b40ddbae76e5">
-      <profileInstance Id="a7241897-8625-4705-aeec-502f06b75f25" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="753607ed-5bac-406f-a11d-91132e2980b5">
-      <profileInstance Id="43f262a9-8fe4-4bbc-b3d3-569654928cd0" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+  <ownedCommentsInternal>
+    <comment Id="f5942d17-5f63-4860-904f-cea90afe6673">
+      <elementDefinition Id="f8d0b67e-2ecc-4130-939e-4767f49121ae" />
+      <body>combine overalp, dup..</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="3a97fa1b-66ec-4ea0-b481-2dd1b235b16d" name="CanvasItems" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="b417a930-6b44-475c-aa19-1ac95a4ce6c3" />
-        <targetEnds>
-          <association Id="1e3a8630-1ce6-4842-a20b-05a8661aa1eb" isDerived="false" sourceEndRoleName="CanvasObjects" targetEndRoleName="GeoProcessing" isLeaf="false" isAbstract="false">
-            <classMoniker Id="fd0efd73-5a71-4b37-b272-4649484a39cb" LastKnownName="GeoProcessing" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="39b1838e-5f7f-4eca-8550-f8bfcb5d6b1d" name="CanvasObjects" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="c775c40d-1478-4b59-bbf8-c5f3f094add2" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="541877a4-5c85-4c10-b97b-25211c7b146c" name="GeoProcessing" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="614b7196-f18e-401a-a948-e6fefd07f26b" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="a4e879e4-9257-4ff2-99c6-ddfa2b05c395" />
-          </association>
-        </targetEnds>
-        <ownedOperationsInternal>
-          <operation Id="d3c237e0-344b-4b72-bcbb-b975a2b2a4ab" name="add_text" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="44ca18ca-8fbd-432d-9e49-9fa1f97882a2" />
-          </operation>
-          <operation Id="66d8188b-aaf8-441c-aed3-3ec03b344d29" name="add_line" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9227e4f4-aaff-4e57-8bc3-0fc0898123d1" />
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="729583e9-92f7-446a-978d-1b62ebfd98a9" name="GeoValidation" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="53c23500-6afe-4541-8d31-57c521e41363" />
@@ -66,6 +27,14 @@
               <operationHasOwnedParameters>
                 <parameter Id="dfcb3f7c-63a3-4760-be04-f701618b9606" name="geom" direction="In" isUnique="false">
                   <elementDefinition Id="b78d7fe5-9329-4fc3-a431-32adda555c20" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a279bcb-ff6f-49b9-bcb5-6d814b2cef23" direction="Return">
+                  <elementDefinition Id="2acf30a3-f365-4474-8529-02866aa2ca57" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9f1d7411-e6e9-413c-918a-b880ae70eda7" LastKnownName="enum" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -144,26 +113,8 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="fd0efd73-5a71-4b37-b272-4649484a39cb" name="GeoProcessing" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="fd0efd73-5a71-4b37-b272-4649484a39cb" name="GeoProcessingUtil" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5a99d4c7-04a1-4d23-8c54-312a0908a0ed" />
-        <targetEnds>
-          <association Id="52ed7ebe-f1b1-4379-bb43-99c0a9a41a12" isDerived="false" sourceEndRoleName="GeoProcessing" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
-            <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="d85a9309-d87c-4be9-8a62-30ad98a84e66" name="GeoProcessing" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="945e4f74-f1ab-4c22-be7a-3757b727e343" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="c5e36a03-6826-46a0-bd08-85388618d4be" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="2b74973d-7f15-4bc9-8d11-83809257dbe2" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="6ddc06dc-5266-460f-9983-ffdae690a91f" />
-          </association>
-        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="f7fea9b7-78b3-4307-ae58-69fa4f0021de" name="transform_crs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="acc41864-0a87-42f6-a5d1-6248d9b0580a" />
@@ -226,46 +177,24 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="5b0732e7-47c8-40bf-9e8f-6d7e5cfabae5" name="WebMap" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="376d007d-eb71-441c-ad35-7c3931aaa6fe" />
-        <targetEnds>
-          <association Id="95c97fb7-78ee-4f46-9530-a1c7da8ff034" isDerived="false" sourceEndRoleName="WebMap" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
+        <suppliersInternal>
+          <dependency Id="f45d134a-593c-4b99-b591-20265c1f2c86">
             <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="cc3d6188-16ca-42ea-ae2c-e56a30d27e03" name="WebMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="580b1473-a9fd-48f5-890c-c29478edb466" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="5028fbf0-532e-485f-aa34-b3e35d7f9a62" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="e9d1c6d0-1eff-422c-9be3-5e5b649746e0" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="c648fc32-cb16-4437-9c14-b184e6abd95e" />
-          </association>
-        </targetEnds>
+            <elementDefinition Id="db1fb61a-cacb-4d7a-a5c6-a42e66382fc9" />
+          </dependency>
+        </suppliersInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="f0f56cc3-2fb9-42d4-ad24-d6f222fe8a27" name="LocalMap" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a10367a6-f043-4247-a4f9-4380a782a233" />
-        <targetEnds>
-          <association Id="91b3c08b-b2bb-4ce6-92bc-1b823e0ca378" isDerived="false" sourceEndRoleName="LocalMap" targetEndRoleName="GeoValidation" isLeaf="false" isAbstract="false">
+        <suppliersInternal>
+          <dependency Id="452ca83e-9579-4878-80b8-c611f2013711">
             <classMoniker Id="729583e9-92f7-446a-978d-1b62ebfd98a9" LastKnownName="GeoValidation" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="10007a78-fda7-4622-bc53-b3c372c90140" name="LocalMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="4a463835-a3dc-4372-90f6-ea850165bded" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="99a5d4eb-7cfe-4e6c-9d8a-b9b8b9643488" name="GeoValidation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="52548166-ec99-4dfb-b3f4-f23c07202c08" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="74d2c7c6-6cad-4c41-bbe7-ab1369de9045" />
-          </association>
+            <elementDefinition Id="b9ca3444-5cc9-4718-8d7a-9af8eeee916b" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
           <association Id="0a404780-fae7-4220-a685-ca6f88186d66" isDerived="false" sourceEndRoleName="LocalMap" targetEndRoleName="LayersManager" isLeaf="false" isAbstract="false">
             <classMoniker Id="2f080010-3faa-4d95-a3f1-cae720467ffc" LastKnownName="LayersManager" />
             <relationshipOwnedElementsInternal>
@@ -377,8 +306,32 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9f1d7411-e6e9-413c-918a-b880ae70eda7" name="enum" isAbstract="false" isLeaf="false" cachedFullName="enum">
+        <elementDefinition Id="70b57733-eff1-4763-8429-d1c17792fe8f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1b6fa47b-3dd6-4bc2-8a6e-3d46f8dd683d" name="Maps" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b509a977-b621-4a50-aabd-ca5df7d13b3e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="cdd72785-84d3-47c5-881d-60fef4ed4545" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="89716908-fd65-4f89-94b1-b40ddbae76e5">
+        <profileInstance Id="a7241897-8625-4705-aeec-502f06b75f25" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="753607ed-5bac-406f-a11d-91132e2980b5">
+        <profileInstance Id="43f262a9-8fe4-4bbc-b3d3-569654928cd0" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
