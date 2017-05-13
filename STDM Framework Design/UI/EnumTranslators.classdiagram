@@ -1,35 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a938b7d1-a25e-4c33-8b9a-e00fbaeabcf8" name="EnumTranslators" linkedPackageId="96c1f29e-390e-4d1e-ab57-59aff5243c50" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="a6163c3d-1721-4c66-9f1e-2de7efe52ac9">
-      <elementDefinition Id="8956fe7d-06d0-473e-91e5-1c241b7a376a" />
-      <body>Inherits from QObject in order to use translate capabilities</body>
-    </comment>
-  </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="772c52ae-4159-4d5e-aa1a-28b310229a0f">
-      <profileInstance Id="614979f6-04bf-4ca0-ba26-884b45cfa7d4" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="8c825025-a8fd-4101-9bf9-6128f4c71197">
-      <profileInstance Id="6cbe4351-7901-4738-b166-1fbc59839dbb" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="31da7347-06ef-4f4d-b6ec-084ced8b16c2" name="UserCreateStatusTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b769cd8e-50b1-46c0-8f64-528d6dddafb3" />
-        <generalsInternal>
-          <generalization Id="33423472-b410-4a7e-9a06-b05cc8887e87" isSubstitutable="false">
-            <classMoniker Id="263e0606-ad66-4133-9a48-e327f371463c" LastKnownName="EnumTranslator" />
-            <elementDefinition Id="0f6848fc-e314-47a8-9533-71f75c8f7283" />
-          </generalization>
-        </generalsInternal>
         <ownedOperationsInternal>
           <operation Id="7f2390fd-27e8-4e65-aa32-66d000810eb4" name="translate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a50bc1dc-8ecf-42b8-bc43-1aeff7bbd586" />
@@ -55,55 +29,9 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="263e0606-ad66-4133-9a48-e327f371463c" name="EnumTranslator" isAbstract="true" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="54c07e03-ba58-4bd0-8c23-275f8849279f" />
-        <ownedAttributesInternal>
-          <property Id="bc23d764-a259-48ca-a84c-7f887ad4bf50" name="context" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="1bbc20cc-a833-4da7-a5c6-933a4f9ea6f4" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="96629dc3-c046-4460-ad70-f4b9c2a6ae45" LastKnownName="String" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="64f84ac3-fb44-4920-9b0f-6eb695ed135f" name="translate" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="83e07b66-ae62-4452-a87c-cf9a6810abab" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="caf05787-d270-4616-ae5a-45275ef64d3e" name="enum_value" direction="In">
-                  <elementDefinition Id="84b83449-ab6a-403e-a475-35ea6284515f" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="a11b14b5-3b5b-4149-8e1a-5dc76ef4526d" LastKnownName="Integer" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="227e794c-00d1-4471-873e-3be3af484268" direction="Return">
-                  <elementDefinition Id="a9447dc3-9974-4843-be05-74b18b82d041" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="ab7cc1ee-4d57-4d2a-9cb1-82ee4958c790" LastKnownName="String" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="96629dc3-c046-4460-ad70-f4b9c2a6ae45" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="a11b14b5-3b5b-4149-8e1a-5dc76ef4526d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="ab7cc1ee-4d57-4d2a-9cb1-82ee4958c790" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -114,5 +42,19 @@
   </packagedElements>
   <package Id="96c1f29e-390e-4d1e-ab57-59aff5243c50" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="772c52ae-4159-4d5e-aa1a-28b310229a0f">
+        <profileInstance Id="614979f6-04bf-4ca0-ba26-884b45cfa7d4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8c825025-a8fd-4101-9bf9-6128f4c71197">
+        <profileInstance Id="6cbe4351-7901-4738-b166-1fbc59839dbb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

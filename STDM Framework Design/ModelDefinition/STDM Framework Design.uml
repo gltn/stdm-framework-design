@@ -49,7 +49,7 @@ approval.stc</body>
     </comment>
     <comment
       Id="cff77be1-ecbb-436c-b831-0b12c57db40f">
-      <body>Uses OGR for DDL queries</body>
+      <body>Uses OGR/direct SQL for DDL queries</body>
     </comment>
     <comment
       Id="bb0947c7-d9f7-41a4-9e8c-4dde80ec0a50">
@@ -1094,6 +1094,19 @@ approval.stc</body>
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0542f5f6-5339-4f7a-80e2-9f1f31becd76"
+                  name="kwargs"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7f338b5f-3866-4de8-8380-7ef08fb3c118"
+                      LastKnownName="dict"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -1126,7 +1139,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7d815d98-d745-45ae-8666-5f9de340c87c"
+                  name="column"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="182bb1ee-30c1-40bd-8ca2-9aaedfb38bf3"
+                      LastKnownName="BaseColumn"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b146824f-506f-463c-96b9-1e6b01105b21"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="3e06ec94-e15e-4952-82b0-54aca11c9815"
+                      LastKnownName="ColumnOpStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="1819ac5f-fd5a-4fc9-971f-04fd0444f91b"
             name="create_table"
@@ -1134,7 +1175,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="91f7c3b3-84b4-4acc-bcf9-505a44d01029"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2f320407-c5fe-4934-9490-6061652c8d2e"
+                      LastKnownName="Entity"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b54adc67-1fe6-40cb-b57a-a8044a002558"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="fdd40c73-c174-4e17-aa53-967fdce53c74"
+                      LastKnownName="TableOpStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="a94ff443-936b-4ea9-9bd3-9fad352e7357"
             name="execute_sql"
@@ -1151,7 +1220,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d34ab705-c967-4f49-af1e-7272b8552350"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2f320407-c5fe-4934-9490-6061652c8d2e"
+                      LastKnownName="Entity"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d8e4e472-608c-4af0-be43-9d6ab52d2980"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="fdd40c73-c174-4e17-aa53-967fdce53c74"
+                      LastKnownName="TableOpStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="9634673f-5053-4ab5-9829-8e1d5bf94413"
             name="update_column"
@@ -1159,7 +1256,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="59de529d-840b-485e-8e10-01faaa680617"
+                  name="column"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="182bb1ee-30c1-40bd-8ca2-9aaedfb38bf3"
+                      LastKnownName="BaseColumn"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="001990bb-ee5d-4466-9f35-551e94e7876c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="3e06ec94-e15e-4952-82b0-54aca11c9815"
+                      LastKnownName="ColumnOpStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="e5dfa3af-bff0-4170-b6f8-9d3765670c66"
             name="views"
@@ -1360,7 +1485,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7bd02b73-a0c2-4247-8265-d6793c292a38"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8e950622-16c8-49fb-9d2d-a88825cd0ad7"
+                  name="entity_relation"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fc7d7e17-d291-484a-b536-95641c70ac2d"
+                      LastKnownName="EntityRelation"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="8a6984ea-35c1-479a-8240-da32157fe927"
             name="drop_foreign_key_constraint"
@@ -1368,7 +1521,35 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14164d10-e3b2-453e-9afb-bfc4124d862c"
+                  name="entity_relation"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fc7d7e17-d291-484a-b536-95641c70ac2d"
+                      LastKnownName="EntityRelation"
+                      LastKnownLocation="Package_2212.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0f84dcd4-d940-419b-82de-733866e4e80f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="bef419d7-d9be-487e-bd3d-5c93ee27b143"
             name="create_unique_constraint"
@@ -1376,7 +1557,48 @@ approval.stc</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f54061ce-d575-4379-9106-4b850b438131"
+                  name="table"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6ab56c23-895a-4906-a77c-68fc2e1e218d"
+                  name="column"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ced23779-1c1c-410a-b421-9cf0c4fd5cea"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="b7722772-d420-44b8-8d8e-f92474944fd9"
             name="table_exists"
@@ -1483,6 +1705,29 @@ approval.stc</body>
                   Id="d23f2a25-a816-427f-b6a1-7b4e9e5af2ce"
                   name="cascade"
                   direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6575519a-59e3-4386-9bce-e737142db82b"
+            name="supports_async_notification"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b4e676d9-b8ae-4a3c-b853-899bdacdb254"
+                  direction="Return">
                   <type_NamedElement>
                     <primitiveTypeMoniker
                       Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
@@ -4440,6 +4685,9 @@ approval.stc</body>
           <enumerationLiteral
             Id="683aaa8f-27a5-45c8-a993-01e8695e7982"
             name="COLUMN_EXISTS" />
+          <enumerationLiteral
+            Id="29a69361-70cf-4943-ac87-98e195e0be26"
+            name="SUCCESSFUL" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -4461,6 +4709,9 @@ approval.stc</body>
           <enumerationLiteral
             Id="adde309c-6580-4992-a5c5-86519d8b60b4"
             name="TABLE_EXISTS" />
+          <enumerationLiteral
+            Id="2d071fc1-94d6-46ac-b901-dd9c4bb2cc53"
+            name="SUCCESSFUL" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -4501,6 +4752,14 @@ approval.stc</body>
           </generalization>
         </generalsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7f338b5f-3866-4de8-8380-7ef08fb3c118"
+        name="dict"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

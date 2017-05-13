@@ -30,5 +30,12 @@
         <OperationElementListCompartment Id="2d9633ad-5e0c-466d-abea-1c01de177616" absoluteBounds="0.7649999999999999, 4.85117186754942, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="201c3bf2-ac59-4fc5-bf35-f4f99dde3bc9" absoluteBounds="2.625, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="ff67b3b3-67fe-44e6-af37-63b0ea6b1078" LastKnownName="dict" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="d9e9695f-c3cc-4a74-876e-600fcc0af8ac" absoluteBounds="2.64, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="0de12353-b2f1-4d0b-be08-9626fa28a99d" absoluteBounds="2.64, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>
