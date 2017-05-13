@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a71fadc7-03e2-422b-8ae5-832d98b5ef44" name="Logging" linkedPackageId="6df8bb9a-88bd-4eb1-a4fc-47f94323a4e7" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="87bbbe0e-dbd9-42b3-b155-d6c36b24f7d0">
+      <profileInstance Id="8b8350f9-d961-4abe-8b6d-6a3747a8602d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6dbcf228-0dc9-4a94-a4ae-17bdd5b96e3c">
+      <profileInstance Id="621aa59b-fd88-4063-8fbe-17122324e409" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5cbdc117-8a38-4fc8-bbcc-3fb0e1eacd7a" name="Logger" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5de3e701-874e-40af-87e0-74510c963340" />
+        <ownedAttributesInternal>
+          <property Id="09c8c7d0-57f0-4a0b-90b3-3dd69e7ab6a7" name="log_level" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="059a9c05-2a61-4711-a63e-f001a0f03d1a" />
+          </property>
+          <property Id="1a55dea1-633d-4896-975c-a38af20bc259" name="handlers" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f41891b3-3df1-4b89-99a8-41bf816c5198" />
+          </property>
+          <property Id="8c27b361-b694-41a4-b4ec-4b9236e40e1f" name="formmatter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6a5c44d7-c81e-4308-b9c3-385f51527ab2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b8bb1ad8-c9a0-41d1-ab41-c89002f5a2bc" name="critical" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f43e04ae-4bed-4345-ac69-a37aa4f706ff" />
+          </operation>
+          <operation Id="42e8a538-56dc-40e1-95df-cfbf46c5fb0a" name="debug" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bbd08617-a104-44a6-b4c2-1798ff52b125" />
+          </operation>
+          <operation Id="25962c41-6fc4-46db-871b-e3b435144d2c" name="error" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b11013c6-489c-467c-90fb-33539af4a752" />
+          </operation>
+          <operation Id="ccfb2803-eb20-4f63-8e2e-517c879982f4" name="info" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="00544342-6d18-4214-95a8-6801b31657dc" />
+          </operation>
+          <operation Id="aa094aa3-b007-4ac8-a82a-5eb69ad1f42a" name="warning" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bdd71d6e-b769-4bff-92a4-e5304c8d9bed" />
+          </operation>
+          <operation Id="cb1281c8-23ea-4792-8f15-130a937b37f9" name="__init__" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bde2443d-7fb8-474c-9a37-3157f8b72059" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="447d070c-34be-4e31-9764-2fb3f2d95389" name="LOGGING" direction="In">
+                  <elementDefinition Id="ed31548a-6995-493c-8a0b-d33904fcc9e0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="596d5689-0453-4d0b-bb48-e6ef4485ca2c" LastKnownName="OrderedDict" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString Id="42524a43-2c2e-4085-94ac-6b9596d6fbac" value="LOGGING">
+                      <elementDefinition Id="3350b9c0-0be8-405f-92cc-accfe25e94a2" />
+                    </literalString>
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="03bee9cb-7ebe-4264-8673-5aed5850da41" name="LogLevel" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="497c5ee1-d4b0-40e5-b5da-6307d11e2644" />
+        <ownedLiterals>
+          <enumerationLiteral Id="cbeb8af4-a022-4686-94fe-1907b7903839" name="WARNING">
+            <elementDefinition Id="38fd7a30-51f8-49a1-acc5-24f923d6a0c3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="7884d05c-7313-41ac-b08a-543717eaa0b0" name="INFO">
+            <elementDefinition Id="f37911cd-3836-43ad-8180-808f2ad724e7" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="2059bf45-013b-49f1-ae20-fa617249d8a9" name="DEBUG">
+            <elementDefinition Id="6249e1b9-6d83-434a-ac92-7ac3598e1c39" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="40ed2c7d-adc9-4d8f-ae39-9db85eb5df48" name="ERROR">
+            <elementDefinition Id="811e191d-5961-411b-a6ce-7803770f1b6b" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e829ebab-6c9d-4801-b8f0-ef2d4ae761be" name="CRITICAL">
+            <elementDefinition Id="416c604c-3a1e-41ec-a535-706f011ac58d" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="596d5689-0453-4d0b-bb48-e6ef4485ca2c" name="OrderedDict" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::OrderedDict">
+        <elementDefinition Id="1f2a2fd7-721b-427e-bc0c-2267871e38fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c2be7013-a9d0-4e42-8d7b-4edd5f200011" name="Handler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7efe0e3c-b905-4bc9-aa72-37af732c4b71" />
+        <ownedAttributesInternal>
+          <property Id="84fc3bb9-1da0-4c0b-a717-486a43861432" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f179f0a4-f2dc-48f7-ad12-2a75d27340c2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ab43ccc5-a4e6-4d7b-8ac3-1282bfefc8d8" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ab43ccc5-a4e6-4d7b-8ac3-1282bfefc8d8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3a019a65-30f5-4ef9-b3ef-ce1316db6f52" name="Filter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c20bff0e-01ee-4ce2-a27c-774e65850739" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eacb6e66-b071-4621-88aa-b44711aaef4e" name="Formatter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5b290137-75be-46d0-8e55-c8d558ca36ff" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b4d22ad2-b4b2-44f0-b3c8-15e5534c09c5" name="ConsoleHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6de02801-4a3d-4772-8fb0-62c417ddcb2c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="41491f56-61d5-49de-ac03-3c00ea83da33" name="FileHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ce7e1eef-938f-48b4-9c5b-645a7c74e1be" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f6b8680-fdb9-4758-8026-7dd29282ef45" name="SocketHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9c7850f4-37f5-449a-8592-ba109f5d1e17" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="25171fc4-f96b-4d8b-9a8c-f3b8246548c4" name="XMLFormatter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="241d9ce9-2857-4543-b52f-0fd6cab538bd" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1ee9ee87-772d-4330-afcb-68a2d96a10dc" name="SimpleFormatter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8082fbfe-3653-4b8e-a4b1-874660b3adf9" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6df8bb9a-88bd-4eb1-a4fc-47f94323a4e7" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>

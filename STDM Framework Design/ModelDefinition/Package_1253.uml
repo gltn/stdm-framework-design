@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2f318906-dda5-466a-ab5c-75a1a34fc37d"
+  name="MemCached" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1f2f4334-828c-488c-be71-be397fb35e93"
+        name="MemCache"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="bd45b6af-38b0-42d4-8784-13c3bd2d9a85">
+            <classMoniker
+              Id="b910bb3b-0119-4a08-8da3-25259e8394c2"
+              LastKnownName="MemCachedBackend"
+              LastKnownLocation="Package_1253.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="f097072a-8909-418d-aa02-8f5fc385d598"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cf68d543-004b-4dd5-ae33-60473a36eb05"
+              LastKnownName="BaseCache"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d65908a1-ccbd-4061-9070-dfab3706a08c"
+            name="cache_provider"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c25d8ce-6ceb-424c-be21-1da5c4b36693"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a6232e53-b82e-4495-91de-6fca853708c6"
+                      LastKnownName="MemCachedBackend"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b910bb3b-0119-4a08-8da3-25259e8394c2"
+        name="MemCachedBackend"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

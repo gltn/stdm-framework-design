@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="18cf4a4b-de0f-412b-afa6-2afc40874427"
+  name="FileBased" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="3990b8bd-479d-4c83-b8cb-56609dfa4404"
+        name="FileCache"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="ffe6cef8-e150-4817-8150-88de785ebfe4">
+            <classMoniker
+              Id="f8341058-3f84-4c80-8314-664b254271a8"
+              LastKnownName="FileCacheBackend"
+              LastKnownLocation="Package_1258.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="680ccdb9-537f-4c4b-90e0-91278ed7e619"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cf68d543-004b-4dd5-ae33-60473a36eb05"
+              LastKnownName="BaseCache"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="dbd68dee-9272-4bda-8d22-10b61a9103d7"
+            name="cache_provider"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="08472bad-a749-4689-afa1-1388871f308b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e17871c6-3cf4-4b10-8704-d7064f1b063c"
+                      LastKnownName="FileCacheBackend"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f8341058-3f84-4c80-8314-664b254271a8"
+        name="FileCacheBackend"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

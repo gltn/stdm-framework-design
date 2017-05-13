@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="ec12aa03-2cde-47e8-a6d8-fbe608342c6f" name="Media" linkedPackageId="03962984-5dad-49ea-bb38-7b9cd8fb8f0a" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="ef6784fb-1ce9-45ff-be0b-c085a5b6b324">
+      <profileInstance Id="de12fcf8-acbb-4885-821f-0183324ea008" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4ceb10af-cc3b-43b6-8bdd-c042d5dfb142">
+      <profileInstance Id="2dedece6-1e50-42da-8692-8d7268a289c2" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="14c8c372-e56e-4c7b-9028-56e56cee83eb" name="MediaPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a78a7909-758f-47df-824b-bd6497a998c2" />
+        <ownedOperationsInternal>
+          <operation Id="0c465d76-5232-4b58-ae16-6935fb3e5a71" name="data_source" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef5b71c7-2c07-4c23-a90d-87e710fa3046" />
+          </operation>
+          <operation Id="af7409b9-883e-4327-91f8-924462740eec" name="play" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9d9b76af-6b82-4a13-a881-914a5665a551" />
+          </operation>
+          <operation Id="1193ac25-84c7-4a8a-a1aa-fef7a526d5ce" name="pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3df14427-6feb-4fea-b3cc-8e035617e3cb" />
+          </operation>
+          <operation Id="125a4e01-5c11-49bd-85b5-816a31a73635" name="start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f2397ce4-53c7-4abb-b675-9b1880f114f2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6aa658cb-ae2f-4eec-aa17-238146563dff" name="Images" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ea786ffb-6743-4cc2-893d-27418bf8cef7" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a70671ab-63c4-4237-8e9c-9dce3e305ec5" name="Video" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="619e0821-99b8-442a-af2f-4607fbddc428" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="03962984-5dad-49ea-bb38-7b9cd8fb8f0a" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>

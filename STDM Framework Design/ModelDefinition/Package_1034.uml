@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6a58642d-b027-4a30-9b48-b9ba27d5815e"
+  name="SQLite" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4c313507-bd79-48a5-90f7-10dc77991fc0"
+        name="SQLiteProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="c41d04e2-2a19-4c3b-a9a3-30e6cc7a0e53">
+            <classMoniker
+              Id="3610a886-6a69-49d3-849b-e8a66a8641f7"
+              LastKnownName="SQLiteBackend"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="bbefea57-5adb-489f-ad6b-e2ca24228ba4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2c8d50d7-6691-49b5-9450-99c3bc50b4c0"
+              LastKnownName="BaseProvider"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="dc362fe8-38dd-4c5e-a45e-58f76ff31d43"
+            name="get_provider"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="37093589-39d1-43b3-b416-8652ab67adc6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3be8f463-f808-4225-bc85-9c6838008924"
+                      LastKnownName="SQLiteBackend"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3610a886-6a69-49d3-849b-e8a66a8641f7"
+        name="SQLiteBackend"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="17fa38f4-333a-46bd-b1f0-ea28e97237be">
+            <classMoniker
+              Id="be581a3a-4eb1-436d-8791-422537ccd726"
+              LastKnownName="DatabaseConnection"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+          <dependency
+            Id="eaf33bf0-7477-439e-8cd6-c6145f8b351b">
+            <classMoniker
+              Id="0429cc92-c336-421a-b21d-3ecbecc25532"
+              LastKnownName="DatabaseIntrospection"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+          <dependency
+            Id="f30d3fe3-be08-4941-92ba-6e6a7174536a">
+            <classMoniker
+              Id="c49ce431-fbaa-4513-9143-7dfb7ca8ed68"
+              LastKnownName="DatabaseWrapper"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+          <dependency
+            Id="7cd702b2-fdde-4b75-b929-5106b1d58acb">
+            <classMoniker
+              Id="cf33bd62-e46e-41a0-80b3-1d43d975bdb9"
+              LastKnownName="DatabaseSchema"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+          <dependency
+            Id="b02ecb88-1000-46a0-8092-3f8c3685f7a1">
+            <classMoniker
+              Id="5b555efd-f5dc-44f7-8905-4737e164e7ef"
+              LastKnownName="DatabaseFeatures"
+              LastKnownLocation="Package_1034.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="2678048e-5458-4e39-9644-d08f26bf21df"
+            name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="be581a3a-4eb1-436d-8791-422537ccd726"
+        name="DatabaseConnection"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5b555efd-f5dc-44f7-8905-4737e164e7ef"
+        name="DatabaseFeatures"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cf33bd62-e46e-41a0-80b3-1d43d975bdb9"
+        name="DatabaseSchema"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0429cc92-c336-421a-b21d-3ecbecc25532"
+        name="DatabaseIntrospection"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c49ce431-fbaa-4513-9143-7dfb7ca8ed68"
+        name="DatabaseWrapper"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
