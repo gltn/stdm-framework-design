@@ -7,25 +7,25 @@
 
 approval.stc</body>
     </comment>
+    <comment Id="65f5810f-a044-4bde-8236-63a67dc7b68f">
+      <elementDefinition Id="ecb8851e-7e5f-4c29-a6eb-1d1182869c8e" />
+      <body>consider chaing configuration</body>
+    </comment>
+    <comment Id="bac57a6e-1f00-4c90-b268-e2b93a1e1c0b">
+      <elementDefinition Id="7a4bf4b3-8011-4eb2-b979-0492fc3b0f7b" />
+      <body>activity diagram</body>
+    </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="97c98ef9-dac5-40a0-bb3d-7fac3bd29f4b">
-      <profileInstance Id="3f061aa1-b2fb-4870-a526-db2b1ecf4dc6" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="cfe2e2bc-76f7-46e4-8cef-0c540748d78a">
-      <profileInstance Id="ef384fbe-a7b6-40f3-b7df-e001fcd9e355" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="b10f2291-ba54-4230-a976-7b829176d7ac" name="ApproverEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c" />
+        <suppliersInternal>
+          <dependency Id="d5a71498-3f54-481f-af45-90800b0adab7">
+            <classMoniker Id="a7b3bebf-31db-49c6-9abc-ec280f7d6195" LastKnownName="Notification" />
+            <elementDefinition Id="42e27b93-dbe0-47ac-aa50-bb3d687e6ef9" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association Id="f5c33a4e-aaaa-4a39-aaf7-95c058dde932" isDerived="false" sourceEndRoleName="ApproverEntity" targetEndRoleName="AprovalConfiguration" isLeaf="false" isAbstract="false">
             <classMoniker Id="1349d4ba-2961-456e-b1ca-f927c4e82a3b" LastKnownName="AprovalConfiguration" />
@@ -100,7 +100,7 @@ approval.stc</body>
             <elementDefinition Id="7ff379e1-3813-408a-a880-2bcd8c969986" />
           </association>
           <association Id="c0a30d9f-736a-4d6a-b028-6e348ec741e8" isDerived="false" sourceEndRoleName="ApprovalSerializer" targetEndRoleName="ApprovalEntitySerializer" isLeaf="false" isAbstract="false">
-            <classMoniker Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" LastKnownName="ApprovalEntitySerializer" />
+            <classMoniker Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" LastKnownName="ApproverEntitySerializer" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="de245616-0088-4651-90e7-b9fde55a6290" name="ApprovalSerializer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
@@ -160,12 +160,31 @@ approval.stc</body>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" name="ApprovalEntitySerializer" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" name="ApproverEntitySerializer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a7b3bebf-31db-49c6-9abc-ec280f7d6195" name="Notification" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="736d3ebe-92b2-46d8-a5fc-adedbecc25b1" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="ea569c7c-376c-4ff1-a09b-38c43d89107f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="97c98ef9-dac5-40a0-bb3d-7fac3bd29f4b">
+        <profileInstance Id="3f061aa1-b2fb-4870-a526-db2b1ecf4dc6" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cfe2e2bc-76f7-46e4-8cef-0c540748d78a">
+        <profileInstance Id="ef384fbe-a7b6-40f3-b7df-e001fcd9e355" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

@@ -21,6 +21,11 @@
         <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ff67b3b3-67fe-44e6-af37-63b0ea6b1078" name="dict" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7f338b5f-3866-4de8-8380-7ef08fb3c118" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="27024117-cd8c-479f-9b37-2f06ca9831e6" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

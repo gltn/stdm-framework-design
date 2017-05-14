@@ -2,39 +2,39 @@
 <logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QGIS Framework">
   <logicalClassDesignerModelMoniker Id="04a60727-6abc-4285-ab0b-aa93600b7255" />
   <nestedChildShapes>
-    <classShape Id="d22a7d1d-b67e-4347-a095-023293b20ee6" absoluteBounds="0.875, 1, 1.875, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="3ec52388-2ee6-4d4a-97f7-2c3da6a312f9" LastKnownName="QgsVectorLayer" />
+    <classShape Id="5573cae6-fd83-4c00-b990-629e7ebb35c0" absoluteBounds="0.625, 0.625, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="13edb15e-1eba-4929-89b3-17a3808a6c1b" LastKnownName="QgsFeature" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="7210c639-209e-4251-9abd-9bc05bb1718e" absoluteBounds="0.89, 1.3900000000000001, 1.8450000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="c4efd391-f433-4743-96d1-a9838f94eec8" absoluteBounds="0.89, 1.6011718675494193, 1.8450000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="9e846f3a-9a9b-4512-98c9-7d232d3a256e" absoluteBounds="0.64, 1.0150000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="6a3d8997-2f4e-4257-a9da-e102699698f4" absoluteBounds="0.64, 1.2261718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2455e824-90ad-4de6-af53-650546e30569" absoluteBounds="0.875, 2.25, 1.875, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="b6890a29-cdde-49b5-b953-c9918b901304" LastKnownName="QgsFeature" />
+    <classShape Id="b1120b09-16c3-4e4b-bce3-0a33e4cd1f7a" absoluteBounds="0.625, 1.75, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="dd3c3974-2a3a-40b7-aab2-80aca9498340" LastKnownName="QgsField" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="b9e55ffc-d613-4063-92f5-4638f398d4ce" absoluteBounds="0.89, 2.64, 1.8450000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="3e17e44b-b598-4aaf-8948-5f402d28d5ea" absoluteBounds="0.89, 2.8511718675494193, 1.8450000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="f59d577c-1693-4e60-9ab3-572eb325603e" absoluteBounds="0.6399999999999999, 2.14, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="43ece51a-6936-485a-a2a5-293c47aeed43" absoluteBounds="0.6399999999999999, 2.3511718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="812c55f6-661e-4ccb-8c70-621b81fd378f" absoluteBounds="0.875, 3.375, 1.875, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="da57fd96-63d4-4684-bac2-b46f7f6f2875" LastKnownName="QgsField" />
+    <classShape Id="0bcf3692-6512-4a3a-9760-0c07f5c00692" absoluteBounds="0.625, 2.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="684fe2c1-d7e2-4338-987d-e788fffe3c66" LastKnownName="QgsVectorLayer" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="7071109d-c514-413d-84dc-56fa068d2b31" absoluteBounds="0.89, 3.7649999999999997, 1.8450000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="403a7ee6-478a-4ba3-97dd-ea2ab0f4ea0a" absoluteBounds="0.89, 3.9761718675494198, 1.8450000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="79571055-6e16-42cc-99fe-cf6280fcbb4d" absoluteBounds="0.64, 3.265, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="8c58104b-44b6-4456-b361-8a3690f6a9d1" absoluteBounds="0.64, 3.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f3941939-559c-4a0f-af89-54e5bb8fee9c" absoluteBounds="3.25, 1, 1.75, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="bef19669-4c87-4e74-8210-097f8b286b03" LastKnownName="QgsFeatureRequest" />
+    <classShape Id="4eb956a0-4f45-4878-ae8d-98ca79d2b1ad" absoluteBounds="0.625, 4.125, 1.75, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="33d6b153-b9a9-417b-98b3-3138c68e0ad6" LastKnownName="QgsFeatureRequest" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="9cf8e8f2-37d1-4e0d-8de7-fbe028b25fc0" absoluteBounds="3.265, 1.3900000000000001, 1.7200000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="bdbf774c-0624-41b6-8463-c99a347242b1" absoluteBounds="3.265, 1.6011718675494193, 1.7200000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="814f9342-9f59-4977-b179-777f642bed6e" absoluteBounds="0.64, 4.515, 1.7200000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="fa9ca8d1-f9b7-41a7-a088-0b721f43cd05" absoluteBounds="0.64, 4.72617186754942, 1.7200000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="83f9111b-f650-4122-ac30-28a5e27af7d8" absoluteBounds="3.25, 2.25, 1.75, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="c354bc0f-4549-42e3-99af-94ce0072633d" LastKnownName="QgsFeatureIterator" />
+    <classShape Id="aa08d05b-9918-44d9-9804-5db2351be8ab" absoluteBounds="2.5, 0.625, 2, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="71d7a5f8-b755-411b-94ee-b172d59f712e" LastKnownName="QgsFeatureIterator" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="4a3eef74-dc9c-4164-bb4a-0f458dea8200" absoluteBounds="3.265, 2.64, 1.7200000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="1a3867cb-6b04-4c5c-8db8-48af15b3ee2c" absoluteBounds="3.265, 2.8511718675494193, 1.7200000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="5871c08e-5fb0-42df-8af7-b050cb00a674" absoluteBounds="2.515, 1.0150000000000001, 1.9700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="26a3cb66-cc45-4ac4-8c00-906a7dfd025f" absoluteBounds="2.515, 1.2261718675494193, 1.9700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
