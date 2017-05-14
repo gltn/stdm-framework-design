@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6ae7372b-e90f-4d7c-a6b8-29b98a61165f" name="Database" linkedPackageId="d48176b9-9137-4951-b20b-231416c13fa1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="06258f2f-a7a7-4a54-a6c1-afe9582dfce1">
+      <elementDefinition Id="8a40c53b-969a-492f-b885-7844fd4886fd" />
+      <body>Application::
+
+app_provider = gettr(settings, 'DB_PROVIDER', 'app.providers.postgres.PostgresProvider')
+
+package, cls = app_provider.rsplit('.', 1)
+
+module = importlib.import_module(package)
+
+provider = gettr(module, cls)</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="2aa28a1c-9d82-44b0-9f01-bdfa539242f7">
+      <profileInstance Id="881cd43d-c42d-4962-8adf-4472bade941b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="466b4128-abfa-409f-b53d-2e094b9aa00c">
+      <profileInstance Id="57b35fe6-80b4-44fd-be4b-847621cb7aa1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3392e73f-4b46-4a7b-a69f-1e456126bf99" name="BaseProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2c8d50d7-6691-49b5-9450-99c3bc50b4c0" />
+        <ownedAttributesInternal>
+          <property Id="6c7789c6-a080-4525-983e-02e56d5b8ba8" name="provider" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c63fa3ce-84bd-40fa-a49e-a872de0edbd9" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="94c1161b-0c23-48a1-b97c-d4272e08bb16" name="db_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="be2bd0e4-b1e2-42ce-9d3f-15d429e06445" />
+          </operation>
+          <operation Id="d72f2f57-ff31-40aa-8164-9dfd697b74da" name="create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6ef33ae9-2c2c-4875-9d10-a3ae572a5d4d" />
+          </operation>
+          <operation Id="f73aa104-4c48-4d7e-bea7-86dad115b3ef" name="save" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0978eac1-0609-48ce-bfde-bcded0d302ec" />
+          </operation>
+          <operation Id="2fef2af7-d576-4c33-9850-c9dfc4569cf3" name="connect" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ae569a1-47d6-4650-a0ab-0b960c0caa8b" />
+          </operation>
+          <operation Id="8c15eb92-9e0e-4249-9002-c335bc4ac5a9" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="099a5319-2699-4b10-a46d-b612a2b92045" />
+          </operation>
+          <operation Id="a5f1ba25-9162-4b3e-a148-eb431771b9c2" name="execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2c983eab-0d9f-47f8-bfa8-59dd3624a669" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="484ed696-af27-45d2-bab2-a37feea91611" name="Postgres">
+        <ownedCommentsInternal>
+          <comment Id="834c3a26-9fdb-4030-8ab2-5ae97201e9a3">
+            <elementDefinition Id="6af4cf41-758a-480f-a4f7-4a8e8c769724" />
+            <body>Schema changing statements to the database
+</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="af26fcab-bf42-443c-b0fd-51eea61b16c0" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="9f53299b-b4af-4171-9901-dc115d9fc5bf" name="PostgresBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="fe814998-ee50-4b4b-9a9e-c7246c611000" />
+              <suppliersInternal>
+                <dependency Id="372afebe-a63d-49ac-8fda-c86c3e29737d">
+                  <classMoniker Id="cb46f7ee-6f05-4a12-a311-df17808ba97a" LastKnownName="DatabaseConnection" />
+                  <elementDefinition Id="da93fde1-18da-4513-af23-a4e26ac6a373" />
+                </dependency>
+                <dependency Id="60b288fd-9e49-4fb2-8de6-b309ef1d931a">
+                  <classMoniker Id="3aac214e-ebd9-49f3-8d73-7439b542478e" LastKnownName="DatabaseIntrospection" />
+                  <elementDefinition Id="00cd7663-8e58-44ef-b997-f94e8a88294b" />
+                </dependency>
+                <dependency Id="f11f3555-4c20-4313-9948-c2d19a90073c">
+                  <classMoniker Id="821347a1-ff07-41c0-a9e3-c54d9c2920a8" LastKnownName="DatabaseSchema" />
+                  <elementDefinition Id="efe5f9f9-4c95-4ce7-9549-99580724d69e" />
+                </dependency>
+                <dependency Id="b636c9be-910e-4ab7-81ca-c09e90d2686e">
+                  <classMoniker Id="99abcda8-4529-42c1-b515-b3a3b2092843" LastKnownName="DatabaseWrapper" />
+                  <elementDefinition Id="209a2be9-de77-49e1-8f01-014c5c902aa7" />
+                </dependency>
+                <dependency Id="4fb56e04-8870-49c8-9e91-fffc2276a733">
+                  <classMoniker Id="72d0117a-923b-41ab-bbd4-758de6063340" LastKnownName="DatabaseFeatures" />
+                  <elementDefinition Id="b237d3cf-35b8-4398-9d81-f126a78edd00" />
+                </dependency>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cb46f7ee-6f05-4a12-a311-df17808ba97a" name="DatabaseConnection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c06b4dc9-ca4d-479b-aca4-c3ef056cf1c9" />
+              <ownedOperationsInternal>
+                <operation Id="406f1565-7a00-4ba5-af1a-3c49f8e1b56a" name="connection_params" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d750cf31-9acb-4ffa-a413-24e0d34a4074" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="13e43e55-b648-4e16-8d31-2c34f6878a23" name="PostgresProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="830325e9-49f1-4b8e-afaa-e2015aa632f8" />
+              <suppliersInternal>
+                <dependency Id="a240aa14-7f90-47ea-b229-4ea1236f6718">
+                  <classMoniker Id="9f53299b-b4af-4171-9901-dc115d9fc5bf" LastKnownName="PostgresBackend" />
+                  <elementDefinition Id="b18cfa99-b112-4ad1-bab2-e25a733973ca" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="84bde3f1-cd75-46b6-ba1b-decb671a47be" isSubstitutable="false">
+                  <classMoniker Id="3392e73f-4b46-4a7b-a69f-1e456126bf99" LastKnownName="BaseProvider" />
+                  <elementDefinition Id="760ae3e3-ebdc-4e36-9164-2845244a513b" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="1fa0a64b-c1af-46e2-b1a5-35d611bab1db" name="get_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9fabedbf-1540-411d-8a87-df7f0895edbf" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c8fedaab-059c-436f-aa04-0996abb9a4d7" direction="Return">
+                        <elementDefinition Id="83c07687-9843-427f-9879-d1f68ce56a48" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="742560d5-7996-46eb-a7b1-b997e456c790" LastKnownName="PostgresBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="72d0117a-923b-41ab-bbd4-758de6063340" name="DatabaseFeatures" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5c6e6af7-6608-4647-83b7-d67ab22531de" />
+              <ownedAttributesInternal>
+                <property Id="400cd57b-90d3-4925-b622-4c75f0992bd6" name="has_bulk_insert" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b19be987-9955-4872-b452-a97c40a078b2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1ec4d298-8080-488e-ad5e-eb93e541f198" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+                <property Id="bc41664a-d51a-4667-88d8-6f72cbd5b092" name="supports_transactions" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="00230c65-d32d-47e1-aa87-6fe0686dd08d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f6678ec-e4c3-4791-8302-72a4e16364e7" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+                <property Id="8d9fb623-5ab2-4fc9-a7c4-bcff3c0fd24c" name="has_auto_sequence" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c8fee456-81ea-44d0-8f43-66ee90ca0f30" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="dc3d4e73-c269-4bbf-b37b-a75587dd1be6" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="821347a1-ff07-41c0-a9e3-c54d9c2920a8" name="DatabaseSchema" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="da315676-2ad5-4a4c-b44b-73283ce0f6fe" />
+              <ownedOperationsInternal>
+                <operation Id="d309edf6-b551-4c5e-85ef-13af820de670" name="create_entity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7c7e5796-aae3-408e-b58b-ef16c2d255c7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1ce517ef-9b9f-4677-8bff-9e7ba2ddfb2f" name="entity" direction="In" isUnique="false">
+                        <elementDefinition Id="1f797935-1a49-4d44-80c2-35f3952997c2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4f2f7af2-9cbd-47f2-ac54-c18ba54da6ab" LastKnownName="Entity" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ff5bfaf2-ae1c-4038-b43c-e4f215690674" name="delete_entity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7a233521-3b1c-4672-bc1f-0bc107ea3f20" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2b133843-72ef-43b9-b58c-67155eabe1a7" name="entity" direction="In">
+                        <elementDefinition Id="8160a633-0d8a-4582-b5c9-21a74001d699" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4f2f7af2-9cbd-47f2-ac54-c18ba54da6ab" LastKnownName="Entity" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7bdd9fc4-947d-4c5e-8d05-9339138577bc" name="add_index" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="261678ee-ea2f-4e2c-82d9-2a31a81a6e15" />
+                </operation>
+                <operation Id="8737c7c1-25f7-438e-a372-11d7c10221e0" name="alter_db_table" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="71ca9259-106e-47a0-bd7d-a541853dc337" />
+                </operation>
+                <operation Id="a5dfa059-e54e-4fd8-83f9-3870ba31a031" name="add_field" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0766edf1-eba7-404b-9689-9eda8ca3fdd0" />
+                </operation>
+                <operation Id="69e9e8dc-b9ca-477b-abf0-cf68eeb02263" name="delete_field" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="89f92e30-ee52-494d-ab05-61eb71f5ab4e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a444f2fe-40dc-4b2f-9096-54fbe130430e" name="entity" direction="In">
+                        <elementDefinition Id="ac8fe6ca-2848-4e41-8302-cec585ed8222" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4f2f7af2-9cbd-47f2-ac54-c18ba54da6ab" LastKnownName="Entity" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f3bb28cb-f29a-4061-8371-3ba4f9b7f402" name="column" direction="In">
+                        <elementDefinition Id="56e1b4f5-beda-4565-ba6d-95467353b6d9" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="a31e1c5e-4ba8-45da-91b2-71b232bd146f" LastKnownName="BaseColumn" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d8a1080b-bccc-4170-a0d0-7375ffd5b2c2" name="update_relations" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c53d5f40-b665-44c2-b066-7c05b5a0d17f" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="3aac214e-ebd9-49f3-8d73-7439b542478e" name="DatabaseIntrospection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="51b0428b-b302-495a-9c12-178ed7b0ba94" />
+              <ownedOperationsInternal>
+                <operation Id="6cb8ad39-1575-449d-a912-a29e93186893" name="field_names" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fdce7e9b-2292-4997-9adf-b03d6d40d961" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="08f7b81d-b6b8-4fed-bab2-f0aa3d914e9e" name="table_name" direction="In">
+                        <elementDefinition Id="f9eb86d5-b296-41e6-a199-e4c1cd85d248" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8e12b87f-f259-492f-a052-37c4056bdee9" direction="Return">
+                        <elementDefinition Id="c52a759e-2a27-4233-9f77-95e8ac7a940b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="1f8e8fbf-240b-45a2-804f-5c41283d5aa0" LastKnownName="[*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="cee2e5f4-5f31-43b6-9702-18e443717e33" name="table_names" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e63f28b0-14e9-45d1-8eda-af4fcafea89e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9e9008fa-2e59-480b-8747-41bc3d4a836e" direction="Return">
+                        <elementDefinition Id="cf2cf159-f44f-4ad7-b08c-e9150c6c7745" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9b759c20-cefc-48e6-8257-457b84bc9533" LastKnownName="[*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7ecf78d8-8735-47fa-8a08-0cbaca1e44e1" name="relations" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9f59bca2-9d1e-4b2c-8484-d20f1721fca6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="cba8963d-e72c-4900-a0ad-46a72a81ddc7" name="table_name" direction="In">
+                        <elementDefinition Id="9015185d-05d1-4bd6-a973-1734ebe9dd37" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bb284227-52d2-4af3-a482-9fa68566c1d1" direction="Return">
+                        <elementDefinition Id="3b9e4f84-5e73-4b0d-944b-da40598da1d1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="65085d94-bf48-485a-8f92-fb257697a2c0" LastKnownName="{}" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1631c968-0ece-4c08-b0ea-998bfe0fe66e" name="inspect_db" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7859e0b1-1397-41e0-8327-dc44c2a3372d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="18ecb23b-3bdb-4f32-94f2-c637d19ba804" direction="Return">
+                        <elementDefinition Id="fdf30d15-c886-4248-badc-58928c744447" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="96911b42-fb27-4eb9-a5fa-2c71ace60a63" LastKnownName="StdmConfiguration" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="38237302-ae8a-4951-91e9-9f584b07b919" name="view_names" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="18d526d3-c2fb-47b5-a4d5-f3d7e02ca5c0" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="79bdc6dc-45d7-4124-9278-bbeae0fff294" direction="Return">
+                        <elementDefinition Id="1f6e8a01-99a3-4216-a37c-87b986508b6c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="efee6b5d-3dfa-4215-9739-f47fb1e5135e" LastKnownName="[*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="8dceb0a0-a5d5-4058-8cea-58ad97351145" name="table_count" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="17ee6664-48ac-4ac6-9a4c-3f09ff9edee5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2e654d73-ed5f-48ef-a30e-511f3974e489" direction="Return">
+                        <elementDefinition Id="52fdd05f-bcc0-480e-a53b-370a66c96dbf" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3bff5a63-3a73-4172-9b22-5d295b122957" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="925ffafd-e7de-47e9-a6d3-ccce916eb1f6" name="table_exist" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="229f86ab-01aa-45cf-81bc-bca245ae9c30" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c379ce08-9d97-46e3-ab78-a761022dbb26" direction="Return">
+                        <elementDefinition Id="b292515c-c8ef-4e34-b5f8-cd9592c22261" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d2d74517-f6b0-4ddf-a7d0-0fe89273410b" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="83783f93-aaf6-4491-80c2-e75547f47085" name="column_names" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1bc1489a-8093-4af9-833a-b8c572ea6eed" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bcbfde3d-10f6-4cf2-9df2-91714c7e4207" name="table_name" direction="In">
+                        <elementDefinition Id="d1730cf5-d859-4fc4-8fc7-cb9546b00d27" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="cadfe1ff-182b-4e6a-b816-409359592589" direction="Return">
+                        <elementDefinition Id="b8661e08-6caf-4ea4-94ad-af74b7dbc2ea" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e52107e5-9fd1-4cf7-9d4c-da72254d5573" LastKnownName="[*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9ea69baa-bc2f-43ee-b949-c7f38c4e6eef" name="column_type" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ec4ba00f-b077-4144-84c4-e7637c383e74" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="47b354ae-f052-4a18-9e77-b76889817531" name="column_name" direction="In">
+                        <elementDefinition Id="ed2b573c-6910-4cd3-adb8-56a2c31141c2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3e1800ec-5b36-4a48-9985-28d81a2e16e9" name="table_name" direction="In">
+                        <elementDefinition Id="d6777030-9573-4603-bd84-59bd64dd8793" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="99abcda8-4529-42c1-b515-b3a3b2092843" name="DatabaseWrapper" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="dbd889c5-db27-41ff-8100-7c9dd7bcba0e" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="742560d5-7996-46eb-a7b1-b997e456c790" name="PostgresBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::PostgresBackend">
+        <elementDefinition Id="c1317f65-5466-48c4-88b6-5f046b7cfc4b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1ec4d298-8080-488e-ad5e-eb93e541f198" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0f6678ec-e4c3-4791-8302-72a4e16364e7" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dc3d4e73-c269-4bbf-b37b-a75587dd1be6" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4f2f7af2-9cbd-47f2-ac54-c18ba54da6ab" name="Entity" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::stdm.configuration::Entity">
+        <elementDefinition Id="2f320407-c5fe-4934-9490-6061652c8d2e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a31e1c5e-4ba8-45da-91b2-71b232bd146f" name="BaseColumn" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::stdm.configuration::BaseColumn">
+        <elementDefinition Id="182bb1ee-30c1-40bd-8ca2-9aaedfb38bf3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0dcdec09-1262-4490-bcfa-6f0acc8783d6" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1f8e8fbf-240b-45a2-804f-5c41283d5aa0" name="[*]" isAbstract="false" isLeaf="false" cachedFullName="[*]">
+        <elementDefinition Id="83a35f79-8e7c-45cd-964a-f971a859134f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9b759c20-cefc-48e6-8257-457b84bc9533" name="[*]" isAbstract="false" isLeaf="false" cachedFullName="[*]">
+        <elementDefinition Id="83a35f79-8e7c-45cd-964a-f971a859134f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="65085d94-bf48-485a-8f92-fb257697a2c0" name="{}" isAbstract="false" isLeaf="false" cachedFullName="{}">
+        <elementDefinition Id="7b21cd4d-f745-4fd6-ba50-1a2a740f9a3f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="96911b42-fb27-4eb9-a5fa-2c71ace60a63" name="StdmConfiguration" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::StdmConfiguration">
+        <elementDefinition Id="1f0b4969-7adb-4e5d-86af-af47f2500ef4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="efee6b5d-3dfa-4215-9739-f47fb1e5135e" name="[*]" isAbstract="false" isLeaf="false" cachedFullName="[*]">
+        <elementDefinition Id="83a35f79-8e7c-45cd-964a-f971a859134f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3bff5a63-3a73-4172-9b22-5d295b122957" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d2d74517-f6b0-4ddf-a7d0-0fe89273410b" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e52107e5-9fd1-4cf7-9d4c-da72254d5573" name="[*]" isAbstract="false" isLeaf="false" cachedFullName="[*]">
+        <elementDefinition Id="83a35f79-8e7c-45cd-964a-f971a859134f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="12f05909-083a-4c0a-a3de-5c0364aa5cd4" name="SQLite">
+        <ownedCommentsInternal>
+          <comment Id="d63c3ecf-2de6-445c-9a67-f76eee082613">
+            <elementDefinition Id="0a469d98-6edb-4b32-89bc-1e27f7618258" />
+            <body>SQLiteProvider adapts  SQLiteBackend to BaseDatabaseProvider</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="6a58642d-b027-4a30-9b48-b9ba27d5815e" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="35c6dee1-fc73-4d3e-b0eb-3d2d7ae8c828" name="SQLiteProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4c313507-bd79-48a5-90f7-10dc77991fc0" />
+              <suppliersInternal>
+                <dependency Id="b7bc19c3-2f6b-4c12-b533-6c391cd5b9c1">
+                  <classMoniker Id="4b21bc98-92dd-403e-b985-5d5f63629226" LastKnownName="SQLiteBackend" />
+                  <elementDefinition Id="c41d04e2-2a19-4c3b-a9a3-30e6cc7a0e53" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="a03d148e-ce19-43ab-9986-986d0e4d9389" isSubstitutable="false">
+                  <classMoniker Id="3392e73f-4b46-4a7b-a69f-1e456126bf99" LastKnownName="BaseProvider" />
+                  <elementDefinition Id="bbefea57-5adb-489f-ad6b-e2ca24228ba4" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="36a2f57c-4c90-4ffd-b2ac-a5e72d2091a3" name="get_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="dc362fe8-38dd-4c5e-a45e-58f76ff31d43" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="eace9ff0-6218-4900-9d32-5803d4a0df13" direction="Return">
+                        <elementDefinition Id="37093589-39d1-43b3-b416-8652ab67adc6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="91059c72-977e-44ad-90c8-5e845946de1c" LastKnownName="SQLiteBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="4b21bc98-92dd-403e-b985-5d5f63629226" name="SQLiteBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="3610a886-6a69-49d3-849b-e8a66a8641f7" />
+              <suppliersInternal>
+                <dependency Id="3232776b-2b20-4496-9d99-9b3887ae3301">
+                  <classMoniker Id="86728459-a4a8-4faf-9db3-7b3d3785a317" LastKnownName="DatabaseConnection" />
+                  <elementDefinition Id="17fa38f4-333a-46bd-b1f0-ea28e97237be" />
+                </dependency>
+                <dependency Id="6fb520e6-1fcd-41ec-ba3c-887d11514acd">
+                  <classMoniker Id="c74daf59-3b88-4c3f-961a-c48cd7b1a427" LastKnownName="DatabaseIntrospection" />
+                  <elementDefinition Id="eaf33bf0-7477-439e-8cd6-c6145f8b351b" />
+                </dependency>
+                <dependency Id="041552db-c128-4f4c-a186-9746ce212ce7">
+                  <classMoniker Id="1835924b-5aeb-45f1-a886-02901142d5e8" LastKnownName="DatabaseWrapper" />
+                  <elementDefinition Id="f30d3fe3-be08-4941-92ba-6e6a7174536a" />
+                </dependency>
+                <dependency Id="a7c0e3a2-4fb1-44af-88c7-4de2a9c96ac8">
+                  <classMoniker Id="164aa208-17bb-489a-9113-ef21db077586" LastKnownName="DatabaseSchema" />
+                  <elementDefinition Id="7cd702b2-fdde-4b75-b929-5106b1d58acb" />
+                </dependency>
+                <dependency Id="b3b8c292-a4e0-410c-ad0b-4a948f8a05a8">
+                  <classMoniker Id="802b52dc-d3a3-4f24-a5c5-dea2e74325ef" LastKnownName="DatabaseFeatures" />
+                  <elementDefinition Id="b02ecb88-1000-46a0-8092-3f8c3685f7a1" />
+                </dependency>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="01a4b345-4b31-4a8d-b88f-e7c4d3853173" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2678048e-5458-4e39-9644-d08f26bf21df" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="86728459-a4a8-4faf-9db3-7b3d3785a317" name="DatabaseConnection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="be581a3a-4eb1-436d-8791-422537ccd726" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="802b52dc-d3a3-4f24-a5c5-dea2e74325ef" name="DatabaseFeatures" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5b555efd-f5dc-44f7-8905-4737e164e7ef" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="164aa208-17bb-489a-9113-ef21db077586" name="DatabaseSchema" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="cf33bd62-e46e-41a0-80b3-1d43d975bdb9" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c74daf59-3b88-4c3f-961a-c48cd7b1a427" name="DatabaseIntrospection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="0429cc92-c336-421a-b21d-3ecbecc25532" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="1835924b-5aeb-45f1-a886-02901142d5e8" name="DatabaseWrapper" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c49ce431-fbaa-4513-9143-7dfb7ca8ed68" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="91059c72-977e-44ad-90c8-5e845946de1c" name="SQLiteBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::SQLiteBackend">
+        <elementDefinition Id="3be8f463-f808-4225-bc85-9c6838008924" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="f23bcefe-d02f-4891-8761-c43cbd8fb6da" name="MYSQL">
+        <elementDefinition Id="5715896f-f012-44e4-a5b1-949770afb7aa" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="38ee5ca8-9d1e-4185-b21c-7d8f609230b7" name="MYSQLProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="04f4ea02-10a2-4a95-ba14-1603d84dd8f7" />
+              <suppliersInternal>
+                <dependency Id="66d9246a-7893-4365-8e5d-fa202fbafd59">
+                  <classMoniker Id="8f9c9b82-d71d-4393-8950-f609db444def" LastKnownName="MSSQLBackend" />
+                  <elementDefinition Id="19f22e9a-6801-46e1-bd60-926e07ade20e" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="7a3196f1-08ff-4127-bf11-ec1b3190f4ab" isSubstitutable="false">
+                  <classMoniker Id="3392e73f-4b46-4a7b-a69f-1e456126bf99" LastKnownName="BaseProvider" />
+                  <elementDefinition Id="e74882e6-56c2-4635-948d-ca17dd4ae158" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="90feb1a5-2630-4b73-856c-3678f779c51b" name="get_backend" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8cd9fa25-a240-4f3d-b634-7c1925cd83ae" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1b0d9d73-3d32-4f24-b904-8ed70dc5b5e1" direction="Return">
+                        <elementDefinition Id="46b5c675-a323-4c1e-bf90-796f7192e8e0" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="43d6f0e4-c8a5-4378-9bfe-6a5a3ec4b0b2" LastKnownName="MSSQLBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8f9c9b82-d71d-4393-8950-f609db444def" name="MSSQLBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1aa78841-8b0a-4acd-8060-ff37219bcedc" />
+              <suppliersInternal>
+                <dependency Id="4dc891f3-7e0e-459d-86cf-19a570110560">
+                  <classMoniker Id="2f4eddd2-099e-4417-88c9-2652c6eb5b12" LastKnownName="DatabaseConnection" />
+                  <elementDefinition Id="82326d7e-18e8-4c54-8382-ada17b30602a" />
+                </dependency>
+                <dependency Id="cbb51d58-5026-4377-ac04-887ce1331c57">
+                  <classMoniker Id="05854155-d705-4d3e-a4f0-37c602b631e6" LastKnownName="DatabaseIntrospection" />
+                  <elementDefinition Id="d0372225-d2d6-49cd-a955-84c487920d36" />
+                </dependency>
+                <dependency Id="18b1549c-df53-4bec-aa7b-17a80ed6afe9">
+                  <classMoniker Id="cdb1efc9-4d1c-4ac9-9768-f478ad3fd034" LastKnownName="DatabaseSchema" />
+                  <elementDefinition Id="ecf1ece2-ac30-4eba-8e40-ba6edca0ac72" />
+                </dependency>
+                <dependency Id="0fd2f8a4-e986-4a53-961c-b5b40b1d0080">
+                  <classMoniker Id="cb0dadea-d5da-44a8-85e7-8ee91507be2d" LastKnownName="DatabaseFeatures" />
+                  <elementDefinition Id="03363ba5-cf22-45c6-b774-6137eba16bc0" />
+                </dependency>
+                <dependency Id="236e7079-7462-41e4-9f66-9251facb8458">
+                  <classMoniker Id="2318b64c-612f-4f8a-83bc-f49547daa544" LastKnownName="DatabaseWrapper" />
+                  <elementDefinition Id="36721a75-5e3e-4613-b4c4-e89d0b5c2b6b" />
+                </dependency>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="33c231c8-ce28-4629-a1cd-a5833b517d78" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ea66df0f-9a7a-45c1-96cc-221b5faf99d1" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2f4eddd2-099e-4417-88c9-2652c6eb5b12" name="DatabaseConnection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="efdf9ab1-6e4b-4e81-9517-b637622a0a0f" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="05854155-d705-4d3e-a4f0-37c602b631e6" name="DatabaseIntrospection" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="48928422-fbdf-4d44-a540-b02d325e903a" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cdb1efc9-4d1c-4ac9-9768-f478ad3fd034" name="DatabaseSchema" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2e18b46d-ee64-43b9-a05b-d82e5e010bc4" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cb0dadea-d5da-44a8-85e7-8ee91507be2d" name="DatabaseFeatures" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="726c69b7-d7f2-4bae-a296-8f769411b11f" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2318b64c-612f-4f8a-83bc-f49547daa544" name="DatabaseWrapper" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="216da725-372a-4378-b473-dbbddab2a1a9" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="43d6f0e4-c8a5-4378-9bfe-6a5a3ec4b0b2" name="MSSQLBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::MSSQLBackend">
+        <elementDefinition Id="2cf93ac0-5935-4104-a1a1-c643cae14863" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="d48176b9-9137-4951-b20b-231416c13fa1" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>
