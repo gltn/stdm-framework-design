@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="591c1965-e766-4f10-a80f-a97561cc4e26" name="Cache" linkedPackageId="2b654684-aeaa-488f-9a27-6c60fd106e5c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="2d9beec5-7635-472c-b204-770cf59918c9">
+      <elementDefinition Id="bd55885d-abc1-44f2-aeba-edd1fd45fb77" />
+      <body>CACHES = {
+    'default': {
+        'BACKEND': 'stdm.core.cache.backends.filebased.FileCacheBackend',
+        'LOCATION': 'C:/user/tmp/stdm_cache',
+        'TIMEOUT': 60,
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000
+        }
+    }
+}</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="3316ecb9-cf49-491e-9f00-6a9299e3bbfc">
+      <profileInstance Id="1126721e-1069-40cd-b4df-e77c011d417a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9dce6bac-f80a-42c4-b65e-8bb1e0267ab1">
+      <profileInstance Id="0f069839-86d7-4bb1-bc9a-efa30b11c61f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d585b3a7-1e41-4c1f-bbd1-cb379fff6643" name="BaseCache" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf68d543-004b-4dd5-ae33-60473a36eb05" />
+        <ownedAttributesInternal>
+          <property Id="af038de0-642d-4d0f-af49-5a9a3b2f4f21" name="cache_backend" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8455bbc6-7a4e-401b-8907-525113d84c68" />
+          </property>
+          <property Id="3b811532-784c-4416-8689-e60089868240" name="timeout" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="28fd3f78-69e3-446c-bca3-a9269801bc2b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ca67d4aa-e58d-4c56-9d04-4ed19f5b5081" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="dbb9938f-f99e-4082-a7b8-4149b449aa87" name="max_entries" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="66ee6abc-b287-4280-880a-4df78df504f1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="922be219-e28e-4f0a-b2e6-632944f35f8f" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4ae0809d-24aa-4ef0-a996-a3c3f0483133" name="cache_location" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="64c8b136-6637-41db-b9ae-362659d59d9f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ca67d4aa-e58d-4c56-9d04-4ed19f5b5081" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="922be219-e28e-4f0a-b2e6-632944f35f8f" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="7f94c8cd-6b57-4ec9-8973-519c8d015cb9" name="MemCached">
+        <elementDefinition Id="2f318906-dda5-466a-ab5c-75a1a34fc37d" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="270c2b24-f229-44a7-b7e7-24c066f2dbce" name="MemCache" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1f2f4334-828c-488c-be71-be397fb35e93" />
+              <suppliersInternal>
+                <dependency Id="8111e2a7-b38c-4e60-95f0-eeda2f084bf9">
+                  <classMoniker Id="45b2f73e-6887-4962-b432-2f5f7b0599e9" LastKnownName="MemCachedBackend" />
+                  <elementDefinition Id="bd45b6af-38b0-42d4-8784-13c3bd2d9a85" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="1ce85c12-37f0-4786-ae2e-2710cab7aa8e" isSubstitutable="false">
+                  <classMoniker Id="d585b3a7-1e41-4c1f-bbd1-cb379fff6643" LastKnownName="BaseCache" />
+                  <elementDefinition Id="f097072a-8909-418d-aa02-8f5fc385d598" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="240d8670-4660-40b6-bd12-89e727e10983" name="cache_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d65908a1-ccbd-4061-9070-dfab3706a08c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="40777a0a-f63f-4748-9aa0-296633609080" direction="Return">
+                        <elementDefinition Id="5c25d8ce-6ceb-424c-be21-1da5c4b36693" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9237f198-4961-4fc9-a557-412f844a6625" LastKnownName="MemCachedBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="45b2f73e-6887-4962-b432-2f5f7b0599e9" name="MemCachedBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="b910bb3b-0119-4a08-8da3-25259e8394c2" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="9237f198-4961-4fc9-a557-412f844a6625" name="MemCachedBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::MemCachedBackend">
+        <elementDefinition Id="a6232e53-b82e-4495-91de-6fca853708c6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="2af333e1-0de8-42be-bff0-8b97c3f8a918" name="Database">
+        <elementDefinition Id="ed023096-d731-478c-abc8-01965da96c35" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="43fc2eb3-9706-418a-9204-85c84c784cec" name="DatabaseCache" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="30f926eb-39e5-4e7c-ab2a-41f14065688a" />
+              <suppliersInternal>
+                <dependency Id="57764a4b-25b6-458e-8a48-ca54b79cc84e">
+                  <classMoniker Id="7ef93432-2f3c-4f0a-8a2b-b67ae40ce041" LastKnownName="DatabaseCacheBackend" />
+                  <elementDefinition Id="be55ff8c-1863-4646-87d3-d89837d0b14d" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="64d523c1-e1b0-4272-a3b8-5d031335a25d" isSubstitutable="false">
+                  <classMoniker Id="d585b3a7-1e41-4c1f-bbd1-cb379fff6643" LastKnownName="BaseCache" />
+                  <elementDefinition Id="1ce47b32-c972-4375-b9d1-8a3b16ea87ab" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="1b5a80de-1548-49f2-85c8-1cb733ea7eb9" name="cache_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="852997a4-7fa8-4b83-9f4a-848b6ba70a8a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="46ee204a-6746-478f-8eef-ee49bcbaf85b" direction="Return">
+                        <elementDefinition Id="4e53e237-1867-49f4-a44e-da2eefb05897" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c4272966-ca6a-4ba5-a741-bdf17b78edc2" LastKnownName="DatabaseCacheBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="7ef93432-2f3c-4f0a-8a2b-b67ae40ce041" name="DatabaseCacheBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a2b9b542-3ed7-48b7-9e7b-98663854a618" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="c4272966-ca6a-4ba5-a741-bdf17b78edc2" name="DatabaseCacheBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::DatabaseCacheBackend">
+        <elementDefinition Id="adf19f4c-23b9-4b1d-a4cb-c8d457a67631" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="2996114a-774a-4206-a584-3ead04a85fa0" name="FileBased">
+        <elementDefinition Id="18cf4a4b-de0f-412b-afa6-2afc40874427" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="69838ec0-edf5-43e6-8b2d-d5492b367139" name="FileCache" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="3990b8bd-479d-4c83-b8cb-56609dfa4404" />
+              <suppliersInternal>
+                <dependency Id="d698eaf2-7816-4696-97ac-2ffb559a6ebe">
+                  <classMoniker Id="2e5506be-3b5e-4697-abe1-2c4c198111d6" LastKnownName="FileCacheBackend" />
+                  <elementDefinition Id="ffe6cef8-e150-4817-8150-88de785ebfe4" />
+                </dependency>
+              </suppliersInternal>
+              <generalsInternal>
+                <generalization Id="c11c1d09-83a8-4979-8bf6-319f2549c3c3" isSubstitutable="false">
+                  <classMoniker Id="d585b3a7-1e41-4c1f-bbd1-cb379fff6643" LastKnownName="BaseCache" />
+                  <elementDefinition Id="680ccdb9-537f-4c4b-90e0-91278ed7e619" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="e9bfe6ce-fd33-45e5-8bc1-011cf869fa44" name="cache_provider" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="dbd68dee-9272-4bda-8d22-10b61a9103d7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="509fae29-b403-4734-8dcc-5017304027f0" direction="Return">
+                        <elementDefinition Id="08472bad-a749-4689-afa1-1388871f308b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9ab6175c-53ca-49d5-9464-63e165f4d20b" LastKnownName="FileCacheBackend" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2e5506be-3b5e-4697-abe1-2c4c198111d6" name="FileCacheBackend" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="f8341058-3f84-4c80-8314-664b254271a8" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="9ab6175c-53ca-49d5-9464-63e165f4d20b" name="FileCacheBackend" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::FileCacheBackend">
+        <elementDefinition Id="e17871c6-3cf4-4b10-8704-d7064f1b063c" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="2b654684-aeaa-488f-9a27-6c60fd106e5c" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</logicalClassDesignerModel>
