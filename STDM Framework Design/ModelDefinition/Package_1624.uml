@@ -1180,32 +1180,23 @@
               LastKnownLocation="Package_1624.uml" />
           </dependency>
         </suppliersInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="88dae9fa-5f6f-4ffb-b0f8-3e7fc67849e2"
-        name="DatabaseVersionUpdater"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
         <targetEnds>
           <association
-            Id="0efd65c2-a3e9-48d5-9a17-9fa597dec5a0"
+            Id="c6bc40ef-0934-425f-8b2a-f4b9a09f110d"
             isDerived="false"
-            sourceEndRoleName="DatabaseVersionUpdater"
-            targetEndRoleName="DatabaseUpdater"
+            sourceEndRoleName="DatabaseUpdater"
+            targetEndRoleName="DatabaseVersionUpdater"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="6f728ee7-0f4b-4afb-a3d6-052ae2381f3f"
-              LastKnownName="DatabaseUpdater"
+              Id="88dae9fa-5f6f-4ffb-b0f8-3e7fc67849e2"
+              LastKnownName="DatabaseVersionUpdater"
               LastKnownLocation="Package_1624.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="28f9eb76-932d-4bfa-81d1-31feadd70990"
-                  name="DatabaseVersionUpdater"
+                  Id="df9c712f-c09c-4c22-ab82-20662e8dc02a"
+                  name="DatabaseUpdater"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1217,8 +1208,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="33bbc873-fa99-462d-88f2-6c3f55fbebc2"
-                  name="DatabaseUpdater"
+                  Id="596701e0-5e73-454d-8d01-ad15aace0028"
+                  name="DatabaseVersionUpdater"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1231,6 +1222,14 @@
           </association>
         </targetEnds>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="88dae9fa-5f6f-4ffb-b0f8-3e7fc67849e2"
+        name="DatabaseVersionUpdater"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class

@@ -64,8 +64,9 @@ approval.stc</body>
       <body>activity diagram</body>
     </comment>
     <comment
-      Id="f8d0b67e-2ecc-4130-939e-4767f49121ae">
-      <body>combine overalp, dup..</body>
+      Id="c196f198-7e64-4f1a-9113-46c602e249b4">
+      <body>depends on GeometryValidation under mapping framework
+</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -3351,7 +3352,7 @@ approval.stc</body>
     <packageHasNamedElement>
       <class
         Id="53c23500-6afe-4541-8d31-57c521e41363"
-        name="GeoValidation"
+        name="GeometryValidation"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -3405,8 +3406,8 @@ approval.stc</body>
             </ownedParameters>
           </operation>
           <operation
-            Id="870cdbb7-67d4-4152-9cfd-4a97ef013b18"
-            name="overalps"
+            Id="f819927c-8feb-40ff-9b52-e408f7dd4ea5"
+            name="test_geometry"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3415,103 +3416,64 @@ approval.stc</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="566aadd9-0256-4628-9381-842f559141c6"
-                  name="geom_1"
+                  Id="0be4cc92-799a-4898-b50b-dcf6bdb37a93"
+                  name="test_type"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <description>contains, contained, duplicate, overlaps</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b385bc84-6f77-40b1-95c1-87b2422afa43"
-                  name="geom_2"
+                  Id="3f9e980b-d619-41f7-b21b-0a5dfc6a3690"
+                  name="geom1"
                   direction="In"
                   isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dbefc80d-23de-4e2f-9957-85b08099ccdb"
+                  name="geom2"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="333a97f6-da24-4e55-a1b5-a034eeb653c9"
+                      Id="ed4a985b-b682-485d-bd7a-476f3f1a10f8"
                       value="None" />
                   </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="67539c27-e74b-4eb8-89d9-99636d636553"
-            name="duplicate"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="adaeed17-2f44-4656-9bb5-33c7023c7b95"
-                  name="geom_1"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7fefe485-2711-4114-91d7-97815324946a"
-                  name="geom_2"
-                  direction="In"
-                  isUnique="false">
-                  <defaultValue>
-                    <literalString
-                      Id="364eab00-0f3d-4f30-85fd-d9c9bebfca20"
-                      value="None" />
-                  </defaultValue>
+                  Id="63d2ce94-e80f-47d5-8b05-a6b236d57ca1"
+                  direction="Return">
+                  <description>result detail</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
                 </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="6d88acb6-8fe9-4817-953b-5093d36649c8"
-            name="contains"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e62a0fdf-5cab-457a-a8ca-8794c2e2042f"
-                  name="geom_1"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="f8e562c5-f58d-4af0-9b46-d2b8136867da"
-                  name="geom_2"
-                  direction="In"
-                  isUnique="false">
-                  <defaultValue>
-                    <literalString
-                      Id="91466080-b907-4589-8bfa-5a78c0ccbc99"
-                      value="None" />
-                  </defaultValue>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="b8011cfa-7d83-452a-a955-de708ca00fd1"
-            name="contained"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e507e0cc-6c37-4b1c-adc9-c583ed424385"
-                  name="geom"
-                  direction="In"
-                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3615,6 +3577,31 @@ approval.stc</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="52f76d3f-235d-4671-9325-defe872c2e99"
+            name="split_polygon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1130f843-23e3-43de-9099-c7b0fdc05c92"
+                  name="geom"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6d03cbbb-5ee6-43f2-8f14-57dea6c5a24a"
+                  name="peices"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3630,7 +3617,7 @@ approval.stc</body>
             Id="db1fb61a-cacb-4d7a-a5c6-a42e66382fc9">
             <classMoniker
               Id="53c23500-6afe-4541-8d31-57c521e41363"
-              LastKnownName="GeoValidation"
+              LastKnownName="GeometryValidation"
               LastKnownLocation="STDM Framework Design.uml" />
           </dependency>
         </suppliersInternal>
@@ -3648,7 +3635,7 @@ approval.stc</body>
             Id="b9ca3444-5cc9-4718-8d7a-9af8eeee916b">
             <classMoniker
               Id="53c23500-6afe-4541-8d31-57c521e41363"
-              LastKnownName="GeoValidation"
+              LastKnownName="GeometryValidation"
               LastKnownLocation="STDM Framework Design.uml" />
           </dependency>
         </suppliersInternal>
@@ -4651,6 +4638,1080 @@ approval.stc</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+        name="TableValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d91bd9ea-bdeb-4efd-8687-2af45bfccd5e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f95ff2b5-956d-4116-9a2e-926e084411e1"
+              LastKnownName="LookupValidtor"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+          <generalization
+            Id="219fb425-7287-41eb-b6e7-6b62f6c6c29b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b817c1be-598b-4c08-ae0d-fff3ee936835"
+              LastKnownName="DataTypeValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+          <generalization
+            Id="1b10ecc5-26d4-456f-b880-ab7e975610dd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="09bbb7c8-f061-4e4e-ac74-9a8953a1d5c6"
+              LastKnownName="LengthValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+          <generalization
+            Id="cb44867b-4f5b-4a1f-9cb7-03b7ef82fc6d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c6fde28f-5a65-49c1-8a75-b3470cfa3993"
+              LastKnownName="LookupValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+          <generalization
+            Id="d48731a6-3080-4236-b6ab-e08fd6aca500"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f34e04c7-5304-4301-9a7d-5b4357c3a47b"
+              LastKnownName="GeometryValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f7c4ba31-db23-4e44-b305-a04c5a7a73d3"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7587a23a-35f7-4b0d-a901-f137388fc30f"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c64b1c1a-0fa6-4d54-9a0e-1a42102bb68e"
+                  name="destination"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="88f7da12-b08f-413e-a0fd-0ea5d44dd623"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4d6832b3-802d-4bc0-8526-8c2a1a584923"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f95ff2b5-956d-4116-9a2e-926e084411e1"
+        name="LookupValidtor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="80f8360c-5227-4aab-b192-94c6f197017e"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2a0cf3f7-e2fa-4ff5-9bba-b1cb30b41606"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b817c1be-598b-4c08-ae0d-fff3ee936835"
+        name="DataTypeValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="f6a687b6-218e-409b-9c25-751780f4bba6"
+            name="validate_data_type"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="403010e4-0e98-4f55-af06-a9e11b00805f"
+                  name="source_type"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="88caab56-9d74-4f5b-b364-75e330b39a36"
+                  name="desination_type"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07769d99-ba44-4dcc-9712-850a2a95a963"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="81523d2a-68d1-4828-9e2d-b4e82b724c2b"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0402f0ff-9a82-4054-97a3-10df876985cd"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="23d371d0-421b-4f8d-bdde-032f7898b56b"
+                  name="destination"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6d6f53eb-e7ed-4768-969b-30cac6c43d0e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="99a6d55d-b913-45e1-a29c-330327073ad3"
+            name="source_data_type"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4e0555b-a1d7-4865-af09-2481856a66de"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ba40176d-4478-4c14-946f-d24e6fa73595"
+                  direction="Return">
+                  <description>data_type</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="27b09c1a-6f8a-4309-925d-abe87e305068"
+            name="destination_data_type"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="074f0ddd-ce04-40c8-8568-c84d678f20ea"
+                  name="destination_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6fc7b9f4-d439-4413-a0b5-fb69d0b70be1"
+                  direction="Return">
+                  <description>data_type</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="66057b8a-16e6-44d1-942f-e3511a411ed1"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e29d45d9-4c07-49f8-be3b-e70768db5d30"
+        name="result" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+        name="dictionary" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="09bbb7c8-f061-4e4e-ac74-9a8953a1d5c6"
+        name="LengthValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="e0bc810e-878f-4f59-ad01-7ad6cdb421db"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="254ed499-de90-4fcb-9688-ee3f361b55e1"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e7644d2-4fd1-46a6-8d00-672ec9a6d14e"
+                  name="destination"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1e61a23-eb08-470e-bfca-53ad39960d28"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="76e5dcc9-7a2d-45ca-a993-bcdbf0c5364a"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c6fde28f-5a65-49c1-8a75-b3470cfa3993"
+        name="LookupValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="edecddce-6fa3-4ec9-93dc-8da8d183c94a"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="92fa79d4-39c0-4eab-8885-73812e0b15a6"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d3e12cb-9ca9-4d08-b99b-fddfd3d2b6e0"
+                  name="destination"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84313c59-ec4e-4ce7-b16d-3bce254b73fa"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="880cf9d5-8798-42f1-a54a-4b65e6028a2d"
+            name="cross_check_value"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec36293f-5caf-493c-9eed-68ecb18b487c"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dfc777ed-8cb0-4f18-98e8-4e8172494c56"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fe69c14a-7550-4afe-8ced-fb5a68a633e6"
+                  direction="Return">
+                  <description>result details</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="26cdb316-c462-48d0-b04f-f601b4d463dc"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4780ee47-0f5b-44aa-949e-4c2c52f68bc3"
+        name="ErrorAutoFixer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="0c63d085-6699-45ee-b03d-26ececb4bcb8"
+            name="convert_to_null"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e0333ecf-fa51-4d50-9b0f-8fe2db9471be"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d34f480a-3220-4cf9-a08c-91173f32a996"
+                  direction="Return">
+                  <description>result of the fix</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e5e4b1cb-b322-4457-9d72-29a887256b73"
+            name="fix_integer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4727b303-2ba5-4c63-9e43-28f36c9d0596"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3919249d-150b-49f7-8d0c-56ca4d01d8a0"
+                  direction="Return">
+                  <description>result of the fix</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f34e04c7-5304-4301-9a7d-5b4357c3a47b"
+        name="GeometryValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="86b84ec4-8f7c-4289-abe9-c8d5bc94ae9c"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8992a5d5-d386-41d9-b04d-dc4bac087299"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c4944ff0-1686-47bd-8e0b-622f36091746"
+                  name="desitnation"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7162ec06-f56f-4d3c-8dc2-70204603f523"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="612764c8-114c-43a6-92c1-2b719210b8c3"
+            name="validate_geometry_type"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b53a06a8-d657-4026-b4b8-540bee973bb6"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5cd4b0c4-af0e-4ac0-835e-7a324bc54264"
+                  name="destination_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c4943ee8-076b-451d-aa06-c12f8022920f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ffdefe53-81a6-4487-a22c-dbb94d89b3cd"
+            name="validate_projection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dac216e8-3f4d-402f-a98a-ba06d43a99de"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="91c2885e-021a-43d1-ad69-c906b095e948"
+                  name="destination_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1bfb5895-ad32-438a-b249-bc3a15fff37f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2dd1355f-52df-4b78-9501-57dd81916bf1"
+            name="validate_index_size"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="86127dc9-6e8d-4e13-aab2-2fa524b4b0fb"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="009e976f-9300-4eed-ad45-2405f8ea1606"
+                  name="destination_data"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cae79a14-c612-4d32-8290-3a94e1f2989a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="45da88cd-ccea-4240-b3e3-6f535fc5b71f"
+        name="RelatedTableValidator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="41f94dd1-ebb0-4933-a7d1-5303f26e94dc"
+            name="validate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc1d0191-cca2-460b-9651-ead1ffd873c6"
+                  name="source"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5829dbe0-584a-45ba-8dcd-55ef483c1687"
+                  name="destination"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e664c8f0-1b95-4d61-b217-b10ea5432949"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5b3f0771-8657-4e09-a20a-cdfeece57b22"
+            name="cross_check_value"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="727213c1-8093-4a16-aa07-ddee455d1a7f"
+                  name="source_data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84a5d790-536d-4a89-9846-934001b14c33"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="646a8a5d-a046-418f-a22c-ab036364e596"
+                  direction="Return">
+                  <description>result details</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bd359fa0-ff2e-40e6-8341-34676ba18bd5"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="89c1c648-5c54-4d0b-beae-d76cde455452"
+        name="DataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="30ef1bdc-3554-4a89-b2c7-28b8984e2311"
+        name="ColumnWidgetRegistry"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d4dbbc32-18c0-4ea2-8b20-8a1e6d2dfa42"
+        name="SourceValueTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="90421229-d77c-4d61-8c74-c6dd69c1ed3a"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="06274c4e-d8e1-4558-b824-b311e28aeced"
+            name="translate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5f9c5d02-02d1-416d-a251-14557a828ad6"
+        name="ValueTranslatorManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="550701b3-1f2e-48c8-ae3d-5b5ce669ff9d"
+            isDerived="false"
+            sourceEndRoleName="ValueTranslatorManager"
+            targetEndRoleName="SourceValueTranslator"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d4dbbc32-18c0-4ea2-8b20-8a1e6d2dfa42"
+              LastKnownName="SourceValueTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fe998291-ada7-4626-b31a-5ac120685bd9"
+                  name="ValueTranslatorManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3bb43692-8662-4468-a810-9e6fd6b5f470"
+                  name="SourceValueTranslator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d6463105-f334-4142-a5aa-23b178c31019"
+        name="RelatedTableTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6fab843f-28f6-434e-894a-a0734088a6cf"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d4dbbc32-18c0-4ea2-8b20-8a1e6d2dfa42"
+              LastKnownName="SourceValueTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="10532d68-97d5-44e8-a99c-ff7679478743"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="83190cf3-6d37-4843-98fd-d403739116e0"
+            name="translate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8b89f1c4-dea9-4f95-8ff8-070e28daafa1"
+        name="LookupValueTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="ad46f47f-b0ff-46ea-89c3-4cf5bf194ec6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d6463105-f334-4142-a5aa-23b178c31019"
+              LastKnownName="RelatedTableTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="af2896cd-7165-4add-ac8b-b9243b771ac1"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="15cf94d8-365e-4527-adb4-3f073ca8d511"
+            name="translate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="244f042b-f7f0-47df-b30a-d02d0fbe04f7"
+        name="SourceDocumentTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="bd707bc3-2aa7-44a9-9ced-40f8dbd4b055"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d4dbbc32-18c0-4ea2-8b20-8a1e6d2dfa42"
+              LastKnownName="SourceValueTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+        name="QgsGeometry" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -10,7 +10,129 @@
         name="TableImport"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="17be22cf-3851-46d1-8992-e4563c8f95c9">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="b3d09d2c-4f5f-416f-9897-1cb1b97d9316">
+            <classMoniker
+              Id="4780ee47-0f5b-44aa-949e-4c2c52f68bc3"
+              LastKnownName="ErrorAutoFixer"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="08fc6d8d-4973-454e-9b95-eafcee9074f7"
+            isDerived="false"
+            sourceEndRoleName="TableImport"
+            targetEndRoleName="ValueTranslatorManager"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5f9c5d02-02d1-416d-a251-14557a828ad6"
+              LastKnownName="ValueTranslatorManager"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bb767a8d-de71-4e1b-b29a-9378148ab7f5"
+                  name="TableImport"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="83307cd8-a2ac-4ffc-8d2b-979e187ca6a8"
+                  name="ValueTranslatorManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2a983c2d-3758-4304-8f49-ad10cc7aab3a"
+            name="SourceDetails"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                LastKnownName="dictionary"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="69c21b4e-4dcd-459f-96e4-d15b0616049e"
+            name="DestinationDetails"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                LastKnownName="dictionary"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0940162a-18b2-452f-87f8-5b73e3be6a32"
+            name="validate_all"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5120b7d1-115a-4f77-b141-4698c5f4c1a5"
+                  direction="Return">
+                  <description>validation result containing cell information</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
