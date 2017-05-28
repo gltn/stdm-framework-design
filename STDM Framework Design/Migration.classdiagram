@@ -1687,6 +1687,10 @@
             <classMoniker Id="a6b665a6-174b-4f6d-8db1-ce55dd32ffed" LastKnownName="RelatedTableTranslator" />
             <elementDefinition Id="ad46f47f-b0ff-46ea-89c3-4cf5bf194ec6" />
           </generalization>
+          <generalization Id="01b6018d-921e-4b75-929c-d1e681b111de" isSubstitutable="false">
+            <classMoniker Id="a7853696-d812-4942-975a-442ffd6c0297" LastKnownName="SourceValueTranslator" />
+            <elementDefinition Id="48286584-047b-4449-8479-a46de02cf841" />
+          </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
           <operation Id="8c07ea31-df8b-4181-8f82-ab3385fd1a1e" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">

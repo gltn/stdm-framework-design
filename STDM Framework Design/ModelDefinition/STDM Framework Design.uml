@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c"
   name="STDM Framework Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -67,6 +67,15 @@ approval.stc</body>
       Id="c196f198-7e64-4f1a-9113-46c602e249b4">
       <body>depends on GeometryValidation under mapping framework
 </body>
+    </comment>
+    <comment
+      Id="aa98989d-3cd4-4843-8497-3b1dc731b6c2">
+      <body>
+directly save to table</body>
+    </comment>
+    <comment
+      Id="d93c9fed-de29-4302-b1dd-3795dd9c5402">
+      <body>read in QGIS Authentication System </body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -5668,6 +5677,14 @@ approval.stc</body>
               LastKnownName="RelatedTableTranslator"
               LastKnownLocation="STDM Framework Design.uml" />
           </generalization>
+          <generalization
+            Id="48286584-047b-4449-8479-a46de02cf841"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d4dbbc32-18c0-4ea2-8b20-8a1e6d2dfa42"
+              LastKnownName="SourceValueTranslator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
           <operation
@@ -5712,6 +5729,777 @@ approval.stc</body>
       <undefinedType
         Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
         name="QgsGeometry" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="eddadac9-5daa-4c35-9864-36107429533a"
+        name="approval"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="0e789a83-6cd5-4654-a3a2-6ccbd5fa2eb2"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="832ee57e-f792-47dc-8361-29469ce10222"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="470a52e0-067a-4c56-af6c-b816a1cd2bf6"
+                  LastKnownName="CRUD Record"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="470a52e0-067a-4c56-af6c-b816a1cd2bf6"
+            name="CRUD Record"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="324a3483-10f2-48eb-bb79-a8c48dcbb59a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d32b1a3e-3e54-49af-ad2d-0b1df92b90d6"
+                  LastKnownName="read entity approval config"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="e17f52e2-1bd3-4a40-9775-91dcd0072d0a"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="52ac30ef-d0e8-4e9d-a032-cb1a72f7a532"
+                guard="Non-approval Entity"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d4137600-fcca-45ba-9d0f-e9f06f3ce0c2"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+                <description>Non-approved Entity</description>
+              </controlFlow>
+              <controlFlow
+                Id="568c1aca-e83e-4f6f-b30c-9a8fac73c265"
+                guard="Approval Entity"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="111981fd-0f92-4c48-aaa5-159aa9f93a8a"
+                  LastKnownName="Save to approval table of the entity "
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="d4137600-fcca-45ba-9d0f-e9f06f3ce0c2"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="d32b1a3e-3e54-49af-ad2d-0b1df92b90d6"
+            name="read entity approval config"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="28f9245b-c9c9-473b-aead-146e23474f26"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="e17f52e2-1bd3-4a40-9775-91dcd0072d0a"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="111981fd-0f92-4c48-aaa5-159aa9f93a8a"
+            name="Save to approval table of the entity "
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="70f4bcd6-910a-4e12-aa7b-038015a3ce74"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="40f1882b-60e0-44bc-9f2d-dfaaf177711c"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="66265bab-3209-4699-8056-e20ded554294"
+                  name="table, record, CRUD type and user"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="821a3017-8b70-4a03-b9ca-ef872f6a6fb7"
+                      guard="Using DB Triggers"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="fbc72118-aae1-4c92-80be-1d9a42bf54eb"
+                        LastKnownName="table, record, CRUD type, and user"
+                        LastKnownLocation="STDM Framework Design.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="5087c8e6-99cd-4a86-89ea-d8bdb319b745"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <activityFinalNode
+            Id="40f1882b-60e0-44bc-9f2d-dfaaf177711c"
+            name="ActivityFinal2"
+            isLeaf="false" />
+          <forkNode
+            Id="f76ca7d1-69d8-44dc-b288-38e3c0d70e85"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="041b12a7-a58c-4855-b6a8-7d31ebc7544e"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="62fe32b1-07f9-46c2-8101-ac4d937d06ee"
+                  LastKnownName="email"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="78f0a187-501c-4100-aa3c-00b88d64de9a"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="76e0f193-2730-4bd4-a6af-5d464468be3b"
+                  LastKnownName="SMS"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1670c61a-8435-4793-97ca-6eb770c726b9"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="8f973a3c-858d-418a-8fc0-a2eadda788f9"
+                  LastKnownName="STDM modules alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <sendSignalAction
+            Id="62fe32b1-07f9-46c2-8101-ac4d937d06ee"
+            name="email"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c979b13a-ea0d-4e01-8e58-a122b0e76782"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="8484126c-bb0f-42c8-994f-44e2a69269fe"
+                  LastKnownName="Receive email alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="76e0f193-2730-4bd4-a6af-5d464468be3b"
+            name="SMS"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e1fe7e30-99a6-4587-a56b-da885472ad9b"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="af0ff21f-04f4-4a00-9971-aa8170c958d7"
+                  LastKnownName="Receive sms alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="8f973a3c-858d-418a-8fc0-a2eadda788f9"
+            name="STDM modules alert"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="16aa62df-4bb1-401b-b6da-d276406e11bc"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="93bb2eee-e86b-4c5c-bf2f-6ae240165264"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="a9efd9ab-0a84-4b2b-a271-1810c77b3e07"
+            name="Notify approvers"
+            isLeaf="false">
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin
+                  Id="fbc72118-aae1-4c92-80be-1d9a42bf54eb"
+                  name="table, record, CRUD type, and user"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="21812ddb-1fbb-4dc9-a309-4ed4912accd9"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <decisionNode
+            Id="93bb2eee-e86b-4c5c-bf2f-6ae240165264"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="929211f7-46a9-4610-ab4a-dc0ac1fb5641"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="5a3be9e5-db5e-4ea8-9135-0ebf1253bb66"
+                  LastKnownName="Auto refresh module"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c96d2925-1472-483b-8278-57573fcefc70"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="fa9cd783-4eea-40fd-86aa-a0afec5f4a46"
+                  LastKnownName="Request for refresh"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <acceptEventAction
+            Id="5a3be9e5-db5e-4ea8-9135-0ebf1253bb66"
+            name="Auto refresh module"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a8c5bc5a-b940-4180-8f04-f69f03dd0f37"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="a8a2f8cf-c433-4005-a097-83d72a59f1db"
+                  LastKnownName="ActivityFinal5"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="fa9cd783-4eea-40fd-86aa-a0afec5f4a46"
+            name="Request for refresh"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d326f9ca-3e94-48a9-a019-3b954995b46a"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="e736ce3d-c80d-4c76-9284-d9ea028e88b1"
+                  LastKnownName="ActivityFinal6"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="8484126c-bb0f-42c8-994f-44e2a69269fe"
+            name="Receive email alert"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac648527-f361-4eb5-b3f6-607254b60706"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="2ecdbaaf-3e3d-4932-9bba-4d74d8ecb30f"
+                  LastKnownName="ActivityFinal3"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="af0ff21f-04f4-4a00-9971-aa8170c958d7"
+            name="Receive sms alert"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9fa08381-ef82-4d5d-83b1-e354eaba23a6"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="eaff0dba-bc64-49ca-808a-dad3c5ad610b"
+                  LastKnownName="ActivityFinal4"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <activityFinalNode
+            Id="2ecdbaaf-3e3d-4932-9bba-4d74d8ecb30f"
+            name="ActivityFinal3"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="eaff0dba-bc64-49ca-808a-dad3c5ad610b"
+            name="ActivityFinal4"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="a8a2f8cf-c433-4005-a097-83d72a59f1db"
+            name="ActivityFinal5"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="e736ce3d-c80d-4c76-9284-d9ea028e88b1"
+            name="ActivityFinal6"
+            isLeaf="false" />
+          <initialNode
+            Id="182f7900-1d51-46f8-a551-bd79ddfa19cf"
+            name="Initial2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="746903c1-0600-4fba-a0e8-8bf77e266df0"
+                guard="New record in entity approval table"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="0149d41e-bb5e-4371-82e9-2327b70ff981"
+                  LastKnownName="decision"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <sendSignalAction
+            Id="0149d41e-bb5e-4371-82e9-2327b70ff981"
+            name="decision"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="af50b361-fffa-41f5-aef9-c882ddb047d3"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="8123e980-1984-4fa4-aa41-273a1f01a73b"
+                  LastKnownName="Approve"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2a7cf22b-fd01-4521-bfc2-ad19185443c1"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="57731cba-2409-430a-9d51-78137523b547"
+                  LastKnownName="Disapprove"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="8123e980-1984-4fa4-aa41-273a1f01a73b"
+            name="Approve"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4665e04d-ebea-4181-a138-606fcbbbd39e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8c87ac1b-56ed-4021-8d09-96275ffa22b5"
+                  LastKnownName="Check approval count"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="57731cba-2409-430a-9d51-78137523b547"
+            name="Disapprove"
+            isLeaf="false"
+            isUnmarshall="false">
+            <pins>
+              <acceptEventActionHasResults>
+                <outputPin
+                  Id="423a7707-78fd-42d0-889e-cb0d024c2648"
+                  name="Reason for disapproval"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="6a5f6d25-6e04-472b-bc62-ae84476579da"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <joinNodeMoniker
+                        Id="7e1240ef-d84c-4ad9-a932-01cba67090bc"
+                        LastKnownName="Join1"
+                        LastKnownLocation="STDM Framework Design.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="b72bbbe7-53a9-4704-a9e5-4b49d8cd5392"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </acceptEventActionHasResults>
+            </pins>
+          </acceptEventAction>
+          <forkNode
+            Id="d0388409-5ae5-43eb-89c9-361d6e75f245"
+            name="Fork11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6a79e90d-f1f8-4af6-9628-689ca97a53b2"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="930e6ed9-f787-4149-b303-ba20d30da74b"
+                  LastKnownName="email"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="7c7dba8f-a57f-428e-86cf-42e7da6d7b25"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="797eb61e-df7e-4b79-9a57-07608072283c"
+                  LastKnownName="SMS"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="07eec83b-acdf-4201-a858-4788007a2e41"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="2151b075-c170-4fb7-b1b6-2db0d4f615d1"
+                  LastKnownName="STDM modules alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <sendSignalAction
+            Id="930e6ed9-f787-4149-b303-ba20d30da74b"
+            name="email"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ee446b84-2512-49b4-8b38-4bcb295b33b3"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="e2e3cabf-adb4-41f8-97be-3a182223fb54"
+                  LastKnownName="Receive email alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="797eb61e-df7e-4b79-9a57-07608072283c"
+            name="SMS"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="81436b3b-536f-4a49-afb6-7210fd8cb042"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="0de9db13-bf4e-4d2e-a8ea-99bff84eda84"
+                  LastKnownName="Receive sms alert"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="2151b075-c170-4fb7-b1b6-2db0d4f615d1"
+            name="STDM modules alert"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="98643fe0-7498-4f54-8b3b-8a88aa277856"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="3587d6ac-5dbe-4d40-a0fc-c06d477a7960"
+                  LastKnownName="Decision21"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="51c6330c-810b-4a17-9129-90d6932e2e96"
+            name="Notify editor"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0a43e11c-1f92-4f45-a149-6b44ffe19cde"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="d0388409-5ae5-43eb-89c9-361d6e75f245"
+                  LastKnownName="Fork11"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin
+                  Id="11e953e4-d76c-4ee7-b8ad-81c1acb8571e"
+                  name="approval message"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="843ca8bd-bea8-4ab7-a40a-c1ca83370bf8"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <decisionNode
+            Id="3587d6ac-5dbe-4d40-a0fc-c06d477a7960"
+            name="Decision21"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9ec01eff-7955-49f1-9b66-f446b43133cb"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="b5c5b564-adb4-46e2-a06a-0ce13c1aec5b"
+                  LastKnownName="Auto refresh module"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5a1a29b6-89df-41f6-a5a1-78c736b85b00"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="e56c3223-1e6f-48bb-a87a-b5f6b09d96fd"
+                  LastKnownName="Request for refresh"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <acceptEventAction
+            Id="b5c5b564-adb4-46e2-a06a-0ce13c1aec5b"
+            name="Auto refresh module"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c6b61b22-b38f-4731-a205-1e900ea00b2d"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="fce8084b-d474-4a5e-b78f-2bc074962da8"
+                  LastKnownName="ActivityFinal51"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="e56c3223-1e6f-48bb-a87a-b5f6b09d96fd"
+            name="Request for refresh"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="220c88c7-7d26-4863-a236-6eadd5c49256"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="14aa771f-f110-4ebd-9c93-57ab7486cab6"
+                  LastKnownName="ActivityFinal61"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="e2e3cabf-adb4-41f8-97be-3a182223fb54"
+            name="Receive email alert"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2553ff67-91aa-49e0-a757-5c62b4509566"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f2bb7e5a-20b0-4d96-b1b7-579e467652b8"
+                  LastKnownName="ActivityFinal31"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="0de9db13-bf4e-4d2e-a8ea-99bff84eda84"
+            name="Receive sms alert"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6224427c-3a32-4acc-90ff-8da4c12a9b6b"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="0775aa0c-3252-4f32-989d-b1d422915e04"
+                  LastKnownName="ActivityFinal41"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <activityFinalNode
+            Id="f2bb7e5a-20b0-4d96-b1b7-579e467652b8"
+            name="ActivityFinal31"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="0775aa0c-3252-4f32-989d-b1d422915e04"
+            name="ActivityFinal41"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="fce8084b-d474-4a5e-b78f-2bc074962da8"
+            name="ActivityFinal51"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="14aa771f-f110-4ebd-9c93-57ab7486cab6"
+            name="ActivityFinal61"
+            isLeaf="false" />
+          <joinNode
+            Id="7e1240ef-d84c-4ad9-a932-01cba67090bc"
+            name="Join1"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="929af56d-0317-4ce8-a489-5519fb3a47cb"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="11e953e4-d76c-4ee7-b8ad-81c1acb8571e"
+                  LastKnownName="approval message"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </joinNode>
+          <opaqueAction
+            Id="8c87ac1b-56ed-4021-8d09-96275ffa22b5"
+            name="Check approval count"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9f892392-bb65-4b9a-bf7a-eb93eab8ffda"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="5821fb6d-4e87-4155-9a85-8356d8ca6614"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="5821fb6d-4e87-4155-9a85-8356d8ca6614"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="26fce8f9-9028-445a-bc8c-7f002639cf8d"
+                guard="Approved by all approvers"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="da6137d8-646b-458a-b4d4-3200e6c8b7a7"
+                  LastKnownName="Move to original entity"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="feb08594-ef87-4625-8605-b4d2096c1052"
+                guard="Not approved by all approvers"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="babd56d3-55c9-450e-a20e-dc46dbf95391"
+                  LastKnownName="Update approval count"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="da6137d8-646b-458a-b4d4-3200e6c8b7a7"
+            name="Move to original entity"
+            isLeaf="false">
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="0db3d198-9ece-495d-9697-ec3005fb790a"
+                  name="approver detail fully approved comfirmation"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="9387cf54-4c9e-428b-b6c1-007612b57743"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <joinNodeMoniker
+                        Id="7e1240ef-d84c-4ad9-a932-01cba67090bc"
+                        LastKnownName="Join1"
+                        LastKnownLocation="STDM Framework Design.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="ef5fc277-d5ef-48bd-a677-294597840b08"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction
+            Id="babd56d3-55c9-450e-a20e-dc46dbf95391"
+            name="Update approval count"
+            isLeaf="false">
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="7523a993-93ad-4853-b713-810e3c65bdc8"
+                  name="approver detail and approval remaining"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="cf68a1e5-f7d0-4874-8c8b-29f0d1f69c43"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <joinNodeMoniker
+                        Id="7e1240ef-d84c-4ad9-a932-01cba67090bc"
+                        LastKnownName="Join1"
+                        LastKnownLocation="STDM Framework Design.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="30398328-b924-4564-8d42-04655a10b801"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

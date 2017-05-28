@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e33d41e6-9dda-4586-8dd7-fe1ee0e49292" name="approval" linkedPackageId="f873ded7-ea03-4ca1-9735-36ab282c65ff" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="054d9fb8-b8ee-4364-8c38-6e8775455813">
+      <elementDefinition Id="aa98989d-3cd4-4843-8497-3b1dc731b6c2" />
+      <body>
+directly save to table</body>
+    </comment>
+    <comment Id="023d2f4c-19c2-44d7-92a7-096cc6c86527">
+      <elementDefinition Id="d93c9fed-de29-4302-b1dd-3795dd9c5402" />
+      <body>read in QGIS Authentication System </body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="7320b464-53e5-4d77-9c32-1cf53cd585e9">
+      <profileInstance Id="880ae816-2886-40b1-9ace-3a4732504ba0" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="49cdc7d7-d8e6-4b31-ba41-6278a40f4ad4">
+      <profileInstance Id="0ba3f6b6-9633-45aa-ba73-43eb2b4dac38" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="4d100297-e554-40e9-85f1-9ce826e950ae" name="approval" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="eddadac9-5daa-4c35-9864-36107429533a" />
+        <nodes>
+          <initialNode Id="e98d0313-5b0b-4f60-80b4-94adb67695b0" name="Initial1" isLeaf="false">
+            <elementDefinition Id="0e789a83-6cd5-4654-a3a2-6ccbd5fa2eb2" />
+            <flowNodeTargets>
+              <controlFlow Id="198e2b02-7ec9-4d26-854f-de7a4441983e" isLeaf="false">
+                <opaqueActionMoniker Id="18e556d6-97f9-4f2c-8777-dde1ae4ed20e" LastKnownName="CRUD Record" />
+                <elementDefinition Id="832ee57e-f792-47dc-8361-29469ce10222" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="18e556d6-97f9-4f2c-8777-dde1ae4ed20e" name="CRUD Record" isLeaf="false">
+            <elementDefinition Id="470a52e0-067a-4c56-af6c-b816a1cd2bf6" />
+            <flowNodeTargets>
+              <controlFlow Id="0c7a7a12-6d69-44f8-b2c5-222aae4655e8" isLeaf="false">
+                <opaqueActionMoniker Id="1c38142c-e352-4ac6-9848-9b794c80af05" LastKnownName="read entity approval config" />
+                <elementDefinition Id="324a3483-10f2-48eb-bb79-a8c48dcbb59a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="33331eb8-c6e7-4a9e-9013-95ddeab90b3e" name="Decision1" isLeaf="false">
+            <elementDefinition Id="e17f52e2-1bd3-4a40-9775-91dcd0072d0a" />
+            <flowNodeTargets>
+              <controlFlow Id="891d99c3-52f1-466b-8e8d-a2bc92a31d2a" guard="Non-approval Entity" isLeaf="false">
+                <activityFinalNodeMoniker Id="1f9e9258-ea56-46f6-8533-37cce5056c2d" LastKnownName="ActivityFinal1" />
+                <description>Non-approved Entity</description>
+                <elementDefinition Id="52ac30ef-d0e8-4e9d-a032-cb1a72f7a532" />
+              </controlFlow>
+              <controlFlow Id="5d5b2ee2-ce4a-433a-a2d3-2123da573386" guard="Approval Entity" isLeaf="false">
+                <opaqueActionMoniker Id="938066ee-e409-4a31-bc18-1cd049aa67f0" LastKnownName="Save to approval table of the entity " />
+                <elementDefinition Id="568c1aca-e83e-4f6f-b30c-9a8fac73c265" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="1f9e9258-ea56-46f6-8533-37cce5056c2d" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="d4137600-fcca-45ba-9d0f-e9f06f3ce0c2" />
+          </activityFinalNode>
+          <opaqueAction Id="1c38142c-e352-4ac6-9848-9b794c80af05" name="read entity approval config" isLeaf="false">
+            <elementDefinition Id="d32b1a3e-3e54-49af-ad2d-0b1df92b90d6" />
+            <flowNodeTargets>
+              <controlFlow Id="755ee4de-1994-4d57-8bc4-0361605e52b9" isLeaf="false">
+                <decisionNodeMoniker Id="33331eb8-c6e7-4a9e-9013-95ddeab90b3e" LastKnownName="Decision1" />
+                <elementDefinition Id="28f9245b-c9c9-473b-aead-146e23474f26" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="938066ee-e409-4a31-bc18-1cd049aa67f0" name="Save to approval table of the entity " isLeaf="false">
+            <elementDefinition Id="111981fd-0f92-4c48-aaa5-159aa9f93a8a" />
+            <flowNodeTargets>
+              <controlFlow Id="2d18f981-0e8f-47d8-a727-a933d3338467" isLeaf="false">
+                <activityFinalNodeMoniker Id="f9e387c6-032d-44e4-b88f-26bae4ce1d41" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="70f4bcd6-910a-4e12-aa7b-038015a3ce74" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="396d0d46-83fc-4f3a-8ba2-06d66b540a74" name="table, record, CRUD type and user" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="66265bab-3209-4699-8056-e20ded554294" />
+                  <objectFlowTargets>
+                    <objectFlow Id="d419e296-01d2-420c-aca1-1ba78392d1e0" guard="Using DB Triggers" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <inputPinMoniker Id="9d0e1155-2d63-4edd-92bd-d6e648c6fac3" LastKnownName="table, record, CRUD type, and user" />
+                      <elementDefinition Id="821a3017-8b70-4a03-b9ca-ef872f6a6fb7" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="b0628cd2-ae85-4386-b810-407317f3e682" name="2147483647" value="2147483647">
+                      <elementDefinition Id="5087c8e6-99cd-4a86-89ea-d8bdb319b745" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <activityFinalNode Id="f9e387c6-032d-44e4-b88f-26bae4ce1d41" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="40f1882b-60e0-44bc-9f2d-dfaaf177711c" />
+          </activityFinalNode>
+          <forkNode Id="092ec34a-93ad-4315-86fa-97d599dbcf44" name="Fork1" isLeaf="false">
+            <elementDefinition Id="f76ca7d1-69d8-44dc-b288-38e3c0d70e85" />
+            <flowNodeTargets>
+              <controlFlow Id="28bba4ba-4332-405b-b3f8-8c104454d0fb" isLeaf="false">
+                <sendSignalActionMoniker Id="7e69c5d0-1e15-4915-adcd-26a242aca056" LastKnownName="email" />
+                <elementDefinition Id="041b12a7-a58c-4855-b6a8-7d31ebc7544e" />
+              </controlFlow>
+              <controlFlow Id="de1d8cbd-9360-4ad4-87d9-8426846a381a" isLeaf="false">
+                <sendSignalActionMoniker Id="fe75bd13-082d-464c-967e-11d197512888" LastKnownName="SMS" />
+                <elementDefinition Id="78f0a187-501c-4100-aa3c-00b88d64de9a" />
+              </controlFlow>
+              <controlFlow Id="9625d049-bbe4-40ad-841a-30a025671acb" isLeaf="false">
+                <sendSignalActionMoniker Id="8adaa09f-a8f5-4b00-ba1b-8f6d83230842" LastKnownName="STDM modules alert" />
+                <elementDefinition Id="1670c61a-8435-4793-97ca-6eb770c726b9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <sendSignalAction Id="7e69c5d0-1e15-4915-adcd-26a242aca056" name="email" isLeaf="false">
+            <elementDefinition Id="62fe32b1-07f9-46c2-8101-ac4d937d06ee" />
+            <flowNodeTargets>
+              <controlFlow Id="0169b14e-00f7-4f94-99dd-2efb2540c129" isLeaf="false">
+                <acceptEventActionMoniker Id="1ca3a6be-3ec7-42a2-b94b-4aa8f78b0ab9" LastKnownName="Receive email alert" />
+                <elementDefinition Id="c979b13a-ea0d-4e01-8e58-a122b0e76782" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction Id="fe75bd13-082d-464c-967e-11d197512888" name="SMS" isLeaf="false">
+            <elementDefinition Id="76e0f193-2730-4bd4-a6af-5d464468be3b" />
+            <flowNodeTargets>
+              <controlFlow Id="db540f26-a1e2-4df0-93c8-278eefbb4f2e" isLeaf="false">
+                <acceptEventActionMoniker Id="109d9896-1c00-4216-b7cc-0e1d1fee846b" LastKnownName="Receive sms alert" />
+                <elementDefinition Id="e1fe7e30-99a6-4587-a56b-da885472ad9b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction Id="8adaa09f-a8f5-4b00-ba1b-8f6d83230842" name="STDM modules alert" isLeaf="false">
+            <elementDefinition Id="8f973a3c-858d-418a-8fc0-a2eadda788f9" />
+            <flowNodeTargets>
+              <controlFlow Id="7b1f6efb-71dd-449c-9396-262d92c8e8fe" isLeaf="false">
+                <decisionNodeMoniker Id="b9a50c47-e1e0-4160-9778-55e32c9900d1" LastKnownName="Decision2" />
+                <elementDefinition Id="16aa62df-4bb1-401b-b6da-d276406e11bc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction Id="fe60cfd6-b704-4ab4-8079-758aebb9bc00" name="Notify approvers" isLeaf="false">
+            <elementDefinition Id="a9efd9ab-0a84-4b2b-a271-1810c77b3e07" />
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="9d0e1155-2d63-4edd-92bd-d6e648c6fac3" name="table, record, CRUD type, and user" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="fbc72118-aae1-4c92-80be-1d9a42bf54eb" />
+                  <upperBound>
+                    <literalInteger Id="ca5022e8-4dd5-4755-b5d9-99e1e82f8eaf" name="2147483647" value="2147483647">
+                      <elementDefinition Id="21812ddb-1fbb-4dc9-a309-4ed4912accd9" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <decisionNode Id="b9a50c47-e1e0-4160-9778-55e32c9900d1" name="Decision2" isLeaf="false">
+            <elementDefinition Id="93bb2eee-e86b-4c5c-bf2f-6ae240165264" />
+            <flowNodeTargets>
+              <controlFlow Id="fa7ab1b9-af99-4e93-84f3-3f321e8a7aaa" isLeaf="false">
+                <acceptEventActionMoniker Id="04da6d96-c10e-4174-b443-867fff3b1a64" LastKnownName="Auto refresh module" />
+                <elementDefinition Id="929211f7-46a9-4610-ab4a-dc0ac1fb5641" />
+              </controlFlow>
+              <controlFlow Id="d46ca675-e9af-425d-b5e0-b529838e3ae8" isLeaf="false">
+                <acceptEventActionMoniker Id="6c5a9c8c-31b2-499e-a4da-77db0a2b315c" LastKnownName="Request for refresh" />
+                <elementDefinition Id="c96d2925-1472-483b-8278-57573fcefc70" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <acceptEventAction Id="04da6d96-c10e-4174-b443-867fff3b1a64" name="Auto refresh module" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="5a3be9e5-db5e-4ea8-9135-0ebf1253bb66" />
+            <flowNodeTargets>
+              <controlFlow Id="771cba69-12f9-428f-bdb5-e47edd8df986" isLeaf="false">
+                <activityFinalNodeMoniker Id="84c75841-8683-426d-a7ed-b22a4de04a27" LastKnownName="ActivityFinal5" />
+                <elementDefinition Id="a8c5bc5a-b940-4180-8f04-f69f03dd0f37" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="6c5a9c8c-31b2-499e-a4da-77db0a2b315c" name="Request for refresh" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="fa9cd783-4eea-40fd-86aa-a0afec5f4a46" />
+            <flowNodeTargets>
+              <controlFlow Id="b4ed0ef7-313f-4a48-b405-01355d491a8f" isLeaf="false">
+                <activityFinalNodeMoniker Id="15d22fa1-75eb-4518-8a64-986b9c79355a" LastKnownName="ActivityFinal6" />
+                <elementDefinition Id="d326f9ca-3e94-48a9-a019-3b954995b46a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="1ca3a6be-3ec7-42a2-b94b-4aa8f78b0ab9" name="Receive email alert" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="8484126c-bb0f-42c8-994f-44e2a69269fe" />
+            <flowNodeTargets>
+              <controlFlow Id="549fd322-0b6b-4758-9e6a-46860f0a767f" isLeaf="false">
+                <activityFinalNodeMoniker Id="b9a31409-140a-41a2-9037-904d90c3d362" LastKnownName="ActivityFinal3" />
+                <elementDefinition Id="ac648527-f361-4eb5-b3f6-607254b60706" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="109d9896-1c00-4216-b7cc-0e1d1fee846b" name="Receive sms alert" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="af0ff21f-04f4-4a00-9971-aa8170c958d7" />
+            <flowNodeTargets>
+              <controlFlow Id="ebf6b196-f8fd-4779-8b92-73d88f1cc6c7" isLeaf="false">
+                <activityFinalNodeMoniker Id="c8924d29-c3b5-414a-9b2f-543e873581c0" LastKnownName="ActivityFinal4" />
+                <elementDefinition Id="9fa08381-ef82-4d5d-83b1-e354eaba23a6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <activityFinalNode Id="b9a31409-140a-41a2-9037-904d90c3d362" name="ActivityFinal3" isLeaf="false">
+            <elementDefinition Id="2ecdbaaf-3e3d-4932-9bba-4d74d8ecb30f" />
+          </activityFinalNode>
+          <activityFinalNode Id="c8924d29-c3b5-414a-9b2f-543e873581c0" name="ActivityFinal4" isLeaf="false">
+            <elementDefinition Id="eaff0dba-bc64-49ca-808a-dad3c5ad610b" />
+          </activityFinalNode>
+          <activityFinalNode Id="84c75841-8683-426d-a7ed-b22a4de04a27" name="ActivityFinal5" isLeaf="false">
+            <elementDefinition Id="a8a2f8cf-c433-4005-a097-83d72a59f1db" />
+          </activityFinalNode>
+          <activityFinalNode Id="15d22fa1-75eb-4518-8a64-986b9c79355a" name="ActivityFinal6" isLeaf="false">
+            <elementDefinition Id="e736ce3d-c80d-4c76-9284-d9ea028e88b1" />
+          </activityFinalNode>
+          <initialNode Id="741275d9-5cc7-4ee6-b479-9ace0daeeae5" name="Initial2" isLeaf="false">
+            <elementDefinition Id="182f7900-1d51-46f8-a551-bd79ddfa19cf" />
+            <flowNodeTargets>
+              <controlFlow Id="c3cc188d-f311-4d23-b571-5ab28804ea41" guard="New record in entity approval table" isLeaf="false">
+                <sendSignalActionMoniker Id="32f48bee-a1ae-43d3-bb85-5a882a73e648" LastKnownName="decision" />
+                <elementDefinition Id="746903c1-0600-4fba-a0e8-8bf77e266df0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <sendSignalAction Id="32f48bee-a1ae-43d3-bb85-5a882a73e648" name="decision" isLeaf="false">
+            <elementDefinition Id="0149d41e-bb5e-4371-82e9-2327b70ff981" />
+            <flowNodeTargets>
+              <controlFlow Id="c2c0c1bd-12c5-4fff-8305-dacd39d6b99a" isLeaf="false">
+                <acceptEventActionMoniker Id="17d2b9b4-0116-40cb-b630-d92315c4e7b6" LastKnownName="Approve" />
+                <elementDefinition Id="af50b361-fffa-41f5-aef9-c882ddb047d3" />
+              </controlFlow>
+              <controlFlow Id="c54b1863-c757-4800-b458-09787e526990" isLeaf="false">
+                <acceptEventActionMoniker Id="5fe30e08-e849-4ea9-b963-c923db363610" LastKnownName="Disapprove" />
+                <elementDefinition Id="2a7cf22b-fd01-4521-bfc2-ad19185443c1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction Id="17d2b9b4-0116-40cb-b630-d92315c4e7b6" name="Approve" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="8123e980-1984-4fa4-aa41-273a1f01a73b" />
+            <flowNodeTargets>
+              <controlFlow Id="22d4342e-02a6-43db-b1f7-0ed5e66f7712" isLeaf="false">
+                <opaqueActionMoniker Id="f7b4473b-582f-44dd-a57f-8b7774b597d4" LastKnownName="Check approval count" />
+                <elementDefinition Id="4665e04d-ebea-4181-a138-606fcbbbd39e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="5fe30e08-e849-4ea9-b963-c923db363610" name="Disapprove" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="57731cba-2409-430a-9d51-78137523b547" />
+            <pins>
+              <acceptEventActionHasResults>
+                <outputPin Id="3d2164da-c259-47be-a945-560e2e384b2e" name="Reason for disapproval" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="423a7707-78fd-42d0-889e-cb0d024c2648" />
+                  <objectFlowTargets>
+                    <objectFlow Id="bbaa0cdc-7270-4081-92ed-40e99588b61b" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <joinNodeMoniker Id="90944dbc-cd64-4f30-92a8-b46ba0c086be" LastKnownName="Join1" />
+                      <elementDefinition Id="6a5f6d25-6e04-472b-bc62-ae84476579da" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="ebaa1bc1-8a0f-4b54-be82-1b983f4a0d98" name="2147483647" value="2147483647">
+                      <elementDefinition Id="b72bbbe7-53a9-4704-a9e5-4b49d8cd5392" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </acceptEventActionHasResults>
+            </pins>
+          </acceptEventAction>
+          <forkNode Id="0dd4252f-62e0-4e57-bbec-38be939868e1" name="Fork11" isLeaf="false">
+            <elementDefinition Id="d0388409-5ae5-43eb-89c9-361d6e75f245" />
+            <flowNodeTargets>
+              <controlFlow Id="51f70cf5-c89c-4733-9898-11272beb1dbb" isLeaf="false">
+                <sendSignalActionMoniker Id="f06768aa-bdf9-43b5-841c-4773a94814e0" LastKnownName="email" />
+                <elementDefinition Id="6a79e90d-f1f8-4af6-9628-689ca97a53b2" />
+              </controlFlow>
+              <controlFlow Id="ee882f47-496e-4904-9f66-066a4b003999" isLeaf="false">
+                <sendSignalActionMoniker Id="0b679105-f141-4a72-b823-0403104ef863" LastKnownName="SMS" />
+                <elementDefinition Id="7c7dba8f-a57f-428e-86cf-42e7da6d7b25" />
+              </controlFlow>
+              <controlFlow Id="b4bd995d-a48c-4b4f-944b-7db30c6eb6ac" isLeaf="false">
+                <sendSignalActionMoniker Id="172cc3a0-6ff0-4b31-b583-4a751fb37824" LastKnownName="STDM modules alert" />
+                <elementDefinition Id="07eec83b-acdf-4201-a858-4788007a2e41" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <sendSignalAction Id="f06768aa-bdf9-43b5-841c-4773a94814e0" name="email" isLeaf="false">
+            <elementDefinition Id="930e6ed9-f787-4149-b303-ba20d30da74b" />
+            <flowNodeTargets>
+              <controlFlow Id="e2346928-9d74-4c89-83f7-4939c4fa1a55" isLeaf="false">
+                <acceptEventActionMoniker Id="43899121-e485-45e2-8997-5ec5d097b0dd" LastKnownName="Receive email alert" />
+                <elementDefinition Id="ee446b84-2512-49b4-8b38-4bcb295b33b3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction Id="0b679105-f141-4a72-b823-0403104ef863" name="SMS" isLeaf="false">
+            <elementDefinition Id="797eb61e-df7e-4b79-9a57-07608072283c" />
+            <flowNodeTargets>
+              <controlFlow Id="b6548700-bf07-436c-9993-1d560ac21733" isLeaf="false">
+                <acceptEventActionMoniker Id="8fbc90a6-155e-4b1e-aa60-84b074627257" LastKnownName="Receive sms alert" />
+                <elementDefinition Id="81436b3b-536f-4a49-afb6-7210fd8cb042" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction Id="172cc3a0-6ff0-4b31-b583-4a751fb37824" name="STDM modules alert" isLeaf="false">
+            <elementDefinition Id="2151b075-c170-4fb7-b1b6-2db0d4f615d1" />
+            <flowNodeTargets>
+              <controlFlow Id="68e3df6f-d6c1-4fc6-996a-d1d671a273e3" isLeaf="false">
+                <decisionNodeMoniker Id="d1eae3e5-ed3c-4c26-895a-6a33c0845b6c" LastKnownName="Decision21" />
+                <elementDefinition Id="98643fe0-7498-4f54-8b3b-8a88aa277856" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction Id="7d1d4661-a79a-4bf7-b675-65f295e51e19" name="Notify editor" isLeaf="false">
+            <elementDefinition Id="51c6330c-810b-4a17-9129-90d6932e2e96" />
+            <flowNodeTargets>
+              <controlFlow Id="88a2d74f-15ec-433c-b99a-2aa93c05fec6" isLeaf="false">
+                <forkNodeMoniker Id="0dd4252f-62e0-4e57-bbec-38be939868e1" LastKnownName="Fork11" />
+                <elementDefinition Id="0a43e11c-1f92-4f45-a149-6b44ffe19cde" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="45aa44d3-076a-43dd-b412-6c939717a769" name="approval message" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="11e953e4-d76c-4ee7-b8ad-81c1acb8571e" />
+                  <upperBound>
+                    <literalInteger Id="335a4956-8b5e-4d31-96a9-4fda5d09a282" name="2147483647" value="2147483647">
+                      <elementDefinition Id="843ca8bd-bea8-4ab7-a40a-c1ca83370bf8" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <decisionNode Id="d1eae3e5-ed3c-4c26-895a-6a33c0845b6c" name="Decision21" isLeaf="false">
+            <elementDefinition Id="3587d6ac-5dbe-4d40-a0fc-c06d477a7960" />
+            <flowNodeTargets>
+              <controlFlow Id="32846948-29fc-490a-b4ae-3e5e37d77dc5" isLeaf="false">
+                <acceptEventActionMoniker Id="e3575584-d023-478b-a473-f33f02cae8e1" LastKnownName="Auto refresh module" />
+                <elementDefinition Id="9ec01eff-7955-49f1-9b66-f446b43133cb" />
+              </controlFlow>
+              <controlFlow Id="7b868e23-a394-44b2-92cc-c0fcc34df840" isLeaf="false">
+                <acceptEventActionMoniker Id="0034bf7b-2f04-41c2-b8bf-5f79df94c893" LastKnownName="Request for refresh" />
+                <elementDefinition Id="5a1a29b6-89df-41f6-a5a1-78c736b85b00" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <acceptEventAction Id="e3575584-d023-478b-a473-f33f02cae8e1" name="Auto refresh module" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="b5c5b564-adb4-46e2-a06a-0ce13c1aec5b" />
+            <flowNodeTargets>
+              <controlFlow Id="bb66ee91-07c5-4206-ad6e-19f415d4b728" isLeaf="false">
+                <activityFinalNodeMoniker Id="d02e0d93-c0d6-4293-8be2-8e3438a1713a" LastKnownName="ActivityFinal51" />
+                <elementDefinition Id="c6b61b22-b38f-4731-a205-1e900ea00b2d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="0034bf7b-2f04-41c2-b8bf-5f79df94c893" name="Request for refresh" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="e56c3223-1e6f-48bb-a87a-b5f6b09d96fd" />
+            <flowNodeTargets>
+              <controlFlow Id="e9d07999-fc55-4ad5-aca3-697b484360ff" isLeaf="false">
+                <activityFinalNodeMoniker Id="141be70e-d712-4c68-baeb-81c959e926fd" LastKnownName="ActivityFinal61" />
+                <elementDefinition Id="220c88c7-7d26-4863-a236-6eadd5c49256" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="43899121-e485-45e2-8997-5ec5d097b0dd" name="Receive email alert" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="e2e3cabf-adb4-41f8-97be-3a182223fb54" />
+            <flowNodeTargets>
+              <controlFlow Id="e837d56a-81c8-44d8-8f19-310485009107" isLeaf="false">
+                <activityFinalNodeMoniker Id="32589e6b-613a-4f1e-90a1-18ed3e0146f6" LastKnownName="ActivityFinal31" />
+                <elementDefinition Id="2553ff67-91aa-49e0-a757-5c62b4509566" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="8fbc90a6-155e-4b1e-aa60-84b074627257" name="Receive sms alert" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="0de9db13-bf4e-4d2e-a8ea-99bff84eda84" />
+            <flowNodeTargets>
+              <controlFlow Id="820dbc35-d842-421b-91c5-231ccb9488f0" isLeaf="false">
+                <activityFinalNodeMoniker Id="35431023-0ded-4eac-b5d5-e87c3207d00f" LastKnownName="ActivityFinal41" />
+                <elementDefinition Id="6224427c-3a32-4acc-90ff-8da4c12a9b6b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <activityFinalNode Id="32589e6b-613a-4f1e-90a1-18ed3e0146f6" name="ActivityFinal31" isLeaf="false">
+            <elementDefinition Id="f2bb7e5a-20b0-4d96-b1b7-579e467652b8" />
+          </activityFinalNode>
+          <activityFinalNode Id="35431023-0ded-4eac-b5d5-e87c3207d00f" name="ActivityFinal41" isLeaf="false">
+            <elementDefinition Id="0775aa0c-3252-4f32-989d-b1d422915e04" />
+          </activityFinalNode>
+          <activityFinalNode Id="d02e0d93-c0d6-4293-8be2-8e3438a1713a" name="ActivityFinal51" isLeaf="false">
+            <elementDefinition Id="fce8084b-d474-4a5e-b78f-2bc074962da8" />
+          </activityFinalNode>
+          <activityFinalNode Id="141be70e-d712-4c68-baeb-81c959e926fd" name="ActivityFinal61" isLeaf="false">
+            <elementDefinition Id="14aa771f-f110-4ebd-9c93-57ab7486cab6" />
+          </activityFinalNode>
+          <joinNode Id="90944dbc-cd64-4f30-92a8-b46ba0c086be" name="Join1" isLeaf="false">
+            <elementDefinition Id="7e1240ef-d84c-4ad9-a932-01cba67090bc" />
+            <objectFlowTargets>
+              <objectFlow Id="64d132b9-2e9c-4ba9-934b-9d07211f9b9f" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="45aa44d3-076a-43dd-b412-6c939717a769" LastKnownName="approval message" />
+                <elementDefinition Id="929af56d-0317-4ce8-a489-5519fb3a47cb" />
+              </objectFlow>
+            </objectFlowTargets>
+          </joinNode>
+          <opaqueAction Id="f7b4473b-582f-44dd-a57f-8b7774b597d4" name="Check approval count" isLeaf="false">
+            <elementDefinition Id="8c87ac1b-56ed-4021-8d09-96275ffa22b5" />
+            <flowNodeTargets>
+              <controlFlow Id="a512b677-a7ef-42ac-8e35-7e17c7bd3ddf" isLeaf="false">
+                <decisionNodeMoniker Id="2152746f-1a28-47ed-9688-a36b8955a152" LastKnownName="Decision3" />
+                <elementDefinition Id="9f892392-bb65-4b9a-bf7a-eb93eab8ffda" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="2152746f-1a28-47ed-9688-a36b8955a152" name="Decision3" isLeaf="false">
+            <elementDefinition Id="5821fb6d-4e87-4155-9a85-8356d8ca6614" />
+            <flowNodeTargets>
+              <controlFlow Id="aa176254-c897-4cc3-9c4f-5bac80c3d860" guard="Approved by all approvers" isLeaf="false">
+                <opaqueActionMoniker Id="14c90155-c036-4a4d-8fcc-b74e8e066efa" LastKnownName="Move to original entity" />
+                <elementDefinition Id="26fce8f9-9028-445a-bc8c-7f002639cf8d" />
+              </controlFlow>
+              <controlFlow Id="b3981e02-0fba-4032-bad6-c35ebea6e685" guard="Not approved by all approvers" isLeaf="false">
+                <opaqueActionMoniker Id="91a91c93-59c2-48f4-8880-b5e06431911e" LastKnownName="Update approval count" />
+                <elementDefinition Id="feb08594-ef87-4625-8605-b4d2096c1052" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="14c90155-c036-4a4d-8fcc-b74e8e066efa" name="Move to original entity" isLeaf="false">
+            <elementDefinition Id="da6137d8-646b-458a-b4d4-3200e6c8b7a7" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="f728755f-e226-4880-809e-9a68e8e03d34" name="approver detail fully approved comfirmation" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="0db3d198-9ece-495d-9697-ec3005fb790a" />
+                  <objectFlowTargets>
+                    <objectFlow Id="9063292f-c852-4421-a5b5-b30b7a9a39dc" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <joinNodeMoniker Id="90944dbc-cd64-4f30-92a8-b46ba0c086be" LastKnownName="Join1" />
+                      <elementDefinition Id="9387cf54-4c9e-428b-b6c1-007612b57743" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="e1f89ce0-95ae-4358-93b4-c9fb4c899f94" name="2147483647" value="2147483647">
+                      <elementDefinition Id="ef5fc277-d5ef-48bd-a677-294597840b08" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="91a91c93-59c2-48f4-8880-b5e06431911e" name="Update approval count" isLeaf="false">
+            <elementDefinition Id="babd56d3-55c9-450e-a20e-dc46dbf95391" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="e88d3398-0010-4755-9549-297835b5aeb2" name="approver detail and approval remaining" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="7523a993-93ad-4853-b713-810e3c65bdc8" />
+                  <objectFlowTargets>
+                    <objectFlow Id="5069098d-1e1b-457e-bfeb-85fd0b864953" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <joinNodeMoniker Id="90944dbc-cd64-4f30-92a8-b46ba0c086be" LastKnownName="Join1" />
+                      <elementDefinition Id="cf68a1e5-f7d0-4874-8c8b-29f0d1f69c43" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="b1b9193b-880b-40b2-ad66-be6359bf31e8" name="2147483647" value="2147483647">
+                      <elementDefinition Id="30398328-b924-4564-8d42-04655a10b801" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="f873ded7-ea03-4ca1-9735-36ab282c65ff" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</activityRootModel>
