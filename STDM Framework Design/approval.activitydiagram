@@ -10,6 +10,14 @@ directly save to table</body>
       <elementDefinition Id="d93c9fed-de29-4302-b1dd-3795dd9c5402" />
       <body>read in QGIS Authentication System </body>
     </comment>
+    <comment Id="d0fdb0cb-f9cc-49d5-b690-3040de1f7867">
+      <elementDefinition Id="86d46c67-7333-484e-8780-72521c8fd334" />
+      <body>Activity Post CRUD on All Entities</body>
+    </comment>
+    <comment Id="8a482f5e-46f2-48f9-b8f3-6b01ebaae511">
+      <elementDefinition Id="018fafa0-512e-4062-8b2e-c78e7f478673" />
+      <body>Activity Post CRUD on Approval Entity</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances Id="7320b464-53e5-4d77-9c32-1cf53cd585e9">

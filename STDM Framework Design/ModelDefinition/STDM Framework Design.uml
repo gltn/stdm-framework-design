@@ -34,12 +34,6 @@
       <body>Implemented as a cacheable object</body>
     </comment>
     <comment
-      Id="7c2d3a6e-bf74-4287-a83d-c2e15cf475d5">
-      <body>
-
-approval.stc</body>
-    </comment>
-    <comment
       Id="e3c93af1-d526-43af-bd01-8bd5259ba636">
       <body>Inherits ProviderBase</body>
     </comment>
@@ -56,14 +50,6 @@ approval.stc</body>
       <body>Queries to be done via the QgsVectorLayer</body>
     </comment>
     <comment
-      Id="ecb8851e-7e5f-4c29-a6eb-1d1182869c8e">
-      <body>consider chaing configuration</body>
-    </comment>
-    <comment
-      Id="7a4bf4b3-8011-4eb2-b979-0492fc3b0f7b">
-      <body>activity diagram</body>
-    </comment>
-    <comment
       Id="c196f198-7e64-4f1a-9113-46c602e249b4">
       <body>depends on GeometryValidation under mapping framework
 </body>
@@ -76,6 +62,18 @@ directly save to table</body>
     <comment
       Id="d93c9fed-de29-4302-b1dd-3795dd9c5402">
       <body>read in QGIS Authentication System </body>
+    </comment>
+    <comment
+      Id="383ef3d5-7ae1-4b37-bf6f-df148e0747d6">
+      <body>Store config in QGIS Authentication System </body>
+    </comment>
+    <comment
+      Id="86d46c67-7333-484e-8780-72521c8fd334">
+      <body>Activity Post CRUD on All Entities</body>
+    </comment>
+    <comment
+      Id="018fafa0-512e-4062-8b2e-c78e7f478673">
+      <body>Activity Post CRUD on Approval Entity</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -4227,7 +4225,14 @@ directly save to table</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
+                LastKnownName="Object"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -4244,6 +4249,20 @@ directly save to table</body>
             <classMoniker
               Id="6b2bb508-1f1b-4743-a9aa-e99cebd80c30"
               LastKnownName="ApprovalSerializer"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="1767e93d-00e9-4ba3-aec9-3c207305355a">
+            <classMoniker
+              Id="d2ff5ef4-ca88-41d6-8f9e-081d765776d4"
+              LastKnownName="QgsAuthManger"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="bd0b18dc-a44a-4473-84b6-4c4d9aa9fee0">
+            <classMoniker
+              Id="141c2335-9c31-4db2-958a-479aa83feba6"
+              LastKnownName="DataProvider"
               LastKnownLocation="STDM Framework Design.uml" />
           </dependency>
         </suppliersInternal>
@@ -4457,7 +4476,14 @@ directly save to table</body>
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
+                LastKnownName="Object"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -6500,6 +6526,27 @@ directly save to table</body>
           </opaqueAction>
         </nodes>
       </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d2ff5ef4-ca88-41d6-8f9e-081d765776d4"
+        name="QgsAuthManger"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
+        name="Object" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="141c2335-9c31-4db2-958a-479aa83feba6"
+        name="DataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

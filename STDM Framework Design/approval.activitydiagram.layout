@@ -551,5 +551,13 @@
         <inputPinShapeMoniker Id="74ec21c0-eef0-41ad-aa44-efce32dde115" />
       </nodes>
     </objectFlowConnector>
+    <commentShape Id="a96b9dac-f50d-4bc7-9694-c6c5fb09c720" absoluteBounds="0.5, 0.625, 1.875, 1" customColor="251, 247, 200">
+      <commentMoniker Id="d0fdb0cb-f9cc-49d5-b690-3040de1f7867" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="487ea298-156b-4e74-8f22-46c224f71138" absoluteBounds="0.5, 8, 2.375, 1" customColor="251, 247, 200">
+      <commentMoniker Id="8a482f5e-46f2-48f9-b8f3-6b01ebaae511" />
+      <relativeChildShapes />
+    </commentShape>
   </nestedChildShapes>
 </activityDiagram>

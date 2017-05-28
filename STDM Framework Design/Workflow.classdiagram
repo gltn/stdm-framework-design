@@ -1,31 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a2da887f-b1b1-4ed3-a6b7-501e5c2b9b1f" name="Workflow" linkedPackageId="ea569c7c-376c-4ff1-a09b-38c43d89107f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="a2da887f-b1b1-4ed3-a6b7-501e5c2b9b1f" name="Workflow" linkedPackageId="ea569c7c-376c-4ff1-a09b-38c43d89107f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
-    <comment Id="b0472b72-878d-4899-a417-4cdaabde0c1d">
-      <elementDefinition Id="7c2d3a6e-bf74-4287-a83d-c2e15cf475d5" />
-      <body>
-
-approval.stc</body>
-    </comment>
-    <comment Id="65f5810f-a044-4bde-8236-63a67dc7b68f">
-      <elementDefinition Id="ecb8851e-7e5f-4c29-a6eb-1d1182869c8e" />
-      <body>consider chaing configuration</body>
-    </comment>
-    <comment Id="bac57a6e-1f00-4c90-b268-e2b93a1e1c0b">
-      <elementDefinition Id="7a4bf4b3-8011-4eb2-b979-0492fc3b0f7b" />
-      <body>activity diagram</body>
+    <comment Id="e2f7baab-d791-41c2-b7c8-35a2158229a4">
+      <elementDefinition Id="383ef3d5-7ae1-4b37-bf6f-df148e0747d6" />
+      <body>Store config in QGIS Authentication System </body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="b10f2291-ba54-4230-a976-7b829176d7ac" name="ApproverEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c" />
-        <suppliersInternal>
-          <dependency Id="d5a71498-3f54-481f-af45-90800b0adab7">
-            <classMoniker Id="a7b3bebf-31db-49c6-9abc-ec280f7d6195" LastKnownName="Notification" />
-            <elementDefinition Id="42e27b93-dbe0-47ac-aa50-bb3d687e6ef9" />
-          </dependency>
-        </suppliersInternal>
         <targetEnds>
           <association Id="f5c33a4e-aaaa-4a39-aaf7-95c058dde932" isDerived="false" sourceEndRoleName="ApproverEntity" targetEndRoleName="AprovalConfiguration" isLeaf="false" isAbstract="false">
             <classMoniker Id="1349d4ba-2961-456e-b1ca-f927c4e82a3b" LastKnownName="AprovalConfiguration" />
@@ -47,6 +31,9 @@ approval.stc</body>
         <ownedAttributesInternal>
           <property Id="808c0657-b16b-468b-a021-d52489269e33" name="supporting_document" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f41541a1-52d9-4e30-bafa-9a7178ea558a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a5e88dd9-5886-4b56-928d-752ec7ad5450" LastKnownName="Object" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
@@ -55,9 +42,13 @@ approval.stc</body>
       <class Id="1349d4ba-2961-456e-b1ca-f927c4e82a3b" name="AprovalConfiguration" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f" />
         <suppliersInternal>
-          <dependency Id="3d55049b-69bc-469e-921a-fc40ef5564a2">
-            <classMoniker Id="da3e3216-5287-4032-8e7f-6a5b8d9932ff" LastKnownName="ApprovalSerializer" />
-            <elementDefinition Id="e1d85f3a-1581-4d23-a005-37bd01317903" />
+          <dependency Id="21fdaf73-1b76-471a-ba88-b8f5ef91b655">
+            <classMoniker Id="22b33937-2569-4e9f-aeb1-0011ef418f29" LastKnownName="QgsAuthManger" />
+            <elementDefinition Id="1767e93d-00e9-4ba3-aec9-3c207305355a" />
+          </dependency>
+          <dependency Id="824d6a30-7676-476e-baa2-e79c23e024ec">
+            <classMoniker Id="1772ae94-fe7e-45f7-8982-9d7c7636b550" LastKnownName="DataProvider" />
+            <elementDefinition Id="bd0b18dc-a44a-4473-84b6-4c4d9aa9fee0" />
           </dependency>
         </suppliersInternal>
         <ownedOperationsInternal>
@@ -75,53 +66,6 @@ approval.stc</body>
           </operation>
           <operation Id="4c3b9e42-25f5-441a-919e-bc14d014d774" name="add_approval" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="dca588cd-e969-459a-8fc4-f9f321935036" />
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="da3e3216-5287-4032-8e7f-6a5b8d9932ff" name="ApprovalSerializer" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="6b2bb508-1f1b-4743-a9aa-e99cebd80c30" />
-        <targetEnds>
-          <association Id="12b0c6f6-315e-4b17-8a0f-34d3379b4c63" isDerived="false" sourceEndRoleName="ApprovalSerializer" targetEndRoleName="ApprovalEntitySerializer" isLeaf="false" isAbstract="false">
-            <classMoniker Id="b3d833f2-67cd-407a-a666-8fe4b609c5c6" LastKnownName="ApprovalEntitySerializer" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="07e9a19d-4bd9-4c46-bf66-988abb37dad2" name="ApprovalSerializer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e691c3ba-464f-4ead-b6e6-7cd0032387b1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="ffa6de5c-40ea-49ae-80d5-66e89520d8d7" name="ApprovalEntitySerializer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="3338771b-7f2f-4ddb-aee2-0e9793b0b3b1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="7ff379e1-3813-408a-a880-2bcd8c969986" />
-          </association>
-          <association Id="c0a30d9f-736a-4d6a-b028-6e348ec741e8" isDerived="false" sourceEndRoleName="ApprovalSerializer" targetEndRoleName="ApprovalEntitySerializer" isLeaf="false" isAbstract="false">
-            <classMoniker Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" LastKnownName="ApproverEntitySerializer" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="de245616-0088-4651-90e7-b9fde55a6290" name="ApprovalSerializer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="81207428-14ef-4fec-b2cc-916222800a3d" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="8b8162c3-9095-45fe-9028-2699cd0556f6" name="ApprovalEntitySerializer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="ba9221a4-dbf2-4e16-853b-e2dda9b1e2be" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="fda9b60f-f19f-45e5-aef9-1a950c16dc3c" />
-          </association>
-        </targetEnds>
-        <ownedOperationsInternal>
-          <operation Id="181c1281-b0e4-48c7-bc24-5aa08b60606b" name="read_stc" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="b4f9caf1-8d31-487c-ab65-73bd16ae6a37" />
-          </operation>
-          <operation Id="e0e7f0e4-03dc-4f7f-a2c0-868565890a86" name="write_stc" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9d908c6e-3f68-41e3-b3c5-c41ef4e13a04" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -150,23 +94,31 @@ approval.stc</body>
         <ownedAttributesInternal>
           <property Id="9f351f6d-b130-474d-943f-fedf0c9a4333" name="supporting_document" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b6aa8b18-d4ba-4301-aefc-3554206e4fbb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b545a219-e726-4a35-9346-26d1f3e32df1" LastKnownName="Object" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b3d833f2-67cd-407a-a666-8fe4b609c5c6" name="ApprovalEntitySerializer" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="b48e4ab9-b08d-4aa6-b2b4-7df42fb1d20d" />
+      <class Id="22b33937-2569-4e9f-aeb1-0011ef418f29" name="QgsAuthManger" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d2ff5ef4-ca88-41d6-8f9e-081d765776d4" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="b545a219-e726-4a35-9346-26d1f3e32df1" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
+        <elementDefinition Id="d811c493-947b-4fc6-82b5-2c3811dab2a1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a5e88dd9-5886-4b56-928d-752ec7ad5450" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
+        <elementDefinition Id="d811c493-947b-4fc6-82b5-2c3811dab2a1" />
+      </referencedType>
+    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="e3b1d863-5b71-4fe3-bd37-6d9343ee2b58" name="ApproverEntitySerializer" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="fa30d511-6f54-4e94-8e6f-6190e05ffee4" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="a7b3bebf-31db-49c6-9abc-ec280f7d6195" name="Notification" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="736d3ebe-92b2-46d8-a5fc-adedbecc25b1" />
+      <class Id="1772ae94-fe7e-45f7-8982-9d7c7636b550" name="DataProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="141c2335-9c31-4db2-958a-479aa83feba6" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
