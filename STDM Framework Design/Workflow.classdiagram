@@ -12,7 +12,7 @@
     </comment>
     <comment Id="bf17b5b5-1a90-423c-9ab2-67acdee32155">
       <elementDefinition Id="74ec2f25-9802-4fa9-adbd-f28033a6bf06" />
-      <body>An Approval Configuration UI is needed to configure entities and users to be linked for approval.</body>
+      <body>An Approval Configuration UI class is needed to configure entities and users to be linked for approval.</body>
     </comment>
     <comment Id="0299fbb9-a407-48b2-80a8-10ca0a988622">
       <elementDefinition Id="eb78a222-050d-401e-9a0b-16bac75c65f7" />
@@ -25,6 +25,27 @@
     <comment Id="26579a67-f12a-450e-8ebe-aed042bcb30d">
       <elementDefinition Id="329f77a5-e5fe-41b2-82f7-f726d0524c27" />
       <body>System entities such as users, permissions can be added in the future, post 2.0</body>
+    </comment>
+    <comment Id="b7d69ae1-f8e8-4420-b1e6-bdfff57b718f">
+      <elementDefinition Id="f9f2995a-8a91-427b-9d00-f829594341c0" />
+      <body>Approval UI class diagram</body>
+    </comment>
+    <comment Id="a2256e6e-a804-4948-bb76-5b09f5adaed0">
+      <elementDefinition Id="2e25dab1-3623-46bc-a113-714cb6583cee" />
+      <body>Inherits from EntityBrowser</body>
+    </comment>
+    <comment Id="84f05386-7692-4dc3-958c-d6b9161be2c8">
+      <elementDefinition Id="b89d2940-ce51-4524-9354-573f95f38b08" />
+      <body>Adds extra widgets to choose approve,  disapprove, and write extra message on approval</body>
+    </comment>
+    <comment Id="0a802e04-aed1-4565-a768-85e88193b48d">
+      <elementDefinition Id="4c2e4134-2ea7-4099-8080-07ce45a880f4" />
+      <body>It is expected EntityBrowser can load any database table in STDM 2.0</body>
+    </comment>
+    <comment Id="dcbda182-7b59-4692-acee-b7b1046f4c41">
+      <elementDefinition Id="0a8ac865-b3f5-4c13-84a1-e5e2f512eece" />
+      <body>When a record is approved, it is saved to the original entity and a notification is sent to the editor. 
+If disapproved, only notification is sent to the editor. </body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -106,6 +127,15 @@
                   <elementDefinition Id="5bb26f5f-c3f2-4d4e-a884-2ccec3dbbbb7" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="da8ac79c-2c80-46c3-88f2-8e7d5be73442" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="53034921-5b55-46d0-a658-db9ba5dc76de" name="notifications" direction="In">
+                  <description>list of notification types</description>
+                  <elementDefinition Id="3983906d-5f2f-4cfc-9680-e15ef5259488" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="66ddb64c-e95d-4de2-913b-15eea33b1c52" LastKnownName="list" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -269,6 +299,146 @@
         <elementDefinition Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a40f8670-4a95-45fb-9525-f1d3a74d5aab" name="ApprovalConfiguration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>profile_prefix_approval_configuration table columns</description>
+        <elementDefinition Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc" />
+        <suppliersInternal>
+          <dependency Id="d7a241ea-9074-4878-bc9b-fa321817cbdc">
+            <classMoniker Id="b10f2291-ba54-4230-a976-7b829176d7ac" LastKnownName="Approval" />
+            <elementDefinition Id="374ed895-4ec1-46ed-8f12-c91b665c09e6" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="0185b0d8-0246-40fd-b32b-bb83c2c40360" name="entity_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b42beeb1-bd21-4090-91cc-85ea6317d262" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cdc87839-e343-4d17-be33-27fad5bf4714" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="c93b9b17-2fa6-4a18-aefb-c620a875cde7" name="user_id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b23520b-c51f-4f8f-aceb-f31d68da23ef" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="f4f738c1-c2f5-41ad-9770-b16f57fab785" name="approver_notifications" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6caafe81-a0c6-4cdd-a19a-03fd45046b1c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="66ddb64c-e95d-4de2-913b-15eea33b1c52" LastKnownName="list" />
+            </type_NamedElement>
+          </property>
+          <property Id="332d6ec1-86bd-47fa-b95e-d6703e9f8825" name="user_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ebf9b3fe-69cb-4746-b5b2-9fae3054ab44" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5bbe7006-3b9a-4ff6-891f-662ba7cbb7a8" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="3885ac1e-5d2a-418b-8017-5699e2d5cedc" name="editor_notifications" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e6ad1b98-8fd5-46cc-b2cb-424a84c6442d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ee9fec44-8229-4856-9a9f-8e99eb9510f5" LastKnownName="list" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="cdc87839-e343-4d17-be33-27fad5bf4714" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="66ddb64c-e95d-4de2-913b-15eea33b1c52" name="list" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::list">
+        <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5bbe7006-3b9a-4ff6-891f-662ba7cbb7a8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ee9fec44-8229-4856-9a9f-8e99eb9510f5" name="list" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::list">
+        <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="366af6f5-32a6-4044-bb31-110e12ffc18c" name="EntityApproval" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9a0379e8-493e-4707-ba5b-766747bfeec6" />
+        <ownedOperationsInternal>
+          <operation Id="81d27cd6-0f26-4245-9c0b-1d103009cfc1" name="approve" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c7cb6701-146e-4bbe-bdbb-c84b6899a86b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d75480c6-6370-4fe3-bdd6-a5d3ef0cf886" name="selected_record" direction="In" isUnique="false">
+                  <description>database record id</description>
+                  <elementDefinition Id="be4619d4-12cf-482c-a16a-b2798e3170d4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fa88713e-2d8a-40a9-b480-345c628b00dd" name="disapprove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f612602-dee1-47aa-9e1a-deae3f264823" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="97681845-5855-495a-aa34-02af74626647" name="selected_record" direction="In" isUnique="false">
+                  <description>database record id</description>
+                  <elementDefinition Id="bd9b26a1-b81d-424e-bca8-fa5da62cb4c7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3d9cf3a9-5b88-4e43-8b00-f53575dfa4ef" name="alert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3314cb74-5e9f-4163-ab93-de46eb63fd87" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f5aed4f2-c360-4ee3-9ddc-37a6cff183b7" name="status_message" direction="In" isUnique="false">
+                  <description>message on approval status, entity, and record</description>
+                  <elementDefinition Id="75cd54a6-fe8e-44c0-9b98-7c558dfee738" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="da8ac79c-2c80-46c3-88f2-8e7d5be73442" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0cf17d8d-10ce-4a6c-a2f5-ed0f11f79050" name="extra_message" direction="In" isUnique="false">
+                  <description>Extra message as written by approver</description>
+                  <elementDefinition Id="1c77b23f-9b6b-4bf7-9f12-b5865ec568e9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="da8ac79c-2c80-46c3-88f2-8e7d5be73442" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="eb8307c4-e595-4723-a8ca-6dc306d25be8" name="EntityBrowser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="943122a9-c8fe-4794-87b2-70767d2e4fc7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="09512285-ada1-4848-a550-6ea4936d9308" name="appr_entity" direction="In" isUnique="false">
+                  <elementDefinition Id="cddc79d0-23ac-401a-a0cb-81beb5d251ed" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bb19b6b8-45ec-4530-979e-845529b6c60a" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="ea569c7c-376c-4ff1-a09b-38c43d89107f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

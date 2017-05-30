@@ -106,7 +106,7 @@
       <relativeChildShapes />
     </sendSignalActionShape>
     <actionShape Id="3a320fc1-011b-48f3-9801-869d8b02b822" absoluteBounds="7.25, 4.125, 1.125, 0.5" customColor="161, 199, 231">
-      <opaqueActionMoniker Id="fe60cfd6-b704-4ab4-8079-758aebb9bc00" LastKnownName="Notify approvers" />
+      <opaqueActionMoniker Id="fe60cfd6-b704-4ab4-8079-758aebb9bc00" LastKnownName="Alert approvers" />
       <relativeChildShapes>
         <inputPinShape Id="74ec21c0-eef0-41ad-aa44-efce32dde115" absoluteBounds="7.1, 4.28125, 0.15, 0.15">
           <inputPinMoniker Id="9d0e1155-2d63-4edd-92bd-d6e648c6fac3" LastKnownName="table, record, CRUD type, and user" />
@@ -304,7 +304,7 @@
       <relativeChildShapes />
     </sendSignalActionShape>
     <actionShape Id="3148da9f-c7cc-489b-824d-a25d722f452a" absoluteBounds="4.25, 15.25, 1.125, 0.375" customColor="161, 199, 231">
-      <opaqueActionMoniker Id="7d1d4661-a79a-4bf7-b675-65f295e51e19" LastKnownName="Notify editor" />
+      <opaqueActionMoniker Id="7d1d4661-a79a-4bf7-b675-65f295e51e19" LastKnownName="Alert editor" />
       <relativeChildShapes>
         <inputPinShape Id="d6a6b0f8-6c78-40d5-a225-8733d9e3b2c6" absoluteBounds="4.75, 15.1, 0.15, 0.15">
           <inputPinMoniker Id="45aa44d3-076a-43dd-b412-6c939717a769" LastKnownName="approval message" />
@@ -380,7 +380,7 @@
         <decisionNodeShapeMoniker Id="056313b4-bae3-45dc-ac53-9decad1e424e" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(7.1875 : 18.5); (7.1875 : 19.5625); (6.875 : 19.5625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(7.1875 : 18.5); (7.1875 : 19.5625); (6.875 : 19.5625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="32846948-29fc-490a-b4ae-3e5e37d77dc5" />
       <relativeChildShapes />
       <nodes>
@@ -388,7 +388,7 @@
         <acceptEventActionShapeMoniker Id="c546a11c-ea85-4ce6-917a-3c5de9cabde5" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(7.3125025 : 18.3749975); (7.3125025 : 19.46875); (7.67912658773653 : 19.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(7.3125025 : 18.3749975); (7.3125025 : 19.46875); (7.67912658773653 : 19.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="7b868e23-a394-44b2-92cc-c0fcc34df840" />
       <relativeChildShapes />
       <nodes>
@@ -428,7 +428,7 @@
         <activityFinalNodeShapeMoniker Id="09383f14-ebaa-4583-b5c5-437e84ec2e57" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(6.3125 : 19.75); (6.3125 : 20)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(6.3125 : 19.75); (6.3125 : 20)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="bb66ee91-07c5-4206-ad6e-19f415d4b728" />
       <relativeChildShapes />
       <nodes>
@@ -436,7 +436,7 @@
         <activityFinalNodeShapeMoniker Id="c275497c-52b4-4859-a4b1-8b688483db2a" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(8.1875 : 19.75); (8.1875 : 20.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(8.1875 : 19.75); (8.1875 : 20.25)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="e9d07999-fc55-4ad5-aca3-697b484360ff" />
       <relativeChildShapes />
       <nodes>
@@ -559,7 +559,7 @@
       <commentMoniker Id="8a482f5e-46f2-48f9-b8f3-6b01ebaae511" />
       <relativeChildShapes />
     </commentShape>
-    <controlFlowConnector edgePoints="[(7.8125 : 4.625); (7.8125 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(7.8125 : 4.625); (7.8125 : 5.25)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="057f868c-8592-414e-b554-f2f3c45b4014" />
       <relativeChildShapes />
       <nodes>

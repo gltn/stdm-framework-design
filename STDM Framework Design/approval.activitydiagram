@@ -142,7 +142,7 @@ directly save to table</body>
               </controlFlow>
             </flowNodeTargets>
           </sendSignalAction>
-          <opaqueAction Id="fe60cfd6-b704-4ab4-8079-758aebb9bc00" name="Notify approvers" isLeaf="false">
+          <opaqueAction Id="fe60cfd6-b704-4ab4-8079-758aebb9bc00" name="Alert approvers" isLeaf="false">
             <elementDefinition Id="a9efd9ab-0a84-4b2b-a271-1810c77b3e07" />
             <flowNodeTargets>
               <controlFlow Id="057f868c-8592-414e-b554-f2f3c45b4014" isLeaf="false">
@@ -320,7 +320,7 @@ directly save to table</body>
               </controlFlow>
             </flowNodeTargets>
           </sendSignalAction>
-          <opaqueAction Id="7d1d4661-a79a-4bf7-b675-65f295e51e19" name="Notify editor" isLeaf="false">
+          <opaqueAction Id="7d1d4661-a79a-4bf7-b675-65f295e51e19" name="Alert editor" isLeaf="false">
             <elementDefinition Id="51c6330c-810b-4a17-9129-90d6932e2e96" />
             <flowNodeTargets>
               <controlFlow Id="88a2d74f-15ec-433c-b99a-2aa93c05fec6" isLeaf="false">

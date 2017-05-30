@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Alerts">
+  <logicalClassDesignerModelMoniker Id="b763b1c9-7e20-4e8a-b5b9-fecf5c536f85" />
+  <nestedChildShapes>
+    <classShape Id="87d58c80-51ff-4d51-ab3b-77df408694cd" absoluteBounds="1.875, 3.25, 2.75, 1.5429687152306233" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="abf5a8f3-9480-44a3-87da-852b64fc8851" LastKnownName="Alert" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="5dbcd842-9bcd-46ba-859d-6de3884e2ede" absoluteBounds="1.89, 3.64, 2.7199999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="6958a5d1-35d1-4104-9ee6-938d7ee4338d" absoluteBounds="1.89, 3.8511718675494193, 2.7199999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37485f56-926d-48bc-8b66-5d70fbaf0938" absoluteBounds="3, 0.75, 1.5, 1.2426562251647306" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="be4ad630-ca3b-400e-9421-ae98281983ef" LastKnownName="Message" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="1ae65770-7f03-462e-b897-2031cb4c87f9" absoluteBounds="3.0150000000000006, 1.1400000000000001, 1.4700000000000002, 0.22117186754941942" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="8071a8d0-9cf8-43b6-9e36-852211e57c56" absoluteBounds="3.0150000000000006, 1.3711718675494193, 1.4700000000000002, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 3.25); (3.75 : 1.99265622516473)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+      <associationMoniker Id="49da2bb6-581f-4575-8c4d-2185ddb1cfef" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="87d58c80-51ff-4d51-ab3b-77df408694cd" />
+        <classShapeMoniker Id="37485f56-926d-48bc-8b66-5d70fbaf0938" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e87be734-a987-4d71-98e4-ef799de9a384" absoluteBounds="0.625, 1.25, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="2f548cee-c154-463d-9fea-af665f5e9586" LastKnownName="Notification" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="fd1df77f-0e54-4af0-9c52-77f3a004e6cf" absoluteBounds="0.64, 1.6400000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="beaf662a-caf9-4405-977a-b9f6c7689b7e" absoluteBounds="0.64, 1.8511718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2 : 3.25); (2 : 2.15234373509884)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+      <associationMoniker Id="25e79ea2-5445-4f27-8c3c-37b0f0554dfe" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="87d58c80-51ff-4d51-ab3b-77df408694cd" />
+        <classShapeMoniker Id="e87be734-a987-4d71-98e4-ef799de9a384" />
+      </nodes>
+    </associationConnector>
+    <commentShape Id="a65af820-800a-466c-b5dc-6c24c34164b2" absoluteBounds="0.75, 0.75, 1.25, 0.375" customColor="251, 247, 200">
+      <commentMoniker Id="d4d3ff17-0e46-4fb3-8286-730cfc387d5b" />
+      <relativeChildShapes />
+    </commentShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

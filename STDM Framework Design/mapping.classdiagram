@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="Mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="dc22f7da-f455-443b-a29f-a1a75f69ee8f" name="Mapping" linkedPackageId="cdd72785-84d3-47c5-881d-60fef4ed4545" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="729583e9-92f7-446a-978d-1b62ebfd98a9" name="GeometryValidation" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -37,42 +37,40 @@
             <elementDefinition Id="f819927c-8feb-40ff-9b52-e408f7dd4ea5" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="14fe15ef-5ec1-4397-90d7-e2ed448db8ce" name="test_type" direction="In" isUnique="false">
-                  <description>contains, contained, duplicate, overlaps</description>
-                  <elementDefinition Id="0be4cc92-799a-4898-b50b-dcf6bdb37a93" />
+                <parameter Id="a9056957-25b1-41ee-8074-c7d7c181e141" direction="Return" isUnique="false">
+                  <elementDefinition Id="2271f931-b624-4ff4-8a04-84b1533974fe" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="80797d1f-b336-459e-b5be-d0897bb1d558" LastKnownName="dictionary" />
+                    <referencedTypeMoniker Id="c320766c-5cdb-464c-9812-8a83f7a17bf3" LastKnownName="dictionary" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="45b93838-9ddd-4808-8eb6-722063de2903" name="geom1" direction="In" isUnique="false">
-                  <elementDefinition Id="3f9e980b-d619-41f7-b21b-0a5dfc6a3690" />
+                <parameter Id="128d2c5f-d624-4c80-a552-88f5f5cf8bb9" name="test_type" direction="In" isUnique="false">
+                  <elementDefinition Id="ed5ddde9-794c-4537-aa37-e7e78c27d361" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf6b7fb7-e975-48ac-b145-115837186038" LastKnownName="QgsGeometry" />
+                    <referencedTypeMoniker Id="cb8dba7a-e868-4fc6-80b0-be5c0135bf02" LastKnownName="dictionary" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="c8f821a9-5d33-4225-a7cd-67acd86ce984" name="geom2" direction="In" isUnique="false">
-                  <elementDefinition Id="dbefc80d-23de-4e2f-9957-85b08099ccdb" />
+                <parameter Id="9229c152-6434-4c80-bdac-d9cdbeab29e4" name="geom1" direction="In" isUnique="false">
+                  <elementDefinition Id="f4edc4cd-f5d1-4a4f-bfe6-5ec1734e97a6" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf6b7fb7-e975-48ac-b145-115837186038" LastKnownName="QgsGeometry" />
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed5a4d8a-5aa4-4591-b14e-52c39cf56d34" name="geom2" direction="In" isUnique="false">
+                  <elementDefinition Id="1a1bb3ef-d717-479c-82a3-6d7efac4a8e9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
                   </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="0ef350d3-537e-4efe-b107-b2066caaec7b" value="None">
-                      <elementDefinition Id="ed4a985b-b682-485d-bd7a-476f3f1a10f8" />
+                    <literalString Id="a8672e0c-85fe-45c3-8f6b-0cc3d4358bdb" name="DefaultValue" value="None : dictionary">
+                      <elementDefinition Id="9684e965-9d96-4723-b64e-e9813fd8234f" />
                     </literalString>
                   </defaultValue>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="4c09a1e4-c365-472e-94c3-97820f12b491" direction="Return">
-                  <description>result detail</description>
-                  <elementDefinition Id="63d2ce94-e80f-47d5-8b05-a6b236d57ca1" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="9bf2daee-46c2-4c11-be29-6949f90baa27" LastKnownName="dictionary" />
-                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -85,21 +83,39 @@
         <elementDefinition Id="5a99d4c7-04a1-4d23-8c54-312a0908a0ed" />
         <ownedOperationsInternal>
           <operation Id="f7fea9b7-78b3-4307-ae58-69fa4f0021de" name="transform_crs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Returns transformed QgsGeometry</description>
             <elementDefinition Id="acc41864-0a87-42f6-a5d1-6248d9b0580a" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="e748686a-f690-4c03-bf63-16722f324345" name="geom" direction="In" isUnique="false">
                   <elementDefinition Id="0a012624-9732-4a70-84e3-7729f23bcf74" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="b74bbfb3-f958-47f5-891d-41a391d1fa8c" name="source_crs" direction="In" isUnique="false">
                   <elementDefinition Id="3d85935e-2f2d-40d5-80f1-6254cbc602d6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="34564415-a086-44d3-800b-0909ba3b64d7" name="destination_crs" direction="In" isUnique="false">
                   <elementDefinition Id="1abbd0bd-9beb-4a2f-86c5-cefd9a065ee4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b3eb361d-82ec-412b-a524-f2f505f2ea74" direction="Return">
+                  <elementDefinition Id="0ed397bb-20b7-4209-a7cf-fc029d5de6a6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="52ec5677-15c6-459d-8d68-8ce8f434ce8a" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -110,11 +126,40 @@
               <operationHasOwnedParameters>
                 <parameter Id="567a4a38-3fea-4261-a560-1b7a652471ca" name="geom" direction="In" isUnique="false">
                   <elementDefinition Id="c3830d56-b5bf-41e5-bce6-83ba05ad4cbe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="4165a2a4-6b7a-4fb4-ba0d-d55425025459" name="utm_crs" direction="In" isUnique="false">
+                  <description>UTN coordinate reference system</description>
                   <elementDefinition Id="7b45310f-687b-4e19-ab1d-26e4cb66fe78" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c7e658a3-c808-4d5b-8e48-6f73413ca6f0" direction="Return">
+                  <elementDefinition Id="508344d6-4769-4d1e-8ebe-b72db586ca7f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="afa19ca6-f297-4cc8-85e1-c1a6318eaf1b" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6067d4ed-9ce2-457e-81ca-e409cf6da171" name="unit" direction="In">
+                  <description>unit of the area</description>
+                  <elementDefinition Id="529e6961-bd69-4925-a791-792b79bbed19" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" LastKnownName="String" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString Id="81abfb7e-f2e7-4db2-88c7-436340aaf474" value="None">
+                      <elementDefinition Id="7de1c866-8e3d-4296-a401-4312b8e0abf0" />
+                    </literalString>
+                  </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -125,16 +170,30 @@
               <operationHasOwnedParameters>
                 <parameter Id="800fa1db-9b5c-4f6f-8c88-62232a022cd6" name="geom_1" direction="In" isUnique="false">
                   <elementDefinition Id="35dfbdb5-233d-4a7c-8c92-f94df777b409" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="13ec73e1-76d7-40d5-b610-4b9370cc544f" name="geom_2" direction="In" isUnique="false">
                   <elementDefinition Id="1aaa1ba3-2264-469e-a558-2b036252fa05" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="c98c7d90-75b4-4b7b-88a0-2455fecafaa8" name="unit" direction="In" isUnique="false">
                   <elementDefinition Id="453e13f2-861d-4213-adea-2b692979ee72" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad0ee35f-0645-4e66-93a9-979631f852db" direction="Return">
+                  <elementDefinition Id="d4bc85c0-657d-4fe2-9277-6abd1cbb0c82" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="75fc5337-87d8-4e0f-919e-a8e47897c207" LastKnownName="Integer" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -145,11 +204,26 @@
               <operationHasOwnedParameters>
                 <parameter Id="d818eb62-3713-480e-88ce-d49bdf6fccc4" name="geom" direction="In" isUnique="false">
                   <elementDefinition Id="1130f843-23e3-43de-9099-c7b0fdc05c92" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="31f8f3f7-ff6b-4e6a-bc3c-1d533c085838" name="peices" direction="In" isUnique="false">
+                  <description>number of peices</description>
                   <elementDefinition Id="6d03cbbb-5ee6-43f2-8f14-57dea6c5a24a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="afa19ca6-f297-4cc8-85e1-c1a6318eaf1b" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3ea78131-7fa6-4829-9064-b81148618c38" direction="Return">
+                  <elementDefinition Id="2c8193d1-125c-4736-82f2-b2e445376367" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="21c0555d-ad99-43ce-9d0c-7bbf43ee37f8" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -205,8 +279,19 @@
             <elementDefinition Id="b2c941c3-3301-4f1a-8801-16c0d590f047" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="81faf9c8-a33b-4007-b15c-c3106fb9b26a" name="layer" direction="In" isUnique="false">
+                <parameter Id="81faf9c8-a33b-4007-b15c-c3106fb9b26a" name="layer_name" direction="In" isUnique="false">
                   <elementDefinition Id="749c8469-5129-448f-9e5a-7eb0c2b5e38a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9e86a33-7bbc-4cc4-91ef-937b1e8cb711" direction="Return">
+                  <elementDefinition Id="929a3c14-1708-4b30-8348-9006e28b8664" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7b273b96-09ba-4762-a89d-d0845e9d3eaf" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -216,20 +301,23 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="31a72caa-d2d8-45e8-a3df-85386a4fb8b8" name="entity" direction="In" isUnique="false">
+                  <description>STDM Entity object</description>
                   <elementDefinition Id="bcd91f28-be99-4387-be33-641d65be26d0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b58ce8e0-1eb2-4c28-aa15-3f21ff3a8b92" LastKnownName="object" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="34f49040-1bba-420f-aeea-8c6f40d6c390" name="type" direction="In" isUnique="false">
+                <parameter Id="34f49040-1bba-420f-aeea-8c6f40d6c390" name="display" direction="In" isUnique="false">
+                  <description>Show or hide the layer</description>
                   <elementDefinition Id="af91141e-45e9-4efe-a7e9-2170b453b4bd" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="a49af2a9-65a4-43df-8458-83496d6236a1" name="display" direction="In" isUnique="false">
-                  <elementDefinition Id="d1f3a32a-75cf-4604-a734-d56a70b145b9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="90229ea2-827a-4f31-b32e-66669fa80cae" LastKnownName="Boolean" />
+                  </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="5fecfa05-6730-4fd9-a218-22bfe9cc83f6" name="DefaultValue" value="True">
-                      <elementDefinition Id="78da6bd9-a6e2-471f-a200-4785df4e52fd" />
+                    <literalString Id="07c324f7-12e0-4c84-98c4-ea96ca76f81b" value="True">
+                      <elementDefinition Id="83c8b650-081c-4c15-9dce-a1b998b797f8" />
                     </literalString>
                   </defaultValue>
                 </parameter>
@@ -237,21 +325,55 @@
             </ownedParameters>
           </operation>
           <operation Id="f8b8d5af-4548-451a-bf83-0f2938bd6ce4" name="remove_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Returns the remove status</description>
             <elementDefinition Id="24a3bad9-5ed2-4f89-812b-900576823d07" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="bb8e8a64-7e6e-484f-96c8-acd5a6a48d57" name="entity" direction="In" isUnique="false">
                   <elementDefinition Id="c71fb22e-dca3-44db-a4cf-afc78c8b465d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b58ce8e0-1eb2-4c28-aa15-3f21ff3a8b92" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb61649b-4fd8-402b-bce0-a7fee4e7fcac" direction="Return">
+                  <elementDefinition Id="403ffed8-9188-471f-b09b-2b42419f0f2e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="75d7cd71-c727-40f0-8204-6514223f9563" LastKnownName="Boolean" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="9d293cd2-4b2a-4127-8ceb-be8a871f46df" name="highlight_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="9d293cd2-4b2a-4127-8ceb-be8a871f46df" name="select_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Returns True if selected and False if not.</description>
             <elementDefinition Id="c2c1b1dc-a06d-44ad-8bf7-b4280dbf349f" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e9ece3f6-9999-49fd-935b-14ecf1fe85b4" name="feature" direction="In" isUnique="false">
-                  <elementDefinition Id="4e4c6372-9efb-4866-9d9a-585c53eba7ef" />
+                <parameter Id="0a23b7b6-cbec-4ecc-9ad2-be9cb37b6f29" name="entity" direction="In" isUnique="false">
+                  <description>STDM Entity object</description>
+                  <elementDefinition Id="adf2d3bc-3f7c-4ca0-a4c4-1b42ec3cc448" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b58ce8e0-1eb2-4c28-aa15-3f21ff3a8b92" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f207e3cd-2635-4085-9c26-6e4c7747eca1" name="record_id" direction="In" isUnique="false">
+                  <description>database record id</description>
+                  <elementDefinition Id="f1e4f5d5-003a-4be0-ad6d-ce6332723f4c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="afa19ca6-f297-4cc8-85e1-c1a6318eaf1b" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c5d7a0fa-15f4-445c-ba32-c4218466fa14" direction="Return">
+                  <elementDefinition Id="4772c492-4f93-4175-8dfc-13854d1cdc5a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="91cd6201-2a91-46d9-8d44-f927fd6d24d4" LastKnownName="Boolean" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -262,6 +384,9 @@
               <operationHasOwnedParameters>
                 <parameter Id="7a39acd0-10e0-49fc-8297-7f485fea6988" name="feature" direction="In" isUnique="false">
                   <elementDefinition Id="a90de241-99bb-4410-91fe-e3c1df2ce868" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="22ee6b34-d87a-4865-83b0-32b004fcfe37" LastKnownName="QgsFeature" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -272,16 +397,9 @@
               <operationHasOwnedParameters>
                 <parameter Id="01858f17-0093-46b7-ba08-9cf4073a88af" name="layer" direction="In" isUnique="false">
                   <elementDefinition Id="ee23aa41-18c9-4317-a9d7-640ef9d531e6" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="b299f279-3ad8-44ea-acb5-75100843afbb" name="rename_layer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="111435f4-bd64-464b-ba95-8c43bfb2140b" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="948eee8e-51cc-4108-8881-6156655c8a63" name="layer" direction="In" isUnique="false">
-                  <elementDefinition Id="1cda2eaf-b662-4718-bb86-cdf6d9634fbb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3c699d0a-207e-419d-a9f8-eb6be5a57cbc" LastKnownName="QgsVectorLayer" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -300,18 +418,78 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="80797d1f-b336-459e-b5be-d0897bb1d558" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
+      <referencedType Id="cb8dba7a-e868-4fc6-80b0-be5c0135bf02" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
         <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="bf6b7fb7-e975-48ac-b145-115837186038" name="QgsGeometry" isAbstract="false" isLeaf="false" cachedFullName="QgsGeometry">
+      <referencedType Id="72fd49b8-ce24-4829-a660-4bb9001836b9" name="QgsGeometry" isAbstract="false" isLeaf="false" cachedFullName="QgsGeometry">
         <elementDefinition Id="72fae762-9a6a-4bcd-b336-1a90a77759c4" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="9bf2daee-46c2-4c11-be29-6949f90baa27" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
+      <referencedType Id="c320766c-5cdb-464c-9812-8a83f7a17bf3" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
         <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="06ae07cb-643f-4983-a67f-b58c1a39e6c3" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="afa19ca6-f297-4cc8-85e1-c1a6318eaf1b" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="75fc5337-87d8-4e0f-919e-a8e47897c207" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="21c0555d-ad99-43ce-9d0c-7bbf43ee37f8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="52ec5677-15c6-459d-8d68-8ce8f434ce8a" name="QgsGeometry" isAbstract="false" isLeaf="false" cachedFullName="QgsGeometry">
+        <elementDefinition Id="72fae762-9a6a-4bcd-b336-1a90a77759c4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b58ce8e0-1eb2-4c28-aa15-3f21ff3a8b92" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="90229ea2-827a-4f31-b32e-66669fa80cae" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="91cd6201-2a91-46d9-8d44-f927fd6d24d4" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7b273b96-09ba-4762-a89d-d0845e9d3eaf" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="75d7cd71-c727-40f0-8204-6514223f9563" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="22ee6b34-d87a-4865-83b0-32b004fcfe37" name="QgsFeature" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::QgsFeature">
+        <elementDefinition Id="47a6fb2b-525e-405f-9e12-ebeb7c2ef0c8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3c699d0a-207e-419d-a9f8-eb6be5a57cbc" name="QgsVectorLayer" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::QgsVectorLayer">
+        <elementDefinition Id="b5c34549-ed0d-495a-9ee8-6d32b068e98a" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

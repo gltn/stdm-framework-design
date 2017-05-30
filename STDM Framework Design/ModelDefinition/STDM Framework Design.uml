@@ -82,7 +82,7 @@ directly save to table</body>
     </comment>
     <comment
       Id="74ec2f25-9802-4fa9-adbd-f28033a6bf06">
-      <body>An Approval Configuration UI is needed to configure entities and users to be linked for approval.</body>
+      <body>An Approval Configuration UI class is needed to configure entities and users to be linked for approval.</body>
     </comment>
     <comment
       Id="eb78a222-050d-401e-9a0b-16bac75c65f7">
@@ -95,6 +95,31 @@ directly save to table</body>
     <comment
       Id="329f77a5-e5fe-41b2-82f7-f726d0524c27">
       <body>System entities such as users, permissions can be added in the future, post 2.0</body>
+    </comment>
+    <comment
+      Id="4d6046dd-67da-413e-b333-66e57736f682">
+      <body>Existing STDM Notification UI class</body>
+    </comment>
+    <comment
+      Id="f9f2995a-8a91-427b-9d00-f829594341c0">
+      <body>Approval UI class diagram</body>
+    </comment>
+    <comment
+      Id="2e25dab1-3623-46bc-a113-714cb6583cee">
+      <body>Inherits from EntityBrowser</body>
+    </comment>
+    <comment
+      Id="b89d2940-ce51-4524-9354-573f95f38b08">
+      <body>Adds extra widgets to choose approve,  disapprove, and write extra message on approval</body>
+    </comment>
+    <comment
+      Id="4c2e4134-2ea7-4099-8080-07ce45a880f4">
+      <body>It is expected EntityBrowser can load any database table in STDM 2.0</body>
+    </comment>
+    <comment
+      Id="0a8ac865-b3f5-4c13-84a1-e5e2f512eece">
+      <body>When a record is approved, it is saved to the original entity and a notification is sent to the editor. 
+If disapproved, only notification is sent to the editor. </body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -3444,11 +3469,9 @@ directly save to table</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="0be4cc92-799a-4898-b50b-dcf6bdb37a93"
-                  name="test_type"
-                  direction="In"
+                  Id="2271f931-b624-4ff4-8a04-84b1533974fe"
+                  direction="Return"
                   isUnique="false">
-                  <description>contains, contained, duplicate, overlaps</description>
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
@@ -3459,7 +3482,21 @@ directly save to table</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="3f9e980b-d619-41f7-b21b-0a5dfc6a3690"
+                  Id="ed5ddde9-794c-4537-aa37-e7e78c27d361"
+                  name="test_type"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f4edc4cd-f5d1-4a4f-bfe6-5ec1734e97a6"
                   name="geom1"
                   direction="In"
                   isUnique="false">
@@ -3473,7 +3510,7 @@ directly save to table</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="dbefc80d-23de-4e2f-9957-85b08099ccdb"
+                  Id="1a1bb3ef-d717-479c-82a3-6d7efac4a8e9"
                   name="geom2"
                   direction="In"
                   isUnique="false">
@@ -3485,22 +3522,10 @@ directly save to table</body>
                   </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="ed4a985b-b682-485d-bd7a-476f3f1a10f8"
-                      value="None" />
+                      Id="9684e965-9d96-4723-b64e-e9813fd8234f"
+                      name="DefaultValue"
+                      value="None : dictionary" />
                   </defaultValue>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="63d2ce94-e80f-47d5-8b05-a6b236d57ca1"
-                  direction="Return">
-                  <description>result detail</description>
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                      LastKnownName="dictionary"
-                      LastKnownLocation="STDM Framework Design.uml" />
-                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -3524,27 +3549,61 @@ directly save to table</body>
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <description>Returns transformed QgsGeometry</description>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="0a012624-9732-4a70-84e3-7729f23bcf74"
                   name="geom"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="3d85935e-2f2d-40d5-80f1-6254cbc602d6"
                   name="source_crs"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="1abbd0bd-9beb-4a2f-86c5-cefd9a065ee4"
                   name="destination_crs"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ed397bb-20b7-4209-a7cf-fc029d5de6a6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3562,14 +3621,60 @@ directly save to table</body>
                   Id="c3830d56-b5bf-41e5-bce6-83ba05ad4cbe"
                   name="geom"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="7b45310f-687b-4e19-ab1d-26e4cb66fe78"
                   name="utm_crs"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <description>UTN coordinate reference system</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="508344d6-4769-4d1e-8ebe-b72db586ca7f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="529e6961-bd69-4925-a791-792b79bbed19"
+                  name="unit"
+                  direction="In">
+                  <description>unit of the area</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="7de1c866-8e3d-4296-a401-4312b8e0abf0"
+                      value="None" />
+                  </defaultValue>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3587,14 +3692,28 @@ directly save to table</body>
                   Id="35dfbdb5-233d-4a7c-8c92-f94df777b409"
                   name="geom_1"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="1aaa1ba3-2264-469e-a558-2b036252fa05"
                   name="geom_2"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -3602,6 +3721,18 @@ directly save to table</body>
                   name="unit"
                   direction="In"
                   isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4bc85c0-657d-4fe2-9277-6abd1cbb0c82"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3619,14 +3750,41 @@ directly save to table</body>
                   Id="1130f843-23e3-43de-9099-c7b0fdc05c92"
                   name="geom"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
+                      LastKnownName="QgsGeometry"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="6d03cbbb-5ee6-43f2-8f14-57dea6c5a24a"
                   name="peices"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <description>number of peices</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c8193d1-125c-4736-82f2-b2e445376367"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4040,9 +4198,28 @@ directly save to table</body>
               <operationHasOwnedParameters>
                 <parameter
                   Id="749c8469-5129-448f-9e5a-7eb0c2b5e38a"
-                  name="layer"
+                  name="layer_name"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="929a3c14-1708-4b30-8348-9006e28b8664"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4060,25 +4237,32 @@ directly save to table</body>
                   Id="bcd91f28-be99-4387-be33-641d65be26d0"
                   name="entity"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <description>STDM Entity object</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+                      LastKnownName="object"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="af91141e-45e9-4efe-a7e9-2170b453b4bd"
-                  name="type"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="d1f3a32a-75cf-4604-a734-d56a70b145b9"
                   name="display"
                   direction="In"
                   isUnique="false">
+                  <description>Show or hide the layer</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="78da6bd9-a6e2-471f-a200-4785df4e52fd"
-                      name="DefaultValue"
+                      Id="83c8b650-081c-4c15-9dce-a1b998b797f8"
                       value="True" />
                   </defaultValue>
                 </parameter>
@@ -4093,31 +4277,87 @@ directly save to table</body>
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <description>Returns the remove status</description>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="c71fb22e-dca3-44db-a4cf-afc78c8b465d"
                   name="entity"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+                      LastKnownName="object"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="403ffed8-9188-471f-b09b-2b42419f0f2e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
             Id="c2c1b1dc-a06d-44ad-8bf7-b4280dbf349f"
-            name="highlight_feature"
+            name="select_feature"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <description>Returns True if selected and False if not.</description>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="4e4c6372-9efb-4866-9d9a-585c53eba7ef"
-                  name="feature"
+                  Id="adf2d3bc-3f7c-4ca0-a4c4-1b42ec3cc448"
+                  name="entity"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <description>STDM Entity object</description>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+                      LastKnownName="object"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1e4f5d5-003a-4be0-ad6d-ce6332723f4c"
+                  name="record_id"
+                  direction="In"
+                  isUnique="false">
+                  <description>database record id</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4772c492-4f93-4175-8dfc-13854d1cdc5a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4135,7 +4375,14 @@ directly save to table</body>
                   Id="a90de241-99bb-4410-91fe-e3c1df2ce868"
                   name="feature"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="47a6fb2b-525e-405f-9e12-ebeb7c2ef0c8"
+                      LastKnownName="QgsFeature"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4153,25 +4400,14 @@ directly save to table</body>
                   Id="ee23aa41-18c9-4317-a9d7-640ef9d531e6"
                   name="layer"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="111435f4-bd64-464b-ba95-8c43bfb2140b"
-            name="rename_layer"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="1cda2eaf-b662-4718-bb86-cdf6d9634fbb"
-                  name="layer"
-                  direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b5c34549-ed0d-495a-9ee8-6d32b068e98a"
+                      LastKnownName="QgsVectorLayer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4365,6 +4601,20 @@ directly save to table</body>
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3983906d-5f2f-4cfc-9680-e15ef5259488"
+                  name="notifications"
+                  direction="In">
+                  <description>list of notification types</description>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fead2424-4891-465e-b1f3-b7e193867773"
+                      LastKnownName="list"
                       LastKnownLocation="STDM Framework Design.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -6251,7 +6501,7 @@ directly save to table</body>
           </sendSignalAction>
           <opaqueAction
             Id="a9efd9ab-0a84-4b2b-a271-1810c77b3e07"
-            name="Notify approvers"
+            name="Alert approvers"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -6554,7 +6804,7 @@ directly save to table</body>
           </sendSignalAction>
           <opaqueAction
             Id="51c6330c-810b-4a17-9129-90d6932e2e96"
-            name="Notify editor"
+            name="Alert editor"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -6940,6 +7190,569 @@ directly save to table</body>
       <undefinedType
         Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
         name="object" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc"
+        name="ApprovalConfiguration"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <description>profile_prefix_approval_configuration table columns</description>
+        <suppliersInternal>
+          <dependency
+            Id="374ed895-4ec1-46ed-8f12-c91b665c09e6">
+            <classMoniker
+              Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
+              LastKnownName="Approval"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b42beeb1-bd21-4090-91cc-85ea6317d262"
+            name="entity_name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8b23520b-c51f-4f8f-aceb-f31d68da23ef"
+            name="user_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6caafe81-a0c6-4cdd-a19a-03fd45046b1c"
+            name="approver_notifications"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="fead2424-4891-465e-b1f3-b7e193867773"
+                LastKnownName="list"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ebf9b3fe-69cb-4746-b5b2-9fae3054ab44"
+            name="user_name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e6ad1b98-8fd5-46cc-b2cb-424a84c6442d"
+            name="editor_notifications"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="fead2424-4891-465e-b1f3-b7e193867773"
+                LastKnownName="list"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3dcd9188-b53a-480d-bbea-0f3bac17616b"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
+        name="Alert"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4e3447a0-42b9-4c8a-a835-0b4419a29d9d"
+            isDerived="false"
+            sourceEndRoleName="Alert"
+            targetEndRoleName="Notification"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea"
+              LastKnownName="Notification"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c909fae9-b25b-4757-b0f5-6c3820a018f8"
+                  name="Alert"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b1e5e8c-3398-4b18-93a1-f04d24a32a2b"
+                  name="Notification"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="119f7a2c-740c-40b3-b781-6756d3e8ef79"
+            isDerived="false"
+            sourceEndRoleName="Alert"
+            targetEndRoleName="Message"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="517c4317-3000-4c6e-baec-3a6b475859c8"
+              LastKnownName="Message"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8e39ea58-d02c-44dc-af8f-0a45b0f79226"
+                  name="Alert"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c1e4afe-6405-4ee2-9361-d208f896e46d"
+                  name="Message"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="8a43fb6a-8fc1-476f-8b94-95bed17fc5ad"
+            name="insert_qgis_notification"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="16b7eb57-6663-409e-86ff-f0cc5ab48a9e"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="62800ff7-3ac1-4fff-ae6b-3e7f787d23a8"
+            name="send_email"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10f3dd7e-e654-4f43-be56-22d304f04758"
+                  name="host"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bf0377fc-c4d5-4165-8c85-b9cdd55bded9"
+                  name="port"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f3f48ad-868b-4619-9099-cdc48260a374"
+                  name="email"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6707a33-865d-470f-b2b1-2c32abc050cc"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2a277a84-d8a1-424b-8861-66d825bc67c3"
+            name="send_sms"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1d24b7b-2230-4106-a47d-fffefd955afa"
+                  name="host"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df1d1c35-2007-43f7-a783-32577c2ec734"
+                  name="port"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="085d59a3-7452-47be-bc72-37df77418723"
+                  name="email"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ceaf37d2-3f36-4963-ac52-e5e3d1b2dfe7"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2b1e88bc-c7de-457e-96e3-017077ed65c3"
+            name="insert_module_notification"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="53196fb1-9506-464e-934b-5788b3df242b"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="517c4317-3000-4c6e-baec-3a6b475859c8"
+        name="Message"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="f8fd97dd-2fcb-4c01-84bc-f3395b984316"
+            name="send_sms"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ef1a71ff-9f1e-4b63-9603-25b89ec5fb32"
+                  name="host"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ccd1dcc9-1f2f-468e-9940-088ff06bef95"
+                  name="port"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dacd99ea-eff6-439d-80dd-6e3428daca29"
+                  name="email"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e29c76bd-7ddc-471c-8c2a-211b99b3d51c"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9be93e19-f605-47ce-b384-71220f098311"
+            name="send_email"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b883dd2-03e5-4b98-b129-f5cd2aacf598"
+                  name="host"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b9ad1c06-e482-40a1-8b14-191ac7de590b"
+                  name="port"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a67aedbc-34f2-42ad-a9bd-8c1a7ad5cbf1"
+                  name="email"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="06d854eb-1994-4305-ba46-835aa81698e1"
+                  name="message"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c72d7ac0-b93b-46f3-a802-554636954498"
+        name="Class6"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea"
+        name="Notification"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7b4d3cdb-eda7-457e-b6ed-a17283504a72"
+        name="QGIS "
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9a0379e8-493e-4707-ba5b-766747bfeec6"
+        name="EntityApproval"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="c7cb6701-146e-4bbe-bdbb-c84b6899a86b"
+            name="approve"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be4619d4-12cf-482c-a16a-b2798e3170d4"
+                  name="selected_record"
+                  direction="In"
+                  isUnique="false">
+                  <description>database record id</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1f612602-dee1-47aa-9e1a-deae3f264823"
+            name="disapprove"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bd9b26a1-b81d-424e-bca8-fa5da62cb4c7"
+                  name="selected_record"
+                  direction="In"
+                  isUnique="false">
+                  <description>database record id</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3314cb74-5e9f-4163-ab93-de46eb63fd87"
+            name="alert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75cd54a6-fe8e-44c0-9b98-7c558dfee738"
+                  name="status_message"
+                  direction="In"
+                  isUnique="false">
+                  <description>message on approval status, entity, and record</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1c77b23f-9b6b-4bf7-9f12-b5865ec568e9"
+                  name="extra_message"
+                  direction="In"
+                  isUnique="false">
+                  <description>Extra message as written by approver</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="943122a9-c8fe-4794-87b2-70767d2e4fc7"
+            name="EntityBrowser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cddc79d0-23ac-401a-a0cb-81beb5d251ed"
+                  name="appr_entity"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+                      LastKnownName="object"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
