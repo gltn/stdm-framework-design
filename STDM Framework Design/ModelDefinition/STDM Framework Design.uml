@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c"
   name="STDM Framework Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -65,7 +65,7 @@ directly save to table</body>
     </comment>
     <comment
       Id="383ef3d5-7ae1-4b37-bf6f-df148e0747d6">
-      <body>Store config in QGIS Authentication System </body>
+      <body>Store approval config in QGIS Authentication System </body>
     </comment>
     <comment
       Id="86d46c67-7333-484e-8780-72521c8fd334">
@@ -74,6 +74,27 @@ directly save to table</body>
     <comment
       Id="018fafa0-512e-4062-8b2e-c78e7f478673">
       <body>Activity Post CRUD on Approval Entity</body>
+    </comment>
+    <comment
+      Id="9b1f7fbf-5f99-4c47-b7af-2faace970972">
+      <body>Saving in appr_entity_name should be handled by ui classes such as Forms, STR Editor, Import Data
+</body>
+    </comment>
+    <comment
+      Id="74ec2f25-9802-4fa9-adbd-f28033a6bf06">
+      <body>An Approval Configuration UI is needed to configure entities and users to be linked for approval.</body>
+    </comment>
+    <comment
+      Id="eb78a222-050d-401e-9a0b-16bac75c65f7">
+      <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is added when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
+    </comment>
+    <comment
+      Id="85dc5809-11d3-49dd-a43b-0d2cab4f287a">
+      <body>handles CRUD operation of approval</body>
+    </comment>
+    <comment
+      Id="329f77a5-e5fe-41b2-82f7-f726d0524c27">
+      <body>System entities such as users, permissions can be added in the future, post 2.0</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -4160,7 +4181,7 @@ directly save to table</body>
     <packageHasNamedElement>
       <class
         Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
-        name="ApproverEntity"
+        name="Approval"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -4170,6 +4191,27 @@ directly save to table</body>
             <classMoniker
               Id="736d3ebe-92b2-46d8-a5fc-adedbecc25b1"
               LastKnownName="Notification"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="52ee893d-3809-44f8-99b5-f233f3f428e8">
+            <classMoniker
+              Id="2c6dcc4c-6cde-4839-9269-7883ee6c8367"
+              LastKnownName="STDM Security Framework.Entities"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="1b3134ad-c879-47fe-83e6-426c6d1129a6">
+            <classMoniker
+              Id="925c40ec-8998-4d87-9a77-d3a877567c0d"
+              LastKnownName="Profile.Entity"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+          <dependency
+            Id="ae8074b8-ebbc-4aef-9412-38c204394752">
+            <classMoniker
+              Id="141c2335-9c31-4db2-958a-479aa83feba6"
+              LastKnownName="DataProvider"
               LastKnownLocation="STDM Framework Design.uml" />
           </dependency>
         </suppliersInternal>
@@ -4183,7 +4225,7 @@ directly save to table</body>
             isAbstract="false">
             <classMoniker
               Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
-              LastKnownName="AprovalConfiguration"
+              LastKnownName="Aproval"
               LastKnownLocation="STDM Framework Design.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -4216,8 +4258,8 @@ directly save to table</body>
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="f41541a1-52d9-4e30-bafa-9a7178ea558a"
-            name="supporting_document"
+            Id="e380a46b-a7f4-4984-a445-bd2280f5be3d"
+            name="approved_entities"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4227,19 +4269,252 @@ directly save to table</body>
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
+              <enumerationMoniker
+                Id="35342fc1-abbd-4b4a-a12f-94006c800b0d"
+                LastKnownName="ApprovedEntities"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c3f75ec0-75be-4297-9665-f50729a81c06"
+            name="current_profile"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>STDM current_profile()</description>
+            <type_NamedElement>
               <undefinedTypeMoniker
-                Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
-                LastKnownName="Object"
+                Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+                LastKnownName="object"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f77371f2-7fc7-4c22-864a-34e2d47e24df"
+            name="add_approver"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="23acc34b-f38a-4a83-8073-a4f2c0da8705"
+                  name="record"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="52d7a9d5-59d7-4f13-a10d-369fc62cfd84"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d0c84a95-4b6f-4fe2-adf1-33977228e72b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4ecc8c28-3113-4837-9a67-9724e520a387"
+                      LastKnownName="db record"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a1313610-4e4b-4128-ae61-ce3c4967f66e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5bb26f5f-c3f2-4d4e-a884-2ccec3dbbbb7"
+                  name="entity"
+                  direction="In">
+                  <description>entity to be approved</description>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ba5d87cb-25ba-4df9-aa1e-9f36a90d2950"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8601dcac-bcd1-4837-ab82-3abf9a969057"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0e829eba-01a5-4d2e-a9ac-40ac5c75a363"
+            name="remove_approver"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9126b3dc-338a-4659-b085-1e731890842a"
+                  name="record"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9452ff00-69f2-44a7-bcc7-dbc38ec2224a"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="24e9298e-0aa4-48f9-a5cb-3bc54f83096a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8a1dae09-990f-4dfc-8a47-37767c098e90"
+                      LastKnownName="db_record"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bfa564db-1f61-46bf-af5e-bb31392cdae6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a339db2b-2dfc-4747-b6f7-3cb57142092a"
+                  name="entity"
+                  direction="In">
+                  <description>entity to be delinked</description>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="91eced5c-7916-4ea0-a478-2af3423a2926"
+            name="add_approved_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f0ca2e98-0540-44a3-8797-38bad4ba4d31"
+                  name="entity_name"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0de631ea-8864-49b3-8415-c88f034b6374"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="11ef41b2-bc74-4311-8340-dc4a9d8d8b50"
+            name="remove_approved_entity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6a54efb2-86e1-4a20-a0d5-1dfa6118cc0f"
+                  name="entity_name"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f6e349ca-6717-43b2-9966-9ed9902d36da"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
-        name="AprovalConfiguration"
+        name="Aproval"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -4266,15 +4541,27 @@ directly save to table</body>
               LastKnownLocation="STDM Framework Design.uml" />
           </dependency>
         </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="0a7fff51-beaf-4037-8b4e-129ccd59decb"
-            name="add_approver_entity"
+        <ownedAttributesInternal>
+          <property
+            Id="88ec6d91-dbf6-4d90-8649-1f586f2f1aac"
+            name="approver_entity_handler"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
+                LastKnownName="Approval"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
           <operation
             Id="a0e2c777-38e3-4cd9-87dd-f9525329f1f6"
             name="add_approved_entity"
@@ -4284,24 +4571,8 @@ directly save to table</body>
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="9307c8a9-09fd-4e8c-b2f2-233d6c751e53"
-            name="remove_approver_entity"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="383b1298-e08c-4d8e-88a2-1e9f1b970131"
             name="remove_approved_entity"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="dca588cd-e969-459a-8fc4-f9f321935036"
-            name="add_approval"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -4420,10 +4691,19 @@ directly save to table</body>
     <packageHasNamedElement>
       <class
         Id="dc8e3977-98b2-4e6a-a38a-fa344b8b81dc"
-        name="ApprovedEntity"
+        name="ApprovedEntityHandler"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="529ef891-eb12-4c18-83a0-46aa672ba6a5">
+            <classMoniker
+              Id="925c40ec-8998-4d87-9a77-d3a877567c0d"
+              LastKnownName="Profile.Entity"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="6f5caebe-a0cd-4387-b5d4-068f3cb0c8e9"
@@ -4434,7 +4714,7 @@ directly save to table</body>
             isAbstract="false">
             <classMoniker
               Id="44ac5f0c-8c0c-409d-8908-03eeb406ce0f"
-              LastKnownName="AprovalConfiguration"
+              LastKnownName="Aproval"
               LastKnownLocation="STDM Framework Design.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -4467,8 +4747,8 @@ directly save to table</body>
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="b6aa8b18-d4ba-4301-aefc-3554206e4fbb"
-            name="supporting_document"
+            Id="072379b9-568b-4dd3-bb91-7d96e4cecfd3"
+            name="entity"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -4477,10 +4757,11 @@ directly save to table</body>
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <description>entity name</description>
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
-                LastKnownName="Object"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -5972,6 +6253,16 @@ directly save to table</body>
             Id="a9efd9ab-0a84-4b2b-a271-1810c77b3e07"
             name="Notify approvers"
             isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="400590f7-d15f-4a62-a162-c4d949314941"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="f76ca7d1-69d8-44dc-b288-38e3c0d70e85"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
             <pins>
               <opaqueActionHasInputValues>
                 <inputPin
@@ -6547,6 +6838,108 @@ directly save to table</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="925c40ec-8998-4d87-9a77-d3a877567c0d"
+        name="Profile.Entity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2c6dcc4c-6cde-4839-9269-7883ee6c8367"
+        name="STDM Security Framework.Entities"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="15bc622e-bc05-4b28-9dea-6f620b327870"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="21737eb0-23c4-40b0-a1a9-6c28fe2336ab"
+        name="Approvers"
+        isAbstract="false"
+        isLeaf="false">
+        <description>database table id of approvers</description>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="f49f091c-82cc-44b2-bf30-8d79a7263bce"
+            name="key">
+            <description>users</description>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="35342fc1-abbd-4b4a-a12f-94006c800b0d"
+        name="ApprovedEntities"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="ee62d460-ac8f-4b18-94d5-8c4f7962cc6e"
+            name="USER_ENTITIES" />
+          <enumerationLiteral
+            Id="15d59d28-a285-4c0e-a3b0-8f695b3a0df1"
+            name="SYSTEM_ENTITIES" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4ecc8c28-3113-4837-9a67-9724e520a387"
+        name="db record" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8a1dae09-990f-4dfc-8a47-37767c098e90"
+        name="db_record" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8bd81cae-fc78-4403-8ada-2cfde523d7b7"
+        name="approved_entities" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="149a0627-aee7-40ae-97dd-f4a018c1c99d"
+        name="ApproverEntity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="81bbaf0b-5ce0-40cd-a567-35db97d0a5e9"
+        name="Approvers"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="ccb9c2fe-8fd8-49d8-8b0d-1b774de8c6c1"
+            name="entity_name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
+        name="object" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

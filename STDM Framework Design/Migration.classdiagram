@@ -162,16 +162,16 @@
                 </dependency>
               </suppliersInternal>
               <targetEnds>
-                <association Id="bae7cbb1-acc4-4b1d-89dd-638c44bfefb5" isDerived="false" sourceEndRoleName="ConfigUpdater" targetEndRoleName="BaseConfigUpdater" isLeaf="false" isAbstract="false">
+                <association Id="bae7cbb1-acc4-4b1d-89dd-638c44bfefb5" isDerived="false" sourceEndRoleName="ConfigurationUpdater" targetEndRoleName="ConfigurationVersionUpdater" isLeaf="false" isAbstract="false">
                   <classMoniker Id="d1de4637-cbfd-4edc-a6a0-a22302dbf21a" LastKnownName="ConfigurationVersionUpdater" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="987b3354-6a17-42d2-bdb9-dfd1774d4b1f" name="ConfigUpdater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                      <memberEnd Id="987b3354-6a17-42d2-bdb9-dfd1774d4b1f" name="ConfigurationUpdater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
                         <elementDefinition Id="c75249f0-f4d3-4116-8ab3-14cefd0f362a" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="952968c2-3b44-40ef-9de6-fb692339d433" name="BaseConfigUpdater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                      <memberEnd Id="952968c2-3b44-40ef-9de6-fb692339d433" name="ConfigurationVersionUpdater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
                         <elementDefinition Id="94009492-c6fe-489c-9c81-daa7217d0ba7" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -345,7 +345,7 @@
                 <operation Id="f63f843a-82ed-4e03-b4aa-ba2f92db3226" name="exec_" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="0c087e3b-5e6a-4297-a601-511aa6a9d68d" />
                 </operation>
-                <operation Id="9bf7bacd-001f-4aae-aefe-f690a6d2af0b" name="BaseConfigUpdater" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="9bf7bacd-001f-4aae-aefe-f690a6d2af0b" name="ConfigurationVersionUpdater" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="cfe837ce-b20d-4b3c-a24a-b8706429904f" />
                   <ownedParameters>
                     <operationHasOwnedParameters>

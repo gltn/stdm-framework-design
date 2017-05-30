@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="2dae2489-b794-48db-aa83-2abd9e763d53"
   name="Updater" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -67,8 +67,8 @@
           <association
             Id="3a9237dc-dcee-4c56-9f81-1754d2ec5ee6"
             isDerived="false"
-            sourceEndRoleName="ConfigUpdater"
-            targetEndRoleName="BaseConfigUpdater"
+            sourceEndRoleName="ConfigurationUpdater"
+            targetEndRoleName="ConfigurationVersionUpdater"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -79,7 +79,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c75249f0-f4d3-4116-8ab3-14cefd0f362a"
-                  name="ConfigUpdater"
+                  name="ConfigurationUpdater"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -92,7 +92,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="94009492-c6fe-489c-9c81-daa7217d0ba7"
-                  name="BaseConfigUpdater"
+                  name="ConfigurationVersionUpdater"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -483,7 +483,7 @@
             isQuery="false" />
           <operation
             Id="cfe837ce-b20d-4b3c-a24a-b8706429904f"
-            name="BaseConfigUpdater"
+            name="ConfigurationVersionUpdater"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
