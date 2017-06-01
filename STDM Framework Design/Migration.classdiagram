@@ -1012,11 +1012,11 @@
                     </literalString>
                   </defaultValue>
                 </property>
-                <property Id="abc063c4-8336-446a-aa0d-b4421c2d9183" name="setting_file" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="abc063c4-8336-446a-aa0d-b4421c2d9183" name="backup_setting" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <description>JSON file object</description>
                   <elementDefinition Id="f79c8d92-cca0-4ecb-8a65-192fa59ff0dc" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="797711cc-d45d-438c-a7a4-d797a4f9c5d4" LastKnownName="object" />
+                    <referencedTypeMoniker Id="6ff5e90a-9d41-4c44-8510-955dfffa3161" LastKnownName="dictionary" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -1044,11 +1044,10 @@
                   <elementDefinition Id="0bf1fb7d-eb3a-4f44-bd23-8029c0bf7e65" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="0ac5688b-c550-43f8-aead-666eff121826" name="setting_file" direction="In" isUnique="false">
-                        <description>JSON file object</description>
+                      <parameter Id="0ac5688b-c550-43f8-aead-666eff121826" name="backup_setting" direction="In" isUnique="false">
                         <elementDefinition Id="02f0a624-f902-49ca-85d7-3fb0602986d9" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="329f7c26-ab18-488b-9d2c-4ebcce466afb" LastKnownName="object" />
+                          <referencedTypeMoniker Id="44bb0920-93cf-42eb-9361-7b30aa13de69" LastKnownName="dictionary" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -1079,11 +1078,18 @@
                 </association>
               </targetEnds>
               <ownedAttributesInternal>
-                <property Id="67da60e8-27b2-44f2-b0a7-9820f13e9281" name="setting_file" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="67da60e8-27b2-44f2-b0a7-9820f13e9281" name="backup_setting" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <description>JSON file object</description>
                   <elementDefinition Id="fcf0da24-4b77-4a20-9834-22378d0faeee" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="329f7c26-ab18-488b-9d2c-4ebcce466afb" LastKnownName="object" />
+                    <referencedTypeMoniker Id="9d056b57-d210-47d5-940c-7db88adfb122" LastKnownName="dictionary" />
+                  </type_NamedElement>
+                </property>
+                <property Id="5f18bfac-a896-4173-af4f-36b40e867d14" name="backup_path" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <description>Backup path</description>
+                  <elementDefinition Id="0bf3cebc-3f9a-4844-83e1-28aea39f7429" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9c0422bc-b923-4b56-a519-ab46706024c5" LastKnownName="String" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -1092,7 +1098,8 @@
                   <description>Creates a backup archive using the configuration dictionary</description>
                   <elementDefinition Id="08b9570d-6b74-4209-9482-f566b0c352bc" />
                 </operation>
-                <operation Id="2d5f540b-cb1f-45ab-b033-a81352f819c7" name="create_setting_file" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="2d5f540b-cb1f-45ab-b033-a81352f819c7" name="init_backup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <description>Initialize the backup by creating empty backup folder</description>
                   <elementDefinition Id="f4507c6c-a7d4-4a5a-9f50-bdcadcefc880" />
                 </operation>
               </ownedOperationsInternal>
@@ -1942,11 +1949,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="329f7c26-ab18-488b-9d2c-4ebcce466afb" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
-        <elementDefinition Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="d98c4cf3-2427-4a4f-a42d-897d70eb2c8b" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
@@ -2332,13 +2334,23 @@
       </enumeration>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="797711cc-d45d-438c-a7a4-d797a4f9c5d4" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+      <referencedType Id="584e51c9-8594-4ede-8487-d054c2bfbcb5" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
         <elementDefinition Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="584e51c9-8594-4ede-8487-d054c2bfbcb5" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
-        <elementDefinition Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb" />
+      <referencedType Id="9d056b57-d210-47d5-940c-7db88adfb122" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
+        <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9c0422bc-b923-4b56-a519-ab46706024c5" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6ff5e90a-9d41-4c44-8510-955dfffa3161" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
+        <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

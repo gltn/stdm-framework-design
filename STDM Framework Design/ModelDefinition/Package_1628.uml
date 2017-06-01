@@ -492,7 +492,7 @@
           </property>
           <property
             Id="f79c8d92-cca0-4ecb-8a65-192fa59ff0dc"
-            name="setting_file"
+            name="backup_setting"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -504,8 +504,8 @@
             <description>JSON file object</description>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
-                LastKnownName="object"
+                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                LastKnownName="dictionary"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -564,14 +564,13 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="02f0a624-f902-49ca-85d7-3fb0602986d9"
-                  name="setting_file"
+                  name="backup_setting"
                   direction="In"
                   isUnique="false">
-                  <description>JSON file object</description>
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
-                      LastKnownName="object"
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
                       LastKnownLocation="STDM Framework Design.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -632,7 +631,7 @@
         <ownedAttributesInternal>
           <property
             Id="fcf0da24-4b77-4a20-9834-22378d0faeee"
-            name="setting_file"
+            name="backup_setting"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -644,8 +643,27 @@
             <description>JSON file object</description>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
-                LastKnownName="object"
+                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                LastKnownName="dictionary"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0bf3cebc-3f9a-4844-83e1-28aea39f7429"
+            name="backup_path"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>Backup path</description>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -663,12 +681,14 @@
           </operation>
           <operation
             Id="f4507c6c-a7d4-4a5a-9f50-bdcadcefc880"
-            name="create_setting_file"
+            name="init_backup"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <description>Initialize the backup by creating empty backup folder</description>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
