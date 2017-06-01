@@ -412,11 +412,6 @@
         <elementDefinition Id="70b57733-eff1-4763-8429-d1c17792fe8f" />
       </referencedType>
     </packageHasNamedElement>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="1b6fa47b-3dd6-4bc2-8a6e-3d46f8dd683d" name="Maps" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="b509a977-b621-4a50-aabd-ca5df7d13b3e" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
       <referencedType Id="cb8dba7a-e868-4fc6-80b0-be5c0135bf02" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
         <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />

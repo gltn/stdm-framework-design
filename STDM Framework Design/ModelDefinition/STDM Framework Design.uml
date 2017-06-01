@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c"
   name="STDM Framework Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -120,6 +120,11 @@ directly save to table</body>
       Id="0a8ac865-b3f5-4c13-84a1-e5e2f512eece">
       <body>When a record is approved, it is saved to the original entity and a notification is sent to the editor. 
 If disapproved, only notification is sent to the editor. </body>
+    </comment>
+    <comment
+      Id="ee0d967d-c2f5-4d53-81c7-fbba4f404762">
+      <body>backup setting json file structure
+</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -7753,6 +7758,36 @@ If disapproved, only notification is sent to the editor. </body>
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d0117722-88d5-4c2a-bbec-985c53f7730d"
+        name="DataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d5f3b566-cd0c-4b4f-81e2-fc0c42c4359d"
+        LastKnownName="Restore"
+        LastKnownLocation="Package_1041.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="bc067759-9f0c-4ffa-9c9a-af57768ff3de"
+        name="BackupSetting"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="490adfd4-a37d-422a-bb61-a158b95e8504"
+            name="backup_type" />
+          <enumerationLiteral
+            Id="ca197d30-b635-435b-a24c-c823ca0d0230"
+            name="location" />
+        </ownedLiterals>
+      </enumeration>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
