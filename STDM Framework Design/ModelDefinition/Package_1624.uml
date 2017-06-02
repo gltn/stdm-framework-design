@@ -556,6 +556,86 @@
               LastKnownLocation="Package_1624.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9913ea62-2583-45a4-a372-5a65663076f9"
+            isDerived="false"
+            sourceEndRoleName="ConfigVersionUpdater13"
+            targetEndRoleName="DatabaseUpdater"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6f728ee7-0f4b-4afb-a3d6-052ae2381f3f"
+              LastKnownName="DatabaseUpdater"
+              LastKnownLocation="Package_1624.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30d031e6-e62d-4250-96b5-4e2fdc3de339"
+                  name="ConfigVersionUpdater13"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="50c7e71e-3bb8-4740-9408-c8996bfae239"
+                  name="DatabaseUpdater"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="cbb4c0fd-8f17-49bb-a257-e7a4646b6358"
+            isDerived="false"
+            sourceEndRoleName="ConfigVersionUpdater13"
+            targetEndRoleName="TemplateFileHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44e1fe6b-20fd-4908-84d5-01d252da0ba9"
+              LastKnownName="TemplateFileHandler"
+              LastKnownLocation="Package_1624.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da676269-e98d-4f64-8db3-c52507b68bb0"
+                  name="ConfigVersionUpdater13"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a2e7fa2-aa68-49e8-b586-666c8404fa4c"
+                  name="TemplateFileHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="1d81a234-f3e8-4776-9839-a68eb9a69318"
@@ -1155,15 +1235,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="0f3baf14-588f-4349-938e-352d433cc623">
-            <classMoniker
-              Id="4a86fd8b-752c-439c-b3fb-29972cae97b4"
-              LastKnownName="ConfigVersionUpdater13"
-              LastKnownLocation="Package_1624.uml" />
-          </dependency>
-        </suppliersInternal>
         <targetEnds>
           <association
             Id="c6bc40ef-0934-425f-8b2a-f4b9a09f110d"
@@ -1213,7 +1284,26 @@
         name="DatabaseVersionUpdater"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="685ee4ac-9333-4690-b6fc-f70301ddf8cb"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ac982c1a-601c-4068-b954-93a2d557a53f"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -1241,6 +1331,16 @@
               LastKnownLocation="Package_1624.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7e3243b3-c892-4d75-b73b-f3e4eeca5941"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1269,6 +1369,16 @@
               LastKnownLocation="Package_1624.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ec3595eb-396d-4b4c-880a-d6d0119357f7"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1288,14 +1398,6 @@
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="82e5ecca-d31d-4340-b11d-d1b00039f136"
-            isSubstitutable="false">
-            <classMoniker
-              Id="6c6331a3-6198-4a77-a09f-4e7625bef777"
-              LastKnownName="TemplateContentReader"
-              LastKnownLocation="Package_1624.uml" />
-          </generalization>
-          <generalization
             Id="43603cac-68f8-45d6-9787-7229da556fc1"
             isSubstitutable="false">
             <classMoniker
@@ -1304,6 +1406,24 @@
               LastKnownLocation="Package_1624.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4272de93-1916-4278-a229-e65f60925209"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8e4f6b0b-4526-4432-9639-8636160ea0b7"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1313,16 +1433,110 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <generalsInternal>
-          <generalization
-            Id="b477b621-7585-4b0d-8d6f-b281075c6b3c"
-            isSubstitutable="false">
+        <targetEnds>
+          <association
+            Id="aae88f59-55b2-41bb-8c2c-b9eff4592e39"
+            isDerived="false"
+            sourceEndRoleName="TemplateContentReader"
+            targetEndRoleName="TemplateFileUpdater"
+            isLeaf="false"
+            isAbstract="false">
             <classMoniker
-              Id="44e1fe6b-20fd-4908-84d5-01d252da0ba9"
-              LastKnownName="TemplateFileHandler"
+              Id="5cd55117-0696-4b3a-89ad-cc20f347f4cb"
+              LastKnownName="TemplateFileUpdater"
               LastKnownLocation="Package_1624.uml" />
-          </generalization>
-        </generalsInternal>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a269ee9-0d14-45cf-ab70-aa3963901ae5"
+                  name="TemplateContentReader"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fad7f5bb-0dc9-4c9c-bba3-162a98065bb5"
+                  name="TemplateFileUpdater"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="3ff5ea1a-4fa7-4a66-8bd4-4999cafec7c0"
+            name="template_dom"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f9600be0-9baf-41ed-b2d0-757624d90398"
+                LastKnownName="QDomDocument"
+                LastKnownLocation="Package_1624.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="55b37576-b96d-4897-8562-971f7ac8081e"
+            name="TemplateContentReader"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e496cb48-a0cd-419b-ad54-3fb69dd0ebe8"
+                  name="templat_file"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d811c493-947b-4fc6-82b5-2c3811dab2a1"
+                      LastKnownName="Object"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bd1958dd-2f59-4850-8175-1e03eb474eeb"
+            name="read_template"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c23d3c16-f108-43d0-91f7-692146705355"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1339,7 +1553,242 @@
         name="TemplateFileHandler"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="54189a87-29fc-48d5-8b79-199c3dede992"
+            isDerived="false"
+            sourceEndRoleName="TemplateFileHandler"
+            targetEndRoleName="TemplateContentReader"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6c6331a3-6198-4a77-a09f-4e7625bef777"
+              LastKnownName="TemplateContentReader"
+              LastKnownLocation="Package_1624.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9c30c11c-3107-46d9-a555-5a0a4a0947b7"
+                  name="TemplateFileHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="076a8cec-254c-49b2-8b30-6c19f3072f78"
+                  name="TemplateContentReader"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="8463c416-7d25-4a71-ac27-c143d82ab0f4"
+            name="templates"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>List of templates</description>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4c141eb5-8753-4458-a098-dcd8f96daf23"
+                LastKnownName="list"
+                LastKnownLocation="Package_1624.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1a8b2244-8410-4192-a675-fc076e621716"
+            name="template_path"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="670db78a-b1c7-444d-94d1-e65c7db96c6e"
+            name="populate_templates"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6d6028ef-157d-43e4-b1d8-ab1568876d85"
+        name="DatabaseVersionUpdater14"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="067709d4-d6f0-4054-bf2c-cf08ed789b25">
+            <classMoniker
+              Id="bd1813a4-648d-43a5-abd7-a4ee25493c84"
+              LastKnownName="ConfigurationSchemaUpdater"
+              LastKnownLocation="Package_1624.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="240263e5-17bc-4e6a-b8be-85dac5b7a188"
+            isSubstitutable="false">
+            <classMoniker
+              Id="88dae9fa-5f6f-4ffb-b0f8-3e7fc67849e2"
+              LastKnownName="DatabaseVersionUpdater"
+              LastKnownLocation="Package_1624.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="12736961-7c76-4775-9792-3bd26ad18f86"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5aa08d12-9306-45d0-8ed0-fda29fba89e9"
+        name="DatabaseVersionUpdater132"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="e7c03b52-97f3-4a39-990d-7e04e4b543b1"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dbc12948-1c74-4541-b7e9-760a3c17da9c"
+        name="DatabaseVersionUpdater133"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="de5782bb-3fdb-4e42-b058-0d2160724acb"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="07dd0d7c-6aa5-426a-9019-19f3af0b339f"
+        name="TemplateFileUpdater14"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="f2b0601f-e86f-4c03-9900-5e65b9862f50"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5cd55117-0696-4b3a-89ad-cc20f347f4cb"
+              LastKnownName="TemplateFileUpdater"
+              LastKnownLocation="Package_1624.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b618a246-03a7-4244-862b-1549afe5ba66"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="06d72a85-c1f0-4056-8216-2d5bdbd59df5"
+        name="TemplateFileUpdater15"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d02d35d8-6774-4cee-a039-1bc0c7d70e2a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5cd55117-0696-4b3a-89ad-cc20f347f4cb"
+              LastKnownName="TemplateFileUpdater"
+              LastKnownLocation="Package_1624.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6368251d-40bc-475c-bdc1-65daa48b8e93"
+            name="exec_"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f9600be0-9baf-41ed-b2d0-757624d90398"
+        name="QDomDocument" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4c141eb5-8753-4458-a098-dcd8f96daf23"
+        name="list" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

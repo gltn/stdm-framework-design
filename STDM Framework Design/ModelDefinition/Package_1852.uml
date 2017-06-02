@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="56925dcc-94d4-4414-a252-283a4221092f"
   name="Restore" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -12,13 +12,6 @@
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
-          <dependency
-            Id="17be22cf-3851-46d1-8992-e4563c8f95c9">
-            <classMoniker
-              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
-              LastKnownName="TableValidator"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </dependency>
           <dependency
             Id="b3d09d2c-4f5f-416f-9897-1cb1b97d9316">
             <classMoniker
@@ -57,6 +50,45 @@
                 <memberEnd
                   Id="83307cd8-a2ac-4ffc-8d2b-979e187ca6a8"
                   name="ValueTranslatorManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c7dc9436-42cd-4e80-8975-04a8437d3ce9"
+            isDerived="false"
+            sourceEndRoleName="TableImport"
+            targetEndRoleName="TableValidator"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0db4e204-5a63-4aae-9e35-a4d8e3118128"
+                  name="TableImport"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2e9e64b9-b508-441d-8004-1e7738706cf9"
+                  name="TableValidator"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

@@ -5226,38 +5226,6 @@ If disapproved, only notification is sent to the editor. </body>
               LastKnownName="LookupValidtor"
               LastKnownLocation="STDM Framework Design.uml" />
           </generalization>
-          <generalization
-            Id="219fb425-7287-41eb-b6e7-6b62f6c6c29b"
-            isSubstitutable="false">
-            <classMoniker
-              Id="b817c1be-598b-4c08-ae0d-fff3ee936835"
-              LastKnownName="DataTypeValidator"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </generalization>
-          <generalization
-            Id="1b10ecc5-26d4-456f-b880-ab7e975610dd"
-            isSubstitutable="false">
-            <classMoniker
-              Id="09bbb7c8-f061-4e4e-ac74-9a8953a1d5c6"
-              LastKnownName="LengthValidator"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </generalization>
-          <generalization
-            Id="cb44867b-4f5b-4a1f-9cb7-03b7ef82fc6d"
-            isSubstitutable="false">
-            <classMoniker
-              Id="c6fde28f-5a65-49c1-8a75-b3470cfa3993"
-              LastKnownName="LookupValidator"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </generalization>
-          <generalization
-            Id="d48731a6-3080-4236-b6ab-e08fd6aca500"
-            isSubstitutable="false">
-            <classMoniker
-              Id="f34e04c7-5304-4301-9a7d-5b4357c3a47b"
-              LastKnownName="GeometryValidator"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
           <operation
@@ -5356,6 +5324,16 @@ If disapproved, only notification is sent to the editor. </body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="20840b56-1177-495f-9da5-d24e47c275a8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="f6a687b6-218e-409b-9c25-751780f4bba6"
@@ -5500,14 +5478,6 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="66057b8a-16e6-44d1-942f-e3511a411ed1"
-            name="register"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -5528,6 +5498,16 @@ If disapproved, only notification is sent to the editor. </body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="e65d51b8-2707-4fa5-b7f7-16a0bd3bfba2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="e0bc810e-878f-4f59-ad01-7ad6cdb421db"
@@ -5580,14 +5560,6 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="76e5dcc9-7a2d-45ca-a993-bcdbf0c5364a"
-            name="register"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -5598,6 +5570,16 @@ If disapproved, only notification is sent to the editor. </body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="8a43ca64-2881-4e4d-87b7-012c01572591"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="edecddce-6fa3-4ec9-93dc-8da8d183c94a"
@@ -5687,14 +5669,6 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="26cdb316-c462-48d0-b04f-f601b4d463dc"
-            name="register"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -5720,7 +5694,14 @@ If disapproved, only notification is sent to the editor. </body>
                   Id="e0333ecf-fa51-4d50-9b0f-8fe2db9471be"
                   name="source_data"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -5768,6 +5749,14 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="c8e9aff9-78ab-4222-96de-3f1a53cc2b62"
+            name="trim"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -5778,6 +5767,16 @@ If disapproved, only notification is sent to the editor. </body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="f474e9b5-7976-4db9-a53e-2878889c6564"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="86b84ec4-8f7c-4289-abe9-c8d5bc94ae9c"
@@ -5993,6 +5992,16 @@ If disapproved, only notification is sent to the editor. </body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="06b8a657-c920-4c60-bb5d-cfe7274b655a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6b513191-b9a1-4a99-b849-8843dd87f60f"
+              LastKnownName="TableValidator"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="41f94dd1-ebb0-4933-a7d1-5303f26e94dc"
@@ -6082,14 +6091,6 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="bd359fa0-ff2e-40e6-8341-34676ba18bd5"
-            name="register"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -7788,6 +7789,11 @@ If disapproved, only notification is sent to the editor. </body>
             name="location" />
         </ownedLiterals>
       </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="91adfa38-ddca-4adf-802b-d360471e7931"
+        name="any" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

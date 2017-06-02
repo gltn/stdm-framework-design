@@ -6,7 +6,7 @@
   <ownedCommentsInternal>
     <comment
       Id="f93bc111-25ed-4708-88a5-c2c3b5afe056">
-      <body>json will be used to store backup settings</body>
+      <body>json file in the archive will be used to restore. However, if location settings doesn't match with the actual STDM setting, user will be notified and the backup could be fixed or skipped. </body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -36,51 +36,6 @@
               LastKnownLocation="Package_1041.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="07a90a12-23f4-4ef9-8753-ee9e90f972cd"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="f759db5e-a1be-4b31-853d-aa89410518df"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-          <property
-            Id="f6418be8-f7e6-4adf-9858-5e9393bdb9ae"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <description>host, port, user, etc details</description>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="51847d4e-2af1-43f7-8a28-12de79294267"
@@ -91,8 +46,8 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="331799d2-a3cd-4612-b9d4-5041bbe69f5e"
-            name="append_setting"
+            Id="afd845c5-7abd-49e8-a838-9d57607f485d"
+            name="restore_location"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -118,50 +73,6 @@
               LastKnownLocation="Package_1041.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="46b63452-0ddc-4a5b-9257-b76fc40b2e9a"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="dacaca51-9a5d-4adc-8a17-e950125f0efc"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="dfbbc809-ca9e-4a21-a1b1-983ad28e70e0"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="d557f0f0-eb72-47bb-a515-fdfb3b13cbe2"
@@ -172,8 +83,8 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="02c83170-39b4-475b-a0ad-a54da949e6fc"
-            name="append_setting"
+            Id="494b492b-4e1c-4266-82db-ce556ee506f3"
+            name="restore_location"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -199,50 +110,6 @@
               LastKnownLocation="Package_1041.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="c16e111e-93d7-411e-9637-1b48ba7de423"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="897a2395-ea4d-462b-8381-ee1172a15301"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="6fe1d565-3eaa-4adc-a888-92290c226ebf"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="09768e19-aced-43dd-878d-870ae86cb089"
@@ -253,8 +120,8 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="c67ee62f-56e6-4911-a216-bc0e3065b963"
-            name="append_setting"
+            Id="1437fd2c-2bb6-430d-9b2b-14ea61c456ba"
+            name="restore_location"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -280,50 +147,6 @@
               LastKnownLocation="Package_1041.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="a4b0f9e9-d175-493e-afa0-97e471aa7623"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="2e735576-21ac-4493-8ec7-cb47b7be4285"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="8c234125-23c3-4ed7-a2d0-75f8349ed956"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="620a907b-e5ad-4ae2-92c0-3b9114679069"
@@ -334,8 +157,8 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="a5ebfa45-c7ee-430a-a859-533e623ca00d"
-            name="append_setting"
+            Id="ae31b87d-e301-49ae-b2f7-2739349805fe"
+            name="restore_location"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -361,50 +184,6 @@
               LastKnownLocation="Package_1041.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="c9db7a2b-d374-44be-870f-2398c04708e8"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="3a1f4bb4-1c8a-4474-b8b8-e09444684da1"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="cafdc6f6-159d-4283-83a2-f308e117fe67"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="78b846e5-cccc-4629-89f1-ea404225d697"
@@ -415,8 +194,8 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="a5677119-17e3-4fd6-a7d4-062588852234"
-            name="append_setting"
+            Id="b0ac5580-8001-46f0-8ac2-22c43c16dfb9"
+            name="restore_location"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -434,50 +213,8 @@
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="af50fe19-681c-4153-a64e-df4ce559f86f"
-            name="LOCATION"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
-                LastKnownName="dictionary"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="80d417b8-62de-4f8e-9e51-815542332a66"
-            name="BACKUP_TYPE"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="244b0c18-acf7-4118-86da-d026c5049aa4"
-                name="DefaultValue"
-                value="database" />
-            </defaultValue>
-          </property>
-          <property
             Id="1f57ddf1-677c-496a-bb84-9f872c5a1eb0"
-            name="setting_file"
+            name="backup_setting"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -524,14 +261,6 @@
           <operation
             Id="209c9d80-d7cd-42d1-a133-99d558effc04"
             name="restore"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="5893cd9f-2334-4368-9f7a-c5d4ec7002d7"
-            name="append_setting"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -591,7 +320,7 @@
         <ownedAttributesInternal>
           <property
             Id="37e22c8c-0c58-4122-894e-9130b77ca969"
-            name="setting_file"
+            name="backup_setting"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -600,11 +329,11 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
-            <description>JSON file object</description>
+            <description>Dictionary from the JSON file</description>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="2964f6db-b35f-40b0-85e0-d7c95d5a6afb"
-                LastKnownName="object"
+                Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                LastKnownName="dictionary"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -612,7 +341,7 @@
         <ownedOperationsInternal>
           <operation
             Id="bdc7b90a-6e64-4d24-93b9-fdbf6ba13895"
-            name="backup"
+            name="restore"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
