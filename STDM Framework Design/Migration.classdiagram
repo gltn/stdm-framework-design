@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f08fa84e-31df-457e-a725-4629292091d1" name="Migration" linkedPackageId="ce5195fe-86ae-4dd6-b2ca-aa9baad2aa8b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f08fa84e-31df-457e-a725-4629292091d1" name="Migration" linkedPackageId="ce5195fe-86ae-4dd6-b2ca-aa9baad2aa8b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="0c6e8544-9669-4170-913d-b6fb82237633">
       <elementDefinition Id="c196f198-7e64-4f1a-9113-46c602e249b4" />
@@ -161,6 +161,14 @@
                 <dependency Id="75613d96-3e4a-4032-90ea-13232edfae56">
                   <classMoniker Id="e23db51b-1964-4a63-9e16-d0439cdf48a5" LastKnownName="ConfigurationUtils" />
                   <elementDefinition Id="05a04d5a-d129-4c2b-bd73-984bc9f03c9c" />
+                </dependency>
+                <dependency Id="d10c29af-1892-43b9-834c-d656c1970f05">
+                  <classMoniker Id="ed5ff3fb-c68b-4d6d-bff4-34edf5884e37" LastKnownName="Backup" />
+                  <elementDefinition Id="181734b0-5a5a-412e-bcbc-d045c5fb5368" />
+                </dependency>
+                <dependency Id="4f3629fb-ee86-4811-83ee-70ef12957a58">
+                  <classMoniker Id="28138faa-0d28-4a4f-8fa2-7e8aa58f63df" LastKnownName="Restore" />
+                  <elementDefinition Id="ef4f91db-4446-49c3-b87e-69c8174d28fc" />
                 </dependency>
               </suppliersInternal>
               <targetEnds>

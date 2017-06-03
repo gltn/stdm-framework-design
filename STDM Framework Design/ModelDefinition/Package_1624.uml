@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="2dae2489-b794-48db-aa83-2abd9e763d53"
   name="Updater" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -53,6 +53,20 @@
               Id="2046915c-1ae8-4561-8a33-83c1567b6a09"
               LastKnownName="ConfigurationUtils"
               LastKnownLocation="Package_1624.uml" />
+          </dependency>
+          <dependency
+            Id="181734b0-5a5a-412e-bcbc-d045c5fb5368">
+            <classMoniker
+              Id="db368cde-c4eb-4e97-9cdf-4034b2c663e9"
+              LastKnownName="Backup"
+              LastKnownLocation="Package_1628.uml" />
+          </dependency>
+          <dependency
+            Id="ef4f91db-4446-49c3-b87e-69c8174d28fc">
+            <classMoniker
+              Id="575d35d4-217b-480d-8cc9-ba66f54866e9"
+              LastKnownName="Restore"
+              LastKnownLocation="Package_1041.uml" />
           </dependency>
         </suppliersInternal>
         <targetEnds>
