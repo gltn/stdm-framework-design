@@ -4,6 +4,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="729583e9-92f7-446a-978d-1b62ebfd98a9" name="GeometryValidation" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="53c23500-6afe-4541-8d31-57c521e41363" />
+        <suppliersInternal>
+          <dependency Id="2319a941-3ed0-49cd-9e91-9fd75e92f202">
+            <classMoniker Id="fd0efd73-5a71-4b37-b272-4649484a39cb" LastKnownName="GeoProcessingUtil" />
+            <elementDefinition Id="0a50eb63-9a91-41a4-a1ec-dbc6ceca7e04" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="ce18ff5e-ccd8-444f-9dc4-7b328a756a8c" name="validate_feature" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="7b47e641-382c-40e1-b003-6539a23695d2" />
