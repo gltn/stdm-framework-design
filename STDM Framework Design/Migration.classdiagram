@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f08fa84e-31df-457e-a725-4629292091d1" name="Migration" linkedPackageId="ce5195fe-86ae-4dd6-b2ca-aa9baad2aa8b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f08fa84e-31df-457e-a725-4629292091d1" name="Migration" linkedPackageId="ce5195fe-86ae-4dd6-b2ca-aa9baad2aa8b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="0c6e8544-9669-4170-913d-b6fb82237633">
       <elementDefinition Id="c196f198-7e64-4f1a-9113-46c602e249b4" />
@@ -1260,6 +1260,24 @@
                   <description>Initialize the backup by creating empty backup folder</description>
                   <elementDefinition Id="f4507c6c-a7d4-4a5a-9f50-bdcadcefc880" />
                 </operation>
+                <operation Id="c1f00dd2-74db-4504-b17f-e5ccef042367" name="Backup" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5e393035-8198-450c-b735-0e207d39a7b8" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ff3e2d38-afed-46d1-826f-f551d4ab0304" name="backup_setting" direction="In" isUnique="false">
+                        <elementDefinition Id="a51735a2-6940-4cb8-b6c8-a2d05df74e2b" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6e10921e-de64-4d7f-b02d-01a763c96c9d" direction="Return">
+                        <elementDefinition Id="369871bb-dcb3-492b-be43-69b4d0d1518d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6c258679-f8d1-4248-a8c2-444655de66e8" LastKnownName="dictionary" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
@@ -2371,6 +2389,11 @@
     <packageHasNamedElement>
       <referencedType Id="9675dabe-e51c-4335-a650-bfe9df5faa03" name="QDomDocument" isAbstract="false" isLeaf="false" cachedFullName="QDomDocument">
         <elementDefinition Id="f9600be0-9baf-41ed-b2d0-757624d90398" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6c258679-f8d1-4248-a8c2-444655de66e8" name="dictionary" isAbstract="false" isLeaf="false" cachedFullName="dictionary">
+        <elementDefinition Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

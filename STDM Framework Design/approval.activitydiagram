@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="e33d41e6-9dda-4586-8dd7-fe1ee0e49292" name="approval" linkedPackageId="f873ded7-ea03-4ca1-9735-36ab282c65ff" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e33d41e6-9dda-4586-8dd7-fe1ee0e49292" name="approval" linkedPackageId="f873ded7-ea03-4ca1-9735-36ab282c65ff" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
     <comment Id="054d9fb8-b8ee-4364-8c38-6e8775455813">
       <elementDefinition Id="aa98989d-3cd4-4843-8497-3b1dc731b6c2" />
@@ -8,7 +8,7 @@ directly save to table</body>
     </comment>
     <comment Id="023d2f4c-19c2-44d7-92a7-096cc6c86527">
       <elementDefinition Id="d93c9fed-de29-4302-b1dd-3795dd9c5402" />
-      <body>read in QGIS Authentication System </body>
+      <body>read setting from the database</body>
     </comment>
     <comment Id="d0fdb0cb-f9cc-49d5-b690-3040de1f7867">
       <elementDefinition Id="86d46c67-7333-484e-8780-72521c8fd334" />

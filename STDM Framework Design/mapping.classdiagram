@@ -204,36 +204,6 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="1bc687a1-5802-4d24-b586-97fd58a61996" name="split_polygon" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="52f76d3f-235d-4671-9325-defe872c2e99" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="d818eb62-3713-480e-88ce-d49bdf6fccc4" name="geom" direction="In" isUnique="false">
-                  <elementDefinition Id="1130f843-23e3-43de-9099-c7b0fdc05c92" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="72fd49b8-ce24-4829-a660-4bb9001836b9" LastKnownName="QgsGeometry" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="31f8f3f7-ff6b-4e6a-bc3c-1d533c085838" name="peices" direction="In" isUnique="false">
-                  <description>number of peices</description>
-                  <elementDefinition Id="6d03cbbb-5ee6-43f2-8f14-57dea6c5a24a" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="afa19ca6-f297-4cc8-85e1-c1a6318eaf1b" LastKnownName="Integer" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="3ea78131-7fa6-4829-9064-b81148618c38" direction="Return">
-                  <elementDefinition Id="2c8193d1-125c-4736-82f2-b2e445376367" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="21c0555d-ad99-43ce-9d0c-7bbf43ee37f8" LastKnownName="String" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -446,11 +416,6 @@
     <packageHasNamedElement>
       <referencedType Id="75fc5337-87d8-4e0f-919e-a8e47897c207" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="21c0555d-ad99-43ce-9d0c-7bbf43ee37f8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>

@@ -3,199 +3,376 @@
   <ownedCommentsInternal>
     <comment Id="d4d3ff17-0e46-4fb3-8286-730cfc387d5b">
       <elementDefinition Id="4d6046dd-67da-413e-b333-66e57736f682" />
-      <body>Existing STDM Notification UI class</body>
+      <body>Existing STDM Notification UI could be extended</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="38a5af66-b911-48d6-bb5e-b70efd3580b9">
-      <profileInstance Id="78feba5b-b3b3-4da7-81a3-1706bf4158fc" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="aecef601-d3d1-475b-a26f-8b2b1033899e">
-      <profileInstance Id="9693e014-57b5-49af-aae8-a49d0da9a6ef" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="abf5a8f3-9480-44a3-87da-852b64fc8851" name="Alert" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="abf5a8f3-9480-44a3-87da-852b64fc8851" name="BaseDispatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2" />
+        <ownedOperationsInternal>
+          <operation Id="95252d73-76c5-4c1f-835e-c9f598c4aa55" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5f5b42e4-74dc-4ef2-a938-c3013f4e3241" />
+          </operation>
+          <operation Id="ed3d6a7a-f5dc-4997-be7e-fd7a1d4ab6e1" name="AlertDispatcher" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c98ae9e1-98b2-4ab7-b142-3dc41eaa867f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4e9925b4-550c-4953-8a65-22b08505ce02" name="alert_type" direction="In" isUnique="false">
+                  <elementDefinition Id="91cfa8f6-058b-47b8-ba06-25de188c0589" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="201725b8-c387-4dcb-b490-9900ea9f3157" LastKnownName="AlertType" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e994e362-8142-4afc-bf0f-9f4112226923" direction="Return">
+                  <elementDefinition Id="2d096e95-f290-4b75-b10e-5b34eb2ed3a6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7d710c99-c492-4c99-8e70-1cb35953fec7" name="dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="549c1a93-9626-44bd-8840-62e8fcc57e79" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="efe19de7-0621-4e7f-a3e4-36e352fabd5d" direction="Return">
+                  <elementDefinition Id="9bd75dca-550b-4f6d-9efe-ee210a67908d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="39b5033c-eb1d-4232-82f7-cfd86ac2a543" LastKnownName="DispatchStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be4ad630-ca3b-400e-9421-ae98281983ef" name="EmailDispatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="517c4317-3000-4c6e-baec-3a6b475859c8" />
+        <generalsInternal>
+          <generalization Id="edc011fa-b369-4c52-8c9b-c4b8393be5eb" isSubstitutable="false">
+            <classMoniker Id="abf5a8f3-9480-44a3-87da-852b64fc8851" LastKnownName="BaseDispatcher" />
+            <elementDefinition Id="cebcba00-5aee-47c6-86b7-c2985c1def94" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="024d592b-c02e-4769-95c5-4ecd0bc61be7" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="22303e15-f611-4ca1-853e-a251cec2759a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="53d718af-c261-4d69-8c78-118af11d1ad3" LastKnownName="Message" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e5b9653e-f10c-45e1-8648-7f68f4597969" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8fd97dd-2fcb-4c01-84bc-f3395b984316" />
+          </operation>
+          <operation Id="d79288b1-b824-4265-8179-72a60f4ecaf7" name="dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d7ad7cc0-2731-4117-858e-fcad446b5fd9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="68916849-2f68-42a6-a0ef-6dc4bf069fb8" direction="Return">
+                  <elementDefinition Id="3065909f-8af6-4d46-906b-33f4c2c4973b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0984670a-21ae-4111-97d5-c05c506bccae" LastKnownName="DispatchStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f548cee-c154-463d-9fea-af665f5e9586" name="ModuleBasedDispatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea" />
+        <generalsInternal>
+          <generalization Id="c93633a4-024e-4487-a6cb-10cd8a669dbb" isSubstitutable="false">
+            <classMoniker Id="abf5a8f3-9480-44a3-87da-852b64fc8851" LastKnownName="BaseDispatcher" />
+            <elementDefinition Id="b8499041-16fb-4581-8b23-52b39499e821" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="5f5b3dab-727b-41b0-b0e9-96613b85c5b7" name="type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="47cb9802-a3e4-40fd-b7ef-731ccc50bf70" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7814d8a1-eecb-4a9d-8278-1ccb3c012b25" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d2adf7f3-3548-4180-bd3d-cd802c6b6f03" />
+          </operation>
+          <operation Id="b22fbad6-9588-41fb-bfc9-f6a605fc545f" name="dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c1904b6a-ff7f-43d9-8d9b-b28bac27f35a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="72384f1f-2aff-4329-9225-aca8c1987ab9" direction="Return">
+                  <elementDefinition Id="16318821-770f-44c0-b614-f49beb3c6cd6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="39b5033c-eb1d-4232-82f7-cfd86ac2a543" LastKnownName="DispatchStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="77939165-d76e-4357-87d9-19e987ad159d" name="SMSDispatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5c47b3aa-38f5-41f2-a8d1-edf569e8192d" />
+        <generalsInternal>
+          <generalization Id="1efc30c5-b191-47ea-95dd-82d0f37d842c" isSubstitutable="false">
+            <classMoniker Id="abf5a8f3-9480-44a3-87da-852b64fc8851" LastKnownName="BaseDispatcher" />
+            <elementDefinition Id="7b2266c1-a3ff-4a65-ad61-9e42c6059830" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="7e1bbbb9-bee1-4deb-bb76-916097ead984" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3f2ec1bd-5598-4c63-80f9-1232f6f55982" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a4a2b56a-9c1f-42eb-b273-9905a7ffe1fb" LastKnownName="Message" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a10f9681-7cc5-4226-8a8c-d58a91ee7785" name="register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d377a0b-4bde-41be-be3b-622597fff86e" />
+          </operation>
+          <operation Id="11983f7f-a705-410a-b8c5-3de4d1f1853b" name="dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c56da3b9-daeb-408f-ba43-5e24bf9f4b5d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6a40710b-a7ff-4be9-afe3-9aba83a0467f" direction="Return">
+                  <elementDefinition Id="f06c7413-e0ff-4543-a14f-4be1d574eaa3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="39b5033c-eb1d-4232-82f7-cfd86ac2a543" LastKnownName="DispatchStatus" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="67ac4609-8bc3-4fd9-9f31-f438b519b820" name="AlertType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cb81d5e6-cc08-4d00-969f-6980b8929c02" />
+        <ownedLiterals>
+          <enumerationLiteral Id="3693732b-c167-4744-a30e-97b346bf9aa9" name="email">
+            <elementDefinition Id="9136bceb-5cec-4952-893e-67c8612a4773" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="cc332d9a-8baf-4715-b9ba-c05cbbbb5b34" name="sms">
+            <elementDefinition Id="610b0263-f3a6-4efd-a9fd-f8814c4d54c2" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="744f2f19-1454-4c4c-9130-95ea969e2125" name="module">
+            <elementDefinition Id="675c90e8-ad56-459e-baa9-68a9c99252f1" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="201725b8-c387-4dcb-b490-9900ea9f3157" name="AlertType" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::AlertType">
+        <elementDefinition Id="cb81d5e6-cc08-4d00-969f-6980b8929c02" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="bd345846-4158-429b-b18f-56a956e72f6e" name="DispatchStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e164b9ec-d462-4a91-b20c-c122db6777ff" />
+        <ownedLiterals>
+          <enumerationLiteral Id="4ae2ae75-ffcd-4c61-9ebe-6b98755dd06d" name="Sent">
+            <elementDefinition Id="dc4b418d-6fb0-4253-877d-c91ab1291d24" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="77d26cad-070e-46ad-85d4-ff90c2905411" name="MissingConfiguration">
+            <elementDefinition Id="7dc09824-3198-4ee4-840e-d0802c58da4f" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="c1e9fac5-5502-4a5e-88a6-ba2bd620b54e" name="EMPTY_MESSAGE">
+            <elementDefinition Id="260ad52c-ef53-4fa2-9d39-b1bd46870d2c" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="39b5033c-eb1d-4232-82f7-cfd86ac2a543" name="DispatchStatus" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::DispatchStatus">
+        <elementDefinition Id="e164b9ec-d462-4a91-b20c-c122db6777ff" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0984670a-21ae-4111-97d5-c05c506bccae" name="DispatchStatus" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::DispatchStatus">
+        <elementDefinition Id="e164b9ec-d462-4a91-b20c-c122db6777ff" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1c94a46f-c4a0-481e-a46d-7cb6028508f3" name="DispatcherHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fe99421c-026e-481e-80ca-1855aca94573" />
         <targetEnds>
-          <association Id="25e79ea2-5445-4f27-8c3c-37b0f0554dfe" isDerived="false" sourceEndRoleName="Alert" targetEndRoleName="Notification" isLeaf="false" isAbstract="false">
-            <classMoniker Id="2f548cee-c154-463d-9fea-af665f5e9586" LastKnownName="Notification" />
+          <association Id="6105d3f8-fce1-4a4e-bada-bbb11034e165" isDerived="false" sourceEndRoleName="Dispatcher" targetEndRoleName="AlertDispatcher" isLeaf="false" isAbstract="false">
+            <classMoniker Id="abf5a8f3-9480-44a3-87da-852b64fc8851" LastKnownName="BaseDispatcher" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="ac5981c3-48fa-4406-b6d7-985e9486dc91" name="Alert" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="c909fae9-b25b-4757-b0f5-6c3820a018f8" />
+                <memberEnd Id="da903a1b-2c50-46a6-a2dd-a50028bb1ad5" name="Dispatcher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1c73ac4a-6f95-4feb-9def-5e6eee1865e3" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="74b59072-5e43-4fb7-bf7c-91f6eacdb655" name="Notification" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="1b1e5e8c-3398-4b18-93a1-f04d24a32a2b" />
+                <memberEnd Id="e02b0c0a-7b41-4dc5-86ef-44555e613903" name="AlertDispatcher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="dea1cad1-7b2f-4277-b77a-0778f84ff1e6" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="4e3447a0-42b9-4c8a-a835-0b4419a29d9d" />
-          </association>
-          <association Id="49da2bb6-581f-4575-8c4d-2185ddb1cfef" isDerived="false" sourceEndRoleName="Alert" targetEndRoleName="Message" isLeaf="false" isAbstract="false">
-            <classMoniker Id="be4ad630-ca3b-400e-9421-ae98281983ef" LastKnownName="Message" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="9a8353e4-688e-43c3-97d5-b8e86a0e1540" name="Alert" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="8e39ea58-d02c-44dc-af8f-0a45b0f79226" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="9d358768-761b-45da-aef7-1f2008352e23" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="2c1e4afe-6405-4ee2-9361-d208f896e46d" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="119f7a2c-740c-40b3-b781-6756d3e8ef79" />
+            <elementDefinition Id="73954da7-d111-47b2-93a0-174a1c34b64d" />
           </association>
         </targetEnds>
-        <ownedOperationsInternal>
-          <operation Id="2e1102f6-b223-4ff0-9cb9-f08264d87e39" name="insert_qgis_notification" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="8a43fb6a-8fc1-476f-8b94-95bed17fc5ad" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="0b92b339-3fa1-4f1e-8a05-986a618e3282" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="16b7eb57-6663-409e-86ff-f0cc5ab48a9e" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="76ceb7ef-4765-4d16-b026-7f5b1857d005" name="send_email" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="62800ff7-3ac1-4fff-ae6b-3e7f787d23a8" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="f2fb7619-d984-4482-81dd-563ee1ce49da" name="host" direction="In" isUnique="false">
-                  <elementDefinition Id="10f3dd7e-e654-4f43-be56-22d304f04758" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="1224676b-90ab-4b82-b7e0-b81bdd775005" name="port" direction="In" isUnique="false">
-                  <elementDefinition Id="bf0377fc-c4d5-4165-8c85-b9cdd55bded9" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="f71bfaa7-5d25-4444-a6f4-6dad06d2c679" name="email" direction="In" isUnique="false">
-                  <elementDefinition Id="7f3f48ad-868b-4619-9099-cdc48260a374" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="cd7183de-6a10-436f-a248-9276d7d76225" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="b6707a33-865d-470f-b2b1-2c32abc050cc" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="170d4b3e-b77b-4cd1-9596-79ae0410e9a6" name="send_sms" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="2a277a84-d8a1-424b-8861-66d825bc67c3" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="284bc9fb-0b03-4e83-a0a6-8bf7b52027cb" name="host" direction="In" isUnique="false">
-                  <elementDefinition Id="f1d24b7b-2230-4106-a47d-fffefd955afa" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="f36b33ae-529a-463e-a2ec-fcb282fd3378" name="port" direction="In" isUnique="false">
-                  <elementDefinition Id="df1d1c35-2007-43f7-a783-32577c2ec734" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="616b2997-505c-4055-a1bc-530a52294f80" name="email" direction="In" isUnique="false">
-                  <elementDefinition Id="085d59a3-7452-47be-bc72-37df77418723" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="e277cddc-6957-4daf-a8cb-42a6cd650498" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="ceaf37d2-3f36-4963-ac52-e5e3d1b2dfe7" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="22e6f81c-25ed-408f-844c-e1223ef099d6" name="insert_module_notification" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="2b1e88bc-c7de-457e-96e3-017077ed65c3" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="b5fbe426-1b36-4321-93c7-be60b89a9f2d" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="53196fb1-9506-464e-934b-5788b3df242b" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="be4ad630-ca3b-400e-9421-ae98281983ef" name="Message" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="517c4317-3000-4c6e-baec-3a6b475859c8" />
-        <ownedOperationsInternal>
-          <operation Id="e5b9653e-f10c-45e1-8648-7f68f4597969" name="send_sms" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="f8fd97dd-2fcb-4c01-84bc-f3395b984316" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="83fb7270-310d-42c1-b48f-6ae0eb2a5f25" name="host" direction="In" isUnique="false">
-                  <elementDefinition Id="ef1a71ff-9f1e-4b63-9603-25b89ec5fb32" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="e78f8b97-6fd3-4804-a73b-3f4de72ad9cd" name="port" direction="In" isUnique="false">
-                  <elementDefinition Id="ccd1dcc9-1f2f-468e-9940-088ff06bef95" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ba6a9e44-48da-4a5f-a125-50eda218dbbe" name="email" direction="In" isUnique="false">
-                  <elementDefinition Id="dacd99ea-eff6-439d-80dd-6e3428daca29" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="46ad9ab0-3ee6-41fb-bf42-41bab3b99801" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="e29c76bd-7ddc-471c-8c2a-211b99b3d51c" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="fcd6335a-aeae-45b6-9fb2-45bd60659463" name="send_email" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9be93e19-f605-47ce-b384-71220f098311" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="6763dab1-bc07-44bb-8034-a9fb96104905" name="host" direction="In" isUnique="false">
-                  <elementDefinition Id="5b883dd2-03e5-4b98-b129-f5cd2aacf598" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="529955ba-44da-47a4-8916-7583d4878abf" name="port" direction="In" isUnique="false">
-                  <elementDefinition Id="b9ad1c06-e482-40a1-8b14-191ac7de590b" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="f0853564-8cbe-4de3-82dc-ef6f5b3c111c" name="email" direction="In" isUnique="false">
-                  <elementDefinition Id="a67aedbc-34f2-42ad-a9bd-8c1a7ad5cbf1" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="257f06c1-a181-47d1-b28c-b8bd1c3bf2d3" name="message" direction="In" isUnique="false">
-                  <elementDefinition Id="06d854eb-1994-4305-ba46-835aa81698e1" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
+      <class Id="d89b4bca-7d86-4656-a163-53e33a73a5a5" name="Message" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21" />
+        <targetEnds>
+          <association Id="d896dca9-5b04-4d6f-8ebb-9362fe912207" isDerived="false" sourceEndRoleName="Message" targetEndRoleName="EmailDispatcher" isLeaf="false" isAbstract="false">
+            <classMoniker Id="be4ad630-ca3b-400e-9421-ae98281983ef" LastKnownName="EmailDispatcher" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd6db1d4-00a8-4e0b-9773-bc053e69e2b7" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e35f7da0-8d57-451b-8d0f-21b7bb0ccd7e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b88a791-1489-4a99-85bc-e7c37ea503f1" name="EmailDispatcher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="0e17a089-9d02-4763-9cbd-943d7f8dcc8d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="df6f3430-3a67-48e8-b2bd-a89aac48cddf" />
+          </association>
+          <association Id="dab179ce-14ef-4ec4-b538-c8a37937502f" isDerived="false" sourceEndRoleName="Message" targetEndRoleName="SMSDispatcher" isLeaf="false" isAbstract="false">
+            <classMoniker Id="77939165-d76e-4357-87d9-19e987ad159d" LastKnownName="SMSDispatcher" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0105a5f4-8714-478a-9e08-a9ba026045e3" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="42440384-8912-4250-83a8-7b97f77c30f9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="245ad03f-86d9-47a7-b2e6-03a60a4adeb9" name="SMSDispatcher" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d18f3b81-dc77-4469-a7cf-c38330395cb4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7eab309d-f3dd-47fd-b72c-5d90d6fedc09" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="5891d564-c635-421d-af61-0dd9f92edc25" name="Subject" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed7588d0-3b4b-4f95-adf6-216b16d4326b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3717289d-14ab-4abc-b1f1-e4dd1182319d" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="319988fc-03f3-4fee-aee8-a56ea4b961e8" name="Address" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="39be0a11-06f0-411e-bc66-58651fd9c06e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="437c020a-70f7-4e80-acd5-a9ceecda6263" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="dde1742f-f9e9-4d74-9ff0-3835c894bae7" name="Body" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="67fb589c-4295-49bd-a909-e217c26b2dbf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2dd13c08-d555-4426-8aa4-f39a52a0e3a0" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3717289d-14ab-4abc-b1f1-e4dd1182319d" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="437c020a-70f7-4e80-acd5-a9ceecda6263" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2dd13c08-d555-4426-8aa4-f39a52a0e3a0" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="53d718af-c261-4d69-8c78-118af11d1ad3" name="Message" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::Message">
+        <elementDefinition Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a4a2b56a-9c1f-42eb-b273-9905a7ffe1fb" name="Message" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::Message">
+        <elementDefinition Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21" />
+      </referencedType>
+    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="2f548cee-c154-463d-9fea-af665f5e9586" name="Notification" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea" />
+      <class Id="69192c4b-4e08-495c-a227-05271b9b35ae" name="AlertConfiguration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c7a23f9e-587e-4ed5-b28b-14ca9eea8575" />
+        <targetEnds>
+          <association Id="cdc62154-d78c-4552-aeb8-7466f2e56ac3" isDerived="false" sourceEndRoleName="AlertConfiguration" targetEndRoleName="DispatcherHandler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1c94a46f-c4a0-481e-a46d-7cb6028508f3" LastKnownName="DispatcherHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1a4c6f0b-a0ac-4a2d-9779-87b6d9fe39c1" name="AlertConfiguration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="25f081ae-d2ae-4187-853d-163dc7cbc03c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6ded946-75d4-4d4d-9835-40b316b290c4" name="DispatcherHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="e8d058b0-9934-445e-a329-326a59b5eab7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="09bb11d1-4793-45b6-9a28-6aa147bd2f50" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="b260d0b8-d370-463a-aaf1-464ef06979d0" name="alert_type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c11c9993-165b-4624-a4bd-48f8af8a444f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="39e9d35a-1c4b-48af-9854-3faf8db17b34" LastKnownName="AlertType" />
+            </type_NamedElement>
+          </property>
+          <property Id="c9cd0f27-c6a8-4b64-bbea-c0c2bd64ab06" name="use" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="39240be1-6c18-417f-a1b8-48f360c08a9a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ff068cf0-52ff-4a5a-bdc8-5e5449da55bd" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="39e9d35a-1c4b-48af-9854-3faf8db17b34" name="AlertType" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::AlertType">
+        <elementDefinition Id="cb81d5e6-cc08-4d00-969f-6980b8929c02" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ff068cf0-52ff-4a5a-bdc8-5e5449da55bd" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="5d419559-7850-4b55-b156-0f2ccfc54540" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="38a5af66-b911-48d6-bb5e-b70efd3580b9">
+        <profileInstance Id="78feba5b-b3b3-4da7-81a3-1706bf4158fc" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="aecef601-d3d1-475b-a26f-8b2b1033899e">
+        <profileInstance Id="9693e014-57b5-49af-aae8-a49d0da9a6ef" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

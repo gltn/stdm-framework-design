@@ -3,7 +3,7 @@
   <ownedCommentsInternal>
     <comment Id="e2f7baab-d791-41c2-b7c8-35a2158229a4">
       <elementDefinition Id="383ef3d5-7ae1-4b37-bf6f-df148e0747d6" />
-      <body>Store approval config in QGIS Authentication System </body>
+      <body>Store approval config in STDM database</body>
     </comment>
     <comment Id="57086def-33b7-4d8e-8742-6b69a6146f26">
       <elementDefinition Id="9b1f7fbf-5f99-4c47-b7af-2faace970972" />
@@ -17,10 +17,6 @@
     <comment Id="0299fbb9-a407-48b2-80a8-10ca0a988622">
       <elementDefinition Id="eb78a222-050d-401e-9a0b-16bac75c65f7" />
       <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is added when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
-    </comment>
-    <comment Id="b831e2e3-4767-480b-b6fd-390e229186de">
-      <elementDefinition Id="85dc5809-11d3-49dd-a43b-0d2cab4f287a" />
-      <body>handles CRUD operation of approval</body>
     </comment>
     <comment Id="26579a67-f12a-450e-8ebe-aed042bcb30d">
       <elementDefinition Id="329f77a5-e5fe-41b2-82f7-f726d0524c27" />
@@ -47,10 +43,22 @@
       <body>When a record is approved, it is saved to the original entity and a notification is sent to the editor. 
 If disapproved, only notification is sent to the editor. </body>
     </comment>
+    <comment Id="bd6aa904-30a3-4626-9a76-02dd907918dd">
+      <elementDefinition Id="39448cdb-ede5-4082-8bab-6ebbb682a177" />
+      <body>User specific notification setting that can be used by any module</body>
+    </comment>
+    <comment Id="00e8977f-24b2-49ae-9b90-847b0fcd3990">
+      <elementDefinition Id="91e9a480-3419-4718-a792-ffee641789df" />
+      <body>Inherits from baseEntityInfo</body>
+    </comment>
+    <comment Id="c348888e-607f-4240-9614-be3dbcf4a412">
+      <elementDefinition Id="082ad1b1-30fe-4643-bda3-e2460a31fe22" />
+      <body>Notification to be sent to all approvers in case of a change of a record</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b10f2291-ba54-4230-a976-7b829176d7ac" name="Approval" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="b10f2291-ba54-4230-a976-7b829176d7ac" name="ApprovalProveder" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c" />
         <suppliersInternal>
           <dependency Id="247d063b-aa42-4389-ac02-bf85a9308f55">
@@ -61,11 +69,41 @@ If disapproved, only notification is sent to the editor. </body>
             <classMoniker Id="0b97acc3-7186-4de8-9491-58dd88d831b7" LastKnownName="Profile.Entity" />
             <elementDefinition Id="1b3134ad-c879-47fe-83e6-426c6d1129a6" />
           </dependency>
-          <dependency Id="8e13df88-bd54-4bad-baa4-f2ec143c1dc2">
-            <classMoniker Id="1772ae94-fe7e-45f7-8982-9d7c7636b550" LastKnownName="DataProvider" />
-            <elementDefinition Id="ae8074b8-ebbc-4aef-9412-38c204394752" />
-          </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association Id="4d8193a6-e128-458b-8200-49d661c0ac7e" isDerived="false" sourceEndRoleName="ApprovalProveder" targetEndRoleName="Options" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5c479188-e950-4eb4-a60c-62bf8a776f94" LastKnownName="Options" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa34420a-393d-447c-a7a0-ad72df022d3e" name="ApprovalProveder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="743f7193-4b38-4ec4-81bb-0c5dbb08addb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8c0da063-69ba-423d-98ca-39da1659d978" name="Options" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9d8780e4-1e02-4cff-8b0d-3fcc69f027d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e51a0462-796f-49ea-b39b-48524f6d3c63" />
+          </association>
+          <association Id="0829e833-0fdf-4c57-88fe-c42ba1945128" isDerived="false" sourceEndRoleName="ApprovalProveder" targetEndRoleName="Configuration" isLeaf="false" isAbstract="false">
+            <classMoniker Id="edd283fe-c5bf-42cf-a7d3-a54a34c5159a" LastKnownName="Configuration" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b7c2a64-ac81-4441-8e45-737fe3d1cbbd" name="ApprovalProveder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="23eca556-ea05-40ed-a2da-f655854dacc1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="19eb8fca-30c0-4b7d-88d7-223245736073" name="Configuration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac38e161-d3f0-4161-95a6-239d48c866bf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dde7db73-6566-40ac-9600-2973497ac5a0" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="793b73d4-d4e0-46b0-9456-3c11c0a2d4b8" name="approved_entities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="e380a46b-a7f4-4984-a445-bd2280f5be3d" />
@@ -227,11 +265,6 @@ If disapproved, only notification is sent to the editor. </body>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="1772ae94-fe7e-45f7-8982-9d7c7636b550" name="DataProvider" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="141c2335-9c31-4db2-958a-479aa83feba6" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
       <class Id="0b97acc3-7186-4de8-9491-58dd88d831b7" name="Profile.Entity" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="925c40ec-8998-4d87-9a77-d3a877567c0d" />
       </class>
@@ -300,54 +333,38 @@ If disapproved, only notification is sent to the editor. </body>
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="a40f8670-4a95-45fb-9525-f1d3a74d5aab" name="ApprovalConfiguration" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="a40f8670-4a95-45fb-9525-f1d3a74d5aab" name="UsersNotificationSettingRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
         <description>profile_prefix_approval_configuration table columns</description>
         <elementDefinition Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc" />
-        <suppliersInternal>
-          <dependency Id="d7a241ea-9074-4878-bc9b-fa321817cbdc">
-            <classMoniker Id="b10f2291-ba54-4230-a976-7b829176d7ac" LastKnownName="Approval" />
-            <elementDefinition Id="374ed895-4ec1-46ed-8f12-c91b665c09e6" />
-          </dependency>
-        </suppliersInternal>
         <ownedAttributesInternal>
-          <property Id="0185b0d8-0246-40fd-b32b-bb83c2c40360" name="entity_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="b42beeb1-bd21-4090-91cc-85ea6317d262" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="cdc87839-e343-4d17-be33-27fad5bf4714" LastKnownName="String" />
-            </type_NamedElement>
-          </property>
           <property Id="c93b9b17-2fa6-4a18-aefb-c620a875cde7" name="user_id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="8b23520b-c51f-4f8f-aceb-f31d68da23ef" />
             <type_NamedElement>
               <referencedTypeMoniker Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" LastKnownName="Integer" />
             </type_NamedElement>
           </property>
-          <property Id="f4f738c1-c2f5-41ad-9770-b16f57fab785" name="approver_notifications" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6caafe81-a0c6-4cdd-a19a-03fd45046b1c" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="66ddb64c-e95d-4de2-913b-15eea33b1c52" LastKnownName="list" />
-            </type_NamedElement>
-          </property>
-          <property Id="332d6ec1-86bd-47fa-b95e-d6703e9f8825" name="user_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="ebf9b3fe-69cb-4746-b5b2-9fae3054ab44" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="5bbe7006-3b9a-4ff6-891f-662ba7cbb7a8" LastKnownName="String" />
-            </type_NamedElement>
-          </property>
-          <property Id="3885ac1e-5d2a-418b-8017-5699e2d5cedc" name="editor_notifications" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="3885ac1e-5d2a-418b-8017-5699e2d5cedc" name="email_address" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <description>The email address</description>
             <elementDefinition Id="e6ad1b98-8fd5-46cc-b2cb-424a84c6442d" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="ee9fec44-8229-4856-9a9f-8e99eb9510f5" LastKnownName="list" />
+              <referencedTypeMoniker Id="90e69714-db1d-4b84-af1e-da6d84b71936" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="9baa28ba-f579-4f30-9536-53c9e24d7c79" name="sms_number" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="283fbd85-cdf1-4418-81a5-dbffca419b8d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3ff955cd-804c-45af-a4d8-2169dce5c110" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="6342ab1e-8854-4a9d-ac9e-70d0a2c42054" name="module_notification" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8795ff95-09ed-4d83-bd17-62553098fa0a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6f779cf4-28f3-4f77-b1da-fc8f08467683" LastKnownName="Boolean" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="cdc87839-e343-4d17-be33-27fad5bf4714" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="66ddb64c-e95d-4de2-913b-15eea33b1c52" name="list" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::list">
         <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
@@ -356,16 +373,6 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <referencedType Id="12d8f44c-2904-4f22-963f-18cbd24a53d3" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="5bbe7006-3b9a-4ff6-891f-662ba7cbb7a8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="ee9fec44-8229-4856-9a9f-8e99eb9510f5" name="list" isAbstract="false" isLeaf="false" cachedFullName="STDM Framework Design::list">
-        <elementDefinition Id="fead2424-4891-465e-b1f3-b7e193867773" />
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
@@ -439,6 +446,159 @@ If disapproved, only notification is sent to the editor. </body>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a023cc16-2bf2-426e-b2ab-b488b030c7dc" name="AprovalSettingRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4e5eb097-572e-42d0-86c4-089c8ff9e31d" />
+        <suppliersInternal>
+          <dependency Id="b803473c-6792-4a04-9676-40f6c08e1624">
+            <classMoniker Id="a40f8670-4a95-45fb-9525-f1d3a74d5aab" LastKnownName="UsersNotificationSettingRecord" />
+            <description>Notification setting is obtained</description>
+            <elementDefinition Id="292110c4-7efa-4d87-b986-2c4d9d98c9c4" />
+          </dependency>
+          <dependency Id="31985dbb-3560-4565-b418-7131a2f73621">
+            <classMoniker Id="b10f2291-ba54-4230-a976-7b829176d7ac" LastKnownName="ApprovalProveder" />
+            <elementDefinition Id="fd3836b9-0407-4bf5-b146-dd7d86e1bf29" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="0ec7c120-dd7c-4239-8ae2-b07f795500f6" name="entity_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <description>Name of the entity</description>
+            <elementDefinition Id="1e34a944-35de-4fb7-80d7-ed495a98f5c4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c5ff876-5b36-48e4-b9f3-641187bd4292" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="4f11236e-bfec-4701-a708-04f61929a2c9" name="approver_order" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a6d2ec4d-4e09-4248-a22c-fdc4c15338f4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0a6c87dc-e3a1-413c-8b6e-8c273dd078d9" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="a0b888c0-fa5b-416a-a28a-562c00c2eb71" name="approval_type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d583deaf-5917-4605-98cb-8aaec7386fa9" />
+          </property>
+          <property Id="af2b238f-d031-4b89-a71a-547dbe231fc7" name="approval_role_id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="36245e30-ef11-4c83-af40-4b27af729918" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5c5ff876-5b36-48e4-b9f3-641187bd4292" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3ff955cd-804c-45af-a4d8-2169dce5c110" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6f779cf4-28f3-4f77-b1da-fc8f08467683" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="90e69714-db1d-4b84-af1e-da6d84b71936" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0a6c87dc-e3a1-413c-8b6e-8c273dd078d9" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5c479188-e950-4eb4-a60c-62bf8a776f94" name="Options" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2cd3ecad-40b2-43a7-91c8-4451f18ac645" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="edd283fe-c5bf-42cf-a7d3-a54a34c5159a" name="Configuration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8b6413d-c392-4fd3-b514-c987f19e5d4c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7e8ae8d9-ef1c-4c01-8b7d-2f54388c989b" name="EntityApprovalHistory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f5ba393c-5484-432b-b8c2-2c815df118d0" />
+        <targetEnds>
+          <association Id="750e4bb2-5fd0-4f27-abcd-62f4cfef81c6" isDerived="false" sourceEndRoleName="EntityApprovalHistory" targetEndRoleName="UsersNotificationSettingRecord" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a40f8670-4a95-45fb-9525-f1d3a74d5aab" LastKnownName="UsersNotificationSettingRecord" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0365e99b-d06e-4778-ba10-1fe1b79a11cf" name="EntityApprovalHistory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4323a01c-7a82-4c29-a713-a6df8dcb5248" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9ccc670f-6c7f-45df-8166-3fd3ac066b47" name="UsersNotificationSettingRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="91f6c91b-3b45-4420-a6f7-c725a0064fe6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b08690d7-93aa-4622-9913-7fd37f7108ff" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="0330e52b-1b39-4492-a337-d9a7462c432c" name="record_id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e3cd1ec5-3e91-4a35-8da5-0b05cd71d0df" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7e6b52ac-ae60-4a61-bf80-7f6a9bab069c" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="f496adfa-7c92-4361-ba79-5a1237ecdaec" name="approval_status" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <description>approved, disapproved, pending</description>
+            <elementDefinition Id="ecb1f6d9-9063-4168-aebb-d0d86f02ede4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9b3fe8f9-1246-4f39-a0ef-709b8f54d2c8" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="8f87c304-14d0-43e8-99c6-d8a9acb32d1d" name="approver_user_id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="43b55e36-a05d-4535-8930-12c934c66478" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d3716bde-dd79-44a0-8fa4-b482f8896845" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="301ef067-ce2a-486c-9102-5e684eedd59c" name="approval_message" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b10fe6e5-85eb-4ede-b6f1-0a72abbfdac4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="60ca4725-004d-4c13-9d80-78d5ec5cac30" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="7800ab12-7506-4cd4-acfa-98e64dba226f" name="entity_table_name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="490727d2-80db-4a93-9fa1-313b2f301aad" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bdbc4212-9c6e-4df3-9c7c-d4e9b10e844c" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="7e6b52ac-ae60-4a61-bf80-7f6a9bab069c" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9b3fe8f9-1246-4f39-a0ef-709b8f54d2c8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d3716bde-dd79-44a0-8fa4-b482f8896845" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="60ca4725-004d-4c13-9d80-78d5ec5cac30" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bdbc4212-9c6e-4df3-9c7c-d4e9b10e844c" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ea569c7c-376c-4ff1-a09b-38c43d89107f" name="STDM Framework Design">
     <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />

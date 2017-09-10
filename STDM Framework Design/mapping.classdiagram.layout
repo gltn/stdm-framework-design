@@ -9,11 +9,11 @@
         <OperationElementListCompartment Id="ddd7e925-91e0-455e-87b2-e52d26af2d4c" absoluteBounds="0.515, 1.6011718675494193, 5.0950000000000006, 0.6816406026482581" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="353b3314-a72b-4210-b1a1-058c2ee2ba25" absoluteBounds="6.625, 1, 3.125, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="353b3314-a72b-4210-b1a1-058c2ee2ba25" absoluteBounds="6.625, 1, 3.125, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="fd0efd73-5a71-4b37-b272-4649484a39cb" LastKnownName="GeoProcessingUtil" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="80fdd032-52e8-4d03-b7cf-ac2ffb3f7650" absoluteBounds="6.64, 1.3900000000000001, 3.0949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="da5119d9-4bab-4269-b9a0-09fb9bdf5f97" absoluteBounds="6.64, 1.6011718675494193, 3.0949999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="da5119d9-4bab-4269-b9a0-09fb9bdf5f97" absoluteBounds="6.64, 1.6011718675494193, 3.0949999999999998, 0.68164060264825821" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <dependencyConnector edgePoints="[(5.625 : 1.69140623509884); (6.625 : 1.69140623509884)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">

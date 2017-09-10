@@ -689,6 +689,36 @@
             isQuery="false">
             <description>Initialize the backup by creating empty backup folder</description>
           </operation>
+          <operation
+            Id="5e393035-8198-450c-b735-0e207d39a7b8"
+            name="Backup"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a51735a2-6940-4cb8-b6c8-a2d05df74e2b"
+                  name="backup_setting"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="369871bb-dcb3-492b-be43-69b4d0d1518d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7f6c2af1-2e98-4dda-b54c-7938b0568a8b"
+                      LastKnownName="dictionary"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

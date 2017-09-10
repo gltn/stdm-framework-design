@@ -61,11 +61,11 @@ directly save to table</body>
     </comment>
     <comment
       Id="d93c9fed-de29-4302-b1dd-3795dd9c5402">
-      <body>read in QGIS Authentication System </body>
+      <body>read setting from the database</body>
     </comment>
     <comment
       Id="383ef3d5-7ae1-4b37-bf6f-df148e0747d6">
-      <body>Store approval config in QGIS Authentication System </body>
+      <body>Store approval config in STDM database</body>
     </comment>
     <comment
       Id="86d46c67-7333-484e-8780-72521c8fd334">
@@ -89,16 +89,12 @@ directly save to table</body>
       <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is added when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
     </comment>
     <comment
-      Id="85dc5809-11d3-49dd-a43b-0d2cab4f287a">
-      <body>handles CRUD operation of approval</body>
-    </comment>
-    <comment
       Id="329f77a5-e5fe-41b2-82f7-f726d0524c27">
       <body>System entities such as users, permissions can be added in the future, post 2.0</body>
     </comment>
     <comment
       Id="4d6046dd-67da-413e-b333-66e57736f682">
-      <body>Existing STDM Notification UI class</body>
+      <body>Existing STDM Notification UI could be extended</body>
     </comment>
     <comment
       Id="f9f2995a-8a91-427b-9d00-f829594341c0">
@@ -125,6 +121,18 @@ If disapproved, only notification is sent to the editor. </body>
       Id="ee0d967d-c2f5-4d53-81c7-fbba4f404762">
       <body>backup setting json file structure
 </body>
+    </comment>
+    <comment
+      Id="39448cdb-ede5-4082-8bab-6ebbb682a177">
+      <body>User specific notification setting that can be used by any module</body>
+    </comment>
+    <comment
+      Id="91e9a480-3419-4718-a792-ffee641789df">
+      <body>Inherits from baseEntityInfo</body>
+    </comment>
+    <comment
+      Id="082ad1b1-30fe-4643-bda3-e2460a31fe22">
+      <body>Notification to be sent to all approvers in case of a change of a record</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -3750,58 +3758,6 @@ If disapproved, only notification is sent to the editor. </body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="52f76d3f-235d-4671-9325-defe872c2e99"
-            name="split_polygon"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="1130f843-23e3-43de-9099-c7b0fdc05c92"
-                  name="geom"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="72fae762-9a6a-4bcd-b336-1a90a77759c4"
-                      LastKnownName="QgsGeometry"
-                      LastKnownLocation="STDM Framework Design.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6d03cbbb-5ee6-43f2-8f14-57dea6c5a24a"
-                  name="peices"
-                  direction="In"
-                  isUnique="false">
-                  <description>number of peices</description>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="STDM Framework Design.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2c8193d1-125c-4736-82f2-b2e445376367"
-                  direction="Return">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="STDM Framework Design.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -4431,7 +4387,7 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <class
         Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
-        name="Approval"
+        name="ApprovalProveder"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -4502,6 +4458,84 @@ If disapproved, only notification is sent to the editor. </body>
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e51a0462-796f-49ea-b39b-48524f6d3c63"
+            isDerived="false"
+            sourceEndRoleName="ApprovalProveder"
+            targetEndRoleName="Options"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2cd3ecad-40b2-43a7-91c8-4451f18ac645"
+              LastKnownName="Options"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="743f7193-4b38-4ec4-81bb-0c5dbb08addb"
+                  name="ApprovalProveder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9d8780e4-1e02-4cff-8b0d-3fcc69f027d8"
+                  name="Options"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dde7db73-6566-40ac-9600-2973497ac5a0"
+            isDerived="false"
+            sourceEndRoleName="ApprovalProveder"
+            targetEndRoleName="Configuration"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b8b6413d-c392-4fd3-b514-c987f19e5d4c"
+              LastKnownName="Configuration"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="23eca556-ea05-40ed-a2da-f655854dacc1"
+                  name="ApprovalProveder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ac38e161-d3f0-4161-95a6-239d48c866bf"
+                  name="Configuration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -4820,7 +4854,7 @@ If disapproved, only notification is sent to the editor. </body>
             <type_NamedElement>
               <classMoniker
                 Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
-                LastKnownName="Approval"
+                LastKnownName="ApprovalProveder"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -7209,39 +7243,12 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <class
         Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc"
-        name="ApprovalConfiguration"
+        name="UsersNotificationSettingRecord"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <description>profile_prefix_approval_configuration table columns</description>
-        <suppliersInternal>
-          <dependency
-            Id="374ed895-4ec1-46ed-8f12-c91b665c09e6">
-            <classMoniker
-              Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
-              LastKnownName="Approval"
-              LastKnownLocation="STDM Framework Design.uml" />
-          </dependency>
-        </suppliersInternal>
         <ownedAttributesInternal>
-          <property
-            Id="b42beeb1-bd21-4090-91cc-85ea6317d262"
-            name="entity_name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="STDM Framework Design.uml" />
-            </type_NamedElement>
-          </property>
           <property
             Id="8b23520b-c51f-4f8f-aceb-f31d68da23ef"
             name="user_id"
@@ -7261,8 +7268,8 @@ If disapproved, only notification is sent to the editor. </body>
             </type_NamedElement>
           </property>
           <property
-            Id="6caafe81-a0c6-4cdd-a19a-03fd45046b1c"
-            name="approver_notifications"
+            Id="e6ad1b98-8fd5-46cc-b2cb-424a84c6442d"
+            name="email_address"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -7271,16 +7278,17 @@ If disapproved, only notification is sent to the editor. </body>
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <description>The email address</description>
             <type_NamedElement>
-              <classMoniker
-                Id="fead2424-4891-465e-b1f3-b7e193867773"
-                LastKnownName="list"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="ebf9b3fe-69cb-4746-b5b2-9fae3054ab44"
-            name="user_name"
+            Id="283fbd85-cdf1-4418-81a5-dbffca419b8d"
+            name="sms_number"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -7291,14 +7299,14 @@ If disapproved, only notification is sent to the editor. </body>
             isComposite="false">
             <type_NamedElement>
               <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="e6ad1b98-8fd5-46cc-b2cb-424a84c6442d"
-            name="editor_notifications"
+            Id="8795ff95-09ed-4d83-bd17-62553098fa0a"
+            name="module_notification"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -7308,9 +7316,9 @@ If disapproved, only notification is sent to the editor. </body>
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="fead2424-4891-465e-b1f3-b7e193867773"
-                LastKnownName="list"
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
                 LastKnownLocation="STDM Framework Design.uml" />
             </type_NamedElement>
           </property>
@@ -7325,94 +7333,22 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <class
         Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
-        name="Alert"
+        name="BaseDispatcher"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="4e3447a0-42b9-4c8a-a835-0b4419a29d9d"
-            isDerived="false"
-            sourceEndRoleName="Alert"
-            targetEndRoleName="Notification"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea"
-              LastKnownName="Notification"
-              LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c909fae9-b25b-4757-b0f5-6c3820a018f8"
-                  name="Alert"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1b1e5e8c-3398-4b18-93a1-f04d24a32a2b"
-                  name="Notification"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="119f7a2c-740c-40b3-b781-6756d3e8ef79"
-            isDerived="false"
-            sourceEndRoleName="Alert"
-            targetEndRoleName="Message"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="517c4317-3000-4c6e-baec-3a6b475859c8"
-              LastKnownName="Message"
-              LastKnownLocation="STDM Framework Design.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8e39ea58-d02c-44dc-af8f-0a45b0f79226"
-                  name="Alert"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="2c1e4afe-6405-4ee2-9361-d208f896e46d"
-                  name="Message"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedOperationsInternal>
           <operation
-            Id="8a43fb6a-8fc1-476f-8b94-95bed17fc5ad"
-            name="insert_qgis_notification"
+            Id="5f5b42e4-74dc-4ef2-a938-c3013f4e3241"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c98ae9e1-98b2-4ab7-b142-3dc41eaa867f"
+            name="AlertDispatcher"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7421,16 +7357,28 @@ If disapproved, only notification is sent to the editor. </body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="16b7eb57-6663-409e-86ff-f0cc5ab48a9e"
-                  name="message"
+                  Id="91cfa8f6-058b-47b8-ba06-25de188c0589"
+                  name="alert_type"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="cb81d5e6-cc08-4d00-969f-6980b8929c02"
+                      LastKnownName="AlertType"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d096e95-f290-4b75-b10e-5b34eb2ed3a6"
+                  direction="Return" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="62800ff7-3ac1-4fff-ae6b-3e7f787d23a8"
-            name="send_email"
+            Id="549c1a93-9626-44bd-8840-62e8fcc57e79"
+            name="dispatch"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7439,88 +7387,15 @@ If disapproved, only notification is sent to the editor. </body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="10f3dd7e-e654-4f43-be56-22d304f04758"
-                  name="host"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="bf0377fc-c4d5-4165-8c85-b9cdd55bded9"
-                  name="port"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7f3f48ad-868b-4619-9099-cdc48260a374"
-                  name="email"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b6707a33-865d-470f-b2b1-2c32abc050cc"
-                  name="message"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="2a277a84-d8a1-424b-8861-66d825bc67c3"
-            name="send_sms"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="f1d24b7b-2230-4106-a47d-fffefd955afa"
-                  name="host"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="df1d1c35-2007-43f7-a783-32577c2ec734"
-                  name="port"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="085d59a3-7452-47be-bc72-37df77418723"
-                  name="email"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ceaf37d2-3f36-4963-ac52-e5e3d1b2dfe7"
-                  name="message"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="2b1e88bc-c7de-457e-96e3-017077ed65c3"
-            name="insert_module_notification"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="53196fb1-9506-464e-934b-5788b3df242b"
-                  name="message"
-                  direction="In"
-                  isUnique="false" />
+                  Id="9bd75dca-550b-4f6d-9efe-ee210a67908d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="e164b9ec-d462-4a91-b20c-c122db6777ff"
+                      LastKnownName="DispatchStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -7530,53 +7405,52 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <class
         Id="517c4317-3000-4c6e-baec-3a6b475859c8"
-        name="Message"
+        name="EmailDispatcher"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="cebcba00-5aee-47c6-86b7-c2985c1def94"
+            isSubstitutable="false">
+            <classMoniker
+              Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
+              LastKnownName="BaseDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="22303e15-f611-4ca1-853e-a251cec2759a"
+            name="Message"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21"
+                LastKnownName="Message"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="f8fd97dd-2fcb-4c01-84bc-f3395b984316"
-            name="send_sms"
+            name="register"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ef1a71ff-9f1e-4b63-9603-25b89ec5fb32"
-                  name="host"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ccd1dcc9-1f2f-468e-9940-088ff06bef95"
-                  name="port"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="dacd99ea-eff6-439d-80dd-6e3428daca29"
-                  name="email"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e29c76bd-7ddc-471c-8c2a-211b99b3d51c"
-                  name="message"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
           <operation
-            Id="9be93e19-f605-47ce-b384-71220f098311"
-            name="send_email"
+            Id="d7ad7cc0-2731-4117-858e-fcad446b5fd9"
+            name="dispatch"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7585,31 +7459,15 @@ If disapproved, only notification is sent to the editor. </body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="5b883dd2-03e5-4b98-b129-f5cd2aacf598"
-                  name="host"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b9ad1c06-e482-40a1-8b14-191ac7de590b"
-                  name="port"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a67aedbc-34f2-42ad-a9bd-8c1a7ad5cbf1"
-                  name="email"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="06d854eb-1994-4305-ba46-835aa81698e1"
-                  name="message"
-                  direction="In"
-                  isUnique="false" />
+                  Id="3065909f-8af6-4d46-906b-33f4c2c4973b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="e164b9ec-d462-4a91-b20c-c122db6777ff"
+                      LastKnownName="DispatchStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -7627,10 +7485,67 @@ If disapproved, only notification is sent to the editor. </body>
     <packageHasNamedElement>
       <class
         Id="4af3c3c9-64a2-4152-b2b3-35894eeac3ea"
-        name="Notification"
+        name="ModuleBasedDispatcher"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="b8499041-16fb-4581-8b23-52b39499e821"
+            isSubstitutable="false">
+            <classMoniker
+              Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
+              LastKnownName="BaseDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="47cb9802-a3e4-40fd-b7ef-731ccc50bf70"
+            name="type"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d2adf7f3-3548-4180-bd3d-cd802c6b6f03"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c1904b6a-ff7f-43d9-8d9b-b28bac27f35a"
+            name="dispatch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="16318821-770f-44c0-b614-f49beb3c6cd6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="e164b9ec-d462-4a91-b20c-c122db6777ff"
+                      LastKnownName="DispatchStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -7803,6 +7718,702 @@ If disapproved, only notification is sent to the editor. </body>
       <undefinedType
         Id="91adfa38-ddca-4adf-802b-d360471e7931"
         name="any" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e5eb097-572e-42d0-86c4-089c8ff9e31d"
+        name="AprovalSettingRecord"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="292110c4-7efa-4d87-b986-2c4d9d98c9c4">
+            <classMoniker
+              Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc"
+              LastKnownName="UsersNotificationSettingRecord"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <description>Notification setting is obtained</description>
+          </dependency>
+          <dependency
+            Id="fd3836b9-0407-4bf5-b146-dd7d86e1bf29">
+            <classMoniker
+              Id="f18d76cb-8ec0-4946-9ec4-e1c87e0e663c"
+              LastKnownName="ApprovalProveder"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="1e34a944-35de-4fb7-80d7-ed495a98f5c4"
+            name="entity_name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>Name of the entity</description>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a6d2ec4d-4e09-4248-a22c-fdc4c15338f4"
+            name="approver_order"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d583deaf-5917-4605-98cb-8aaec7386fa9"
+            name="approval_type"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="36245e30-ef11-4c83-af40-4b27af729918"
+            name="approval_role_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0f98f81c-3d08-449c-8390-bd9df1fa6656"
+        name="EmailNotificationSetting"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="97127373-b376-4b44-98db-57ebf1e4771a"
+            name="email_address"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1c01cf18-309e-417f-bda3-e817d208477c"
+            name="host"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5d00b13f-b985-457e-b7c9-92e744b7ba6b"
+            name="port"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5c47b3aa-38f5-41f2-a8d1-edf569e8192d"
+        name="SMSDispatcher"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="7b2266c1-a3ff-4a65-ad61-9e42c6059830"
+            isSubstitutable="false">
+            <classMoniker
+              Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
+              LastKnownName="BaseDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="3f2ec1bd-5598-4c63-80f9-1232f6f55982"
+            name="Message"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21"
+                LastKnownName="Message"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0d377a0b-4bde-41be-be3b-622597fff86e"
+            name="register"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c56da3b9-daeb-408f-ba43-5e24bf9f4b5d"
+            name="dispatch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f06c7413-e0ff-4543-a14f-4be1d574eaa3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="e164b9ec-d462-4a91-b20c-c122db6777ff"
+                      LastKnownName="DispatchStatus"
+                      LastKnownLocation="STDM Framework Design.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="cb81d5e6-cc08-4d00-969f-6980b8929c02"
+        name="AlertType"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="9136bceb-5cec-4952-893e-67c8612a4773"
+            name="email" />
+          <enumerationLiteral
+            Id="610b0263-f3a6-4efd-a9fd-f8814c4d54c2"
+            name="sms" />
+          <enumerationLiteral
+            Id="675c90e8-ad56-459e-baa9-68a9c99252f1"
+            name="module" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7223b1b2-dc69-4726-9cc1-0c1748f90851"
+        name="Al" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="e164b9ec-d462-4a91-b20c-c122db6777ff"
+        name="DispatchStatus"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="dc4b418d-6fb0-4253-877d-c91ab1291d24"
+            name="Sent" />
+          <enumerationLiteral
+            Id="7dc09824-3198-4ee4-840e-d0802c58da4f"
+            name="MissingConfiguration" />
+          <enumerationLiteral
+            Id="260ad52c-ef53-4fa2-9d39-b1bd46870d2c"
+            name="EMPTY_MESSAGE" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="06fcf3d3-ddb3-41ae-b8f9-d6944f488a30"
+        name="Dis" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fe99421c-026e-481e-80ca-1855aca94573"
+        name="DispatcherHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="73954da7-d111-47b2-93a0-174a1c34b64d"
+            isDerived="false"
+            sourceEndRoleName="Dispatcher"
+            targetEndRoleName="AlertDispatcher"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="60c0e86a-9981-40cc-b356-3b02eb43f5a2"
+              LastKnownName="BaseDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c73ac4a-6f95-4feb-9def-5e6eee1865e3"
+                  name="Dispatcher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dea1cad1-7b2f-4277-b77a-0778f84ff1e6"
+                  name="AlertDispatcher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2cd3ecad-40b2-43a7-91c8-4451f18ac645"
+        name="Options"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b8b6413d-c392-4fd3-b514-c987f19e5d4c"
+        name="Configuration"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fd52bacf-80b6-4ace-a9df-1f944d17bb21"
+        name="Message"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="df6f3430-3a67-48e8-b2bd-a89aac48cddf"
+            isDerived="false"
+            sourceEndRoleName="Message"
+            targetEndRoleName="EmailDispatcher"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="517c4317-3000-4c6e-baec-3a6b475859c8"
+              LastKnownName="EmailDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e35f7da0-8d57-451b-8d0f-21b7bb0ccd7e"
+                  name="Message"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e17a089-9d02-4763-9cbd-943d7f8dcc8d"
+                  name="EmailDispatcher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7eab309d-f3dd-47fd-b72c-5d90d6fedc09"
+            isDerived="false"
+            sourceEndRoleName="Message"
+            targetEndRoleName="SMSDispatcher"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5c47b3aa-38f5-41f2-a8d1-edf569e8192d"
+              LastKnownName="SMSDispatcher"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="42440384-8912-4250-83a8-7b97f77c30f9"
+                  name="Message"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d18f3b81-dc77-4469-a7cf-c38330395cb4"
+                  name="SMSDispatcher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="ed7588d0-3b4b-4f95-adf6-216b16d4326b"
+            name="Subject"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="39be0a11-06f0-411e-bc66-58651fd9c06e"
+            name="Address"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="67fb589c-4295-49bd-a909-e217c26b2dbf"
+            name="Body"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c7a23f9e-587e-4ed5-b28b-14ca9eea8575"
+        name="AlertConfiguration"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="09bb11d1-4793-45b6-9a28-6aa147bd2f50"
+            isDerived="false"
+            sourceEndRoleName="AlertConfiguration"
+            targetEndRoleName="DispatcherHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fe99421c-026e-481e-80ca-1855aca94573"
+              LastKnownName="DispatcherHandler"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="25f081ae-d2ae-4187-853d-163dc7cbc03c"
+                  name="AlertConfiguration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e8d058b0-9934-445e-a329-326a59b5eab7"
+                  name="DispatcherHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="c11c9993-165b-4624-a4bd-48f8af8a444f"
+            name="alert_type"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="cb81d5e6-cc08-4d00-969f-6980b8929c02"
+                LastKnownName="AlertType"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="39240be1-6c18-417f-a1b8-48f360c08a9a"
+            name="use"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f5ba393c-5484-432b-b8c2-2c815df118d0"
+        name="EntityApprovalHistory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="b08690d7-93aa-4622-9913-7fd37f7108ff"
+            isDerived="false"
+            sourceEndRoleName="EntityApprovalHistory"
+            targetEndRoleName="UsersNotificationSettingRecord"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5282cd9a-b32b-4f9a-a6d0-9d50d60476cc"
+              LastKnownName="UsersNotificationSettingRecord"
+              LastKnownLocation="STDM Framework Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4323a01c-7a82-4c29-a713-a6df8dcb5248"
+                  name="EntityApprovalHistory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91f6c91b-3b45-4420-a6f7-c725a0064fe6"
+                  name="UsersNotificationSettingRecord"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e3cd1ec5-3e91-4a35-8da5-0b05cd71d0df"
+            name="record_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ecb1f6d9-9063-4168-aebb-d0d86f02ede4"
+            name="approval_status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>approved, disapproved, pending</description>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="43b55e36-a05d-4535-8930-12c934c66478"
+            name="approver_user_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b10fe6e5-85eb-4ede-b6f1-0a72abbfdac4"
+            name="approval_message"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="490727d2-80db-4a93-9fa1-313b2f301aad"
+            name="entity_table_name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="STDM Framework Design.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
