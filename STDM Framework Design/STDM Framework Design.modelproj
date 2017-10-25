@@ -36,12 +36,26 @@
       <SubType>Content</SubType>
       <DependentUpon>approval.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="Auditing.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Auditing.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Auditing.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Auditing.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Auditing.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Auditing.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="BackupRestore.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BackupRestore.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BackupRestore.activitydiagram</DependentUpon>
     </Content>
     <Content Include="Cache.classdiagram">
       <SubType>Content</SubType>

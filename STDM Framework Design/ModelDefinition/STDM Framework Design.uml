@@ -142,6 +142,14 @@ If disapproved, only notification is sent to the editor. </body>
       Id="23014f31-5610-491f-a6ee-c189ab1f2989">
       <body>Decide if Import is possible or not</body>
     </comment>
+    <comment
+      Id="7de0e7b1-8d99-4b27-b68a-bd052de0436b">
+      <body>Backup</body>
+    </comment>
+    <comment
+      Id="dd84cc76-1e9b-45d0-b7d2-474945a0daff">
+      <body>Restore</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -8940,6 +8948,388 @@ If disapproved, only notification is sent to the editor. </body>
             Id="a2688122-7bca-4521-817c-51ea2493ffdb"
             name="ActivityFinal1"
             isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="15ec0695-8caa-4e68-949c-52c911e55cad"
+        name="Auditing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="5ead1808-7207-43de-b4ad-404fb244d24c"
+            name="Initial11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="09198bec-2bfb-4758-887a-ee40530d700a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f9f4dea7-99c9-41f8-b11b-e7f5009541a2"
+                  LastKnownName="Open Database Audit"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="f9f4dea7-99c9-41f8-b11b-e7f5009541a2"
+            name="Open Database Audit"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3efa906d-79a7-4830-b291-743615489658"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="3b28fd17-c6af-4e9f-80ad-05852ecc955a"
+                  LastKnownName="Load Auditing Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="8966d82c-72d4-40db-af87-5d0d1501d67d"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8a303bd2-7f3e-4259-b869-990e21b75eb9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7c3c6f16-b378-458f-a205-8d17280e9253"
+                  LastKnownName="Assign Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="7c3c6f16-b378-458f-a205-8d17280e9253"
+            name="Assign Formatters"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a92a2532-2c4f-437f-88c0-ff6a0de44b09"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="b03dad0d-f18d-47ef-ad55-e8e6a727ebb6"
+                  LastKnownName="Load Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e8c39696-2145-474b-bf56-9b15167a30c3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c678c3df-1159-49db-a646-0498e0a79098"
+                  LastKnownName="Populate Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="b03dad0d-f18d-47ef-ad55-e8e6a727ebb6"
+            name="Load Formatters"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="56f3821b-5fa2-48df-a25f-f4bb34f59452"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="2bdf280d-98c8-46fc-b156-37d602489d5b"
+                  LastKnownName="Populate Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="03d90c71-e08d-43b5-b41a-78c68088809a"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="8e030a06-d962-4ca3-a962-ef7260a03caf"
+                  LastKnownName="Load from Cache"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="2bdf280d-98c8-46fc-b156-37d602489d5b"
+            name="Populate Formatters"
+            isLeaf="false"
+            isUnmarshall="false" />
+          <opaqueAction
+            Id="c678c3df-1159-49db-a646-0498e0a79098"
+            name="Populate Records"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3a499735-30c6-49b5-904b-19ade4adbd3a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ec9c74de-7750-4e33-9866-8d66d1c6d9f2"
+                  LastKnownName="Show Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ec9c74de-7750-4e33-9866-8d66d1c6d9f2"
+            name="Show Records"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c6be9139-e7cb-40c9-ae0c-1683c331bc94"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="3ada4e24-68f5-45b5-ab19-5fe897a77e2a"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="3ada4e24-68f5-45b5-ab19-5fe897a77e2a"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <sendSignalAction
+            Id="3b28fd17-c6af-4e9f-80ad-05852ecc955a"
+            name="Load Auditing Records"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7b518188-17cc-4f23-8f69-9e46fbb9206b"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="d26a2572-fe64-47d2-93e0-5b195ffa75ca"
+                  LastKnownName="Load Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="d26a2572-fe64-47d2-93e0-5b195ffa75ca"
+            name="Load Records"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f6c92b97-f05f-4af7-bd27-6711540f1793"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="8966d82c-72d4-40db-af87-5d0d1501d67d"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="8e030a06-d962-4ca3-a962-ef7260a03caf"
+            name="Load from Cache"
+            isLeaf="false"
+            isUnmarshall="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="88e2f09f-0e85-4a76-91a3-59be58338ddc"
+        name="BackupRestore"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="d3f66fd6-3055-4502-affd-39ff08028d15"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="88513b35-7e90-4714-862d-9d9a457051f4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="873b9a6d-da12-4c25-8caf-03b4bd03283e"
+                  LastKnownName="Backup window opens"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="873b9a6d-da12-4c25-8caf-03b4bd03283e"
+            name="Backup window opens"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ef5d37ca-ce61-4124-a7b1-cafa8db601e1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="99e14002-fc04-4525-8a64-0b177ba72e80"
+                  LastKnownName="Select Items to Backup"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="99e14002-fc04-4525-8a64-0b177ba72e80"
+            name="Select Items to Backup"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0d7ff5ad-564b-47da-9cac-7aa3f3c16113"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="984d99b6-7334-42c3-a271-bd6685df4c0e"
+                  LastKnownName="Commit backup"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="984d99b6-7334-42c3-a271-bd6685df4c0e"
+            name="Commit backup"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="985a8371-086f-4f3a-b97b-903d2db4fd16"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ab1dab74-8098-4a1e-aff2-9a3f4babb1b0"
+                  LastKnownName="Copy items"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ab1dab74-8098-4a1e-aff2-9a3f4babb1b0"
+            name="Copy items"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="402d2822-3ae6-4a96-832e-5acf63aff004"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f108633b-053c-4b3a-bf92-c9dfc5c09465"
+                  LastKnownName="Zip items"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f108633b-053c-4b3a-bf92-c9dfc5c09465"
+            name="Zip items"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0d2ce74c-a8d1-461b-8630-baba439ec1b7"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="439b8ff4-ac5c-4562-b10a-7bfffbd6c098"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="439b8ff4-ac5c-4562-b10a-7bfffbd6c098"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <initialNode
+            Id="4e848cd6-f648-4e1b-8cd6-e07db78625c6"
+            name="Initial11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e9fb28d3-cc01-4093-82d8-a292d663eb50"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1f58456e-8d77-46a5-9413-3b3680574ebe"
+                  LastKnownName="Restore window opens"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="1f58456e-8d77-46a5-9413-3b3680574ebe"
+            name="Restore window opens"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fdc7faf9-2f69-48b1-be77-13680f2c1e57"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1cec8c6f-f386-49bc-9a3c-48b2b46cc01f"
+                  LastKnownName="Specfiy archive file"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0a94ab2e-b2a0-418f-aa18-4da3967aa3f2"
+            name="Select Items to restore"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1d7b9998-33c1-4270-8bd1-1216386edb13"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2a2cc74f-4ca1-4142-9a1e-250ef2c2ee23"
+                  LastKnownName="Commit restore"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2a2cc74f-4ca1-4142-9a1e-250ef2c2ee23"
+            name="Commit restore"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1e4c22ca-6eff-4d29-af79-9bdfc077fa73"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="65a2effb-8d13-40a0-ab67-c6de2cd76a43"
+                  LastKnownName="Copy items"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="65a2effb-8d13-40a0-ab67-c6de2cd76a43"
+            name="Copy items"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="52391155-ef2a-4d14-83e5-bd7d958a384c"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d9eefed4-2d86-40cb-9013-4945c5896180"
+                  LastKnownName="ActivityFinal11"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="d9eefed4-2d86-40cb-9013-4945c5896180"
+            name="ActivityFinal11"
+            isLeaf="false" />
+          <opaqueAction
+            Id="1cec8c6f-f386-49bc-9a3c-48b2b46cc01f"
+            name="Specfiy archive file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8c645e22-44ee-4ef2-b1a2-08ec7f987360"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0a94ab2e-b2a0-418f-aa18-4da3967aa3f2"
+                  LastKnownName="Select Items to restore"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>

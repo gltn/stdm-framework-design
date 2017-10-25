@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="8325dd9b-48e9-4c15-96b2-94a26eab86ff" name="BackupRestore" linkedPackageId="4909dd1e-a43f-4003-9168-cf33e23d276d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="3fb5e054-363d-4940-9168-7be6972b3a32">
+      <elementDefinition Id="7de0e7b1-8d99-4b27-b68a-bd052de0436b" />
+      <body>Backup</body>
+    </comment>
+    <comment Id="a967afd0-d872-4c1c-a441-97047a2ef489">
+      <elementDefinition Id="dd84cc76-1e9b-45d0-b7d2-474945a0daff" />
+      <body>Restore</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="30615f91-4469-4174-b999-967d1bb44caf">
+      <profileInstance Id="9a1a0ee9-7677-4f15-941f-09fb1fa2d617" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="782edef3-2679-4464-99a4-2221c0ab5fc4">
+      <profileInstance Id="6d27ec2c-6c7f-4292-84f8-64f257792e10" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="f78c7475-359f-4cf1-96ea-2a009d3e7677" name="BackupRestore" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="88e2f09f-0e85-4a76-91a3-59be58338ddc" />
+        <nodes>
+          <initialNode Id="7cb2114d-8535-4450-8458-8e8743db5dc3" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d3f66fd6-3055-4502-affd-39ff08028d15" />
+            <flowNodeTargets>
+              <controlFlow Id="6ade09ca-c1a3-4389-b1ef-d5f5f06f2df1" isLeaf="false">
+                <opaqueActionMoniker Id="73f43103-1d02-42fd-8333-e2469d0099b2" LastKnownName="Backup window opens" />
+                <elementDefinition Id="88513b35-7e90-4714-862d-9d9a457051f4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="73f43103-1d02-42fd-8333-e2469d0099b2" name="Backup window opens" isLeaf="false">
+            <elementDefinition Id="873b9a6d-da12-4c25-8caf-03b4bd03283e" />
+            <flowNodeTargets>
+              <controlFlow Id="d81196e1-6e5b-4bdd-b605-5b5fdf14c668" isLeaf="false">
+                <opaqueActionMoniker Id="354307ec-3ec2-4ecd-92e2-1a382746a473" LastKnownName="Select Items to Backup" />
+                <elementDefinition Id="ef5d37ca-ce61-4124-a7b1-cafa8db601e1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="354307ec-3ec2-4ecd-92e2-1a382746a473" name="Select Items to Backup" isLeaf="false">
+            <elementDefinition Id="99e14002-fc04-4525-8a64-0b177ba72e80" />
+            <flowNodeTargets>
+              <controlFlow Id="67b8fa9f-45cf-46f6-9592-3553fa559b80" isLeaf="false">
+                <opaqueActionMoniker Id="185d1851-3ce5-49e5-859b-48a0f296c705" LastKnownName="Commit backup" />
+                <elementDefinition Id="0d7ff5ad-564b-47da-9cac-7aa3f3c16113" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="185d1851-3ce5-49e5-859b-48a0f296c705" name="Commit backup" isLeaf="false">
+            <elementDefinition Id="984d99b6-7334-42c3-a271-bd6685df4c0e" />
+            <flowNodeTargets>
+              <controlFlow Id="ae4e79bd-77d4-496f-8991-b92d0ef72f2b" isLeaf="false">
+                <opaqueActionMoniker Id="6d754bfc-2dd0-4f93-9276-1e6768fbd220" LastKnownName="Copy items" />
+                <elementDefinition Id="985a8371-086f-4f3a-b97b-903d2db4fd16" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6d754bfc-2dd0-4f93-9276-1e6768fbd220" name="Copy items" isLeaf="false">
+            <elementDefinition Id="ab1dab74-8098-4a1e-aff2-9a3f4babb1b0" />
+            <flowNodeTargets>
+              <controlFlow Id="912dfe93-598d-4063-a024-23d472fc8f3d" isLeaf="false">
+                <opaqueActionMoniker Id="26dc0d19-8e30-4c5f-9f1d-644b5baeb2e6" LastKnownName="Zip items" />
+                <elementDefinition Id="402d2822-3ae6-4a96-832e-5acf63aff004" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="26dc0d19-8e30-4c5f-9f1d-644b5baeb2e6" name="Zip items" isLeaf="false">
+            <elementDefinition Id="f108633b-053c-4b3a-bf92-c9dfc5c09465" />
+            <flowNodeTargets>
+              <controlFlow Id="5c96e874-276f-4c34-bb7e-aefaad0896e0" isLeaf="false">
+                <activityFinalNodeMoniker Id="8ab2d59a-73a0-44d6-a9f7-c10b043e99b4" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0d2ce74c-a8d1-461b-8630-baba439ec1b7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="8ab2d59a-73a0-44d6-a9f7-c10b043e99b4" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="439b8ff4-ac5c-4562-b10a-7bfffbd6c098" />
+          </activityFinalNode>
+          <initialNode Id="c64af733-1121-4ecd-a70c-79b6faf8685e" name="Initial11" isLeaf="false">
+            <elementDefinition Id="4e848cd6-f648-4e1b-8cd6-e07db78625c6" />
+            <flowNodeTargets>
+              <controlFlow Id="f298fbbf-44b9-48d7-9231-e26cc77bb540" isLeaf="false">
+                <opaqueActionMoniker Id="12054387-f8fb-4f7e-b4a3-45c0f1f8fda2" LastKnownName="Restore window opens" />
+                <elementDefinition Id="e9fb28d3-cc01-4093-82d8-a292d663eb50" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="12054387-f8fb-4f7e-b4a3-45c0f1f8fda2" name="Restore window opens" isLeaf="false">
+            <elementDefinition Id="1f58456e-8d77-46a5-9413-3b3680574ebe" />
+            <flowNodeTargets>
+              <controlFlow Id="63dffb2e-182c-4d89-813f-96dad207a2e3" isLeaf="false">
+                <opaqueActionMoniker Id="e8f237a0-19fd-4179-8eb8-5e0301997fa4" LastKnownName="Specfiy archive file" />
+                <elementDefinition Id="fdc7faf9-2f69-48b1-be77-13680f2c1e57" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0a2218c6-45f4-40e1-82ab-78412f27b51f" name="Select Items to restore" isLeaf="false">
+            <elementDefinition Id="0a94ab2e-b2a0-418f-aa18-4da3967aa3f2" />
+            <flowNodeTargets>
+              <controlFlow Id="9652441a-7f24-4ba8-8de9-389ac8fd51e0" isLeaf="false">
+                <opaqueActionMoniker Id="697d6507-12df-4541-a43b-5467c67d090d" LastKnownName="Commit restore" />
+                <elementDefinition Id="1d7b9998-33c1-4270-8bd1-1216386edb13" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="697d6507-12df-4541-a43b-5467c67d090d" name="Commit restore" isLeaf="false">
+            <elementDefinition Id="2a2cc74f-4ca1-4142-9a1e-250ef2c2ee23" />
+            <flowNodeTargets>
+              <controlFlow Id="19b8328e-d4f8-461b-b8d3-53265d212a3a" isLeaf="false">
+                <opaqueActionMoniker Id="7568dd40-639a-429e-85b0-39580b09f5a8" LastKnownName="Copy items" />
+                <elementDefinition Id="1e4c22ca-6eff-4d29-af79-9bdfc077fa73" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7568dd40-639a-429e-85b0-39580b09f5a8" name="Copy items" isLeaf="false">
+            <elementDefinition Id="65a2effb-8d13-40a0-ab67-c6de2cd76a43" />
+            <flowNodeTargets>
+              <controlFlow Id="e80d3e9b-25a8-4c17-81d6-6a41d2a818db" isLeaf="false">
+                <activityFinalNodeMoniker Id="c6f5d04b-27b2-4c4e-a5a3-18265997bc2f" LastKnownName="ActivityFinal11" />
+                <elementDefinition Id="52391155-ef2a-4d14-83e5-bd7d958a384c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="c6f5d04b-27b2-4c4e-a5a3-18265997bc2f" name="ActivityFinal11" isLeaf="false">
+            <elementDefinition Id="d9eefed4-2d86-40cb-9013-4945c5896180" />
+          </activityFinalNode>
+          <opaqueAction Id="e8f237a0-19fd-4179-8eb8-5e0301997fa4" name="Specfiy archive file" isLeaf="false">
+            <elementDefinition Id="1cec8c6f-f386-49bc-9a3c-48b2b46cc01f" />
+            <flowNodeTargets>
+              <controlFlow Id="17000e68-220b-43a9-9aa9-7f85a06a6367" isLeaf="false">
+                <opaqueActionMoniker Id="0a2218c6-45f4-40e1-82ab-78412f27b51f" LastKnownName="Select Items to restore" />
+                <elementDefinition Id="8c645e22-44ee-4ef2-b1a2-08ec7f987360" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="4909dd1e-a43f-4003-9168-cf33e23d276d" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</activityRootModel>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="b2cc9e15-b9b1-4e0a-aec0-fd96cb9090fc" name="Auditing" linkedPackageId="03259d3f-2d76-43ba-914a-8a10e6e95523" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="15585b21-87fd-4dba-a4ed-03a47aa46642">
+      <profileInstance Id="240017a1-98d2-456a-b433-3f37092ae418" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1f9a90a3-274d-42ac-a7d3-d8b45e755c27">
+      <profileInstance Id="f6e721be-fa92-4895-b634-7306b64cecd3" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="4731e645-d021-46a8-b605-a21acf3fc56e" name="Auditing" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="15ec0695-8caa-4e68-949c-52c911e55cad" />
+        <nodes>
+          <initialNode Id="7df4b01c-ae99-4c7f-b2fa-382ebaeb0b8e" name="Initial11" isLeaf="false">
+            <elementDefinition Id="5ead1808-7207-43de-b4ad-404fb244d24c" />
+            <flowNodeTargets>
+              <controlFlow Id="19ad110e-48f7-48b8-9ce2-7dfa6ee38e0c" isLeaf="false">
+                <opaqueActionMoniker Id="07bffa78-7252-42a0-ac67-247f9d1d4ddd" LastKnownName="Open Database Audit" />
+                <elementDefinition Id="09198bec-2bfb-4758-887a-ee40530d700a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="07bffa78-7252-42a0-ac67-247f9d1d4ddd" name="Open Database Audit" isLeaf="false">
+            <elementDefinition Id="f9f4dea7-99c9-41f8-b11b-e7f5009541a2" />
+            <flowNodeTargets>
+              <controlFlow Id="3eeec2cc-619c-4262-9659-6179e168c1d4" isLeaf="false">
+                <sendSignalActionMoniker Id="1cbe3022-e5b9-4e86-a121-238f8e46a5eb" LastKnownName="Load Auditing Records" />
+                <elementDefinition Id="3efa906d-79a7-4830-b291-743615489658" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="bb36acd7-cd8b-402d-9710-503e037e8d1f" name="Merge1" isLeaf="false">
+            <elementDefinition Id="8966d82c-72d4-40db-af87-5d0d1501d67d" />
+            <flowNodeTargets>
+              <controlFlow Id="3ca6a732-e04c-4d30-a32a-ecaec7c1b630" isLeaf="false">
+                <opaqueActionMoniker Id="1b80350b-d265-4e9f-8f1d-5feea7e44c2b" LastKnownName="Assign Formatters" />
+                <elementDefinition Id="8a303bd2-7f3e-4259-b869-990e21b75eb9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="1b80350b-d265-4e9f-8f1d-5feea7e44c2b" name="Assign Formatters" isLeaf="false">
+            <elementDefinition Id="7c3c6f16-b378-458f-a205-8d17280e9253" />
+            <flowNodeTargets>
+              <controlFlow Id="400edca3-720a-4f86-a1b6-e252338fa8de" isLeaf="false">
+                <sendSignalActionMoniker Id="56c61ed2-09ba-40df-8bce-2477463b339d" LastKnownName="Load Formatters" />
+                <elementDefinition Id="a92a2532-2c4f-437f-88c0-ff6a0de44b09" />
+              </controlFlow>
+              <controlFlow Id="8e368bce-2d16-4c9b-91cd-d14119b83f62" isLeaf="false">
+                <opaqueActionMoniker Id="bb9f331d-67fe-4699-936e-a3c046f37f32" LastKnownName="Populate Records" />
+                <elementDefinition Id="e8c39696-2145-474b-bf56-9b15167a30c3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction Id="56c61ed2-09ba-40df-8bce-2477463b339d" name="Load Formatters" isLeaf="false">
+            <elementDefinition Id="b03dad0d-f18d-47ef-ad55-e8e6a727ebb6" />
+            <flowNodeTargets>
+              <controlFlow Id="5d734b23-560c-41c6-9025-78c2ede4fdeb" isLeaf="false">
+                <acceptEventActionMoniker Id="1c5c2af9-abdd-4453-9a6e-e81ec74063e3" LastKnownName="Populate Formatters" />
+                <elementDefinition Id="56f3821b-5fa2-48df-a25f-f4bb34f59452" />
+              </controlFlow>
+              <controlFlow Id="e60be425-f009-48fe-87fc-b06438dafe36" isLeaf="false">
+                <acceptEventActionMoniker Id="24e79daa-6730-48ba-9f12-6c667995e90f" LastKnownName="Load from Cache" />
+                <elementDefinition Id="03d90c71-e08d-43b5-b41a-78c68088809a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction Id="1c5c2af9-abdd-4453-9a6e-e81ec74063e3" name="Populate Formatters" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="2bdf280d-98c8-46fc-b156-37d602489d5b" />
+          </acceptEventAction>
+          <opaqueAction Id="bb9f331d-67fe-4699-936e-a3c046f37f32" name="Populate Records" isLeaf="false">
+            <elementDefinition Id="c678c3df-1159-49db-a646-0498e0a79098" />
+            <flowNodeTargets>
+              <controlFlow Id="ec7776af-e861-4b83-aace-455cb649f41c" isLeaf="false">
+                <opaqueActionMoniker Id="eb33f5eb-c1be-4a4f-973a-4a2fe382e8ac" LastKnownName="Show Records" />
+                <elementDefinition Id="3a499735-30c6-49b5-904b-19ade4adbd3a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="eb33f5eb-c1be-4a4f-973a-4a2fe382e8ac" name="Show Records" isLeaf="false">
+            <elementDefinition Id="ec9c74de-7750-4e33-9866-8d66d1c6d9f2" />
+            <flowNodeTargets>
+              <controlFlow Id="06332851-775a-40aa-b4b4-b6ae22db0cbb" isLeaf="false">
+                <activityFinalNodeMoniker Id="33bead0c-3508-434b-8f90-17b5797b1fbf" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c6be9139-e7cb-40c9-ae0c-1683c331bc94" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="33bead0c-3508-434b-8f90-17b5797b1fbf" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="3ada4e24-68f5-45b5-ab19-5fe897a77e2a" />
+          </activityFinalNode>
+          <sendSignalAction Id="1cbe3022-e5b9-4e86-a121-238f8e46a5eb" name="Load Auditing Records" isLeaf="false">
+            <elementDefinition Id="3b28fd17-c6af-4e9f-80ad-05852ecc955a" />
+            <flowNodeTargets>
+              <controlFlow Id="8e0edd69-95e7-4128-b06b-7b25a9833a52" isLeaf="false">
+                <acceptEventActionMoniker Id="981f52ba-2989-4ac8-b298-e7b3ee68142e" LastKnownName="Load Records" />
+                <elementDefinition Id="7b518188-17cc-4f23-8f69-9e46fbb9206b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction Id="981f52ba-2989-4ac8-b298-e7b3ee68142e" name="Load Records" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="d26a2572-fe64-47d2-93e0-5b195ffa75ca" />
+            <flowNodeTargets>
+              <controlFlow Id="66b1f97e-128e-45fb-ae92-399d881795ae" isLeaf="false">
+                <mergeNodeMoniker Id="bb36acd7-cd8b-402d-9710-503e037e8d1f" LastKnownName="Merge1" />
+                <elementDefinition Id="f6c92b97-f05f-4af7-bd27-6711540f1793" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction Id="24e79daa-6730-48ba-9f12-6c667995e90f" name="Load from Cache" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="8e030a06-d962-4ca3-a962-ef7260a03caf" />
+          </acceptEventAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="03259d3f-2d76-43ba-914a-8a10e6e95523" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</activityRootModel>
