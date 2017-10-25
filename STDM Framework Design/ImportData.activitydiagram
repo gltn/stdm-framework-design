@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="843b981a-4745-4e7e-9195-1618fec6add4" name="ImportData" linkedPackageId="76809d51-fe34-4b8a-a6bc-6a99ddfad092" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="1d0c269e-4a5c-45a6-8c34-c7d8bde0a8b3">
+      <elementDefinition Id="6a54c3fc-f4f2-408e-90a4-3d04a8dcbf48" />
+      <body>Determine geometry type of the file and the Geometry of the destination table are compatible</body>
+    </comment>
+    <comment Id="048fab47-d279-421f-ba49-7575e2b73a5d">
+      <elementDefinition Id="23014f31-5610-491f-a6ee-c189ab1f2989" />
+      <body>Decide if Import is possible or not</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="c2e9f21f-7d78-4b1d-a284-d31f78a85542">
+      <profileInstance Id="24aeeeb7-c55f-4eda-a6aa-49d9ed48f8bd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8873f055-8e58-4256-8461-4d5cbd085ffc">
+      <profileInstance Id="00150ddf-2c9e-41a3-9ead-7d2ba7f423cc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="98435408-36da-43d8-8742-bab03450fd01" name="ImportData" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c4378d48-19d2-450b-bc7b-f29e5c6850e9" />
+        <nodes>
+          <initialNode Id="89ccc953-b394-4116-a3ab-b8530a3d7eb5" name="Initial1" isLeaf="false">
+            <elementDefinition Id="284299cb-7ca6-41ed-89b1-c7d215c3001f" />
+            <flowNodeTargets>
+              <controlFlow Id="29692aff-12db-47cc-bb56-70676eb3cfc8" isLeaf="false">
+                <opaqueActionMoniker Id="88e1af16-f56c-4aad-998a-b0c6a4982d1e" LastKnownName="Choose File" />
+                <elementDefinition Id="eb677c39-9bbe-4c59-a95a-f45f4d1406f9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="88e1af16-f56c-4aad-998a-b0c6a4982d1e" name="Choose File" isLeaf="false">
+            <elementDefinition Id="2c63d441-4b7c-4d4e-8116-2179360fb41a" />
+            <flowNodeTargets>
+              <controlFlow Id="c9c232ab-7155-4283-bf22-659181a5a5d8" isLeaf="false">
+                <opaqueActionMoniker Id="bd9579de-16b8-4d6b-a3d7-433db249ec29" LastKnownName="Choose Table to Import to" />
+                <elementDefinition Id="0a26a52b-0b65-456b-b077-e3240801f4ec" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a139b6d4-dddf-490f-8d84-6b8f9e92d2c8" name="Spatial Table" isLeaf="false">
+            <elementDefinition Id="9d39a2a6-95b2-434c-9961-d1a3afdd2130" />
+            <flowNodeTargets>
+              <controlFlow Id="1ae566b9-6b8f-4700-81ac-836d8d0aa9ba" isLeaf="false">
+                <opaqueActionMoniker Id="581f1d4c-7925-43a3-8170-e6a6253fd3e1" LastKnownName="Choose Geometry Column" />
+                <elementDefinition Id="6212e731-4208-4573-995e-a7121dbbebb8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e7ab7198-f2f0-4676-bd94-daffdc4a7d75" name="Non-Spatial Table" isLeaf="false">
+            <elementDefinition Id="277f8b58-ff58-439f-a8d3-fddafc504aa9" />
+            <flowNodeTargets>
+              <controlFlow Id="372b175b-7ee8-4995-8e8f-50a6c5ca79a0" isLeaf="false">
+                <opaqueActionMoniker Id="34339781-e736-4d19-867a-f1bea1233fb9" LastKnownName="Align Source and Destination Columns" />
+                <elementDefinition Id="a8a94a7d-4ef5-47f7-8724-47e99d70f7db" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2024d133-de5e-4a4b-bcbc-7a3db033f0c2" name="Compare the Geometry Type of source and destination" isLeaf="false">
+            <elementDefinition Id="3222bcaf-938e-43fd-bbc8-7466af041b30" />
+            <flowNodeTargets>
+              <controlFlow Id="721e71f7-f99a-4768-a5da-63804739aec3" isLeaf="false">
+                <decisionNodeMoniker Id="fdf64cdf-0aec-4207-9d9a-d11c40816a28" LastKnownName="Decision3" />
+                <elementDefinition Id="d6799f8a-ddc2-420b-9ab1-982e110e9e9e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="fdf64cdf-0aec-4207-9d9a-d11c40816a28" name="Decision3" isLeaf="false">
+            <elementDefinition Id="b4cc82f3-2396-4735-a9dc-be47262d6785" />
+            <flowNodeTargets>
+              <controlFlow Id="b5ff3553-7862-492f-8df8-f59d5b480168" isLeaf="false">
+                <opaqueActionMoniker Id="17cfe775-08c5-4424-a841-21a414f3f924" LastKnownName="Show Validation Issues as a Popup" />
+                <elementDefinition Id="e1959264-c3a4-4ce5-8afb-8bd059ed85dd" />
+              </controlFlow>
+              <controlFlow Id="67a85c13-bb5c-400f-a105-c1c388ee4b7b" isLeaf="false">
+                <opaqueActionMoniker Id="34339781-e736-4d19-867a-f1bea1233fb9" LastKnownName="Align Source and Destination Columns" />
+                <elementDefinition Id="f2b90665-dbee-426f-9dbf-869e5114fbc3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="17cfe775-08c5-4424-a841-21a414f3f924" name="Show Validation Issues as a Popup" isLeaf="false">
+            <elementDefinition Id="5062a7e1-b2b5-4b9a-b7ee-a81f7647ffa4" />
+          </opaqueAction>
+          <opaqueAction Id="bd9579de-16b8-4d6b-a3d7-433db249ec29" name="Choose Table to Import to" isLeaf="false">
+            <elementDefinition Id="8ae05835-ba62-4836-9ea9-8bc6c3b76404" />
+            <flowNodeTargets>
+              <controlFlow Id="46e0ac45-81cf-44bd-a45e-e13e3d434eb9" isLeaf="false">
+                <decisionNodeMoniker Id="19a93cb6-9f10-4706-bf97-ae01a706bb15" LastKnownName="Decision1" />
+                <elementDefinition Id="6d11eece-b47c-47cf-b461-8866c1ad26f1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="581f1d4c-7925-43a3-8170-e6a6253fd3e1" name="Choose Geometry Column" isLeaf="false">
+            <elementDefinition Id="6ca24f1f-270d-4355-9d0a-817bf648503c" />
+            <flowNodeTargets>
+              <controlFlow Id="bf048da3-e5a5-4fa4-b74a-09607cae1648" isLeaf="false">
+                <opaqueActionMoniker Id="2024d133-de5e-4a4b-bcbc-7a3db033f0c2" LastKnownName="Compare the Geometry Type of source and destination" />
+                <elementDefinition Id="9fbb7e60-4841-4fd8-8386-91af9563e532" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="34339781-e736-4d19-867a-f1bea1233fb9" name="Align Source and Destination Columns" isLeaf="false">
+            <elementDefinition Id="b1590870-e8d6-43e0-9706-f4d37af73c74" />
+            <flowNodeTargets>
+              <controlFlow Id="307cd4d6-dfb1-4d76-bc24-3a7b2a863253" isLeaf="false">
+                <opaqueActionMoniker Id="5572c0be-1acd-4f20-821c-d68323fcefad" LastKnownName="Asign tranlators" />
+                <elementDefinition Id="9e367084-8c8d-4073-902f-036d0aefc042" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3b2299d9-70a3-4f73-aaed-51fd66ffef2f" name="Import Data button Clicked" isLeaf="false">
+            <elementDefinition Id="0d23fe87-6a96-448a-8e24-35967263951e" />
+            <flowNodeTargets>
+              <controlFlow Id="2bcd5a55-9dad-474d-bb8b-7b8dcb6cce2b" isLeaf="false">
+                <opaqueActionMoniker Id="7cbe267f-c00e-45fe-b242-406e07a555a1" LastKnownName="Validate Import" />
+                <elementDefinition Id="be11df94-4a46-4f3b-adc9-f5a1c24e96ed" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7cbe267f-c00e-45fe-b242-406e07a555a1" name="Validate Import" isLeaf="false">
+            <elementDefinition Id="ced17920-c923-4679-a444-4aa7bfd395b3" />
+            <flowNodeTargets>
+              <controlFlow Id="fccda253-be0d-4a8d-921e-587406fab485" isLeaf="false">
+                <opaqueActionMoniker Id="a223aefd-06a6-4b95-975e-680894c2ed7f" LastKnownName="Autofix Issues" />
+                <elementDefinition Id="cc8deb16-72b1-4c79-a00d-66de514578f7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ea806fc6-158a-4440-9b06-09339a1fd5f4" name="Import to Database Table" isLeaf="false">
+            <elementDefinition Id="ff671762-09d0-4b91-a440-5c85c530d245" />
+            <flowNodeTargets>
+              <controlFlow Id="60971261-9db9-4ce1-bdf2-4c456a65ff6a" isLeaf="false">
+                <activityFinalNodeMoniker Id="fa225bfd-8b03-406c-8743-a6fd9134bea1" LastKnownName="ActivityFinal3" />
+                <elementDefinition Id="6f26d744-3f2e-4bd1-9107-5ada1168014e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="089299c4-6762-488e-b3c3-931f2a167481" name="Decision2" isLeaf="false">
+            <elementDefinition Id="38d94c97-7af6-447f-be53-6ddcce385fbb" />
+            <flowNodeTargets>
+              <controlFlow Id="a0c9e2e6-229b-40d5-a4ed-349316d7923b" isLeaf="false">
+                <opaqueActionMoniker Id="5d9f68aa-3f92-4276-9c3a-2ba7aa5eeb7f" LastKnownName="Show Validation Issues in Import Validator Window" />
+                <elementDefinition Id="d8f2cfea-bd39-496e-9943-bf79602e7274" />
+              </controlFlow>
+              <controlFlow Id="f9e90a69-d249-46c6-8ac1-1a5225634d64" isLeaf="false">
+                <opaqueActionMoniker Id="ea806fc6-158a-4440-9b06-09339a1fd5f4" LastKnownName="Import to Database Table" />
+                <elementDefinition Id="6c5459a1-cc0c-42c9-a79d-f798efaa9cd8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="5d9f68aa-3f92-4276-9c3a-2ba7aa5eeb7f" name="Show Validation Issues in Import Validator Window" isLeaf="false">
+            <elementDefinition Id="f4e96f49-b558-44c3-b1d8-2dfc57ab1b5a" />
+            <flowNodeTargets>
+              <controlFlow Id="105f7c1b-dbdd-48c3-881e-79fa14bfaabc" isLeaf="false">
+                <opaqueActionMoniker Id="34339781-e736-4d19-867a-f1bea1233fb9" LastKnownName="Align Source and Destination Columns" />
+                <elementDefinition Id="f5378d3e-1eda-40a4-a924-8b9839c04693" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="fa225bfd-8b03-406c-8743-a6fd9134bea1" name="ActivityFinal3" isLeaf="false">
+            <elementDefinition Id="b12fafe1-a369-4497-87d6-3cd075fe88af" />
+          </activityFinalNode>
+          <opaqueAction Id="5572c0be-1acd-4f20-821c-d68323fcefad" name="Asign tranlators" isLeaf="false">
+            <elementDefinition Id="16a3423d-a7c9-4598-a4a6-56b4353e0fb4" />
+            <flowNodeTargets>
+              <controlFlow Id="56accfc3-ae55-4dfb-9dd8-6872a1447c22" isLeaf="false">
+                <opaqueActionMoniker Id="3b2299d9-70a3-4f73-aaed-51fd66ffef2f" LastKnownName="Import Data button Clicked" />
+                <elementDefinition Id="1e5ed563-323d-4f4a-a278-2596805ca016" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a223aefd-06a6-4b95-975e-680894c2ed7f" name="Autofix Issues" isLeaf="false">
+            <elementDefinition Id="db3e4aa4-39dd-45d9-b68a-ba00a3349965" />
+            <flowNodeTargets>
+              <controlFlow Id="f619e078-3076-4f73-916b-3354de51247f" isLeaf="false">
+                <decisionNodeMoniker Id="089299c4-6762-488e-b3c3-931f2a167481" LastKnownName="Decision2" />
+                <elementDefinition Id="ef30b0be-8750-40e3-87db-6b4cf1bf787c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="19a93cb6-9f10-4706-bf97-ae01a706bb15" name="Decision1" isLeaf="false">
+            <elementDefinition Id="7fb9aa9d-bdf8-45f8-be59-f8c1a22bf5e7" />
+            <flowNodeTargets>
+              <controlFlow Id="cb33c8e8-1219-4805-9e52-bc438bd5e116" isLeaf="false">
+                <opaqueActionMoniker Id="a139b6d4-dddf-490f-8d84-6b8f9e92d2c8" LastKnownName="Spatial Table" />
+                <elementDefinition Id="621ca848-7205-4d6a-83a2-1cf798abedc4" />
+              </controlFlow>
+              <controlFlow Id="09086252-4f01-4ccb-8093-188aa0cca560" isLeaf="false">
+                <opaqueActionMoniker Id="e7ab7198-f2f0-4676-bd94-daffdc4a7d75" LastKnownName="Non-Spatial Table" />
+                <elementDefinition Id="69141894-b7fd-49dd-a7a1-adf7f020ed00" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="76809d51-fe34-4b8a-a6bc-6a99ddfad092" name="STDM Framework Design">
+    <elementDefinition Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c" />
+  </package>
+</activityRootModel>
