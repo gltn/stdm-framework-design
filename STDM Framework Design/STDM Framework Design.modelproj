@@ -92,6 +92,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Entities.classdiagram</DependentUpon>
     </Content>
+    <Content Include="EntityBrowser.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EntityBrowser.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EntityBrowser.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="ImportData.activitydiagram">
       <SubType>Content</SubType>
     </Content>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="b43ca084-fb9e-4a6f-a85b-43ac090e898c"
   name="STDM Framework Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -86,7 +86,7 @@ directly save to table</body>
     </comment>
     <comment
       Id="eb78a222-050d-401e-9a0b-16bac75c65f7">
-      <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is added when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
+      <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is created when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
     </comment>
     <comment
       Id="329f77a5-e5fe-41b2-82f7-f726d0524c27">
@@ -8721,6 +8721,225 @@ If disapproved, only notification is sent to the editor. </body>
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="231742b8-c62f-4347-9ef3-86c569e1bfc9"
+        name="EntityBrowser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="45bfc87a-dcbb-40fa-977a-dbaa4608d04c"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="37d981a2-0bdb-4518-9986-8f446356d754"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="250ab0ce-1114-4d29-a4a2-beceebf0dc61"
+                  LastKnownName="User Opens Records Table"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="250ab0ce-1114-4d29-a4a2-beceebf0dc61"
+            name="User Opens Records Table"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="deaa1737-29cb-496a-825c-18467614f016"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="9f5035e4-ecae-45ea-9bdf-7546d2e4ca6d"
+                  LastKnownName="Open from Cache"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f59d876f-637e-492c-9b36-efe6cb634bda"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5c7affed-f407-4b4c-af6d-da4c6996ef62"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="03a0455c-c44f-4e65-8e83-f76b7ebfc06d"
+                  LastKnownName="Load from Cache"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b0b728d1-565b-4302-943e-88b149a788c9"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="e061717f-491c-4208-878d-45f35332b916"
+                  LastKnownName="Load from Database"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="9f5035e4-ecae-45ea-9bdf-7546d2e4ca6d"
+            name="Open from Cache"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d2659940-e862-4ab2-8021-acf526c137f6"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f59d876f-637e-492c-9b36-efe6cb634bda"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="03a0455c-c44f-4e65-8e83-f76b7ebfc06d"
+            name="Load from Cache"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d5cbcc56-c8da-4dc0-986d-1e5c3605be36"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d6ff349-7611-40b2-835d-6176dfb85339"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <acceptEventAction
+            Id="e061717f-491c-4208-878d-45f35332b916"
+            name="Load from Database"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6f41fdf9-f932-44cc-ac2c-c15e54931d32"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d6ff349-7611-40b2-835d-6176dfb85339"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <mergeNode
+            Id="0d6ff349-7611-40b2-835d-6176dfb85339"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="52ed1d5b-b7f4-4209-a3e7-68739c2c212b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7939cff6-dba4-4457-abec-2c7d8ea2d14d"
+                  LastKnownName="Assign Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="7939cff6-dba4-4457-abec-2c7d8ea2d14d"
+            name="Assign Formatters"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8b58d174-99f6-419d-9ffd-8bb3c6c4275e"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="26cd415b-7d7d-412b-96f3-30e5843abd84"
+                  LastKnownName="Load Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="56a61340-8f32-4a8a-9a3d-9340383e0440"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e90567c8-1d7e-4294-9d7e-a31eab65bb5c"
+                  LastKnownName="Populate Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="26cd415b-7d7d-412b-96f3-30e5843abd84"
+            name="Load Formatters"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a3d5ee89-aa60-450a-9676-71bc362a9e61"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="2bbbe605-cf17-4328-aeb8-909bb98af9c3"
+                  LastKnownName="Load from Cache"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f0c74b4c-c636-4459-ae8e-d05f22cbd990"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="7ca62c77-8b70-480c-9662-314704e26141"
+                  LastKnownName="Populate Formatters"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="2bbbe605-cf17-4328-aeb8-909bb98af9c3"
+            name="Load from Cache"
+            isLeaf="false"
+            isUnmarshall="false" />
+          <acceptEventAction
+            Id="7ca62c77-8b70-480c-9662-314704e26141"
+            name="Populate Formatters"
+            isLeaf="false"
+            isUnmarshall="false" />
+          <opaqueAction
+            Id="e90567c8-1d7e-4294-9d7e-a31eab65bb5c"
+            name="Populate Records"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fe4df3c3-a5ef-44ac-8c9f-92622a633f49"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2b8c4bde-9077-4db0-b8cb-ff43bf1523c4"
+                  LastKnownName="Show Records"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2b8c4bde-9077-4db0-b8cb-ff43bf1523c4"
+            name="Show Records"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="00231614-80d0-4c77-91b0-b95c8c3ebfde"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="a2688122-7bca-4521-817c-51ea2493ffdb"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="STDM Framework Design.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="a2688122-7bca-4521-817c-51ea2493ffdb"
+            name="ActivityFinal1"
+            isLeaf="false" />
         </nodes>
       </activity>
     </packageHasNamedElement>

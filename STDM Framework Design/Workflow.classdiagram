@@ -16,7 +16,7 @@
     </comment>
     <comment Id="0299fbb9-a407-48b2-80a8-10ca0a988622">
       <elementDefinition Id="eb78a222-050d-401e-9a0b-16bac75c65f7" />
-      <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is added when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
+      <body>Approval entities, will have one more table called appr_entity_name, that stores unapproved records of the entity. appr_entity_name is created when entity becomes an approval entity. When the entity is removed from approval, the appr_entity_name will be kept but not used. This is because it might be enabled again and unapproved records will not be lost</body>
     </comment>
     <comment Id="26579a67-f12a-450e-8ebe-aed042bcb30d">
       <elementDefinition Id="329f77a5-e5fe-41b2-82f7-f726d0524c27" />
